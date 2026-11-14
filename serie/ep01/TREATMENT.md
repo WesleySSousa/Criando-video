@@ -1,37 +1,64 @@
-# BRASA VIVA — Ep. 1 "O Despertar" — Tratamento
+# LOGADO — Ep. 1 "Nível 1" — Tratamento
 
-Logline: preso num jogo onde apagar a brasa da cintura é morrer de verdade, um garoto aprende em uma noite que só quem fala baixo vive, e desce em direção à única saída.
+## 1. Três estruturas candidatas
 
-## Três estruturas candidatas
+1. **Um dia, em ordem (diário).** Manhã em casa, a discussão, o login, a caçada que passa de manhã a pôr do sol, a carteira. Simples e verdadeiro ao estilo de diário.
+2. **Antes/depois com o saldo no início.** Abre com o saldo de R$ 1,12 e volta no tempo. Esvazia a surpresa do saldo ser tão pequeno.
+3. **Contagem de gosmas.** Cada slime morto marca um número na tela até o fim. Gráfico demais, pouca vida real.
 
-**A. Mapa do dia (day-cycle).** Um só lugar, a Praça, do sol à noite; a luz muda e a praça se esvazia. Força: unidade visual e cada hora com práticas diferentes. Fraqueza: o perigo (Ouvidores, o Fosso) fica fora de quadro; pouco para a série prometer.
+**Escolhida: 1**, com um relógio de jogo em números e o pôr do sol como cronômetro natural. O saldo pequeno funciona melhor como anticlímax e a Carta final dá o gancho.
 
-**B. Três locais, uma regra (menu de lugares).** Praça (regra do mundo), Beco (a regra na prática: alguém quebra e morre), Boca do Fosso (a escolha). Cada lugar com sua névoa e luz-chave (ouro-pálido, violeta, verde). O herói sussurra do começo ao fim. Força: ensina a premissa, tem uma morte-lição e um fecho aberto.
+## 2. Logline e arco
 
-**C. Flashback a partir da escolha.** Abrir na Boca do Fosso e voltar para a Praça. Força: ganho de tensão imediato. Fraqueza: o "botão ausente" perde força e a morte-lição vira explicação.
+Um garoto que os pais acusam de jogar demais decide provar que dá para ganhar dinheiro no jogo, e passa o dia inteiro, no nível 1, para ganhar R$ 1,12.
 
-**Escolhida: B.** Ela dá a cada 20 s um lugar novo (leitura instantânea pela cor da névoa), põe a regra do sussurro antes da morte que a prova e termina com ação, não com explicação. A tem pouco perigo; C gasta o susto.
+- **Setup:** casa, brigas dos pais, "vou mostrar pra vocês".
+- **Virada:** o jogo é difícil; um slime quase o vence; o drop vale quatro centavos.
+- **Fim:** pôr do sol, nível 3, R$ 1,12 de um saque mínimo de R$ 20; chega uma Carta de R$ 50,00 por um item que ele ainda não consegue conseguir.
 
-## Logline e arco
-Setup (0–21 s): o botão de sair não existe; quatro mil presos; a regra da Brasa. Turn (35–55 s): no Beco, alguém grita, um Ouvidor o ouve, a brasa dele apaga: silêncio real. Ending (62–80 s): Teco e Lira chegam à Boca do Fosso; a brasa tremendo; ele diz seu nome e que vai sair; a faixa de foco fecha sobre ele; cartão de título.
+## 3. Benchmark
 
-## Benchmark
-Aprender com *Octopath Traveler*: sprite plano em diorama aceso, câmera alta, tilt-shift, luz como assunto, cartão de capítulo. Aprender com animes de "preso no jogo": ritmo de regra, depois consequência, depois escolha. Não levar: personagens, nomes, UI, música de nenhum deles; nada de andares ascendentes (o nosso é um fosso descendente), nem espada-dupla, nem "avatar com nome real".
+- **Aprender:** o ritmo de "um dia de grind" em jogos de rotina (relógio, sombras que giram, repetição que vira música); a luz de pôr do sol como medida de esforço; diários em vídeo de primeira pessoa (voz perto do ouvido sobre imagem calma).
+- **Não tomar:** personagens, UI, nomes ou músicas de nenhum jogo ou anime existente; nada de "preso no jogo".
 
-## Abertura, final, score
-- **Abertura:** inserto de mão sobre o Menu, onde falta o botão (não a praça: o clichê é o plano aberto de cidade).
-- **Final:** a faixa de foco fecha sobre Teco até todo o resto virar desfoque, com a brasa dele como única luz laranja; ecoa a abertura (a mão volta, agora fechada em punho no cachecol).
-- **Score:** pequenas cordas dedilhadas (alaúde, harpa pequena) e celesta; pad de coral grave só no Fosso; uma batida de coração no silêncio; mão de tambor só no final.
+## 4. Lista de planos (resumo; detalhes no ROTEIRO)
 
-## Movimento nativo
-**A luz carregada como medidor:** a brasa de cada um. É a vida e a luz-chave. A morte do Gritador é a brasa que se apaga (o plano mais silencioso do episódio).
+| Nº | s | Plano | Por quê |
+|---|---|---|---|
+| 1 | 0–6 | Quarto, plano médio baixo, Visor nas mãos | hook: o objeto da discussão |
+| 2 | 6–12 | Cozinha, 3/4 baixa, pais de braços cruzados | mostra a pressão sem voz |
+| 3 | 12–21 | Porta da cozinha, perfil, pais desfocados | primeira fala sussurrada (QUADRO-CHAVE, vida real) |
+| 4 | 21–24 | Quarto, dolly in, Visor desce | corte entre mundos |
+| 5 | 24–33 | Campina, lateral baixa, cartão de capítulo | chegada ao jogo |
+| 6 | 33–39 | Campina, 3/4, rack focus na luta | números de dano mostram a dificuldade |
+| 7 | 39–48 | Campina, perfil próximo | segunda fala; silêncio; golpe final (QUADRO-CHAVE) |
+| 8 | 48–54 | Campina, insert alto da poça, drop | o valor do drop |
+| 9 | 54–57 | Campina, geral/elevado (1 de 2) | passagem do dia |
+| 10 | 57–66 | Campina ao pôr do sol, travelling lateral | o último slime, nível 3 |
+| 11 | 66–72 | Campina, por cima do ombro, painel | a carteira |
+| 12 | 72–80 | Campina, 3/4 baixa, pull-back | gancho (QUADRO-CHAVE) e título |
 
-## Plano e câmera (resumo; detalhe no ROTEIRO)
-12 planos. Câmeras: inserto de topo, muito alta e lenta (push), 3/4 média, lateral com tracking, rack focus entre lanternas, mergulho baixo ajoelhando, orbit parcial, fixo, faixa que fecha.
+## 5. Beat sheet resumido
 
-## Som
-Seção 1 (Praça): vento seco, murmúrio abafado, celesta; sem música forte. Seção 2 (Beco): sinos mudos (sem som, só movimento), passos em pedra, harpa pequena; um grito sem palavras. Seção 3 (silêncio): 6 s só com o vento e um coração. Seção 4 (Fosso): corais graves, vento subindo do buraco, cristais que zumbem; final em hard stop com a última sílaba.
-Dois silêncios reais: 38,6–41 s e 49–55 s. Transições por som: o vento do Fosso entra 5 s antes (J-cut, plano 10→11); a celesta da Praça cai sobre o inserto 1→2 (L-cut).
+0–12 casa (pressão); 12–21 promessa; 21–24 silêncio e corte; 24–48 luta de verdade; 48–57 pouco valor e o dia passando; 57–72 pôr do sol e conta; 72–80 gancho e título.
 
-## Tipo
-Só cartões: "CAPÍTULO 1 · O DESPERTAR" (Cinzel, caixa alta, 6–10 s) e título "BRASA VIVA" no fim (76–80 s). Nenhuma fala escrita.
+## 6. Cue map
+
+Tempo 80 bpm, compasso de 3 s. Cortes nos compassos: 0, 6, 12, 21, 24, 33, 39, 48, 54, 57, 66, 72. Música: vida real quase sem música (relógio de parede, geladeira); entra no corte para o jogo (24 s) um lo-fi leve de violão de nylon, celesta e baixo; pad cresce até o pôr do sol; sino fino no gancho. Silêncios reais: 21–24 s (quarto, só o clique do Visor) e 44,8–48 s (depois do sussurro, antes do golpe). Cauda final 78,7–80 s.
+
+## 7. Tabela de som
+
+| Seção | Cama | Foley | Música |
+|---|---|---|---|
+| Casa (0–21) | geladeira, relógio, vozes abafadas sem palavras | cadeira, xícara, passos de chinelo | nenhuma |
+| Corte (21–24) | quase silêncio | clique do Visor, zumbido que sobe | pad entra em 23,5 (J-cut) |
+| Campina (24–72) | vento, grilo, pássaros que somem ao cair do dia | galho no slime, estouro mole, moedas, sino de nível | violão, celesta, baixo |
+| Gancho (72–80) | vento calmo | sino de carta | celesta e pad; para no título |
+
+## 8. Texto na tela
+
+Só em pós: cartão de capítulo "Nível 1" (24,5–28 s) e título "LOGADO" (77,5–80 s), Cinzel; nenhum quadro gerado contém letras. Números de HUD (HP, dano, relógio, nível, saldo com símbolo R$) são parte da imagem.
+
+## 9. Voz
+
+Narração calma e baixa ("wesley"), falas em cena sussurradas. Total: 105 palavras, 581 caracteres (ver ROTEIRO).
