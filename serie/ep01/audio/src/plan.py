@@ -1,24 +1,16 @@
 import json
-A=json.load(open('ana.json'))
-dur={int(k):v['dur'] for k,v in A.items()}; lead={int(k):v['lead'] for k,v in A.items()}
-gap={i:.32 for i in range(2,28)}
-gap.update({4:.55,5:.65,9:.6,10:1.2,16:.45,17:.8,18:.6,19:.4,20:.6,21:.4,23:.5,24:.45,26:.6,27:.5})
-S={1:.2}
-for i in range(2,28): S[i]=S[i-1]+dur[i-1]+gap[i]
-E={i:S[i]+dur[i] for i in S}
-# cuts (end of each shot); ids
-c=[('1',S[2]-.25),('2',S[2]+2.49),('3',S[3]+1.3),('4',S[4]-.25),('5',S[5]-.3),('6',S[5]+1.5),
-('7',S[6]+.9),('8',S[7]+.78),('9',S[7]+3.4),('10',E[8]+.05),('11',E[9]+.08),('12',S[10]+1.1),
-('13',S[11]+.88),('14',S[12]+.85),('15',S[12]+3.0),('16',S[13]-.25),('17',S[13]+2.36),('18',S[14]+.9),
-('19',S[14]+3.98),('20',S[15]+2.49),('21',S[16]-.25),('22',S[17]-.25),('23',S[17]+1.6),('24',S[18]-.25),
-('25a',S[18]+1.25),('25b',S[19]-.25),('26',S[20]-.25),('27',S[20]+2.76),('28',S[22]-.25),('29',S[22]+2.1),
-('30',S[23]-.25),('31',S[23]+2.7),('32',S[24]-.25),('33',S[24]+2.24),('34',S[25]-.25),('35',S[25]+2.8),
-('36',S[26]-.2),('37',E[26]+.05),('38',S[27]+3.5),('39',S[27]+6.45),('40',E[27]+2.4)]
-T=c[-1][1]
-shots=[];p=0
-for id_,e in c:
-    shots.append(dict(id=id_,plano=int(''.join(ch for ch in id_ if ch.isdigit())),ini=round(p,2),fim=round(e,2),dur=round(e-p,2)));p=e
+A=json.load(open("ana.json"))
+# sequencia de falas (ordem do roteiro rev3: L2 -> P1 -> P2 -> L3 -> L4 ...)
+SEQ=['l%02d'%i for i in (1,2)]+['p01_pai','p02_mae']+['l%02d'%i for i in range(3,28)]
+dur={k:v['dur'] for k,v in A.items()}
+P_A=A
+# pausa ANTES de cada fala (padrao 0,32 s; regras do roteiro)
+gap={k:.32 for k in SEQ}
+gap.update({'l04':.55,'l05':.65,'l09':.6,'l10':1.2,'l16':.45,'l17':.8,'l18':.6,'l19':.4,'l20':.6,'l21':.4,
+            'l23':.5,'l24':.45,'l26':.6,'l27':.5,'p01_pai':.4,'p02_mae':.3,'l03':.5})
+S={'l01':.2}
+for a,b in zip(SEQ,SEQ[1:]): S[b]=S[a]+dur[a]+gap[b]
+E={k:S[k]+dur[k] for k in S}
 if __name__=='__main__':
-    for s in shots: print(s, '!!' if s['dur']>4 else '')
-    print('T',T)
-    for i in S: print(i,round(S[i],2),round(E[i],2))
+    for k in SEQ: print(k, round(S[k],2), round(E[k],2))
+    print('T_fala', round(E['l27'],2))
