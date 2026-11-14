@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+serie/ep01/audio/stems/
+serie/**/frames/
