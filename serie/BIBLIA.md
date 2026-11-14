@@ -81,3 +81,10 @@ Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de 80 s, sem leg
 2. A brasa de Teco tremeu sem causa visível: por quê? (O Fosso "bebe" brasa de quem desce?)
 3. O Mercado Cego (Terraço Dois): lá não há sinos mudos; tudo é negociado por gestos.
 4. Alguém no Fosso já passou de Terraço Três e deixou uma lanterna acesa na parede, uma Brasa que não pertence a nenhum jogador vivo.
+
+## 8. Linguagem de câmera da série
+
+- **Câmera padrão:** lateral ou 3/4, baixa e próxima, como série de TV, com inclinação de só ~10–20° para baixo, nunca na altura dos olhos; mostra perfil e rosto dos personagens.
+- **Plano elevado (top-down ou bem alto):** só para momentos especiais, no máximo 2 por episódio, cada um com motivo dramático (escala, morte, mapa).
+- **Movimentos bem-vindos:** travelling lateral, dolly in, câmera por cima do ombro, rack focus, orbit curto.
+- Mantém a gramática do estilo (diorama, tilt-shift, luz prática); a faixa de foco segue o sujeito.
