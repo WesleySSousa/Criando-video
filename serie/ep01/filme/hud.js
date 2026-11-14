@@ -83,7 +83,7 @@ export function drawPanel(g, kind, st = {}, t = 0) {
     if (st.tag) { R_(g, 8, 62, 96, 15, COL.slate2); ICON.moeda(g, 16, 70, 3); ptext(g, st.tag, 24, 66, COL.paper, 1); if (st.tag2) { ICON.gosma(g, 66, 69, .45); ptext(g, st.tag2, 74, 66, COL.silver); } }
   } else if (kind === 'cartas') {
     R_(g, 8, 8, 96, 84, COL.slate2); R_(g, 10, 10, 92, 80, '#ece4d0'); R_(g, 10, 10, 92, 2, '#d4c9aa');
-    ICON.dourada(g, 32, 38); ptext(g, 'R$ 50,00', 48, 22, '#2a2010', 2); R_(g, 46, 40, 52, 1, '#b4a888');
+    ICON.dourada(g, 32, 38); ptext(g, 'R$', 46, 14, '#2a2010', 1); ptext(g, '50,00', 44, 24, '#2a2010', 2); R_(g, 46, 40, 52, 1, '#b4a888');
     ICON.relogio(g, 22, 72); ptext(g, st.deadline ?? '08:00', 32, 68, '#2a2010', 2);
     ICON.carta(g, 86, 74, null);
   } else if (kind === 'diagrama') {

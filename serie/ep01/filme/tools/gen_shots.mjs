@@ -183,9 +183,9 @@ add(20, { set: 'banca', cam: cam([C(56, -.2, 2.9, -7.7, 9.6, -6, 6, 40), C(59, -
 {
   const items = []; const pos = [[-.9, 0], [-.6, 0], [-.3, 0], [0, 0], [.3, 0], [-.9, .25], [-.6, .25], [-.3, .25], [0, .25], [.3, .25], [-.75, .5], [-.45, .5], [-.15, .5], [.15, .5], [.45, .5]];
   pos.forEach(([x, dz], i) => items.push({ id: 'g' + i, kind: 'item', ...{ id: 'gosma' }, kind: 'item', k: .55, pos: [.3 + x, 1.17, -3.2 - dz * .5 + .1], show: K([[59.5 + i * .02, 60.3 + i * .0]]) }));
-  add(21, { set: 'banca', cam: cam([C(59, .35, 1.3, -3, 5.4, 8, 8), C(61.8, .45, 1.3, -3, 4.6, 8, 8)]), focus: [.2, 1.3, -3], coinT: R3(W(60.4)), hud: HUD_L2('13:08'), aper: 80,
-    menu: { screen: [[R3(W(59)), 'carteira']], pos: [2.0, 1.75, -2.6], w: .62, state: { moneyLin: K([[60.3, 0], [61.5, 68]]), meta: 0.68 } },
-    actors: [TECO({ pos: [-.6, 0, -2.2], pose: K([[59, 'stand'], [59.4, 'put'], [60.3, 'stand']]) }), { id: 'po', kind: 'item', ...{ id: 'po' }, kind: 'item', k: .6, pos: [.7, 1.17, -3.0], show: K([[59.5, 60.3]]) }, ...items] });
+  add(21, { set: 'banca', cam: cam([C(59, .85, 1.25, -3, 6.6, 8, 8), C(61.8, .85, 1.25, -3, 6.0, 8, 8)]), focus: [.2, 1.3, -3], coinT: R3(W(60.4)), hud: HUD_L2('13:08'), aper: 80,
+    menu: { screen: [[R3(W(59)), 'carteira']], pos: [1.55, 1.95, -2.6], w: .6, state: { moneyLin: K([[60.3, 0], [61.5, 68]]), meta: 0.68 } },
+    actors: [TECO({ pos: [.05, 0, -2.2], pose: K([[59, 'stand'], [59.4, 'put'], [60.3, 'stand']]) }), { id: 'po', kind: 'item', ...{ id: 'po' }, kind: 'item', k: .6, pos: [.7, 1.17, -3.0], show: K([[59.5, 60.3]]) }, ...items] });
 }
 // 22: quarto 14:20
 add(22, { set: 'quarto', cam: cam([C(61.8, .2, .95, -2, 7.2, 8, 8), C(63.6, 1.0, .95, -2, 7.0, 8, 8)]), focus: [.6, .9, -2.0], aper: 110, hud: null,

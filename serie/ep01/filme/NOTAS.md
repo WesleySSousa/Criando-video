@@ -11,7 +11,7 @@ Pasta: `serie/ep01/filme/`. Motor: base do estilo (px/kit/fx/post_ts copiados da
 - **Storyboard**: `storyboard.jpg` (grade numerada) + `storyboard_parte1.jpg`/`parte2.jpg`; quadros individuais em `stills/full/`.
 
 ## Falta para o render final
-1. Reler `tempos.json` final (o atual ainda é o de 112,47 s sem 3a–3c/5a–5b; o gerador divide o plano 3 e o 5 proporcionalmente) e rodar `node tools/gen_shots.mjs`; conferir eventos de luta/cura/estouro contra `tempos.json.eventos`.
+1. `tempos.json` (119,37 s, 43 entradas) já foi lido na última geração; reconferir eventos de luta/cura/estouro contra `tempos.json.eventos` e rodar `node tools/gen_shots.mjs` se mudar.
 2. Ajustes visuais: zona de cartões (cartão "Nível 1" cobre o tronco do Teco), planos "por cima do ombro" mostram só um pedaço do Teco, orelhas/rosto de Rogério e Sandra ainda simples, Teco de frente com cachecol dominante, rachadura do galho só legível no macro (plano 26), tira de foco do mapa (plano 35) não aplicada, chão com tracejado de dither ainda visível.
 3. Áudio (voz, música, foley, mix), `video.mjs` (24 fps, `--workers 3`, ~10 s por quadro em software GL: cerca de 40 min por 1000 quadros por worker; usar GPU se houver), mux, `readcheck.mjs`.
 4. Conferir R4 do `.srt` com os tempos reais e o `speaker` de P1/P2.
