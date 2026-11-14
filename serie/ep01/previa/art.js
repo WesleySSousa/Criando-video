@@ -18,12 +18,12 @@ export const C = {
   leather: R(['#1a0f09', '#2f1c10', '#4a2e1b']),
   glass: R(['#ff7a14', '#ff9f2e', '#ffc860', '#fff0b0']),
   glassY: R(['#d8a830', '#f0c94a', '#ffe27a', '#fff5c0']),
-  moss: R(['#232c1b', '#3a4727', '#55663a', '#73844f']),
+  moss: R(['#1c2a1f', '#2e4430', '#42603f', '#58784f']),
   braid: R(['#26130a', '#472714', '#69401f', '#8a5a2c']),
   canvas: R(['#4d4130', '#74654a', '#9a8a66', '#b8a880']),
   wood: R(['#2a1608', '#47290f', '#6a4119']),
   blue: R(['#0c1330', '#16224a', '#223470', '#33498f']),
-  ouv: R(['#171d27', '#2a3442', '#43526a', '#67799a']),
+  ouv: R(['#232b38', '#3c4a60', '#5d708c', '#8a9fbe']),
   ear: R(['#0e5a3c', '#1fa874', '#5ff0a8', '#c8ffe2'], .2),
   ash: R(['#8d8794', '#b6b0bd', '#d9d4df', '#f2eef6']),
 };
@@ -155,7 +155,7 @@ export function ouvidor() {
     // bracos longos ate o chao, dedos compridos
     for (const [sx, dir] of [[21, -1], [40, 1]]) { for (let y = 46; y < 100; y++) { const x = sx + dir * Math.round(Math.sin((y - 46) / 54 * 1.6) * 5); P.set(x, y, C.ouv(.6, 0, 0)); P.set(x + dir, y, C.ouv(.35, 0, 0)); } for (let k = 0; k < 4; k++) P.line(sx + dir * 5, 99, sx + dir * (6 + k * 1.2), 108 + k, C.ouv(.5, 0, 0)); }
     // cabeca baixa, sem olhos, sem rosto, fenda de boca
-    P.ellipse(cx + 1, 40, 5.5, 7, (x, y, dx, dy) => C.ouv(.7 - dx * .25 - dy * .2, x, y));
+    P.ellipse(cx + 1, 41, 6.5, 8, (x, y, dx, dy) => C.ouv(.7 - dx * .25 - dy * .2, x, y));
     P.rect(cx - 1, 45, 4, 1, hex('#0b0e14'));
     // orelhas gigantes: antenas de membrana fina que brilham verde
     for (const s of [-1, 1]) {
@@ -193,9 +193,10 @@ export function tecoTop() {
     // cachecol rubi: gola ao redor do pescoco + ponta longa pelo ombro esquerdo (dir. da imagem) ate o punho
     P.ellipse(32, 31, 14, 4.6, (x, y, dx, dy) => C.ruby(.62 - dy * .3 + (dx > .4 ? .1 : 0) + ((x + y) % 5 === 0 ? -.1 : 0), x, y));
     for (let t = 0; t <= 1; t += .02) { const x = 44 + Math.sin(t * 3) * 3 + t * 6, y = 31 + t * 22; P.rect(Math.round(x), Math.round(y), 4, 2, C.ruby(.6 + (t % .1 < .05 ? .1 : -.08), x, y)); }
-    P.rect(52, 52, 3, 6, C.ruby(.55, 0, 0));
+    // punho esquerdo fechado na ponta do cachecol (por cima do Espeto)
+    P.rect(45, 50, 11, 8, C.skin(.85, 0, 0)); P.rect(45, 50, 11, 1, C.skin(.4, 0, 0)); P.rect(46, 52, 1, 4, C.skin(.5, 0, 0)); P.rect(49, 54, 5, 1, C.skin(.5, 0, 0)); P.rect(50, 58, 4, 5, C.ruby(.55, 0, 0)); P.rect(50, 58, 1, 5, C.ruby(.8, 0, 0)); P.set(51, 63, C.ruby(.35, 0, 0));
     // Brasa de Teco: cintura esquerda (dir. da imagem), vista de cima: tampa e brilho
-    P.rect(53, 63, 9, 9, C.steel(.45, 0, 0)); rf(P, 54, 64, 7, 7, (x, y) => { E.set(x, y, C.glass(.95, x, y)); return C.glass(.85 - (Math.hypot(x - 57.5, y - 67.5)) * .08, x, y); }); P.rect(56, 66, 3, 3, C.glass(.99, 0, 0)); E.rect(56, 66, 3, 3, C.glass(.99, 0, 0));
+    P.rect(53, 63, 9, 9, C.steel(.45, 0, 0)); rf(P, 54, 64, 7, 7, (x, y) => { E.set(x, y, C.glass(.95, x, y)); return C.glass(.85 - (Math.hypot(x - 57.5, y - 67.5)) * .08, x, y); }); P.rect(56, 66, 3, 3, C.glass(.9, 0, 0)); E.rect(56, 66, 3, 3, C.glass(.9, 0, 0));
   }, .3);
 }
 // pessoa anonima vista de cima (cabeca + ombros)

@@ -46,9 +46,9 @@ function buildQC1() {
   const gl2 = glow('#ff9030', .25, 1.6); gl2.position.copy(brasa).setY(.25); scene.add(gl2);
   // Menu: painel flutuando a frente das maos
   const pm = new THREE.Mesh(new THREE.PlaneGeometry(1.75, 1.75), new THREE.MeshBasicMaterial({ map: A.menuPanel(), transparent: true, opacity: .93, color: new THREE.Color(1.08, 1.1, 1.12), fog: false }));
-  pm.position.set(.05, 1.05, .55); pm.up.set(0, 0, -1); pm.lookAt(V3(0, 12, 2.2)); scene.add(pm);
-  const pg = glow('#b6ccf4', 2.8, .55); pg.position.set(.05, .9, .55); scene.add(pg);
-  const refl = new THREE.Mesh(new THREE.PlaneGeometry(1.6, .12), new THREE.MeshBasicMaterial({ color: new THREE.Color(1.6, 1.7, 1.9), transparent: true, opacity: .16, fog: false, depthWrite: false })); refl.position.set(.05, 1.07, .1); refl.rotation.copy(pm.rotation); refl.rotateZ(.9); refl.rotation.order = pm.rotation.order; scene.add(refl);
+  pm.position.set(.05, 1.05, .8); pm.up.set(0, 0, -1); pm.lookAt(V3(0, 12, 2.2)); scene.add(pm);
+  const pg = glow('#b6ccf4', 2.8, .55); pg.position.set(.05, .9, .8); scene.add(pg);
+  const refl = new THREE.Mesh(new THREE.PlaneGeometry(1.6, .12), new THREE.MeshBasicMaterial({ color: new THREE.Color(1.6, 1.7, 1.9), transparent: true, opacity: .16, fog: false, depthWrite: false })); refl.position.set(.05, 1.07, .35); refl.rotation.copy(pm.rotation); refl.rotateZ(.9); refl.rotation.order = pm.rotation.order; scene.add(refl);
   const dust = particles(60, (i, t, o) => { o.x = ((i * 7.3) % 5) - 2.5; o.y = .5 + (i * 3.7 % 4); o.z = ((i * 5.1) % 7) - 3.5; o.a = .25; o.s = .045; o.r = 1; o.g = .95; o.b = .8; }, { soft: 1 }); dust.userData.update(0); scene.add(dust);
   camera.position.set(0, 13.5, 1.6); camera.up.set(0, 0, -1); camera.lookAt(0, 0, -.05); camera.fov = 30; camera.updateProjectionMatrix();
   tiltPt = px(12, 74).add(V3(.25, .3, .55));   // entre a mao e o painel
@@ -82,24 +82,24 @@ function buildQC2() {
     const g = new THREE.Mesh(new THREE.CylinderGeometry(.22, .22, .45, 10), new THREE.MeshStandardMaterial({ color: '#ffb0c8', emissive: '#ff6a9c', emissiveIntensity: 2.4 })); g.position.set(.3, 3.9, z); scene.add(g); const gl = glow('#ff7aa8', 2.0, .7); gl.position.set(.3, 3.9, z); scene.add(gl); lants.push(V3(.3, 3.9, z)); }
   [[-9, 0], [0, 1], [6, 0], [-14, 1]].forEach(([z, k]) => { const p = lamp(k ? '#ff9cc0' : '#ffb27a', 5, 11, V3(k ? -1 : 1.4, 3.4, z)); scene.add(p); });
   // personagens
-  camera.position.set(0, 17.6, 9.8); camera.up.set(0, 1, 0); camera.lookAt(0, 0, -2.0); camera.fov = 30; camera.updateProjectionMatrix();
-  const GZ = -6.2;
+  camera.position.set(0, 15.8, 13.2); camera.up.set(0, 1, 0); camera.lookAt(0, 0, -1.8); camera.fov = 30; camera.updateProjectionMatrix();
+  const GZ = -4.3;
   const grit = A.gritadorTop(); const gf = flat(grit, 1.2, .03, .35); gf.position.set(-.1, .03, GZ); scene.add(gf);
   const axe = flat(A.axeFlat(), 1.15, .03, -.7); axe.position.set(1.35, .03, GZ + .9); scene.add(axe);
-  const dl = stand(A.deadLantern(), -1.15, GZ + .8, 1.1, { shadow: true }); scene.add(dl); face(dl, camera);
+  const dl = stand(A.deadLantern(), -.95, GZ + .75, 1.3, { shadow: true }); scene.add(dl); face(dl, camera);
   const Rr = mulberry(8); const ad = A.ashDot();
   for (let i = 0; i < 34; i++) { const f = flat(ad, .5 + Rr() * .7, .035, Rr() * 6.28); const a = Rr() * 6.28, r = .6 + Rr() * 1.9; f.position.set(-.1 + Math.cos(a) * r * 1.1, .035, GZ + Math.sin(a) * r * .9); scene.add(f); }
-  const ouv = stand(A.ouvidor(), .15, GZ - .9, 1.05, { emI: 1.1 }); scene.add(ouv); face(ouv, camera);
+  const ouv = stand(A.ouvidor(), .15, GZ - .9, 1.0, { emI: 1.1 }); scene.add(ouv); face(ouv, camera);
   const eg = glow('#5ff0a8', 1.6, .35); eg.position.set(.15, 3.8, GZ - .6); scene.add(eg); const el = lamp('#5ff0a8', 3, 9, V3(.15, 3.2, GZ + .4)); scene.add(el);
   const ash = particles(110, (i, t, o) => { const r = h2(i, 1, 3), r2 = h2(i, 2, 3), r3 = h2(i, 3, 3), u = (r * 1.4) % 1; o.x = -.1 + (r2 - .5) * 2.2 + Math.sin(u * 5 + i) * .25; o.z = GZ + (r3 - .5) * 1.6; o.y = .2 + u * 4.2; o.a = .8 * (1 - u * .6); o.s = .04 + r2 * .05; o.r = .9; o.g = .86; o.b = 1; }, { soft: 1 }); ash.userData.update(0); scene.add(ash);
-  const teco = stand(A.tecoBack(), -1.9, 2.4, 1.0); const lira = stand(A.liraBack(), -1.35, 2.95, 1.0);
+  const teco = stand(A.tecoBack(), -1.45, 2.8, 1.0); const lira = stand(A.liraBack(), -.9, 3.3, 1.0);
   scene.add(teco, lira); face(teco, camera); face(lira, camera);
-  const tl = V3(-1.9 - .38, .45, 2.4 + 0); const tb = lamp('#ff8a2a', 2.3, 5, tl.clone().add(V3(.1, .6, .9))); scene.add(tb);
+  const tl = V3(-1.45 - .38, .45, 2.8); const tb = lamp('#ff8a2a', 1.6, 3.5, tl.clone().add(V3(-.1, .2, .8))); scene.add(tb);
   const tg = glow('#ff9a40', 1.0, 1.5); tg.position.copy(tl).add(V3(0, 0, .15)); scene.add(tg);
-  const lg = glow('#ffe080', .3, .7); lg.position.set(-1.35 + .23, .27, 3.05); scene.add(lg);
-  scene.add(lamp('#c8b4ff', 2.2, 7, V3(-1.5, 2.2, 5.2)));
+  const lg = glow('#ffe080', .3, .7); lg.position.set(-.9 + .23, .27, 3.35); scene.add(lg);
+  scene.add(lamp('#c8b4ff', 2.6, 8, V3(-1.2, 2.4, 5.6)));
   tiltPt = V3(0, 1.2, GZ);
-  post_o = { exposure: 1.3, bloom: [.6, .8, .9], vig: .62, warm: .06, sat: 1.12, tilt: [9, .06, .36], aper: 220, focusPt: tiltPt };
+  post_o = { exposure: 1.3, bloom: [.6, .8, .9], vig: .62, warm: .06, sat: 1.12, tilt: [5, .08, .42], aper: 25, focusPt: tiltPt };
 }
 
 // ============ QC3: P12, Boca do Fosso ============
@@ -117,12 +117,12 @@ function buildQC3() {
   // parede do poco + escada em espiral (7 terracos)
   const wall = mesh(new THREE.CylinderGeometry(RP + .05, RP + .05, 15, 40, 1, true).translate(0, -7.5, -5.2), rk2); wall.material = wall.material.clone(); wall.material.side = THREE.BackSide; wall.castShadow = false; scene.add(wall);
   const N = 7 * 16; const stepM = rk;
-  for (let i = 0; i < N; i++) { const th = i / 16 * Math.PI * 2 + Math.PI * .5, r = (1.75 + RP) / 2, y = -.18 - i * .1; const b = box(RP - 1.7 + .02, .22, 1.08, stepM); b.position.set(Math.cos(th) * r, y - .22, -5.2 + Math.sin(th) * r); b.rotation.y = -th; b.castShadow = false; scene.add(b); }
+  for (let i = 0; i < N; i++) { const th = i / 16 * Math.PI * 2 - Math.PI * .5, r = (1.75 + RP) / 2, y = -.18 - i * .1; const b = box(RP - 1.7 + .02, .22, 1.08, stepM); b.position.set(Math.cos(th) * r, y - .22, -5.2 + Math.sin(th) * r); b.rotation.y = -th; b.castShadow = false; scene.add(b); }
   const bottom = new THREE.Mesh(new THREE.CircleGeometry(RP, 32), new THREE.MeshBasicMaterial({ color: new THREE.Color(.4, 3.0, 1.7), fog: false })); bottom.rotation.x = -Math.PI / 2; bottom.position.set(0, -11.8, -5.2); scene.add(bottom);
   const bg = glow('#4dffb0', 7.5, 1.3); bg.position.set(0, -11.4, -5.2);  scene.add(bg);
   const bg2 = glow('#7affc8', 3, 1.0); bg2.position.set(0, -9, -5.2);  scene.add(bg2);
   for (const [y, i, d] of [[-1.5, 14, 14], [-5, 26, 16], [-9, 36, 14]]) scene.add(lamp('#42ffa4', i, d, V3(0, y, -5.2)));
-  const mist = glow('#3dffa6', 6.5, .45); mist.position.set(0, .6, -5.2); scene.add(mist);
+  const mist = glow('#3dffa6', 4.2, .22); mist.position.set(0, .6, -5.2); scene.add(mist);
   // paredoes da caverna
   const Rr = mulberry(21);
   const rocks = []; const addRock = (x, z, w, h, d) => { const b = box(w, h, d, rk2); b.position.set(x, -.6, z); b.rotation.y = (Rr() - .5) * .5; scene.add(b); rocks.push(b); };
@@ -130,22 +130,22 @@ function buildQC3() {
   for (let i = 0; i < 9; i++) addRock(9 - Rr() * 2 + 3 * (i % 3), -14 + i * 2.2 + Rr(), 4 + Rr() * 3, 6 + Rr() * 8, 4 + Rr() * 3);
   for (let i = 0; i < 7; i++) addRock(-10 + i * 3.4 + Rr(), -15 - Rr() * 2, 4 + Rr() * 3, 10 + Rr() * 8, 4 + Rr() * 2);
   // cristais verdes: parede do poco, borda e paredoes
-  const cm = new THREE.MeshStandardMaterial({ color: '#7affc0', emissive: '#2cf08c', emissiveIntensity: 2.6, roughness: .35, flatShading: true });
+  const cm = new THREE.MeshStandardMaterial({ color: '#7affc0', emissive: '#2cf08c', emissiveIntensity: 1.1, roughness: .35, flatShading: true });
   const cry = (p, dir, s) => { const g = new THREE.Mesh(new THREE.ConeGeometry(.11 * s, .75 * s, 5), cm); g.position.copy(p); g.quaternion.setFromUnitVectors(V3(0, 1, 0), dir.clone().normalize()); g.translateY(.3 * s); scene.add(g); return g; };
   for (let i = 0; i < 46; i++) { const a = Rr() * 6.28, y = -.8 - Rr() * 10.5, p = V3(Math.cos(a) * (RP - .1), y, -5.2 + Math.sin(a) * (RP - .1)); const gl = glow('#5affb0', .8 + Rr() * .4, .55); gl.position.copy(p); scene.add(gl); cry(p, V3(-Math.cos(a), .35, -Math.sin(a)), .9 + Rr() * .9); }
-  for (const [x, z, n] of [[-4.5, -1.8, 5], [4.3, -3.5, 4], [-5.4, -6.5, 6], [5.6, -8, 5], [-3.2, -9.8, 4], [3.4, -10.5, 5], [-7, -3.5, 4], [7.2, -5, 5]]) { for (let k = 0; k < n; k++) { const p = V3(x + (Rr() - .5) * 1.0, 0, z + (Rr() - .5) * 1.0); cry(p, V3((Rr() - .5) * .8, 1, (Rr() - .5) * .8), 1.3 + Rr() * 1.4); } const gl = glow('#5affb0', 1.8, .55); gl.position.set(x, .8, z); scene.add(gl); const l = lamp('#3dffa0', 4, 7, V3(x, 1.1, z)); scene.add(l); }
-  for (let i = 0; i < 18; i++) { const p = V3((Rr() - .5) * 18, 1 + Rr() * 8, -12 - Rr() * 2.5); const gl = glow('#5affb0', .9, .5); gl.position.copy(p); scene.add(gl); cry(p, V3((Rr() - .5), (Rr() - .5), 1), 1.5 + Rr()); }
+  for (const [x, z, n] of [[-4.5, -1.8, 3], [4.3, -3.5, 3], [-5.4, -6.5, 4], [5.6, -8, 3], [-3.2, -9.8, 2], [3.4, -10.5, 2], [-7, -3.5, 3], [7.2, -5, 3]]) { for (let k = 0; k < n; k++) { const p = V3(x + (Rr() - .5) * 1.0, 0, z + (Rr() - .5) * 1.0); cry(p, V3((Rr() - .5) * .8, 1, (Rr() - .5) * .8), 1.3 + Rr() * 1.4); } const gl = glow('#5affb0', 1.2, .35); gl.position.set(x, .8, z); scene.add(gl); const l = lamp('#3dffa0', 4, 7, V3(x, 1.1, z)); scene.add(l); }
+  for (let i = 0; i < 18; i++) { const p = V3((Rr() - .5) * 18, 1 + Rr() * 8, -12 - Rr() * 2.5); const gl = glow('#5affb0', .7, .25); gl.position.copy(p); scene.add(gl); cry(p, V3((Rr() - .5), (Rr() - .5), 1), 1.5 + Rr()); }
   // poeira / esporos subindo do buraco
   const sp = particles(120, (i, t, o) => { const r = h2(i, 5, 1), r2 = h2(i, 6, 1), u = (r2 * 3) % 1; const a = r * 6.28, rr = Math.sqrt(h2(i, 7, 1)) * (RP - .3); o.x = Math.cos(a) * rr; o.z = -5.2 + Math.sin(a) * rr; o.y = -8 + u * 12; o.a = .55 * Math.sin(u * 3.1416); o.s = .05 + r * .05; o.r = .5; o.g = 1; o.b = .7; }, { soft: 1 }); sp.userData.update(0); scene.add(sp);
   // Teco e Lira, de costas, diante do Fosso (Lira a ~0,5 m atras)
-  camera.position.set(0, 16.2, 10.4); camera.up.set(0, 1, 0); camera.lookAt(0, -2.0, -4.3); camera.fov = 30; camera.updateProjectionMatrix();
+  camera.position.set(0, 16.2, 8.6); camera.up.set(0, 1, 0); camera.lookAt(0, -2.0, -6.1); camera.fov = 30; camera.updateProjectionMatrix();
   const teco = stand(A.tecoBack(), .15, -.85, 1.0, { shadow: false }), lira = stand(A.liraBack(), -.45, -.3, 1.0, { shadow: false }); scene.add(teco, lira); face(teco, camera); face(lira, camera);
-  const tl = V3(.15 - .38, .45, -.85), tb = lamp('#ff8428', 2.2, 5, tl.clone().add(V3(-.1, .55, .9))); scene.add(tb);
+  const tl = V3(.15 - .38, .45, -.85), tb = lamp('#ff8428', 1.3, 3.2, tl.clone().add(V3(-.15, .2, .8))); scene.add(tb);
   const tg = glow('#ff9440', 1.0, 1.7); tg.position.copy(tl).add(V3(0, 0, .15)); scene.add(tg);
   const lg = glow('#ffe080', .3, .7); lg.position.set(-.45 + .23, .27, -.25); scene.add(lg);
   scene.add(lamp('#9ae8cc', 2.4, 7, V3(.2, 2.2, 1.9)));
   tiltPt = V3(.15, .8, -.85);
-  post_o = { exposure: 1.25, bloom: [.75, .8, .8], vig: .66, warm: .02, sat: 1.1, tilt: [16, .05, .3], aper: 300, focusPt: tiltPt };
+  post_o = { exposure: 1.25, bloom: [.75, .8, .8], vig: .66, warm: .02, sat: 1.1, tilt: [12, .06, .34], aper: 260, focusPt: tiltPt };
 }
 
 [buildQC1, buildQC2, buildQC3][QC - 1]();
