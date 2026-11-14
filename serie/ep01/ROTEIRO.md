@@ -107,23 +107,23 @@ Elevados (máx. 2): planos 27 e 35. "O que ele sabe": probabilidade (15–17), e
 
 ## Linhas faladas (para TTS), na ordem
 
-1. [softly] Dez horas. Sessenta e oito centavos.
+1. Dez horas. Sessenta e oito centavos.
 2. Em Almaré, item vira dinheiro. Meus pais dizem que não paga.
-3. [softly] Eu não discuti. Não adiantava. Falei baixinho, de costas pros dois:
+3. Eu não discuti. Não adiantava. Falei baixinho, de costas pros dois:
 4. [whispering] Eu vou provar que paga.
 5. Entrei em Almaré. Nível um, um galho, quarenta de vida.
 6. Primeiro inimigo: um slime. Parece fácil.
 7. Não era. Eu tirava três por golpe, e ele se curava.
-8. [softly] Eu pedi pro slime, baixinho:
+8. Eu pedi pro slime, baixinho:
 9. [whispering] Morre logo, por favor.
 10. Caiu uma gosma. Valia quatro centavos.
 11. Pra sacar, são vinte reais. Quinhentas gosmas.
-12. [calm] Eu já sabia: sessenta e cinco por cento é a chance de soltar gosma, não uma garantia.
+12. Eu já sabia: sessenta e cinco por cento é a chance de soltar gosma, não uma garantia.
 13. Nos dez primeiros vieram só quatro. Continuei.
-14. [calm] Fui vender. Eu já sabia: quando todo mundo vende junto, o preço cai.
+14. Fui vender. Eu já sabia: quando todo mundo vende junto, o preço cai.
 15. À uma da tarde, salão vazio. Vendi: sessenta e oito centavos.
 16. Esqueci o almoço.
-17. [calm] Eu já sabia que a ponta do galho anda mais rápido que a mão.
+17. Eu já sabia que a ponta do galho anda mais rápido que a mão.
 18. Segurei na base: mais velocidade, cinco por golpe.
 19. Mas o galho rachou.
 20. Pôr do sol. Slime trinta e oito. Oito segundos, não treze.
@@ -136,6 +136,9 @@ Elevados (máx. 2): planos 27 e 35. "O que ele sabe": probabilidade (15–17), e
 27. [curious] Você faria o quê? A, arriscar a caverna hoje. B, esperar e perder a carta. Comenta.
 
 Linhas sem tag usam o tom padrão da voz (calmo, baixo). Falas em cena: 4 (para os pais, plano 5) e 9 (para o slime, plano 11). Campo asr (nomes inventados): Almaré, Gosmim, Gosma Rala, Gosma Dourada, Visor, Banca, Teco.
+
+
+Tom (atualizado): narração em voz NORMAL (sem tag), exceto 24 [surprised] e 27 [curious]; falas em cena 4 e 9 [whispering] (R96–R97).
 
 ## Corrigido na revisão 1
 
