@@ -107,3 +107,45 @@ Falham: nenhum.
 
 ## Veredito: REPROVADO
 Sem críticos. Pendências médias: M1 a M11. Os mais urgentes: M1 (regra de 2,4 pal/s), M2 (Mochila no pl. 20), M3 (HP 38/56), M4 (Carta piscando no loop), M5 ("treze" sem origem).
+
+---
+
+# Revisão 3 (final) — LOGADO EP01 — APROVADO
+
+Base: ROTEIRO.md (116 s, 40 planos) e BIBLIA.md atuais.
+
+## 1. Os 11 médios da revisão 2: todos resolvidos
+- M1: L1 = 6 palavras em 2,6 s (2,3/s). Soma das 27 linhas conferida: 247 palavras, igual ao roteiro.
+- M2: pl. 21 "Mochila vazia"; 9 + 1 só a partir do pl. 25/30. Conta: 24−15 = 9, 2−1 = 1.
+- M3: HP 56/56 nos pl. 1, 28, 40 e na bíblia §5.
+- M4: Carta com "1" fixo no loop; pisca só no pl. 33.
+- M5: cronômetro 0:13 (pl. 12) e 0:08 (pl. 25, 28).
+- M6: falas e imagens alinhadas (gosma 35,7 s / L10 35,8; 65% em 42,0 s; curva 0,03 no pl. 20 junto da L14; Carteira → Mochila nas duas ordens).
+- M7: L23 diz "no preço da manhã"; pl. 32 mostra 0,44 com 0,04 ao lado; bíblia §5 explica 0,35 a 0,03.
+- M8: B = "esperar e perder a carta" em L27, pl. 38 e legenda.
+- M9: bíblia §3 com uma só regra de preço (fila do momento; volta às 06:00).
+- M10: premissa fecha em ~5 s; 5 hashtags (bíblia 3–5); legenda "dez horas de jogo, nível 3".
+- M11: bíblia §3 registra as sub-telas do HUD.
+
+## 2. Verificações
+- Tempo: 40 planos contíguos de 0 a 116 s; maior plano 3,8 s (pl. 3 e 4); nenhum acima de 4 s; 116 s ≤ 120 s.
+- Falas: contei as palavras das linhas L2, L3, L12, L14, L17, L20, L23–L27 e conferem com a tabela; todas as janelas ≤ 2,35 pal/s; sussurros L4 e L9 a 1,6 e 1,5; total 2,13 pal/s. Cada fala cai sobre o plano que ela descreve.
+- Contas de R$: 15 × 0,04 + 0,08 = 0,68; 9 × 0,04 + 0,08 = 0,44 (0,35 a 0,03); patrimônio 1,12; 20,00 ÷ 0,04 = 500; faltam 19,32; 24/38 = 63%; 114 XP. OK.
+- HP/inventário: luta 1 (20→0 em 9 golpes, Teco 40→36→32), luta final 5+4+5+6 = 20, HP 48 no Nv 2, 56 no Nv 3, Mochila (1 → 15+1 → vazia → 9+1), Carteira (0,00 → 0,68). OK.
+- Regras: pt-BR; nenhuma fala escrita (só os cartões "LOGADO" e "Nível 1" em pós, com posição e tempo dentro dos planos); sussurros marcados; pais sem voz; nenhum nome de franquia.
+- Viral: 15 itens cumpridos ou parciais; nenhum falha. Parcial: 1 (número em L1, conflito em L2, ~2,8 s) e 3 (risco só no galho rachado). Item 10: explicações de 3 a 7,4 s, mas a física ainda abre pela regra e não pelo resultado.
+
+## 3. Pendências novas (todas leves, não bloqueiam)
+- Pl. 9–12: o cronômetro anda mais devagar que os golpes (0:12 em 34,0 s e 0:13 em ~35 s com três golpes depois; golpes a ~1,5 s pedem 4,5 s). Correção: 0:04 (fim do pl. 9), 0:07 (pl. 10), 0:09 (pl. 11), 0:13 (pl. 12).
+- Pl. 33: estado do Menu não definido, mas o ícone da Carta pisca; escrever "Menu aberto".
+- Pl. 5 x L3: "de costas pros dois" e "vira o rosto para os pais"; escrever "olha por cima do ombro".
+- Pl. 35: o Mapa cita "Caverna do Brejo" sem dizer "sem rótulos"; acrescentar "sem letras, só ícone e selo".
+- Pl. 36 x 38: a caverna fica "a leste" no pl. 35–36 e à esquerda (A) no pl. 38; fixar a orientação da câmera.
+- L20: "Oito segundos" é dito antes do cronômetro chegar a 0:08 (79,8 s); o 0:08 já apareceu no pl. 25, então só deslocar o fim do pl. 28 uns 0,5 s se possível.
+- BIBLIA §5: linha do Visor diz "nas mãos dele sentado na cama" (o roteiro põe o Visor sob a mão do pai na mesa) e linha da Mochila diz "depois do almoço" (ele não almoça); trocar por "depois das 13:08".
+
+## 4. Livro de regras
+/home/user/Criando-video/serie/LIVRO_DE_REGRAS.md não existe; conforme a instrução (só "se já existir"), não foi criado e nenhuma regra foi acrescentada.
+
+## Veredito: APROVADO
+Sem críticos nem médios. As 7 pendências leves podem ser corrigidas no ajuste de produção.
