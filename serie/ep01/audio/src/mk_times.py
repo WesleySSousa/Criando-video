@@ -22,7 +22,7 @@ ev={'2':[(0.15,'titulo LOGADO entra (2,6 s)')],'7':[(0.1,'cartao Nivel 1 entra (
 '9':[(0.5,'golpe 3'),(1.1,'golpe 2'),(1.7,'erro'),(2.2,'+1 cura')],
 '10':[(0.3,'golpe 4'),(1.0,'slime acerta -4 (36/40)'),(2.0,'golpe 3')],
 '11':[(0.15,'erro'),(0.3,'+1 cura'),(0.4,'slime acerta -4 (32/40)')],
-'12':[(0.3,'golpe 3'),(0.6,'golpe 4'),(0.85,'golpe 3'),(1.0,'estouro, cronometro 0:13'),(1.9,'gosma salta')],
+'12':[(0.2,'golpe 3'),(0.45,'golpe 4'),(0.7,'golpe 3'),(0.85,'estouro, cronometro para em 0:13'),(1.12,'gosma salta da poca (L10 comeca em 32,62)')],
 '15':[(0.0,'65% entra')],'28':[(0.4,'golpes 5,4,5,6'),(1.9,'estouro'),(2.6,'selo vira 3, HP 56/56')],
 '34':[(1.5,'1 da Carta vira fixo')]}
 sh=[]
@@ -35,7 +35,6 @@ for s in shots:
 # abs events fixes
 for d in sh:
     if d['id']=='33': d['eventos']=[dict(t=round(S[24]+1.85,2),o=round(S[24]+1.85-d['ini'],2),desc='icone de Carta pisca 1 (sino)')]
-    if d['id']=='12': d['eventos'].append(dict(t=round(S[10]-0.1,2),o=round(S[10]-0.1-d['ini'],2),desc='gosma salta da poca (L10 comeca em %.2f)'%S[10]))
 json.dump(dict(dur=T,fps_nota='tempos em segundos; planos contiguos; plano final (40) = quadro do plano 1 (loop)',n_planos=40,n_entradas=len(sh),planos=sh),open(R+'filme/tempos.json','w'),ensure_ascii=False,indent=1)
 # TEMPOS.md
 rot={}

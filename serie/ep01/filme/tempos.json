@@ -199,34 +199,29 @@
    ],
    "eventos": [
     {
-     "t": 31.8,
-     "o": 0.3,
+     "t": 31.7,
+     "o": 0.2,
      "desc": "golpe 3"
     },
     {
-     "t": 32.1,
-     "o": 0.6,
+     "t": 31.95,
+     "o": 0.45,
      "desc": "golpe 4"
+    },
+    {
+     "t": 32.2,
+     "o": 0.7,
+     "desc": "golpe 3"
     },
     {
      "t": 32.35,
      "o": 0.85,
-     "desc": "golpe 3"
+     "desc": "estouro, cronometro para em 0:13"
     },
     {
-     "t": 32.5,
-     "o": 1.0,
-     "desc": "estouro, cronometro 0:13"
-    },
-    {
-     "t": 33.4,
-     "o": 1.9,
-     "desc": "gosma salta"
-    },
-    {
-     "t": 32.52,
-     "o": 1.02,
-     "desc": "gosma salta da poca (L10 comeca em 32.62)"
+     "t": 32.62,
+     "o": 1.12,
+     "desc": "gosma salta da poca (L10 comeca em 32,62)"
     }
    ]
   },
