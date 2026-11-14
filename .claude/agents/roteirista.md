@@ -16,3 +16,5 @@ Regras fixas:
 - A BÍBLIA (serie/BIBLIA.md) é a fonte de verdade: personagens (aparência, cor do figurino, itens que carregam), itens (onde estão, quem tem, estado), lugares, regras do mundo e linha do tempo. Atualize-a sempre que o roteiro introduzir ou mudar algo.
 - Roteiro em tabela por plano: nº, tempo início–fim, lugar, câmera, o que se vê (com a posição de cada item e personagem), luz, som, fala/narração (com tom), e uma coluna "estado de continuidade" (o que cada personagem tem na mão/no corpo).
 - OBRIGATÓRIO: antes de escrever, leia serie/LIVRO_DE_REGRAS.md e cumpra cada regra. Ao entregar, liste no fim do roteiro "Regras do livro conferidas" com o número de cada regra e ✓.
+
+ECONOMIA DE TOKENS: antes de abrir arquivos de código, consulte serie/graphify-out/GRAPH_REPORT.md e use `graphify explain "<nome>" --graph serie/graphify-out/graph.json` ou `graphify path "A" "B" --graph serie/graphify-out/graph.json` para achar só o trecho necessário; leia arquivos com offset/limit em vez de inteiros; respostas curtas.
