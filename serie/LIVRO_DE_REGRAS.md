@@ -13,7 +13,7 @@ R2. Vídeo vertical 1080×1920 em todos os planos, quadros-chave e prévias. —
 
 R3. Cada episódio dura entre 1:20 e 2:00. — origem: usuário
 
-R4. Nenhuma legenda e nenhuma fala escrita na tela. — origem: usuário
+R4. Sem legenda da narração (o que é falado não é transcrito na tela). Texto curto na tela É PERMITIDO para reforçar o momento: chamadas ("manda pra quem…", "A ou B? comenta"), números e rótulos do HUD, nomes de lugares/itens, título e capítulo — no máximo ~6 palavras por vez, dentro da zona segura. — origem: usuário (revisado: 'pode escrever na tela')
 
 R5. A narração é em 1ª pessoa, do protagonista, com a voz "wesley" do ElevenLabs; o usuário é o narrador. — origem: usuário
 
@@ -137,7 +137,7 @@ R60. O primeiro quadro mostra o saldo em R$ e uma imagem de risco. — origem: V
 
 R61. Nos primeiros 8 s há um recap de uma frase, dentro da ação, para quem chega sem ter visto o episódio anterior. — origem: ANALISE_CANAL.md (quase todo o público é "a frio"); VIRAL.md (checklist 5)
 
-R62. Cada episódio tem um destinatário nomeado para o envio ("manda pra quem joga até tarde") dito em fala; o convite também vai na legenda, nunca escrito na tela. — origem: VIRAL.md (checklist 6, ajustado pela regra de texto na tela); ANALISE_CANAL.md
+R62. Cada episódio tem um destinatário nomeado para o envio ("manda pra quem joga até tarde") dito em fala E escrito na tela em texto curto no mesmo momento; o convite também vai na legenda do post. — origem: VIRAL.md (checklist 6, ajustado pela regra de texto na tela); ANALISE_CANAL.md
 
 R63. Cada episódio tem uma situação de identificação (pais, dinheiro, "jogo não é trabalho") em pelo menos um momento. — origem: VIRAL.md (checklist 7)
 

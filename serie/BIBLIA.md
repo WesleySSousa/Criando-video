@@ -1,7 +1,7 @@
 # LOGADO — Bíblia da série
 
 Fonte de verdade. Toda mudança de roteiro atualiza este arquivo.
-Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de **1:20 a 2:00** (ep. 1 = 116 s, final em loop com o primeiro quadro), sem legendas nem fala escrita (só cartões de título/capítulo em pós; números de HUD, dano, relógio, preço e saldo podem aparecer como números, sem palavras; o símbolo R$ vale como símbolo). Mundo, nomes e personagens 100% originais.
+Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de **1:20 a 2:00** (ep. 1 = 116 s, final em loop com o primeiro quadro), sem legenda da narração; texto curto na tela é permitido (chamadas como "manda pra quem…" e "A ou B? comenta", rótulos do HUD, nomes de lugares/itens, título e capítulo; máx. ~6 palavras por vez, na zona segura) — ver LIVRO_DE_REGRAS R4. Mundo, nomes e personagens 100% originais.
 
 ## 1. Premissa
 
