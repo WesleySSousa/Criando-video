@@ -121,7 +121,7 @@ Elevados (máx. 2): planos 27 e 35. "O que ele sabe": probabilidade (15–17), e
 12. [calm] Eu já sabia: sessenta e cinco por cento é a chance de soltar gosma, não uma garantia.
 13. Nos dez primeiros vieram só quatro. Continuei.
 14. [calm] Fui vender. Eu já sabia: quando todo mundo vende junto, o preço cai.
-15. Às treze, salão vazio. Vendi: sessenta e oito centavos.
+15. À uma da tarde, salão vazio. Vendi: sessenta e oito centavos.
 16. Esqueci o almoço.
 17. [calm] Eu já sabia que a ponta do galho anda mais rápido que a mão.
 18. Segurei na base: mais velocidade, cinco por golpe.
