@@ -5,7 +5,7 @@ def fmt(s):
     ms=int(round(max(0,s)*1000));return f"{ms//3600000:02d}:{ms//60000%60:02d}:{ms//1000%60:02d},{ms%1000:03d}"
 cues=[]
 for v in VO['lines']:
-    txt=v['texto']; i=v['linha']
+    txt=v['texto']; i=v['arquivo']; spk=v.get('speaker')
     segs=[p.strip() for p in re.findall(r'[^.:?]+[.:?]?',txt) if p.strip()]
     sp=[]
     for g in segs:
@@ -47,13 +47,14 @@ for v in VO['lines']:
     for b,c in zip(fin,chars):
         a=t0+d*pos/tot;e=t0+d*(pos+c)/tot;pos+=c
         # snap ao fim em pausa interna
-        for pc,pd in ana[str(i)]['pauses']:
+        for pc,pd in ana[i]['pauses']:
             tp=t0+pc
             if abs(tp-e)<.4 and pd>=.25: e=tp-pd/2+.05
             if abs(tp-a)<.4 and pd>=.25: a=tp+pd/2-.05
+        if spk: b[0]=spk+': '+b[0]
         b='\n'.join(b)
-        if v['who']=='S': b='\n'.join('<i>'+x+'</i>' for x in b.split('\n'))
-        cues.append(dict(t0=a,t1=e+.15,text=b,l=i))
+        if v.get('who')=='S': b='\n'.join('<i>'+x+'</i>' for x in b.split('\n'))
+        cues.append(dict(t0=a,t1=e+.15,text=b,l=v['id']))
 # garante ordem, sem sobreposicao, duracao minima legivel
 cues.sort(key=lambda c:c['t0'])
 for k,c in enumerate(cues):

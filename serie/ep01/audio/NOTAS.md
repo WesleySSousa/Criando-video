@@ -1,6 +1,6 @@
 # LOGADO ep01: áudio (trilha, efeitos, ambiente, mix)
 
-Entrega: `mix.wav` (48 kHz, estéreo, 16 bit, **112,47 s = duração exata de `filme/tempos.json`**, −14,0 LUFS integrado, pico real −1,4 dBTP), `legenda.srt` (44 blocos, ≤ 2 linhas e ≤ 8 palavras; sussurros de L04 e L09 em itálico), `vo_times.json`, `TEMPOS.md`. Nenhuma voz foi gerada: só as `voz/l01..l27.mp3` existentes, cortadas nas pontas e posicionadas por `vo_times.json`.
+Entrega: `mix.wav` (48 kHz, estéreo, 16 bit, **119,37 s = duração exata de `filme/tempos.json`**, −14,0 LUFS integrado, pico real −1,4 dBTP), `legenda.srt` (47 blocos, ≤ 2 linhas e ≤ 8 palavras; sussurros de L04 e L09 em itálico; falas dos pais com "ROGÉRIO:" / "SANDRA:" no início), `vo_times.json`, `TEMPOS.md`. Nenhuma voz foi gerada: só as `voz/l01..l27.mp3` e `voz/p01_pai.mp3`, `voz/p02_mae.mp3` existentes, cortadas nas pontas e posicionadas por `vo_times.json`. Falas dos pais (ROGÉRIO 2,87 s, SANDRA 3,94 s) tocam em cena entre L02 e L03, com ambiência de cozinha (low-pass 12 kHz, sala 12%).
 
 ## Como foi feito
 - `src/build_audio.py` (rodar com `/root/lemo-opuscar/.venv/bin/python`; ~20 s) gera tudo a partir de `vo_times.json` e `filme/tempos.json`. `src/mk_times.py` (+ `plan.py`, `ana.py`, `ana.json`) gera os tempos; `src/mk_srt.py` gera a legenda. Se `tempos.json` mudar, rode de novo e o áudio acompanha. Stems saem em `$STEMS` (padrão `/tmp/ep01_stems`; não versionados, 4 × 21 MB).
@@ -38,3 +38,10 @@ Golpes do galho (madeira; mais secos e agudos na pegada de ponta, planos 25b e 2
 - Todos os efeitos são sintéticos (sem gravação real); se algum soar artificial, trocar só aquele evento no script.
 - Tempos de imagem que mudaram desde o commit dos tempos: só os eventos do plano 12 em `tempos.json` (golpes em +0,20/+0,45/+0,70, estouro em +0,85, gosma salta em +1,12 = 32,62 s; a fala L10 começa em 32,62 s). Os planos (ini/fim) não mudaram.
 - Legenda: tempos por proporção de caracteres dentro de cada fala, ajustados às pausas internas medidas; não há timestamps por palavra (sem Whisper instalado). Os nomes de personagem (R4) não se aplicam: só há narração e o protagonista.
+
+## Revisão desta rodada (narração normal + pais)
+- `ana.py` mede também `p01_pai` e `p02_mae`; `plan.py` monta a sequência L01, L02, P1, P2, L03…L27 com as pausas.
+- `mk_times.py` reescrito: 45 entradas de plano (3a–3d, 5a–5b, 25a–25b), nenhuma > 4 s; eventos dos planos mantidos com o mesmo deslocamento relativo ao início do plano.
+- `build_audio.py`: aceita o id do plano pelo número (alias `'3'`, `'5'`… = conjunto dos pedaços) e lê o arquivo de cada fala pelo campo `arquivo` de `vo_times.json`.
+- `mk_srt.py`: usa `arquivo` e o campo `speaker` (nome antes da fala dos pais).
+- Pendências: sem audição humana; conferir o sussurro de L04/L09 e o equilíbrio das falas dos pais na cozinha.
