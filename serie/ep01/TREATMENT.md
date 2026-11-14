@@ -1,64 +1,44 @@
-# LOGADO — Ep. 1 "Nível 1" — Tratamento
+# LOGADO — Ep. 1 "Nível 1" — Tratamento (105 s)
 
 ## 1. Três estruturas candidatas
 
-1. **Um dia, em ordem (diário).** Manhã em casa, a discussão, o login, a caçada que passa de manhã a pôr do sol, a carteira. Simples e verdadeiro ao estilo de diário.
-2. **Antes/depois com o saldo no início.** Abre com o saldo de R$ 1,12 e volta no tempo. Esvazia a surpresa do saldo ser tão pequeno.
-3. **Contagem de gosmas.** Cada slime morto marca um número na tela até o fim. Gráfico demais, pouca vida real.
+1. **Um dia, em ordem.** Casa, login, caçada, carteira. Honesta, mas o saldo pequeno chega sem tensão.
+2. **Começar pelo saldo e voltar no tempo (flash-back).** Abre com "um real e doze centavos" e conta como. Ganha gancho de 2 s e dá ao final um eco (mesmo quadro, agora com a Carta).
+3. **Contagem de slimes.** Número subindo na tela; frio demais.
 
-**Escolhida: 1**, com um relógio de jogo em números e o pôr do sol como cronômetro natural. O saldo pequeno funciona melhor como anticlímax e a Carta final dá o gancho.
+**Escolhida: 2.** O número minúsculo é o gancho (por que alguém passa um dia por isso?); o corpo do episódio responde com a rotina; o último plano devolve o quadro do início com algo novo, a Carta.
 
 ## 2. Logline e arco
 
-Um garoto que os pais acusam de jogar demais decide provar que dá para ganhar dinheiro no jogo, e passa o dia inteiro, no nível 1, para ganhar R$ 1,12.
-
-- **Setup:** casa, brigas dos pais, "vou mostrar pra vocês".
-- **Virada:** o jogo é difícil; um slime quase o vence; o drop vale quatro centavos.
-- **Fim:** pôr do sol, nível 3, R$ 1,12 de um saque mínimo de R$ 20; chega uma Carta de R$ 50,00 por um item que ele ainda não consegue conseguir.
+Um garoto acusado de jogar demais passa o sábado no nível 1 para ganhar R$ 1,12, e usa o que sabe de economia, probabilidade e física para não desistir.
+Setup: casa, a promessa. Virada: a luta é dura, o drop vale quatro centavos; ele passa a usar o que sabe. Fim: nível 3, R$ 1,12, e uma Carta de R$ 50,00 por um item que ele ainda não pode obter.
 
 ## 3. Benchmark
 
-- **Aprender:** o ritmo de "um dia de grind" em jogos de rotina (relógio, sombras que giram, repetição que vira música); a luz de pôr do sol como medida de esforço; diários em vídeo de primeira pessoa (voz perto do ouvido sobre imagem calma).
-- **Não tomar:** personagens, UI, nomes ou músicas de nenhum jogo ou anime existente; nada de "preso no jogo".
+- **Aprender:** a repetição que vira música em jogos de rotina; o pôr do sol como cronômetro; diários em vídeo de primeira pessoa, voz próxima ao ouvido.
+- **Não tomar:** personagens, UI, nomes, músicas de qualquer obra existente; nada de "preso no jogo".
 
-## 4. Lista de planos (resumo; detalhes no ROTEIRO)
+## 4. Lista de planos (38; detalhe no ROTEIRO)
 
-| Nº | s | Plano | Por quê |
-|---|---|---|---|
-| 1 | 0–6 | Quarto, plano médio baixo, Visor nas mãos | hook: o objeto da discussão |
-| 2 | 6–12 | Cozinha, 3/4 baixa, pais de braços cruzados | mostra a pressão sem voz |
-| 3 | 12–21 | Porta da cozinha, perfil, pais desfocados | primeira fala sussurrada (QUADRO-CHAVE, vida real) |
-| 4 | 21–24 | Quarto, dolly in, Visor desce | corte entre mundos |
-| 5 | 24–33 | Campina, lateral baixa, cartão de capítulo | chegada ao jogo |
-| 6 | 33–39 | Campina, 3/4, rack focus na luta | números de dano mostram a dificuldade |
-| 7 | 39–48 | Campina, perfil próximo | segunda fala; silêncio; golpe final (QUADRO-CHAVE) |
-| 8 | 48–54 | Campina, insert alto da poça, drop | o valor do drop |
-| 9 | 54–57 | Campina, geral/elevado (1 de 2) | passagem do dia |
-| 10 | 57–66 | Campina ao pôr do sol, travelling lateral | o último slime, nível 3 |
-| 11 | 66–72 | Campina, por cima do ombro, painel | a carteira |
-| 12 | 72–80 | Campina, 3/4 baixa, pull-back | gancho (QUADRO-CHAVE) e título |
+Nenhum plano passa de 4 s. Blocos: hook (1–2), casa (3–8), chegada e luta (9–15), drop e economia (16–19), montagem e probabilidade (20–22), física (23–26), tarde real (27), pôr do sol (28–30), carteira e Carta (31–36), quadro final e título (37–38). Elevados: plano 28 (passagem do dia) e 36 (mapa). Os outros, câmera lateral/3/4 baixa e próxima.
 
-## 5. Beat sheet resumido
+## 5. Cue map
 
-0–12 casa (pressão); 12–21 promessa; 21–24 silêncio e corte; 24–48 luta de verdade; 48–57 pouco valor e o dia passando; 57–72 pôr do sol e conta; 72–80 gancho e título.
+80 bpm (batida 0,75 s); cortes na batida mais próxima (±0,3 s). Casa: sem música, só relógio, geladeira, vozes abafadas sem palavras. Corte para o jogo em 22 s: violão de nylon, celesta, baixo leve; a montagem (49–66 s) acelera a percussão suave; no pôr do sol (73–80 s) pad cresce; sino fino no nível 3 (78,7 s) e na Carta (88 s); pad some no título. Pausas de voz ≤ 1,5 s: 36,0–37,2 s (antes do golpe final, o silêncio real), 79,5–80,0 s. Cartão "Nível 1" 22–25 s; título "LOGADO" 102,5–105 s (pós, Cinzel).
 
-## 6. Cue map
-
-Tempo 80 bpm, compasso de 3 s. Cortes nos compassos: 0, 6, 12, 21, 24, 33, 39, 48, 54, 57, 66, 72. Música: vida real quase sem música (relógio de parede, geladeira); entra no corte para o jogo (24 s) um lo-fi leve de violão de nylon, celesta e baixo; pad cresce até o pôr do sol; sino fino no gancho. Silêncios reais: 21–24 s (quarto, só o clique do Visor) e 44,8–48 s (depois do sussurro, antes do golpe). Cauda final 78,7–80 s.
-
-## 7. Tabela de som
+## 6. Tabela de som
 
 | Seção | Cama | Foley | Música |
 |---|---|---|---|
-| Casa (0–21) | geladeira, relógio, vozes abafadas sem palavras | cadeira, xícara, passos de chinelo | nenhuma |
-| Corte (21–24) | quase silêncio | clique do Visor, zumbido que sobe | pad entra em 23,5 (J-cut) |
-| Campina (24–72) | vento, grilo, pássaros que somem ao cair do dia | galho no slime, estouro mole, moedas, sino de nível | violão, celesta, baixo |
-| Gancho (72–80) | vento calmo | sino de carta | celesta e pad; para no título |
+| Casa (4,5–21) | geladeira, relógio, vozes abafadas | cadeira, xícara, chinelo | nenhuma |
+| Corte (19–22) | quase silêncio | clique do Visor, zumbido que sobe | pad entra em 21,3 s (J-cut) |
+| Campina (22–98) | vento, pássaros que somem ao entardecer | galho no slime, estouro mole, moedinhas, rachadura de madeira | violão, celesta, baixo |
+| Final (98–105) | vento calmo | sino de carta | pad; corta no título |
 
-## 8. Texto na tela
+## 7. Texto na tela
 
-Só em pós: cartão de capítulo "Nível 1" (24,5–28 s) e título "LOGADO" (77,5–80 s), Cinzel; nenhum quadro gerado contém letras. Números de HUD (HP, dano, relógio, nível, saldo com símbolo R$) são parte da imagem.
+Só em pós: cartão "Nível 1" e título "LOGADO". Nenhum quadro gerado contém letras. Números (HP, dano, relógio, nível, preço, saldo com R$) fazem parte da imagem.
 
-## 9. Voz
+## 8. Voz
 
-Narração calma e baixa ("wesley"), falas em cena sussurradas. Total: 105 palavras, 581 caracteres (ver ROTEIRO).
+Narração calma ("wesley") com 2 falas sussurradas em cena (planos 7 e 14). 228 palavras, 1.334 caracteres com tags (ver ROTEIRO).

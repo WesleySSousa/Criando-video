@@ -1,110 +1,125 @@
 # LOGADO — Bíblia da série
 
 Fonte de verdade. Toda mudança de roteiro atualiza este arquivo.
-Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de 80 s, sem legendas nem fala escrita (só cartões de título/capítulo em pós; números de HUD, dano, relógio e saldo podem aparecer como números, sem palavras). Mundo, nomes e personagens 100% originais.
+Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de **1:20 a 2:00** (ep. 1 = 105 s), sem legendas nem fala escrita (só cartões de título/capítulo em pós; números de HUD, dano, relógio, preço e saldo podem aparecer como números, sem palavras; o símbolo R$ vale como símbolo). Mundo, nomes e personagens 100% originais.
 
 ## 1. Premissa
 
 **Logline:** Um garoto de 16 anos que os pais acusam de jogar demais descobre que o seu MMORPG paga dinheiro de verdade por itens e decide provar à família que dá para viver disso, começando no nível 1, com um galho na mão e quatro centavos por slime.
 
-**Título:** LOGADO (logado = conectado; o garoto sempre pode sair, e é justamente por isso que escolhe ficar).
+**Título:** LOGADO (conectado; o garoto pode sair quando quiser, e é por isso que a escolha de ficar pesa).
 
 **Nome do jogo:** ALMARÉ (MMORPG de realidade virtual). Equipamento: o **Visor** (headset cinza-claro com faixa de tecido, cobre olhos e ouvidos).
 
 **Dois mundos, duas luzes:**
-- VIDA REAL: luz de lâmpada incandescente, amarelo-quente dessaturado, névoa bege-poeira, pouca saturação, ambiente apertado e doméstico.
-- JOGO: luz de dia fria menta-esverdeada, névoa verde-pálido, cores saturadas, ambiente aberto. O pôr do sol do jogo vai a rosa-magenta e violeta com sombras verde-azuladas (nunca o amarelo-âmbar da vida real), para o corte entre mundos continuar instantâneo.
+- VIDA REAL: lâmpada incandescente, amarelo-quente dessaturado, névoa bege-poeira, ambiente apertado e doméstico.
+- JOGO: dia frio menta-esverdeado, névoa verde-pálido, cores saturadas, espaço aberto. O pôr do sol do jogo vai a rosa-magenta e violeta com sombras verde-azuladas (nunca o amarelo-âmbar da vida real), para o corte entre mundos continuar instantâneo.
 
-**Narração:** primeira pessoa do Teco (voz "wesley"), calma, baixa, estilo diário. É a maior parte do que se ouve. Falas em cena: raras, sussurradas, sempre introduzidas pela narração ou pela imagem, mostrando com quem ele fala. Ep. 1: máx. 2 falas em cena, só do Teco; os pais nunca têm voz (chegam por narração, gesto e som abafado).
+## 2. Voz e ritmo (regras da série)
 
-## 2. Regras do jogo (ALMARÉ)
+- **Narração:** primeira pessoa do Teco (voz "wesley"), calma e baixa, estilo diário; cobre quase o episódio todo (pausas só como efeito, ≤ 1,5 s). Ritmo ~2,4 palavras/s; sussurro ~1,6 palavras/s. Teto ~2,4 palavras/s no total do episódio.
+- **Falas em cena:** no máximo 2 por episódio, só do protagonista, sussurradas, sempre com a narração ou a imagem mostrando com quem ele fala antes. Os pais nunca têm voz (narração, gesto, som abafado).
+- **Gancho:** forte nos primeiros 2 s (ep. 1: o saldo de R$ 1,12) e final que puxa o próximo episódio.
+- **Ritmo de imagem:** nenhum plano parado; corte, movimento ou ação a cada 2–4 s.
+- **Marca da série: "O que ele sabe".** O Teco explica, como quem já sabia ("Eu já sabia que..."), um fato verdadeiro do mundo real (física, biologia, matemática, economia) e o usa numa ação na tela: vencer, escolher o que vender, decidir. 2 a 3 por episódio. Regra de continuidade: o conhecimento tem de ser real e o jogo, por regra, o recompensa (ver §3).
 
-- **Sair a qualquer hora.** Gesto: punho no peito por 2 s abre o desligamento; fora de combate sai em 3 s, em combate espera 10 s. Ninguém está preso. (Em tela: só o gesto e o fade, sem palavra.)
-- **HUD (só ícones e números).** Dois dedos descem do ar para abrir o Menu: painel quadrado azul-ardósia, moldura prateada, ícones: Mochila (bolsa), Mapa, Carteira (bolsinha com moeda), Cartas (envelope), Sair (porta). Barra de vida **verde** (nunca vermelho-rubi, que é só do cachecol) com número "40/40"; barra de experiência azul fina; selo redondo com o nível; relógio do jogo em números (igual ao horário real, 24 h).
-- **Dano e níveis.** Nível 1: 40 HP; ataque com Galho Torto = 2 a 4 de dano, um golpe a cada ~1,5 s, ~25% de erro. Cada nível dá +8 HP e +1 de ataque mínimo e máximo no nível 5+, não antes.
-- **XP.** Nv 1→2: 30 XP; Nv 2→3: mais 80 XP (cumulativo 110). Slime Gosmim (nível 1) dá 3 XP. Ou seja: 10 slimes para o nível 2, ~37 para o nível 3.
-- **Gosmim (slime de nível 1).** 20 HP, ataque 4 de dano a cada ~3 s, recupera 1 HP a cada 2 s se ficar sem apanhar. Matar um com o Galho leva ~12 s de jogo e custa ~8–12 HP do jogador. Explode numa poça azul-clara.
-- **Drops do Gosmim.** Gosma Rala (65% de chance), Pó Brilhante (5%), 1 a 3 moedas de cobre (moeda interna, não vale dinheiro real).
-- **Itens negociáveis e dinheiro real.** Só itens marcados "negociáveis" (borda prateada no ícone) podem virar reais. A **Banca de Compras** (balcão em Porto Manso) compra a preço fixo e credita na **Carteira** em R$; jogadores também fazem **encomendas** pela Carta (preço livre, bem acima da Banca para itens raros). Preços já líquidos de taxa.
-- **Saque.** Mínimo de R$ 20,00 por saque (PIX), taxa de saque de 10%. Prazo 1 dia útil. Teco só vai poder mostrar dinheiro de verdade quando passar de 20.
-- **Tabela de referência (Banca de Compras, líquido):**
+| Ep. | Conhecimento | Fato real | Uso na tela |
+|---|---|---|---|
+| 1 | Economia | preço = oferta e procura | slime é farmado por todos, logo vale 4 centavos; raro vale 50 |
+| 1 | Probabilidade | 65% é média de muitas tentativas, não "toda vez" (lei dos grandes números) | conta o drop sem se frustrar com poças vazias |
+| 1 | Física | a ponta de um galho anda mais rápido que a mão (v = ω·r), e a energia do impacto cresce com a velocidade | segura na base, bate com a ponta: dano de 3 para 5 |
+
+## 3. Regras do jogo (ALMARÉ)
+
+- **Sair a qualquer hora.** Gesto: punho no peito por 2 s; fora de combate sai em 3 s, em combate espera 10 s. Ninguém está preso.
+- **Física simplificada (explica "O que ele sabe").** O dano de arma depende da velocidade da ponta no impacto; drops são sorteios independentes; a Banca reajusta o preço a cada manhã pela oferta do dia anterior.
+- **HUD (só ícones e números).** Dois dedos descem do ar: Menu quadrado azul-ardósia, moldura prateada; ícones: Mochila, Mapa, Carteira (bolsinha com moeda), Cartas (envelope), Sair (porta). Barra de vida **verde** (nunca rubi, cor do cachecol) com número "40/40"; barra de XP azul fina; selo redondo do nível; relógio em números (igual ao horário real, 24 h); dano em números flutuantes.
+- **Níveis e HP.** Nv 1: 40 HP; cada nível +8 HP máx (Nv 2: 48, Nv 3: 56). Regeneração fora de combate: 1 HP a cada 5 s.
+- **Dano.** Galho Torto: 2 a 4 por golpe (pegada normal); com pegada na base e golpe de ponta: 4 a 6 (média ~5). Um golpe a cada ~1,5 s, ~25% de erro.
+- **XP.** Nv 1→2: 30 XP; Nv 2→3: mais 84 (acumulado 114). Slime Gosmim dá 3 XP: 10 slimes para o Nv 2, 38 para o Nv 3.
+- **Gosmim (slime de nível 1).** 20 HP; ataca a cada ~3 s com 50% de acerto, 4 de dano; recupera 1 HP a cada 2 s se ficar sem apanhar. Luta de iniciante: ~12 s e ~8 HP perdidos; com pegada de ponta: ~8 s. Estoura numa poça azul-clara que some em 2 s.
+- **Drops do Gosmim.** Gosma Rala (65%), Pó Brilhante (5%), 1 a 3 moedas de cobre (moeda interna, sem valor real).
+- **Dinheiro real.** Só itens "negociáveis" (borda prateada no ícone). A **Banca de Compras** (balcão em Porto Manso) compra por preço do dia e credita na **Carteira** em R$; jogadores também fazem **encomendas** pela Carta (preço livre, bem acima da Banca para raros). Preços já líquidos.
+- **Saque.** Mínimo R$ 20,00, taxa de 10%, prazo de 1 dia útil.
+- **Tabela de referência:**
 
 | Item | Onde cai | Valor |
 |---|---|---|
 | Gosma Rala | Gosmim, 65% | R$ 0,04 |
 | Pó Brilhante | Gosmim, 5% | R$ 0,08 |
-| Gosma Dourada | só à noite, Caverna do Brejo (slimes dourados) | Banca R$ 3,00 / encomenda R$ 50,00 (ep. 1 gancho) |
+| Gosma Dourada | só à noite, Caverna do Brejo (nível 5) | Banca R$ 3,00 / encomenda R$ 50,00 |
 
-- **Contas do ep. 1 (o que deve fechar):** ~38 slimes mortos; ~24 Gosmas Ralas (24 × 0,04 = 0,96) + 2 Pós Brilhantes (2 × 0,08 = 0,16) = **R$ 1,12**. Faltam R$ 18,88 para o primeiro saque (~470 Gosmas).
-- **Mapa.** Porto Manso (cidade inicial), Campina Mansa (campo dos Gosmins, ao sul), Caverna do Brejo (noite, nível recomendado 5, ao leste, ainda bloqueada para o Teco por nível).
+- **Contas do ep. 1:** 38 slimes; 24 Gosmas Ralas (24 × 0,04 = 0,96) + 2 Pós Brilhantes (2 × 0,08 = 0,16) = **R$ 1,12**. Falta R$ 18,88 para sacar (~470 gosmas).
+- **Mapa.** Porto Manso (cidade inicial), Campina Mansa (campo dos Gosmins, ao sul), Caverna do Brejo (noite, nível recomendado 5, a leste).
 
-## 3. Personagens
+## 4. Personagens
 
 ### Teco (protagonista)
-- Nome real: Mateus Almeida, 16 anos, de Niterói; "Teco" é o nick do jogo (provisório; o usuário pode mudar). Estudante, joga muito, quieto, teimoso, ri baixo quando se constrange. Narra em tom calmo, de diário.
-- **Proporção ~7 cabeças** em ambos os mundos.
-- **No jogo (avatar já desenhado):** cabelo preto curto espetado, pele parda, olhos grandes, calça cinza-ferro, botas marrons de couro cru, colete de couro bege curto, **cachecol comprido vermelho-rubi (#E01030)**, cor única do herói que nenhum cenário usa. Itens: **Galho Torto** (porrete de galho de madeira clara, na mão direita), Mochila de pano (costas, pequena). Sem Espeto, sem Brasa (eram da versão antiga).
-- **Na vida real:** camiseta cinza-grafite grande, bermuda preta, descalço ou chinelo preto, cabelo preto amassado de quem acabou de acordar, olheiras leves. **Detalhe vermelho que o liga ao avatar: faixa de pano vermelho-rubi amarrada no pulso esquerdo** (réplica do cachecol, sempre visível quando a mão aparece).
+- Mateus Almeida, 16 anos, Niterói; "Teco" é o nick (provisório). Joga muito, quieto, teimoso, ri baixo quando se constrange. Nerd de ciências; gosta de fazer conta.
+- **Proporção ~7 cabeças** nos dois mundos.
+- **No jogo (avatar já desenhado):** cabelo preto curto espetado, pele parda, olhos grandes, calça cinza-ferro, botas marrons de couro cru, colete de couro bege curto, **cachecol comprido vermelho-rubi (#E01030)**, cor única do herói. Itens: **Galho Torto** (galho de madeira clara, mão direita), Mochila de pano (costas, pequena). Sem Espeto nem Brasa.
+- **Na vida real:** camiseta cinza-grafite grande, bermuda preta, chinelo preto, cabelo amassado, olheiras leves; **faixa de pano vermelho-rubi amarrada no pulso esquerdo** (réplica do cachecol), sempre visível quando a mão aparece.
 
 ### Rogério Almeida (pai, sem voz)
-- 47 anos, corpulento, barba grisalha curta, óculos de armação grossa preta. Polo azul-petróleo, calça jeans escura. Cruza os braços, balança a cabeça. Fala "abafado" atrás de porta ou em volume sem palavras; no ep. 1 só aparece em gesto e silhueta.
+- 47 anos, corpulento, barba grisalha curta, óculos de armação grossa preta; polo azul-petróleo, jeans escuro. Cruza os braços, balança a cabeça.
 
 ### Sandra Almeida (mãe, sem voz)
-- 44 anos, cabelo cacheado castanho preso num coque alto, blusa mostarda e avental cinza-claro. Aponta o relógio da parede, segura o celular com a mão esquerda. Preocupada, não só brava.
+- 44 anos, cabelo cacheado castanho em coque alto, blusa mostarda e avental cinza-claro. Aponta o relógio da parede; preocupada, não só brava.
 
-### Slime Gosmim (criatura)
-- Gota baixa, translúcida azul-clara, dois pontos escuros de olho, ~0,5 de cabeça do herói. Pulinho de 2 quadros. Ao morrer estoura e vira poça que some em 2 s, deixando o drop.
+### Slime Gosmim
+- Gota baixa, translúcida azul-clara, dois pontos escuros de olho, ~0,5 de cabeça do herói; pulinho de 2 quadros.
 
 ### Comprador anônimo (gancho)
-- Só ícone de Carta com o número 1; sem rosto, sem voz no ep. 1.
+- Só ícone de Carta com o número 1.
 
-## 4. Itens (dono, lugar, estado) — ao fim do ep. 1
+## 5. Itens (dono, lugar, estado) — ao fim do ep. 1
 
-| Item | Dono | Onde está | Estado |
+| Item | Dono | Onde | Estado |
 |---|---|---|---|
-| Visor | Teco | cabeça (jogando); começou na mão dele sentado na cama | intacto, cinza-claro |
-| Faixa vermelha | Teco | pulso esquerdo (vida real) | sempre presente |
-| Cachecol rubi | avatar do Teco | pescoço, ponta esquerda comprida | limpo |
-| Galho Torto | Teco | mão direita (jogo) | desgastado, rachadura na ponta desde o ep. 1 (plano 8) |
-| Mochila de pano | Teco | costas (jogo) | 24 Gosmas Ralas e 2 Pós Brilhantes **vendidos ao longo do dia** (a Mochila fica quase vazia no fim) |
-| Carteira (saldo) | Teco | Menu | **R$ 1,12** |
-| Carta do comprador | Teco | Menu, não lida | 1 mensagem nova |
-| Nível/HP | Teco | HUD | **Nv 3, HP 22/40**, XP ~5/80 do nível 3 |
+| Visor | Teco | cabeça (jogando); no início, nas mãos dele sentado na cama | intacto |
+| Faixa vermelha | Teco | pulso esquerdo (vida real) | presente |
+| Cachecol rubi | avatar | pescoço, ponta esquerda longa | limpo |
+| Galho Torto | avatar | mão direita | **rachado na ponta** desde o plano 26 do ep. 1 |
+| Mochila | avatar | costas | quase vazia (tudo vendido) |
+| Carteira | Teco | Menu | **R$ 1,12** |
+| Carta do comprador | Teco | Menu | aberta; encomenda R$ 50,00 (Gosma Dourada) |
+| Nível/HP | avatar | HUD | **Nv 3, HP 38/56** |
+| Prato de almoço | família Almeida | mesinha ao lado da cama, quarto | esfriou, intocado |
 
-## 5. Lugares (cada um com névoa e luz-chave próprias)
+## 6. Lugares
 
 | Lugar | Mundo | Névoa | Luz-chave | Práticas | Uso |
 |---|---|---|---|---|---|
-| **Quarto do Teco** | real | bege-poeira quente | lâmpada de mesa incandescente amarela, janela com céu cinza-claro | monitor apagado, luz sob a porta, abajur | ep. 1 planos 1 e 4 |
-| **Cozinha dos Almeida** | real | bege-amarelado | luz de teto amarela, quente, dessaturada | relógio de parede (só ponteiros), cafeteira com luz âmbar | ep. 1 planos 2 e 3 |
-| **Campina Mansa** | jogo | verde-pálido | sol alto frio menta; no fim do dia, sol baixo rosa-magenta e sombras verde-azuladas | nenhuma lâmpada; só o brilho dos slimes e do painel do Menu | ep. 1 planos 5 a 12 |
-| Porto Manso | jogo | azul-claro | luz fria de manhã | lampiões, Banca de Compras (balcão com selo prateado) | previsto ep. 2 |
-| Caverna do Brejo | jogo | verde-musgo escuro | brilho dourado dos slimes dourados | cogumelos fluorescentes | previsto ep. 2 (à noite) |
+| **Quarto do Teco** | real | bege-poeira | lâmpada de mesa incandescente amarela; janela com céu cinza-claro | abajur, luz sob a porta | ep. 1 planos 3, 8, 27 |
+| **Cozinha e corredor dos Almeida** | real | bege-amarelado | luz de teto amarela, quente | relógio de parede, cafeteira com luz âmbar | ep. 1 planos 4 a 7 |
+| **Campina Mansa** | jogo | verde-pálido | sol alto frio menta; no fim do dia, sol baixo rosa-magenta, sombras verde-azuladas | só o brilho dos slimes e do Menu | ep. 1 planos 1, 2, 9 a 37 |
+| Porto Manso | jogo | azul-claro | luz fria de manhã | lampiões, Banca de Compras | ep. 2 |
+| Caverna do Brejo | jogo | verde-musgo escuro | brilho dourado dos slimes dourados | cogumelos fluorescentes | ep. 2 (noite) |
 
-## 6. Linha do tempo
+## 7. Linha do tempo
 
-- **Sábado, ep. 1:** ~08:00 café com os pais (discussão); 08:10 Teco loga; 08:12 chega à Campina; ~09:30–16:40 repete a caçada; 18:05 pôr do sol, mata o último slime do dia e sobe ao nível 3; ~18:30 abre a Carteira (R$ 1,12); a Carta chega logo depois.
-- **Ep. 2 (previsto):** Teco acorda no domingo, decide subir de nível para chegar à Caverna do Brejo à noite; os pais notam que ele passou o dia todo jogando.
+- **Sábado, ep. 1:** 08:00 café com os pais; 08:10 Teco loga; 08:12 Campina; ~10:05 Nv 2; ~12:00 muda a pegada do galho; 14:20 prato esfriando; 18:05 último slime e Nv 3; ~18:30 Carteira R$ 1,12; Carta chega.
+- **Ep. 2 (previsto):** domingo; os pais notam que passou o dia sem comer; Teco sobe de nível para a caverna.
 
-## 7. Saldo e progresso ao fim de cada episódio (previsão)
+## 8. Saldo e progresso ao fim de cada episódio (previsão)
 
 | Ep. | Nível | Saldo | Marco |
 |---|---|---|---|
-| 1 | 3 | R$ 1,12 | primeiros centavos; Carta de R$ 50,00 |
-| 2 | 5 | ~R$ 9 | entra na Caverna do Brejo; primeira Gosma Dourada |
-| 3 | 7 | ~R$ 60 | cumpre a encomenda de R$ 50 e passa de R$ 20 |
-| 4+ | — | primeiro saque | mostrar o comprovante aos pais (final da temporada 1) |
+| 1 | 3 | R$ 1,12 | Carta de R$ 50,00 |
+| 2 | 5 | ~R$ 9 | Caverna do Brejo, primeira Gosma Dourada |
+| 3 | 7 | ~R$ 60 | cumpre a encomenda; passa de R$ 20 |
+| 4+ | — | primeiro saque | comprovante aos pais (final da temporada 1) |
 
-## 8. Ganchos
+## 9. Ganchos
 
-1. Ep. 1: a Carta com R$ 50,00 por uma Gosma Dourada, só à noite na Caverna do Brejo (nível 5 recomendado; Teco é 3).
-2. Os pais notaram que ele ficou o sábado inteiro sem comer; a tensão sobe.
+1. Ep. 1: Carta de R$ 50,00 por uma Gosma Dourada (só à noite, caverna nível 5; Teco é Nv 3).
+2. Tensão em casa: ele passou o sábado sem comer.
 3. Quem é o comprador anônimo?
-4. O Galho Torto está rachado: vai quebrar antes da caverna.
+4. O Galho Torto rachado vai quebrar antes da caverna.
 
-## 9. Linguagem de câmera da série
+## 10. Linguagem de câmera da série
 
-- **Padrão:** lateral ou 3/4, baixa e próxima, ~10–20° para baixo, nunca na altura dos olhos; plano médio/americano com o protagonista ~60% da altura da tela.
-- **Plano geral/top-down:** máx. 2 por episódio, com motivo (ep. 1 usa 1: passagem do dia, plano 9).
-- **Movimentos bem-vindos:** travelling lateral, dolly in, rack focus, orbit curto, por cima do ombro.
-- **Gramática do estilo:** diorama, luzes práticas, tilt-shift acompanhando o sujeito, cartão de capítulo. Corte entre mundos: corte seco com som da outra vida entrando um pouco antes (J-cut).
+- **Padrão:** lateral ou 3/4, baixa e próxima, ~10–20° para baixo; plano médio/americano com o protagonista ~60% da altura.
+- **Geral/elevado:** máx. 2 por episódio, com motivo (ep. 1: plano 28, passagem do dia; plano 36, mapa).
+- **Movimentos:** travelling lateral, dolly in, rack focus, orbit curto, por cima do ombro, inserts de HUD.
+- **Estilo:** diorama, luzes práticas, tilt-shift que acompanha o sujeito, cartão de capítulo. Corte entre mundos: corte seco, som do outro mundo entra antes (J-cut).
