@@ -25,6 +25,8 @@ export const C = {
   blue: R(['#0c1330', '#16224a', '#223470', '#33498f']),
   ouv: R(['#2e3848', '#4a5c78', '#7088a8', '#a4bcdc']),
   ear: R(['#0e5a3c', '#1fa874', '#5ff0a8', '#c8ffe2'], .2),
+  ouvH: R(['#34405a', '#4d5f7e', '#6f86a6', '#92a9c8']),
+  earM: R(['#16302c', '#245048', '#37746a', '#5b9a8a'], .2),
   ash: R(['#8d8794', '#b6b0bd', '#d9d4df', '#f2eef6']),
 };
 const INK = hex('#17101a');
@@ -261,7 +263,7 @@ function headSide(P, hx, hy, o = {}) {
   P.set(hx + 7, hy + 2, C.skin(.7, 0, 0)); P.set(hx + 7, hy + 3, C.skin(.5, 0, 0)); P.rect(hx + 4, hy + 5, 2, 1, hex(o.lips ? '#7a3a2e' : '#5a2a22'));
   P.rect(hx + 6, hy + 4, 1, 1, C.skin(.5, 0, 0)); P.set(hx + 3, hy + 3, hex('#c26a5a'));
 }
-export function tecoSide(pose = 'stand') {
+function tecoSideOld(pose = 'stand') {
   const kn = pose === 'kneel', by = kn ? 12 : 0, hx = 21, hy = 10 + by;
   return mkk(40, 56, (P, E) => {
     // pernas
@@ -300,7 +302,7 @@ export function tecoSide(pose = 'stand') {
 }
 
 // Lira de perfil (34x46), olhando para a direita; mao segurando a ponta do cachecol (ponta rubi acima da mao)
-export function liraSide() {
+function liraSideOld() {
   return mkk(34, 46, (P, E) => {
     const hx = 17, hy = 10;
     for (const [lx, sh] of [[17, .35], [11, .6]]) { rf2(P, lx, 35, 5, 8, (x, y) => C.pants(sh - (x === lx ? .15 : 0), x, y)); rf2(P, lx - 1, 42, 9, 4, (x, y) => C.boot(.55 - (y > 44 ? .35 : 0), x, y)); }
@@ -336,7 +338,7 @@ export function axeSide() {
   return mkk(34, 16, (P) => { rf2(P, 1, 10, 24, 2, (x, y) => C.wood(y === 10 ? .8 : .35, x, y)); P.poly([[22, 12], [24, 2], [33, 0], [32, 13], [28, 12]], (x, y) => C.steel(.82 - (x - 22) * .03 - (y > 7 ? .25 : 0), x, y)); P.rect(21, 8, 3, 6, C.steel(.35, 0, 0)); });
 }
 // Ouvidor de perfil (64x128): curvado, cabeca baixa e legivel, orelhas altas e finas em folha
-export function ouvidor2() {
+function ouvidor2Old() {
   return mkk(64, 128, (P, E) => {
     const L = (x0, y0, x1, y1, w, f) => { const n = Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0)) * 2; for (let i = 0; i <= n; i++) { const t = i / n, x = x0 + (x1 - x0) * t, y = y0 + (y1 - y0) * t; for (let k = 0; k < w; k++) P.set(Math.round(x) + k, Math.round(y), f(t, k)); } };
     const sk = (b) => (t, k) => C.ouv(b - k * .18 - (t % .2 < .03 ? .1 : 0), 0, 0);
@@ -364,4 +366,113 @@ export function ouvidor2() {
 }
 export function crowdSide(hair, cloth, pants) {
   return mk(6, 16, (P) => { P.rect(1, 0, 4, 4, hex(hair)); P.rect(2, 2, 3, 2, hex('#b0805c')); P.rect(0, 4, 6, 6, hex(cloth)); P.rect(1, 10, 2, 6, hex(pants)); P.rect(3, 10, 2, 6, hex(pants)); }, .25);
+}
+
+
+// ================= v3: proporcoes realistas (~7 cabecas), membros em pixel art =================
+// Tabelas de pose reutilizaveis: acrescente uma entrada para ganhar um desenho novo.
+export const TECO_POSES = {
+  stand: { arm: 'fist' },
+  menu: { arm: 'fist', far: 'menu' },
+  kneel: { arm: 'lips', kneel: 1 },
+};
+export const LIRA_POSES = { stand: { arm: 'hold' } };
+export const OUVIDOR_POSES = { bent: {} };
+const _cache = {};
+export function makeSprite(kind, pose) {
+  const key = kind + ':' + pose; if (_cache[key]) return _cache[key];
+  const f = { teco: tecoSide, lira: liraSide, ouvidor: ouvidor2 }[kind]; return (_cache[key] = f(pose));
+}
+// membro afunilado com sombreado em rampa (u = posicao na largura)
+function limb(P, x0, y0, x1, y1, w0, w1, R, v = .62) {
+  const dx = x1 - x0, dy = y1 - y0, L = Math.hypot(dx, dy) || 1, nx = -dy / L, ny = dx / L;
+  P.poly([[x0 + nx * w0 / 2, y0 + ny * w0 / 2], [x1 + nx * w1 / 2, y1 + ny * w1 / 2], [x1 - nx * w1 / 2, y1 - ny * w1 / 2], [x0 - nx * w0 / 2, y0 - ny * w0 / 2]],
+    (x, y) => { const t = Math.max(0, Math.min(1, ((x - x0) * dx + (y - y0) * dy) / (L * L))), w = w0 + (w1 - w0) * t, u = ((x - x0) * nx + (y - y0) * ny) / Math.max(.5, w); return R(v - u * .5 + (h2(x * 2 | 0, y * 2 | 0, 5) - .5) * .06, x, y); });
+}
+function headP(P, hx, hy, o = {}) {
+  const sk = (x, y, dx, dy) => C.skin(.68 - (x - hx) * .02 - (y - hy) * .015 + (o.lit ?? 0), x, y);
+  P.poly([[hx - 3.2, hy - 3.6], [hx + 1.6, hy - 4.2], [hx + 3.2, hy - 2.6], [hx + 3.4, hy - .2], [hx + 4.5, hy + 1.4], [hx + 3.5, hy + 1.9], [hx + 3.7, hy + 2.8], [hx + 3.1, hy + 4.1], [hx + .8, hy + 4.9], [hx - 2.2, hy + 4.1], [hx - 3.6, hy + 1.2]], sk);
+  // cabelo preto curto espetado: calota + franja + espetos
+  P.poly([[hx - 4.2, hy + 2.2], [hx - 4.6, hy - 2], [hx - 2.4, hy - 5], [hx + 1.8, hy - 5.4], [hx + 3.4, hy - 3.6], [hx + 1.6, hy - 2.7], [hx - .6, hy - 1.6], [hx - 1.6, hy + 1.2]], (x, y) => C.hair(.4 - (y - hy) * .03 + (h2(x * 2 | 0, y * 2 | 0, 3) > .85 ? .22 : 0), x, y));
+  for (const [dx, h] of [[-3.5, 2], [-2, 3], [-.5, 3.4], [1, 3], [2.4, 2.2], [-4, 1.4]]) P.poly([[hx + dx - .9, hy - 4.6], [hx + dx + .2, hy - 4.8 - h], [hx + dx + 1.1, hy - 4.4]], C.hair(.5, 0, 0));
+  P.rect(hx - 1.4, hy + .6, 1.4, 2, C.skin(.4, 0, 0));
+  P.rect(hx + 2.1, hy - .2, 1, 1.5, INK); P.set(hx + 2.5, hy - .2, hex('#f2e8dc')); P.rect(hx + 1.4, hy - 1.6, 2.4, .6, C.hair(.2, 0, 0));
+  P.rect(hx + 2.6, hy + 3, 1.4, .5, hex(o.lips ? '#6a2e26' : '#5a2a22'));
+}
+export function tecoSide(pose = 'stand') {
+  const T = TECO_POSES[pose] || TECO_POSES.stand, kn = !!T.kneel, by = kn ? 13 : 0, hx = 22, hy = 7 + by;
+  return mkk(40, 56, (P, E) => {
+    const Y = y => y + by;
+    // pernas
+    if (!kn) {
+      limb(P, 22, 31, 24, 43, 5.4, 4.4, C.pants, .38); limb(P, 24, 43, 25, 52, 4.2, 3.2, C.pants, .36); P.poly([[22.5, 51], [26.8, 51], [27.4, 53.5], [32, 54.2], [32, 56], [22, 56]], C.boot(.4, 0, 0));
+      limb(P, 19.5, 31, 20.5, 43, 6, 4.8, C.pants, .7); limb(P, 20.5, 43, 20, 52, 4.6, 3.4, C.pants, .68); P.poly([[18, 51], [22.2, 51], [22.8, 53.5], [28, 54.4], [28, 56], [17.5, 56]], (x, y) => C.boot(.66 - (y - 51) * .08, x, y)); P.rect(18, 55, 10, .8, C.boot(.1, 0, 0));
+    } else {
+      limb(P, 17, 44, 7, 54, 5, 4, C.pants, .38); P.poly([[3, 53], [10, 53], [10, 56], [3, 56]], C.boot(.4, 0, 0));
+      limb(P, 19.5, 44, 30, 46.5, 6, 5, C.pants, .7); limb(P, 30, 46.5, 30.5, 54, 4.8, 3.6, C.pants, .62); P.poly([[28.4, 53], [32.6, 53], [33.4, 54.8], [38, 55], [38, 56], [28, 56]], C.boot(.6, 0, 0));
+    }
+    // braco direito (longe)
+    if (T.far === 'menu') { limb(P, 22, 15, 27, 20.5, 3.6, 3.2, C.shirt, .45); limb(P, 27, 20.5, 32, 21.6, 2.8, 2.4, C.skin, .45); P.ellipse(33.2, 21.8, 1.9, 1.4, C.skin(.55, 0, 0)); limb(P, 33.8, 22.2, 34.6, 26.4, 1.2, 1, C.skin, .6); limb(P, 35.2, 22, 36.2, 26.2, 1.2, 1, C.skin, .6); }
+    // Espeto: cabo acima do ombro, bainha em diagonal nas costas
+    P.line(17.5, Y(16), 12.5, Y(40), C.leather(.5, 0, 0)); P.line(18.3, Y(16), 13.3, Y(40), C.leather(.75, 0, 0)); P.rect(11.6, Y(39.5), 2.4, 1.6, C.brass(.8, 0, 0));
+    P.rect(16.6, Y(8), 1.5, 7.5, C.leather(.7, 0, 0)); P.rect(15, Y(14.6), 4.8, .9, C.steel(.85, 0, 0)); P.rect(16.5, Y(6.8), 1.8, 1.6, C.steel(.9, 0, 0));
+    // cachecol: ponta longa ao vento, atras
+    for (let t = 0; t < 1; t += .02) { const x = 18.5 - Math.sin(t * 2.3) * 6.5, y = Y(12.5) + t * 17; P.rect(x, y, 2.6, 1.2, C.ruby(.62 + (t % .25 < .05 ? .14 : 0) - ((t * 40 | 0) % 7 === 0 ? .1 : 0), 0, 0)); }
+    // torso: colete de couro bege, dobras e sombreado
+    P.poly([[17.3, Y(14)], [25.6, Y(14)], [26.4, Y(22)], [25.8, Y(31.4)], [17, Y(31.6)], [16.6, Y(22)]], (x, y) => C.vest(.76 - (x - 17) / 9.5 * .3 - (y - Y(14)) / 17 * .1 + (((x * 1.3 + (y >> 1)) | 0) % 7 === 0 && y > Y(19) ? -.14 : 0), x, y));
+    for (const [a, b, c, d] of [[18, 22, 22, 27], [20, 20, 24, 24]]) P.line(a, Y(b), c, Y(d), C.vest(.2, 0, 0));
+    P.rect(17, Y(30), 9.4, 1.6, C.leather(.7, 0, 0)); P.rect(22, Y(30), 1.6, 1.6, C.brass(.9, 0, 0));
+    // Brasa de Teco, cintura esquerda
+    lantern(P, E, 16.4, Y(31.5), 3, 4, 1, C.glass);
+    // braco esquerdo (perto)
+    if (T.arm === 'fist') {
+      limb(P, 20, 15.5, 22.6, 24.2, 4.2, 3.4, C.vest, .38); limb(P, 22.6, 24.2, 25.6, 19.6, 3, 2.5, C.skin, .66); P.ellipse(26.2, 18.8, 1.9, 1.7, C.skin(.8, 0, 0)); P.rect(25.4, 18.8, 2.2, .5, C.skin(.35, 0, 0));
+      limb(P, 24, 13.2, 26.4, 17.2, 2, 2, C.ruby, .64); limb(P, 26.3, 20.4, 27, 26, 2, 1.8, C.ruby, .58);
+    } else { // dedo nos labios
+      limb(P, 20, Y(15.5), 24.2, Y(22.6), 4.2, 3.4, C.vest, .38); limb(P, 24.2, Y(22.6), 26.6, Y(16.8), 3, 2.5, C.skin, .66); P.ellipse(26.9, Y(15.6), 1.8, 1.9, C.skin(.8, 0, 0)); limb(P, 27.6, Y(14.6), 28, Y(11.6), 1.2, 1, C.skin, .8);
+    }
+    P.rect(hx - 1.5, Y(10.4), 3.4, 3, C.skin(.4, 0, 0));
+    headP(P, hx, hy, { lips: kn });
+    P.ellipse(hx - .6, Y(12.8), 4.6, 2.1, (x, y, dx, dy) => C.ruby(.64 - dy * .3 + ((x * 2 + y) % 5 < 1 ? -.1 : 0), x, y)); P.rect(hx + 2, Y(12.5), 2.6, 2.6, C.ruby(.5, 0, 0));
+  });
+}
+export function liraSide(pose = 'stand') {
+  return mkk(34, 46, (P, E) => {
+    const hx = 17, hy = 7.6;
+    limb(P, 15.5, 29, 15.5, 38, 4.6, 3.6, C.pants, .36); limb(P, 15.5, 38, 15, 44, 3.4, 2.8, C.pants, .34); P.poly([[13.5, 43], [17, 43], [17.6, 44.6], [22, 45], [22, 46], [13, 46]], C.boot(.4, 0, 0));
+    limb(P, 18.5, 29, 18.5, 38, 5, 4, C.pants, .62); limb(P, 18.5, 38, 18.8, 44, 3.8, 3, C.pants, .6); P.poly([[16.6, 43], [20.6, 43], [21.2, 44.6], [26, 45], [26, 46], [16, 46]], (x, y) => C.boot(.62 - (y - 43) * .1, x, y));
+    for (let t = 0; t <= 1; t += .04) { const x = 6 - Math.sin(t * Math.PI) * 2.4, y = 8 + t * 24; P.rect(x, y, 1, 1.2, C.wood(.65, 0, 0)); }
+    rf2(P, 6, 15, 7, 11, (x, y) => C.canvas(.58 + (y < 17.5 ? .1 : 0) - (x < 6.6 ? .2 : 0) - (y > 24.5 ? .2 : 0), x, y)); P.rect(6, 19.5, 7, .7, C.leather(.5, 0, 0)); P.rect(5.6, 14.6, 8, .9, C.canvas(.2, 0, 0));
+    for (let y = 12; y < 32; y++) { const x = 11 + Math.sin(y * .6) * .8; P.rect(x, y, 1.6, 1, C.braid(.7 - (y % 3 === 0 ? .25 : 0), x, y)); } P.rect(10.4, 31.5, 2.4, 1.6, hex('#8a7a46'));
+    P.poly([[13, 14], [22, 14], [23.4, 29], [12.4, 29]], (x, y) => C.moss(.64 - (x - 13) / 10 * .26 + ((((x * 1.3) + (y >> 1)) | 0) % 6 === 0 ? -.13 : 0), x, y));
+    P.rect(12.6, 27.6, 11, 1, C.leather(.6, 0, 0));
+    limb(P, 19.5, 15.6, 24, 21, 3.4, 2.8, C.moss, .55); limb(P, 24, 21, 28, 22.6, 2.5, 2.1, C.skin, .66); P.ellipse(28.8, 22.8, 1.5, 1.3, C.skin(.8, 0, 0)); limb(P, 29.3, 22.2, 29.8, 17.4, 2, 1.8, C.ruby, .64); P.set(29.6, 16.6, C.ruby(.4, 0, 0));
+    lantern(P, E, 14, 28.2, 2, 3, .6, C.glassY);
+    // capuz e rosto (menor, discreto)
+    P.rect(hx - 1.2, 11.4, 3, 3, C.skin(.4, 0, 0));
+    P.ellipse(hx - .4, hy, 6.2, 6.2, (x, y, dx, dy) => C.moss(.72 - dx * .25 - dy * .3, x, y)); P.poly([[hx - 1, hy + 4.6], [hx + 4.4, hy + 6.4], [hx + 2, hy + 8.4], [hx - 4, hy + 6]], C.moss(.5, 0, 0));
+    P.poly([[hx + .6, hy - 3.8], [hx + 3.2, hy - 3.2], [hx + 3.6, hy - .2], [hx + 4.6, hy + 1.2], [hx + 3.6, hy + 1.8], [hx + 3.6, hy + 3.4], [hx + 1, hy + 4.4], [hx - 1.4, hy + 3], [hx - 1.8, hy - 1]], (x, y) => C.skin(.7 - (y - hy) * .02 - (x - hx) * .01, x, y));
+    P.rect(hx + 2.1, hy - .2, 1, 1.4, INK); P.set(hx + 2.5, hy - .2, hex('#f2e8dc')); P.rect(hx + 1.4, hy - 1.5, 2.4, .5, C.hair(.25, 0, 0)); P.rect(hx + 2.4, hy + 2.8, 1.4, .5, hex('#6a2e26'));
+    P.rect(hx - .6, hy - 4.6, 4, .8, C.moss(.35, 0, 0));
+  });
+}
+// Ouvidor: silhueta alta e magra, curvado; cabeca clara e legivel; orelhas grandes e foscas (sem emissivo), so um filete verde de rim
+export function ouvidor2(pose = 'bent') {
+  return mkk(64, 128, (P, E) => {
+    const SK = C.ouv;
+    limb(P, 34, 72, 27, 94, 3.6, 3, SK, .4); limb(P, 27, 94, 31, 121, 2.8, 2.2, SK, .4); P.rect(29, 120, 9, 2.4, SK(.25, 0, 0));
+    limb(P, 30, 72, 22, 94, 3.8, 3, SK, .68); limb(P, 22, 94, 25, 121, 3, 2.3, SK, .66); P.rect(23, 120, 10, 2.6, SK(.45, 0, 0));
+    P.poly([[24, 72], [35, 74], [42, 62], [46, 52], [40, 44], [30, 45], [23, 58]], (x, y) => SK(.6 - (x - 23) / 24 * .28 + ((y % 5 < 1 && x > 30 && x < 42) ? -.16 : 0), x, y));
+    limb(P, 41, 46, 49, 53, 4.4, 4, SK, .66);
+    // cabeca: cranio alongado, palido, sem olhos
+    P.poly([[45, 48], [50, 44], [57, 46], [62, 52], [62.5, 57], [59, 62], [53, 63], [47, 58]], (x, y) => C.ouvH(.8 - (y - 44) * .018 - (x - 45) * .006 + ((x * 2 | 0) % 7 === 0 && y > 52 ? -.05 : 0), x, y));
+    P.rect(53, 51, 7, .8, SK(.3, 0, 0)); P.rect(58, 58, 4.6, .7, hex('#0b0e14')); P.set(61, 54, hex('#0b0e14')); P.set(61.5, 55, hex('#0b0e14'));
+    // orelhas: folhas altas, foscas, verde-acinzentado, filete claro de rim
+    for (const [bx, by, tx, ty, wd, dk] of [[47, 50, 28, 3, 12, 0], [43, 49, 18, 12, 10, 1]]) {
+      P.poly([[bx, by], [tx, ty], [tx + wd, ty + 3], [bx + 9, by + 2]], (x, y) => { const v = (by - y) / (by - ty), vein = Math.abs((x - bx) + v * (bx - tx) * .9 - 3) % 6 < .9; return C.earM((dk ? .3 : .55) - v * .12 - (vein ? .22 : 0) + (h2(x * 2 | 0, y * 2 | 0, 1) - .5) * .08, x, y); });
+      P.line(tx + wd, ty + 3, bx + 9, by + 2, hex(dk ? '#3d6e62' : '#5a9a86')); P.line(tx, ty, tx + wd, ty + 3, hex(dk ? '#355f55' : '#4a8574'));
+    }
+    limb(P, 38, 48, 41, 72, 2.6, 2.2, SK, .6); limb(P, 41, 72, 52, 98, 2.2, 1.8, SK, .6); for (let k = 0; k < 4; k++) P.line(52, 98, 53 + k * 2, 112 + k, SK(.5, 0, 0));
+    limb(P, 40, 48, 44, 70, 2.6, 2.2, SK, .38); limb(P, 44, 70, 58, 96, 2.2, 1.8, SK, .38); for (let k = 0; k < 3; k++) P.line(58, 96, 59 + k * 2, 108 + k, SK(.32, 0, 0));
+  }, .3);
 }

@@ -39,15 +39,15 @@ function buildQC1() {
   const Rr = mulberry(5), hc = ['#1a1410', '#3a2a1c', '#6a4a2a', '#c8a050', '#2a2a30'], cc = ['#2e4a6a', '#6a3a3a', '#3a5a3a', '#5a5a66', '#7a5a8a', '#8a7a4a'];
   const spr = []; for (let i = 0; i < 14; i++) spr.push(A.crowdSide(hc[i % 5], cc[i % 6], ['#2a2a30', '#3a3328', '#40454e'][i % 3]));
   for (let i = 0; i < 170; i++) { const x = (Rr() - .5) * 44, z = -3.6 - Rr() * 30; if (Math.abs(x) < 3 && z > -7) continue; const g = actor(spr[i % 14], x, z, 3.1 * (.92 + Rr() * .16), { flip: Rr() > .5 }); g.userData.cam = true; }
-  const teco = A.tecoSide('menu'), K = .9, tg = actor(teco, -.42, 0, K, { shadow: true });
+  const teco = A.makeSprite('teco','menu'), K = .9, tg = actor(teco, -.3, 0, K, { shadow: true });
   const bz = px(tg, teco, K, 16.5, 41); lamp('#ff9a3a', 2.6, 4, bz.clone().add(V3(.05, .15, .6)));
   const g1 = glow('#ffa040', .5, 1.2); g1.position.copy(bz).add(V3(0, 0, .1)); scene.add(g1);
   lamp('#fff2d6', 1.2, 9, V3(-2.2, 2.6, 4)); 
-  const pm = new THREE.Mesh(new THREE.PlaneGeometry(.78, .78), new THREE.MeshBasicMaterial({ map: A.menuPanel(), transparent: true, opacity: .94, color: new THREE.Color(1.1, 1.12, 1.15), fog: false }));
-  pm.position.set(.4, 1.12, .15); pm.rotation.y = -.6; scene.add(pm);
-  const pg = glow('#b6ccf4', 1.7, .5); pg.position.set(.4, 1.12, .05); scene.add(pg);
+  const pm = new THREE.Mesh(new THREE.PlaneGeometry(.68, .68), new THREE.MeshBasicMaterial({ map: A.menuPanel(), transparent: true, opacity: .94, color: new THREE.Color(1.1, 1.12, 1.15), fog: false }));
+  pm.position.set(.36, 1.1, .15); pm.rotation.y = -.6; scene.add(pm);
+  const pg = glow('#b6ccf4', 1.5, .5); pg.position.set(.36, 1.1, .05); scene.add(pg);
   const dust = particles(70, (i, t, o) => { o.x = ((i * 7.3) % 4) - 2; o.y = .2 + (i * 3.7 % 3); o.z = ((i * 5.1) % 5) - 2; o.a = .3; o.s = .02; o.r = 1; o.g = .95; o.b = .8; }, { soft: 1 }); dust.userData.update(0); scene.add(dust);
-  camera.position.set(-1.9, 2.15, 3.7); camera.up.set(0, 1, 0); camera.lookAt(.12, 1.0, 0); camera.fov = 40; camera.updateProjectionMatrix();
+  camera.position.set(-1.9, 2.15, 3.7); camera.up.set(0, 1, 0); camera.lookAt(-.02, 1.0, 0); camera.fov = 36; camera.updateProjectionMatrix();
   post_o = { exposure: 1.1, bloom: [.5, .8, .85], vig: .5, warm: .12, sat: 1.04, tilt: [10, .16, .3], aper: 150, focusPt: V3(0, 1.0, 0) };
 }
 
@@ -74,18 +74,18 @@ function buildQC2() {
   const gs = A.gritadorSide(); actor(gs, GX, GZ, 1.0);
   const axe = A.axeSide(); actor(axe, GX + 1.5, GZ + .3, 1.0);
   const dl = A.deadLantern(); actor(dl, GX + .55, GZ + .5, 1.5);
-  const ouv = actor(A.ouvidor2(), GX + .1, GZ - 1.6, .95, { flip: true, shadow: false });
-  const eg = glow('#5ff0a8', .8, .2); eg.position.set(GX - .1, 1.9, GZ - 1.6); scene.add(eg); lamp('#5ff0a8', 3, 8, V3(GX, 2.0, GZ + 1));
+  const ouv = actor(A.makeSprite('ouvidor', 'bent'), GX + .1, GZ - 1.6, .95, { flip: true, shadow: false });
+  lamp('#4fd8a0', 2.2, 5, V3(GX + 1.2, 2.2, GZ - 2.4));
   const ash = particles(110, (i, t, o) => { const r = h2(i, 1, 3), r2 = h2(i, 2, 3), r3 = h2(i, 3, 3), u = (r * 1.4) % 1; o.x = GX + (r2 - .5) * 2.4 + Math.sin(u * 5 + i) * .25; o.z = GZ + (r3 - .5) * 1.2; o.y = .2 + u * 3.4; o.a = .8 * (1 - u * .6); o.s = .05 + r2 * .05; o.r = .9; o.g = .86; o.b = 1; }, { soft: 1 }); ash.userData.update(0); scene.add(ash);
   // primeiro plano
-  const teco = A.tecoSide('kneel'), lira = A.liraSide();
+  const teco = A.makeSprite('teco','kneel'), lira = A.makeSprite('lira','stand');
   const tg = actor(teco, -.3, 4.0, .9, { shadow: true }), lg = actor(lira, .36, 3.8, .85, { flip: true, shadow: true });
   const bz = px(tg, teco, .9, 16.5, 39 + 12); lamp('#ff8a2a', 1.4, 3, bz.clone().add(V3(.1, .1, .5)));
   const g1 = glow('#ff9a40', .35, 1.2); g1.position.copy(bz).add(V3(0, 0, .1)); scene.add(g1);
   const g2 = glow('#ffe080', .2, .7); g2.position.copy(px(lg, lira, .85, 15, 32)).add(V3(0, 0, .1)); scene.add(g2);
   lamp('#ffc4dc', 1.6, 6, V3(.3, 1.9, 5.6)); lamp('#c8b4ff', 1.4, 6, V3(-1, 1.0, 5.4));
   camera.position.set(.2, 1.4, 6.35); camera.up.set(0, 1, 0); camera.lookAt(0, .95, 4.0); camera.fov = 55; camera.updateProjectionMatrix();
-  post_o = { exposure: 1.3, bloom: [.6, .8, .9], vig: .62, warm: .06, sat: 1.12, tilt: [8, .14, .3], aper: 7, focusPt: V3(0, .85, 4.0) };
+  post_o = { exposure: 1.3, bloom: [.6, .8, .9], vig: .62, warm: .06, sat: 1.12, tilt: [8, .14, .3], aper: 3, focusPt: V3(0, .85, 4.0) };
 }
 
 // ============ QC3: Boca do Fosso, 3/4 lateral ============
@@ -94,7 +94,7 @@ function buildQC3() {
   const hemi = new THREE.HemisphereLight('#4a9a82', '#0a1a16', 1.5), key = new THREE.DirectionalLight('#88e0c0', .9); key.position.set(-3, 14, 12); key.castShadow = true; key.shadow.mapSize.set(2048, 2048);
   Object.assign(key.shadow.camera, { left: -12, right: 12, top: 14, bottom: -14, near: 1, far: 50 }); scene.add(hemi, key);
   const rk = mat(rock(128, 128, { seed: 7, cols: ['#0a1612', '#16282a', '#243c3e', '#37524f', '#4c6a64', '#6a8880'] })), rk2 = mat(rock(96, 96, { seed: 2, cols: ['#08120f', '#122220', '#1e3432', '#2e4846'] }));
-  const RP = 2.9, PX0 = 2.7, PZ = -3.3;
+  const RP = 2.9, PX0 = 2.7, PZ = -3.0;
   const sh = new THREE.Shape(); sh.moveTo(-16, -22); sh.lineTo(18, -22); sh.lineTo(18, 12); sh.lineTo(-16, 12); sh.closePath();
   const hole = new THREE.Path(); hole.absarc(PX0, -PZ, RP, 0, Math.PI * 2, true); sh.holes.push(hole);
   const fg = new THREE.ExtrudeGeometry(sh, { depth: .6, bevelEnabled: false, curveSegments: 40 }); fg.rotateX(-Math.PI / 2); fg.translate(0, -.6, 0); scene.add(mesh(fg, rk));
@@ -113,14 +113,14 @@ function buildQC3() {
   for (const [x, z, n] of [[-3.5, -6, 4], [8, -8, 4], [-2, -12, 3], [6.5, -13, 3], [-6.5, -2, 3]]) { for (let k = 0; k < n; k++) cry(V3(x + (Rr() - .5), 0, z + (Rr() - .5)), V3((Rr() - .5) * .8, 1, (Rr() - .5) * .8), 1.2 + Rr() * 1.2); const gl = glow('#5affb0', 1.6, .4); gl.position.set(x, .8, z); scene.add(gl); lamp('#3dffa0', 3, 7, V3(x, 1.1, z)); }
   for (let i = 0; i < 14; i++) { const p = V3(-10 + Rr() * 22, 1 + Rr() * 7, -15 - Rr() * 2); const gl = glow('#5affb0', .8, .3); gl.position.copy(p); scene.add(gl); cry(p, V3(Rr() - .5, Rr() - .5, 1), 1.5 + Rr()); }
   const sp = particles(120, (i, t, o) => { const r = h2(i, 5, 1), r2 = h2(i, 6, 1), u = (r2 * 3) % 1, a = r * 6.28, rr = Math.sqrt(h2(i, 7, 1)) * (RP - .3); o.x = PX0 + Math.cos(a) * rr; o.z = PZ + Math.sin(a) * rr; o.y = -8 + u * 12; o.a = .55 * Math.sin(u * 3.1416); o.s = .04 + r * .04; o.r = .5; o.g = 1; o.b = .7; }, { soft: 1 }); sp.userData.update(0); scene.add(sp);
-  const teco = A.tecoSide('stand'), lira = A.liraSide(), K = .9;
+  const teco = A.makeSprite('teco','stand'), lira = A.makeSprite('lira','stand'), K = .9;
   const tg = actor(teco, .7, 0, K, { shadow: true }), lg = actor(lira, .08, .12, .85, { shadow: true });
   const bz = px(tg, teco, K, 16.5, 41); lamp('#ff8428', 2.2, 4.5, bz.clone().add(V3(.35, .7, .9)));
   const g1 = glow('#ff9440', .5, 1.4); g1.position.copy(bz).add(V3(0, 0, .1)); scene.add(g1);
   const g2 = glow('#ffe080', .22, .8); g2.position.copy(px(lg, lira, .85, 15, 32)).add(V3(0, 0, .1)); scene.add(g2);
   lamp('#9ae8cc', 1.8, 8, V3(-1.5, 2.2, 3));
-  camera.position.set(-.5, 1.95, 3.1); camera.up.set(0, 1, 0); camera.lookAt(.45, .85, 0); camera.fov = 45; camera.updateProjectionMatrix();
-  post_o = { exposure: 1.25, bloom: [.75, .8, .8], vig: .66, warm: .02, sat: 1.1, tilt: [8, .15, .3], aper: 38, focusPt: V3(.5, .9, 0) };
+  camera.position.set(-.9, 2.5, 3.2); camera.up.set(0, 1, 0); camera.lookAt(.5, .95, -.3); camera.fov = 37; camera.updateProjectionMatrix();
+  post_o = { exposure: 1.25, bloom: [.75, .8, .8], vig: .66, warm: .02, sat: 1.1, tilt: [8, .15, .3], aper: 22, focusPt: V3(.5, .9, 0) };
 }
 
 [buildQC1, buildQC2, buildQC3][QC - 1]();

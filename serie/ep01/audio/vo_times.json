@@ -1,0 +1,14 @@
+{"dur": 80.0, "note": "inicio (s) de cada fala no mix de 80 s; plano e fim calculados com voz/duracoes.txt",
+ "lines": [
+  {"id":"l01","shot":1,"t":0.3,"dur":3.396,"end":3.696,"who":"N"},
+  {"id":"l02","shot":2,"t":4.3,"dur":3.318,"end":7.618,"who":"N"},
+  {"id":"l03","shot":3,"t":11.3,"dur":5.799,"end":17.099,"who":"N"},
+  {"id":"l04","shot":4,"t":20.3,"dur":5.251,"end":25.551,"who":"N"},
+  {"id":"l05","shot":5,"t":28.3,"dur":4.676,"end":32.976,"who":"N"},
+  {"id":"l06","shot":6,"t":35.3,"dur":3.239,"end":38.539,"who":"N"},
+  {"id":"l07","shot":7,"t":41.3,"dur":4.362,"end":45.662,"who":"N"},
+  {"id":"l08","shot":9,"t":55.3,"dur":2.926,"end":58.226,"who":"S","lowpass_hz":7000},
+  {"id":"l09","shot":10,"t":62.3,"dur":4.598,"end":66.898,"who":"N"},
+  {"id":"l10","shot":11,"t":69.3,"dur":3.396,"end":72.696,"who":"N"},
+  {"id":"l11","shot":12,"t":74.3,"dur":2.847,"end":77.147,"who":"S","lowpass_hz":7000}
+ ]}

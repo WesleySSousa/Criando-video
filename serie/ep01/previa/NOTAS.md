@@ -1,10 +1,11 @@
-# Previa visual ep.1 v2 (camera lateral/3-4, baixa, ~12-15 graus para baixo; 1080x1920; sem texto)
-Fonte: previa/index.html + main.js + art.js (sprites em codigo, desenhados a 2,5x: Teco ~140 px, com selout e NearestFilter) + px/kit/fx/post_ts do estilo. Versao anterior (top-down): main_v1.js.
-- qc1 Praca: Teco de perfil (rosto, Espeto nas costas, cachecol rubi, Brasa forte na cintura esquerda, punho esquerdo na ponta do cachecol) olhando o Menu azul-ardosia flutuando na altura do peito (4 icones sem rotulo, espaco cinza liso embaixo); fundo ouro-palido com multidao e fonte desfocados.
-- qc2 Beco: Teco ajoelhado com dedo nos labios e Lira de frente a ele em primeiro plano (~55-60% da altura), rostos; ao fundo, a ~9 m e desfocado, o Ouvidor curvado perto do Gritador caido (brasa apagada, machado no chao, cinzas); lanternas rosa e sinos nos beirais, violeta.
-- qc3 Fosso: Teco e Lira de perfil (Lira ~0,5 m atras, mao na ponta do cachecol), rostos aquecidos pela Brasa laranja, fundo verde mineral.
+# Previa visual ep.1 v3 (proporcoes ~7 cabecas, camera lateral baixa; 1080x1920; sem texto)
+Codigo: previa/art.js (sprites a 2,5x, ~140 px; membros por `limb()`, rampas + selout), main.js (3 cenas, `?qc=1|2|3`), px/kit/fx/post_ts do estilo.
+Pose-table reutilizavel: `TECO_POSES`, `LIRA_POSES`, `OUVIDOR_POSES` + `makeSprite(kind, pose)` em art.js (acrescente uma entrada ou parametro para nova pose). main_v1.js = versao top-down antiga.
+- qc1 Praca: Teco de perfil, rosto discreto, cachecol rubi, Espeto, Brasa forte (cintura esquerda), punho esquerdo no cachecol, mao direita com dedos tocando o Menu azul-ardosia (4 icones, espaco cinza liso). ~60% da altura.
+- qc2 Beco: Teco ajoelhado (dedo nos labios) e Lira (ponta do cachecol na mao) em primeiro plano; ao fundo Ouvidor alto e magro com cabeca clara e orelhas foscas, Gritador caido, brasa apagada, machado, cinzas; lanternas rosa.
+- qc3 Fosso: Teco e Lira de perfil, Lira ~0,5 m atras, camera ~24 graus; espiral de degraus visivel atras; Brasa laranja aquece os rostos.
 ## Limitacoes
-- qc3: a espiral de degraus nao ficou legivel (camera baixa so ve uma nesga da borda; fundo e uma nevoa verde com cristais e desfoque). Precisaria de mais uma rodada.
-- qc2: orelhas do Ouvidor ainda brilham demais (borrao verde grande) e a cabeca continua pouco legivel; pernas e corpo leem melhor.
-- Personagens nos 3 quadros ocupam ~50-60% da altura; Teco/Lira no qc2 encostam nas bordas laterais. Braco proximo de Teco desenhado como bloco cinza/laranja (antebraco+punho), simplificado.
+- qc2: orelhas do Ouvidor viram duas "placas" retas; cabeca ainda lavanda por causa da luz violeta.
+- qc3: Teco/Lira ~50% da altura; degraus aparecem so em parte (borda esquerda do poco), cristal verde estourado no alto.
+- Braco proximo de Teco ainda simplificado; Lira sem dobras finas; Gritador e machado em sprites antigos (menos detalhe).
 - PNGs convertidos de JPEG q92 (still.mjs so salva JPEG).
