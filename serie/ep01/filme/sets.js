@@ -20,9 +20,9 @@ const TOD = [  // hora do jogo -> parametros de luz
   { h: 8.0, sun: '#eafff4', si: 1.7, sunp: [-7, 15, 9], hs: '#d6f5e6', hg: '#79a98f', hi: 1.05, fog: '#bfe6d2', fd: .018, top: '#78bcd4', mid: '#a6dccd', hor: '#cdeedd', exp: 1.15 },
   { h: 13.0, sun: '#f4fff8', si: 1.9, sunp: [-3, 18, 8], hs: '#dcf8ea', hg: '#82b496', hi: 1.1, fog: '#c4ecd8', fd: .017, top: '#6cb4d0', mid: '#a0dccc', hor: '#cfeedd', exp: 1.18 },
   { h: 16.0, sun: '#f0ffea', si: 1.8, sunp: [6, 13, 8], hs: '#d4f2e0', hg: '#7aa88a', hi: 1.05, fog: '#bce6cc', fd: .019, top: '#70b4cc', mid: '#a4d8c4', hor: '#cdeacf', exp: 1.15 },
-  { h: 17.8, sun: '#ff74b4', si: 1.7, sunp: [14, 4.6, 7], hs: '#f0a0d2', hg: '#2c5a66', hi: .95, fog: '#d890bc', fd: .02, top: '#5a3a8a', mid: '#c870b8', hor: '#ff9ac8', exp: 1.2 },
-  { h: 18.58, sun: '#d884e6', si: 1.2, sunp: [14, 5, 7], hs: '#b680d6', hg: '#27505e', hi: 1.05, fog: '#a878c4', fd: .022, top: '#2c2468', mid: '#8a5ab8', hor: '#e88ac8', exp: 1.25 },
-  { h: 18.8, sun: '#9a78f0', si: .9, sunp: [14, 5, 7], hs: '#8a6ed0', hg: '#1f4252', hi: 1.1, fog: '#7058b0', fd: .024, top: '#1c1856', mid: '#6a48a8', hor: '#b078d0', exp: 1.28 },
+  { h: 17.8, sun: '#ff74b4', si: 1.7, sunp: [14, 4.6, 7], hs: '#f4b0dc', hg: '#356a76', hi: 1.25, fog: '#d890bc', fd: .02, top: '#5a3a8a', mid: '#c870b8', hor: '#ff9ac8', exp: 1.2 },
+  { h: 18.58, sun: '#d884e6', si: 1.2, sunp: [14, 5, 7], hs: '#c090e0', hg: '#2f6070', hi: 1.45, fog: '#a878c4', fd: .022, top: '#2c2468', mid: '#8a5ab8', hor: '#e88ac8', exp: 1.25 },
+  { h: 18.8, sun: '#9a78f0', si: .9, sunp: [14, 5, 7], hs: '#9a80e0', hg: '#2a5568', hi: 1.5, fog: '#7058b0', fd: .024, top: '#1c1856', mid: '#6a48a8', hor: '#b078d0', exp: 1.28 },
 ];
 export function todAt(hr) {
   let a = TOD[0], b = TOD[TOD.length - 1];
@@ -42,9 +42,9 @@ export function buildCampina() {
   g.userData.cam = [];
   const addBB = (spr, x, z, k, flip = false, o = {}) => { const m = bb(spr, { k, shadow: o.shadow ?? false }); if (flip) m.scale.x = -1; const gp = new THREE.Group(); gp.add(m); gp.position.set(x, o.y ?? 0, z); gp.userData.cam = true; g.add(gp); return gp; };
   const tr0 = sprite('item', 'tree0'), tr1 = sprite('item', 'tree1'), bush = sprite('item', 'bush'), tu0 = sprite('item', 'tuft0'), tu1 = sprite('item', 'tuft1');
-  for (let i = 0; i < 26; i++) { const x = -30 + i * 2.4 + R() * 2, z = -14 - R() * 10; addBB(R() > .5 ? tr0 : tr1, x, z, 2.2 + R() * 1.1, R() > .5); }
-  for (let i = 0; i < 16; i++) { const x = -26 + i * 3.4 + R() * 2, z = -34 - R() * 10; addBB(R() > .5 ? tr0 : tr1, x, z, 3 + R() * 1.4, R() > .5); }
-  for (let i = 0; i < 9; i++) addBB(bush, -14 + i * 3 + R() * 2, -5 - R() * 5, 1.1 + R() * .5, R() > .5);
+  for (let i = 0; i < 24; i++) { const x = -26 + i * 2.2 + R() * 1.6, z = -9 - R() * 8; addBB(R() > .5 ? tr0 : tr1, x, z, .95 + R() * .6, R() > .5); }
+  for (let i = 0; i < 22; i++) { const x = -40 + i * 3.8 + R() * 2, z = -26 - R() * 14; addBB(R() > .5 ? tr0 : tr1, x, z, 2.0 + R() * 1.0, R() > .5); }
+  for (let i = 0; i < 14; i++) addBB(bush, -16 + i * 2.4 + R() * 2, -4 - R() * 4, .9 + R() * .5, R() > .5);
   for (let i = 0; i < 70; i++) { const x = -16 + R() * 34, z = 4 - R() * 16; addBB(R() > .5 ? tu0 : tu1, x, z, .55 + R() * .45, R() > .5); }
   for (const [x, z] of [[-4.6, 1.2], [6.5, -.2]]) addBB(sprite('item', 'marker'), x, z, 1.1, false, { shadow: true });
   // serra distante (cintas de colinas em pixel)
@@ -89,7 +89,7 @@ export function buildBanca() {
   const cnt = box(7, 1.1, 1.1, wood); cnt.position.set(0, 0, -3.6); g.add(cnt);
   const top = box(7.3, .1, 1.4, mat(cobbles(64, 64, { seed: 3, cell: 20, cols: ['#8a909c', '#aab0bc', '#cfd5de', '#eef2f8'] }))); top.position.set(0, 1.1, -3.6); g.add(top);
   const seal = new PX(32, 32); seal.fill((x, y) => { const d = Math.hypot(x - 15.5, y - 15.5); if (d > 15) return null; if (d > 13) return hex('#eef2f8'); if (d > 11) return hex('#8a909c'); const a = Math.atan2(y - 15.5, x - 15.5); const star = Math.abs(Math.cos(a * 2.5)) * 9 + 3 > d; return star ? hex('#e8eef6') : hex('#5a6478'); });
-  const sealM = plane(.9, .9, canvasTex(seal.done()), { tr: true, fog: true, color: '#ffffff' }); sealM.position.set(0, .6, -3.02); g.add(sealM);
+  const sealM = plane(.6, .6, canvasTex(seal.done()), { tr: true, fog: true, color: '#ffffff' }); sealM.position.set(0, .6, -3.02); g.add(sealM);
   const slot = box(1.2, .08, .5, M.beam); slot.position.set(0, 1.2, -3.5); g.add(slot);
   // colunas
   for (const x of [-10, 10]) { const c = box(.9, 7, .9, wallM); c.position.set(x, 0, -6); g.add(c); }
@@ -120,7 +120,7 @@ export function buildBanca() {
 
 // ============ CASA (cozinha + corredor), vida real ============
 function tileFloor() { const P = new PX(64, 64), R = ramp(['#8a7a58', '#a89870', '#c4b48a', '#d8caa0']); P.fill((x, y) => { const cx = (x >> 4), cy = (y >> 4), alt = (cx + cy) & 1, e = (x & 15) === 0 || (y & 15) === 0; if (e) return hex('#6a5c40'); return R((alt ? .35 : .62) + (h2(x, y, 3) - .5) * .12 + (fbm(x * .3, y * .3, 4) - .5) * .12, x, y); }); return P.done(); }
-function wallpaper() { const P = new PX(64, 64), R = ramp(['#8a7656', '#a8936c', '#c4ae84', '#dccaa0']); P.fill((x, y) => { const st = (x % 8) < 1 ? -.1 : 0, dot = ((x % 8 === 4) && (y % 8 === 4)) ? -.14 : 0; return R(.55 + st + dot + (fbm(x * .2, y * .2, 5) - .5) * .18, x, y); }); return P.done(); }
+function wallpaper() { const P = new PX(64, 64), R = ramp(['#8a7656', '#a8936c', '#c4ae84', '#dccaa0']); P.fill((x, y) => { const st = (x % 8) < 1 ? -.05 : 0, dot = ((x % 8 === 4) && (y % 8 === 4)) ? -.06 : 0; return R(.58 + st + dot + (fbm(x * .2, y * .2, 5) - .5) * .1, x, y); }); return P.done(); }
 function clockTex(hh, mm) { const P = new PX(32, 32); P.fill((x, y) => { const d = Math.hypot(x - 15.5, y - 15.5); if (d > 15.5) return null; if (d > 13.5) return hex('#2a1c14'); if (d > 12) return hex('#6a4a2a'); return hex('#f2ead6'); }); for (let i = 0; i < 12; i++) { const a = i / 12 * Math.PI * 2; P.rect(15.5 + Math.sin(a) * 11 - .5, 15.5 - Math.cos(a) * 11 - .5, 1.5, 1.5, hex('#2a1c14')); } const ha = ((hh % 12) + mm / 60) / 12 * Math.PI * 2, ma = mm / 60 * Math.PI * 2; P.line(15, 15, 15 + Math.sin(ha) * 7, 15 - Math.cos(ha) * 7, hex('#1a1410')); P.line(15, 15, 15 + Math.sin(ma) * 11, 15 - Math.cos(ma) * 11, hex('#1a1410')); P.rect(14, 14, 3, 3, hex('#a8281a')); return canvasTex(P.done()); }
 export function buildCasa() {
   const g = new THREE.Group(), M = mats();
@@ -139,23 +139,23 @@ export function buildCasa() {
   const table = new THREE.Group(); const top = box(1.9, .07, 1.0, wood); top.position.y = .74; table.add(top);
   for (const [x, z] of [[-.82, -.4], [.82, -.4], [-.82, .4], [.82, .4]]) { const l = box(.07, .74, .07, dark); l.position.set(x, 0, z); table.add(l); }
   table.position.set(-3.4, 0, -1.6); g.add(table);
-  const chair = (x, z, s) => { const c = new THREE.Group(); const seat = box(.55, .06, .55, dark); seat.position.y = .45; c.add(seat); const back = box(.06, .55, .55, dark); back.position.set(-.25 * s, .45, 0); c.add(back); for (const [a, b] of [[-.22, -.22], [.22, -.22], [-.22, .22], [.22, .22]]) { const l = box(.05, .45, .05, dark); l.position.set(a, 0, b); c.add(l); } c.position.set(x, 0, z); g.add(c); };
+  const chair = (x, z, s) => { const c = new THREE.Group(); const seat = box(.55, .06, .55, dark); seat.position.y = .5; c.add(seat); const back = box(.06, .55, .55, dark); back.position.set(-.25 * s, .45, 0); c.add(back); for (const [a, b] of [[-.22, -.22], [.22, -.22], [-.22, .22], [.22, .22]]) { const l = box(.05, .45, .05, dark); l.position.set(a, 0, b); c.add(l); } c.position.set(x, 0, z); g.add(c); };
   chair(-5.0, -1.6, 1); chair(-1.8, -1.6, -1);
   // bancada com pia e cafeteira + geladeira + relogio de parede
-  const cab = box(2.6, .9, .65, mat(woodPlanks(64, 64, { pw: 8, len: 64, seed: 5, nails: false, cols: ['#4a3a2a', '#6a543a', '#8a7048', '#a88a5c'] }))); cab.position.set(-7.6, 0, -2.8); g.add(cab);
-  const cat = box(2.7, .06, .7, mat(cobbles(64, 64, { seed: 8, cell: 16, cols: ['#8a8070', '#a89c88', '#c8bca4'] }))); cat.position.set(-7.6, .9, -2.8); g.add(cat);
-  const sink = box(.9, .05, .45, M.beam); sink.position.set(-8.2, .96, -2.8); g.add(sink);
-  const cafe = box(.28, .4, .26, mat(woodPlanks(32, 32, { pw: 32, len: 32, seed: 2, nails: false, cols: ['#15100c', '#241a14', '#3a2c20'] }))); cafe.position.set(-7.0, .96, -2.8); g.add(cafe);
-  const cafeL = new THREE.Mesh(new THREE.BoxGeometry(.14, .12, .02), new THREE.MeshBasicMaterial({ color: new THREE.Color(3, 1.6, .3) })); cafeL.position.set(-7.0, 1.2, -2.66); g.add(cafeL); const cg = glow('#ffa030', .7, .8); cg.position.set(-7.0, 1.2, -2.5); g.add(cg);
-  const fridge = box(.95, 1.9, .75, mat(cobbles(32, 32, { seed: 1, cell: 30, cols: ['#8a8c8a', '#aaaca8', '#c8cac6', '#dcdedb'] }))); fridge.position.set(-9.2, 0, -2.7); g.add(fridge);
-  const clockM = new THREE.Mesh(new THREE.CircleGeometry(.36, 20), new THREE.MeshBasicMaterial({ map: clockTex(8, 0), fog: false })); clockM.position.set(-4.4, 2.5, -3.0); g.add(clockM);
+  const cab = box(2.6, .9, .65, mat(woodPlanks(64, 64, { pw: 8, len: 64, seed: 5, nails: false, cols: ['#4a3a2a', '#6a543a', '#8a7048', '#a88a5c'] }))); cab.position.set(.6, 0, -2.8); g.add(cab);
+  const cat = box(2.7, .06, .7, mat(cobbles(64, 64, { seed: 8, cell: 16, cols: ['#8a8070', '#a89c88', '#c8bca4'] }))); cat.position.set(.6, .9, -2.8); g.add(cat);
+  const sink = box(.9, .05, .45, M.beam); sink.position.set(.0, .96, -2.8); g.add(sink);
+  const cafe = box(.28, .4, .26, mat(woodPlanks(32, 32, { pw: 32, len: 32, seed: 2, nails: false, cols: ['#15100c', '#241a14', '#3a2c20'] }))); cafe.position.set(1.3, .96, -2.8); g.add(cafe);
+  const cafeL = new THREE.Mesh(new THREE.BoxGeometry(.14, .12, .02), new THREE.MeshBasicMaterial({ color: new THREE.Color(3, 1.6, .3) })); cafeL.position.set(1.3, 1.2, -2.66); g.add(cafeL); const cg = glow('#ffa030', .7, .8); cg.position.set(1.3, 1.2, -2.5); g.add(cg);
+  const fridge = box(.95, 1.9, .75, mat(cobbles(32, 32, { seed: 1, cell: 30, cols: ['#8a8c8a', '#aaaca8', '#c8cac6', '#dcdedb'] }))); fridge.position.set(-7.6, 0, -2.7); g.add(fridge);
+  const clockM = new THREE.Mesh(new THREE.CircleGeometry(.36, 20), new THREE.MeshBasicMaterial({ map: clockTex(8, 0), fog: false })); clockM.position.set(-4.7, 2.3, -3.0); g.add(clockM);
   // janela da cozinha (luz bege pálida) e quadro no corredor
-  const win = new THREE.Mesh(new THREE.PlaneGeometry(1.3, 1.1), new THREE.MeshBasicMaterial({ color: new THREE.Color('#fff0cc').multiplyScalar(1.5), fog: false })); win.position.set(-1.1, 2.1, -3.0); g.add(win); const wf = box(1.5, .08, .12, dark); wf.position.set(-1.1, 1.52, -2.98); g.add(wf);
-  for (const [x, y, w, h, c] of [[5, 2.2, .7, .9, '#6a8a76'], [6.2, 2.2, .5, .7, '#8a6a5a'], [9.6, 2.1, .8, .6, '#5a6a8a']]) { const f = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: c, fog: true })); f.position.set(x, y, -2.88); g.add(f); const fr = box(w + .1, h + .1, .04, dark); fr.position.set(x, y - (h + .1) / 2, -2.92); g.add(fr); }
+  const win = new THREE.Mesh(new THREE.PlaneGeometry(1.3, 1.1), new THREE.MeshBasicMaterial({ color: new THREE.Color('#fff0cc').multiplyScalar(1.5), fog: false })); win.position.set(-6.2, 2.1, -3.0); g.add(win); const wf = box(1.5, .08, .12, dark); wf.position.set(-6.2, 1.52, -2.98); g.add(wf);
+  for (const [x, y, w, h, c] of [[3.4, 2.2, .7, .9, '#6a8a76'], [4.3, 2.1, .5, .7, '#8a6a5a'], [9.6, 2.1, .8, .6, '#5a6a8a']]) { const f = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: c, fog: true })); f.position.set(x, y, -2.88); g.add(f); const fr = box(w + .1, h + .1, .04, dark); fr.position.set(x, y - (h + .1) / 2, -2.92); g.add(fr); }
   // porta do quarto (corredor) com macaneta
-  const door = box(1.0, 2.1, .1, mat(woodPlanks(32, 64, { pw: 6, len: 32, seed: 12, nails: false, cols: ['#3a2418', '#5a3a26', '#7a5236', '#94684a'] }))); door.position.set(7.0, 0, -2.86); g.add(door);
-  const knob = new THREE.Mesh(new THREE.SphereGeometry(.05, 8, 6), new THREE.MeshStandardMaterial({ color: '#d8b050', metalness: .6, roughness: .4 })); knob.position.set(6.55, 1.0, -2.78); g.add(knob);
-  const doorFr = box(1.2, 2.25, .08, dark); doorFr.position.set(7.0, 0, -2.91); g.add(doorFr); door.position.z = -2.84;
+  const door = box(1.0, 2.1, .1, mat(woodPlanks(32, 64, { pw: 6, len: 32, seed: 12, nails: false, cols: ['#3a2418', '#5a3a26', '#7a5236', '#94684a'] }))); door.position.set(6.7, 0, -2.86); g.add(door);
+  const knob = new THREE.Mesh(new THREE.SphereGeometry(.05, 8, 6), new THREE.MeshStandardMaterial({ color: '#d8b050', metalness: .6, roughness: .4 })); knob.position.set(6.25, .95, -2.78); g.add(knob);
+  const doorFr = box(1.2, 2.25, .08, dark); doorFr.position.set(6.7, 0, -2.91); g.add(doorFr); door.position.z = -2.84;
   // luzes: lampada incandescente de teto (quente) + hemisferio quente dessaturado
   const hemi = new THREE.HemisphereLight('#f0d9a8', '#7a6240', 1.0); g.add(hemi);
   const key = sunLight(g, '#ffcf8a', 1.35, V3(-2, 8, 8), 12);

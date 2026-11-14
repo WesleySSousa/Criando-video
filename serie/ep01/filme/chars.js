@@ -32,7 +32,7 @@ export const PAL = {
 export const SPEC = {
   teco_real: { skin: PAL.skin, top: PAL.tee, pants: PAL.shorts, bare: true, shoe: PAL.chin, hair: 'messy', bulk: 1, bags: 0 },
   teco_av: { skin: PAL.skin, top: PAL.shirt, vest: true, pants: PAL.pants, shoe: PAL.boot, hair: 'spiky', bulk: 1, scarf: true, pack: true },
-  rogerio: { skin: PAL.skinD, top: PAL.polo, pants: PAL.jeans, shoe: PAL.leather, hair: 'grey', beard: true, glasses: true, bulk: 1.3, k: 1.03 },
+  rogerio: { skin: PAL.skinD, top: PAL.polo, pants: PAL.jeans, shoe: PAL.leather, hair: 'grey', beard: true, glasses: true, bulk: 1.55, k: 1.03 },
   sandra: { skin: PAL.skinM, top: PAL.mustard, apron: true, pants: PAL.jeans, shoe: PAL.leather, hair: 'bun', bulk: .95, k: .94 },
   // figurantes (jogadores/clientes): variam so a roupa
   npc1: { skin: PAL.skinM, top: R(['#3a2a5a', '#5a3f8a', '#7a5ab0']), vest: false, pants: PAL.pants, shoe: PAL.boot, hair: 'spiky', bulk: 1, k: 1 },
@@ -52,11 +52,11 @@ export const POSES = {
   hold_mug: P_({ ne: [25, 22], nh: [28.5, 22], item: 'mug', fe: [21.5, 24.5], fh: [24, 31] , faixa: 'near'}),
   grab_visor: P_({ ne: [23, 24], nh: [24.5, 31], fe: [27, 21.5], fh: [32.5, 22.5], fhand: 'open', faixa: 'near' }),
   visor_arm: P_({ ne: [22, 24], nh: [24, 31], fe: [21.5, 24.5], fh: [24.5, 29.5], fitem: 'visor_hip', faixa: 'near' }),
-  door: P_({ head: [23, 7], ne: [26, 22.5], nh: [30.5, 25], faixa: 'near', fitem: 'visor_hip', fe: [21, 24.5], fh: [23.5, 30], face: 'worry', dream: 1 }),
-  door_whisper: P_({ head: [23.5, 7.2], ne: [26, 22.5], nh: [30.5, 25], faixa: 'near', fitem: 'visor_hip', fe: [21, 24.5], fh: [23.5, 30], face: 'whisper' }),
+  door: P_({ head: [22, 7.2], ne: [19, 23.5], nh: [13.4, 26], faixa: 'near', fitem: 'visor_hip', fe: [21, 24.5], fh: [23.5, 30], face: 'worry' }),
+  door_whisper: P_({ head: [22.4, 7.3], ne: [19, 23.5], nh: [13.4, 26], faixa: 'near', fitem: 'visor_hip', fe: [21, 24.5], fh: [23.5, 30], face: 'whisper' }),
   sit_visor: P_({ head: [22.5, 12.5], sh: [21.5, 20.5], hip: [18.5, 36.5], ne: [26, 28], nh: [31, 25], fe: [24, 29], fh: [29.5, 26], item: 'visor_up', faixa: 'near', nk: [29.5, 37.5], na: [29, 51], fk: [27, 38.5], fa: [26.5, 51], face: 'n' }),
-  sit_dad: P_({ head: [22, 10.5], sh: [21, 18.5], hip: [17.5, 35], nk: [29, 36], na: [29, 50.5], fk: [27, 37], fa: [26.5, 50.5], ne: [25.5, 26], nh: [31, 29], fe: [24.5, 27], fh: [30, 29.5], hand: 'flat', face: 'stern' }),
-  sit_dad_nod: P_({ head: [22, 11.4], sh: [21, 18.8], hip: [17.5, 35], nk: [29, 36], na: [29, 50.5], fk: [27, 37], fa: [26.5, 50.5], ne: [25.5, 26], nh: [31, 29], fe: [24.5, 27], fh: [30, 29.5], hand: 'flat', face: 'stern' }),
+  sit_dad: P_({ head: [22, 12.5], sh: [21, 20.5], hip: [17.5, 37], nk: [29.5, 38], na: [29.5, 51], fk: [27.5, 39], fa: [27, 51], ne: [25.5, 28], nh: [32, 31.5], fe: [24.5, 29], fh: [31, 31.5], hand: 'flat', face: 'stern' }),
+  sit_dad_nod: P_({ head: [22, 13.4], sh: [21, 20.8], hip: [17.5, 37], nk: [29.5, 38], na: [29.5, 51], fk: [27.5, 39], fa: [27, 51], ne: [25.5, 28], nh: [32, 31.5], fe: [24.5, 29], fh: [31, 31.5], hand: 'flat', face: 'stern' }),
   // ---- avatar: galho (mao direita = braco proximo) ----
   idle_g: P_({ ne: [24, 23], nh: [27, 28], item: 'galho', gang: -25, hand: 'fist', face: 'n' }),
   idle_g_b: P_({ head: [22, 7.6], sh: [21.5, 15.6], ne: [24, 23.6], nh: [27, 28.6], item: 'galho', gang: -22, hand: 'fist' }),
@@ -78,6 +78,13 @@ export const POSES = {
   whistle: P_({ face: 'whistle', ne: [24, 23], nh: [27, 28], item: 'galho', gang: -25, hand: 'fist' }),
   hold_gosma: P_({ head: [24, 12], sh: [22.5, 19], hip: [19, 34], nk: [24, 43.5], na: [24, 52], fk: [17.5, 43.5], fa: [16.5, 52], ne: [27, 27], nh: [29.5, 32], hand: 'open', item: 'gosma', face: 'n' }),
   sit: P_({ head: [22, 10.5], sh: [21, 18.5], hip: [17.5, 35], nk: [29, 36], na: [29, 50.5], fk: [27, 37], fa: [26.5, 50.5], ne: [25.5, 26], nh: [31, 29], fe: [24.5, 27], fh: [30, 29.5], face: 'stern' }),
+  idle_closed: P_({ ne: [24, 23], nh: [27, 28], item: 'galho', gang: -25, hand: 'fist', face: 'closed' }),
+  menu_r: P_({ ne: [24, 23], nh: [27, 28], item: 'galho', gang: -25, hand: 'fist', fe: [27, 21.5], fh: [33.6, 21], fhand: 'point', face: 'n' }),
+  fist_chest: P_({ ne: [24, 23], nh: [27, 28], item: 'galho', gang: -25, hand: 'fist', fe: [24.6, 22], fh: [26.2, 18.6], fhand: 'fist', face: 'worry' }),
+  put: P_({ head: [22.6, 7.2], ne: [27, 22.6], nh: [33.6, 22.8], hand: 'open', fe: [24, 24], fh: [27, 28.6], face: 'n' }),
+  walk_mug: P_({ nk: [25, 42.5], na: [28, 51], fk: [17, 43], fa: [14.5, 51], ne: [22.5, 24.4], nh: [24.5, 30.6], fe: [25, 22.6], fh: [29, 22.2], fitem: 'mug', faixa: 'far', fhand: 'fist' }),
+  walk_mug_b: P_({ nk: [18, 43], na: [15.5, 51.5], fk: [24, 42.5], fa: [27, 51], ne: [22.5, 24.4], nh: [24.5, 30.6], fe: [25, 22.6], fh: [29, 22.2], fitem: 'mug', faixa: 'far', fhand: 'fist' }),
+  sink: P_({ head: [23, 7.6], ne: [22.5, 24.4], nh: [24.5, 30.6], fe: [27, 23.6], fh: [32.6, 24.4], fitem: 'mug', faixa: 'far', fhand: 'fist', face: 'n' }),
   // ---- mae ----
   point_clock: P_({ ne: [26, 17.5], nh: [31, 11.5], hand: 'point', face: 'worry', fe: [21, 24.5], fh: [23, 30] }),
   point_clock_b: P_({ ne: [26.4, 17.2], nh: [31.4, 11.2], hand: 'point', face: 'worry', fe: [21, 24.5], fh: [23, 30] }),
@@ -94,6 +101,7 @@ export const POSES = {
 const faceDraw = (P, hx, hy, face, spec) => {
   const brow = (dy = 0, a = 0) => P.rect(hx + 1.4, hy - 1.6 + dy + a, 2.5, .6, (spec.hairC || PAL.hair)(.2, 0, 0));
   const eye = (cl) => { if (cl) { P.rect(hx + 1.9, hy - .1, 2, .5, INK); return; } P.rect(hx + 2.1, hy - .4, 1, 1.5, INK); P.set(hx + 2.5, hy - .4, hex('#f2e8dc')); };
+  const closed = face === 'closed'; if (closed) { P.rect(hx + 1.9, hy - .1, 2, .5, INK); P.rect(hx + 1.4, hy - 1.4, 2.4, .5, (spec.hairC || PAL.hair)(.2, 0, 0)); P.rect(hx + 2.4, hy + 3, 1.4, .5, hex('#5a2a22')); return; }
   const mouth = (w = 1.4, dy = 3, col = '#5a2a22', h = .5) => P.rect(hx + 2.4, hy + dy, w, h, hex(col));
   if (face === 'smile') { eye(); brow(0); P.rect(hx + 2.2, hy + 3, 2, .5, hex('#5a2a22')); P.set(hx + 4.2, hy + 2.6, hex('#5a2a22')); }
   else if (face === 'pant') { eye(); brow(.7, 0); P.rect(hx + 2.5, hy + 2.9, 1.5, 1.1, hex('#3a1612')); }
@@ -353,6 +361,11 @@ function mkTree(seed = 1, kind = 0) {
 }
 function mkBush() { return mkk(30, 16, (P) => { const gr = R(['#14402c', '#22703c', '#3ea055', '#7ad088']); for (const [cx, cy, r] of [[9, 10, 6.4], [17, 8, 7.4], [24, 11, 5.8]]) P.ellipse(cx, cy, r, r * .8, (x, y, dx, dy) => gr(.6 - dy * .4 + (h2(x * 2 | 0, y * 2 | 0, 5) > .82 ? .16 : 0), x, y)); for (const [x, y] of [[8, 7], [19, 5], [24, 9]]) P.rect(x, y, 1.4, 1.4, hex('#ffe6f0')); }, .3); }
 function mkTuft(v = 0) { return mkk(14, 12, (P) => { const gr = R(['#1a5a34', '#2a8a4a', '#58c070', '#a0e8a0']); for (let i = 0; i < 6; i++) { const x = 2 + i * 1.8, h = 5 + h2(i, v, 4) * 6; P.poly([[x - 1, 12], [x + (i - 2.5) * .6, 12 - h], [x + 1, 12]], gr(.5 + h2(i, v, 5) * .45, 0, 0)); } }, .25); }
+function mkCave() { return mkk(64, 52, (P, E) => { const rk = R(['#0a1412', '#16282a', '#26403f', '#3c5a56']); for (let y = 0; y < 52; y++) for (let x = 0; x < 64; x++) { const cx = x - 32, dome = Math.hypot(cx / 31, (y - 52) / 50); if (dome > 1) continue; const hole = Math.hypot((x - 32) / 11, (y - 40) / 17) < 1 || (y > 40 && Math.abs(x - 32) < 11); if (hole) { P.set(x, y, hex(y < 44 ? '#05080a' : '#04070a')); continue; } P.set(x, y, rk(.55 - dome * .35 + (h2(x >> 1, y >> 1, 5) - .5) * .35, x, y)); }
+  for (const [x, y] of [[20, 44], [44, 46], [24, 30], [41, 28]]) { P.rect(x, y, 2, 3, hex('#3dffa6')); E.rect(x, y, 2, 3, hex('#3dffa6')); P.rect(x - 1, y - 1, 4, 1, hex('#1fa874')); } }, .3); }
+function mkCity() { return mkk(76, 44, (P, E) => { const wl = R(['#2a2040', '#3e3060', '#584a86', '#7a6aa8']), rf = R(['#14101e', '#241c36', '#3a2c54']); let x = 2; for (const [w, h] of [[16, 26], [14, 34], [18, 22], [12, 30], [10, 20]]) { P.rect(x, 44 - h, w, h, (xx, yy) => wl(.5 + (h2(xx, yy >> 2, 3) - .5) * .3 - (xx - x) / w * .15, xx, yy)); P.poly([[x - 1, 44 - h], [x + w / 2, 44 - h - 8], [x + w + 1, 44 - h]], (xx, yy) => rf(.5, xx, yy)); for (let wy = 44 - h + 5; wy < 40; wy += 8) for (let wx = x + 3; wx < x + w - 3; wx += 6) { P.rect(wx, wy, 3, 4, hex('#ffd070')); E.rect(wx, wy, 3, 4, hex('#ffb040')); } x += w + 2; } }, .3); }
+function mkLamp() { return mkk(14, 44, (P, E) => { P.rect(6, 12, 2, 32, PAL.leather(.6, 0, 0)); P.rect(4, 42, 6, 2, PAL.leather(.4, 0, 0)); P.rect(3, 2, 8, 2, PAL.brass(.8, 0, 0)); P.rect(3, 5, 8, 8, hex('#ffd070')); E.rect(3, 5, 8, 8, hex('#ffb040')); P.rect(4, 6, 6, 5, hex('#fff2b0')); E.rect(4, 6, 6, 5, hex('#ffe090')); P.rect(3, 13, 8, 1, PAL.brass(.5, 0, 0)); }, .3); }
+function mkAsh() { return mkk(34, 12, (P, E) => { P.poly([[3, 8], [12, 4], [20, 6], [16, 11], [6, 11]], (x, y) => hex(y < 7 ? '#d8cfc0' : '#8a8078')); P.poly([[18, 6], [28, 3], [31, 8], [23, 10]], hex('#b8ae9e')); for (const [x, y] of [[8, 8], [14, 7], [24, 6], [27, 9], [20, 9], [11, 10]]) { P.rect(x, y, 2, 1, hex('#3a3430')); } for (const [x, y] of [[9, 9], [22, 8], [15, 10]]) { P.set(x, y, hex('#ff7a30')); E.set(x, y, hex('#ff7a30')); } for (const [x, y] of [[5, 3], [13, 1], [24, 1], [30, 5]]) P.set(x, y, hex('#9a928a')); }, .25); }
 function mkMarker() { return mkk(8, 16, (P) => { P.rect(3, 4, 2, 12, PAL.wood(.6, 0, 0)); P.rect(0, 1, 8, 5, PAL.wood(.8, 0, 0)); P.rect(1, 2, 6, 1, PAL.wood(.3, 0, 0)); }, .3); }
 
 const SPRITE_BUILD = {
@@ -364,7 +377,7 @@ export function sprite(kind, id, pose = 'stand', o = {}) {
   let s;
   if (kind === 'slime') s = mkSlime(id, +pose || 0);
   else if (kind === 'lying') s = mkLying(id === 'visor');
-  else if (kind === 'item') s = { puddle: mkPuddle, gosma: () => mkGosma(), gosmaD: () => mkGosma(true), po: mkPo, mug: mkMug, visor: mkVisorItem, plate: mkPlate, coin: mkCoin, bush: mkBush, marker: mkMarker, tree0: () => mkTree(1, 0), tree1: () => mkTree(4, 1), tuft0: () => mkTuft(0), tuft1: () => mkTuft(3) }[id]();
+  else if (kind === 'item') s = { puddle: mkPuddle, gosma: () => mkGosma(), gosmaD: () => mkGosma(true), po: mkPo, mug: mkMug, visor: mkVisorItem, plate: mkPlate, coin: mkCoin, bush: mkBush, marker: mkMarker, cave: mkCave, city: mkCity, lamp: mkLamp, ash: mkAsh, tree0: () => mkTree(1, 0), tree1: () => mkTree(4, 1), tuft0: () => mkTuft(0), tuft1: () => mkTuft(3) }[id]();
   else s = SPRITE_BUILD[kind](id, pose, o);
   return (cache[key] = s);
 }

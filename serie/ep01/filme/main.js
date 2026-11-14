@@ -34,7 +34,7 @@ const panelMesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBa
 const panelGlow = glow('#b6ccf4', 1.5, .5); scene.add(panelGlow); panelGlow.visible = false;
 // pool de atores
 const pool = []; let used = 0; const sid = new WeakMap(); let sidN = 0;
-function slot() { if (used >= pool.length) { const g = new THREE.Group(), sh = blob(.4, .5); sh.position.y = .015; g.add(sh); g.userData.cam = true; scene.add(g); pool.push({ g, sh, meshes: new Map() }); } return pool[used++]; }
+function slot() { if (used >= pool.length) { const g = new THREE.Group(), sh = blob(.4, .5); sh.position.y = .015; g.add(sh); g.userData.cam = true; scene.add(g); const gl = glow('#ffd070', .9, .8); gl.visible = false; g.add(gl); pool.push({ g, sh, gl, meshes: new Map() }); } return pool[used++]; }
 function place(sl, sp, k, o) {
   const key = (sid.get(sp) ?? (sid.set(sp, ++sidN), sidN)) + ':' + k + ':' + (o.ay ?? 0);
   for (const m of sl.meshes.values()) m.visible = false;
@@ -48,7 +48,7 @@ function step(arr, t) { if (arr == null) return null; if (!Array.isArray(arr)) r
 function lin(arr, t) { if (arr == null) return null; if (!Array.isArray(arr)) return arr; if (t <= arr[0][0]) return arr[0][1]; for (let i = 0; i < arr.length - 1; i++) { const [a, va] = arr[i], [b, vb] = arr[i + 1]; if (t <= b) { return lerp(va, vb, (t - a) / Math.max(1e-6, b - a)); } } return arr[arr.length - 1][1]; }
 const fmtMoney = c => (Math.round(c) / 100).toFixed(2).replace('.', ',');
 const fmtCron = s => { s = Math.max(0, Math.floor(s + 1e-6)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
-function evalState(st, t) { const o = {}; for (const k in st) { const v = st[k]; if (k === 'moneyLin') o.money = fmtMoney(lin(v, t)); else if (Array.isArray(v) && Array.isArray(v[0])) o[k] = step(v, t); else o[k] = v; } return o; }
+function evalState(st, t) { const o = {}; for (const k in st) { const v = st[k]; if (k === 'blinkFrom') o.cartaBlink = (t >= v && Math.floor(t * 4) % 2 === 0) ? 1 : 0; else if (k === 'moneyLin') o.money = fmtMoney(lin(v, t)); else if (Array.isArray(v) && Array.isArray(v[0])) o[k] = step(v, t); else o[k] = v; } return o; }
 const findShot = t => SHOTS.find(s => t >= s.t0 && t < s.t1) || (t < SHOTS[0].t0 ? SHOTS[0] : SHOTS[SHOTS.length - 1]);
 function camAt(keys, t) {
   let a = keys[0], b = keys[0], u = 0;
@@ -64,12 +64,13 @@ function posAt(keys, t) { if (!keys) return [0, 0, 0]; if (!Array.isArray(keys[0
 const hudC = document.createElement('canvas'); hudC.width = 150; hudC.height = 20; const hudG = hudC.getContext('2d');
 const chipC = document.createElement('canvas'); chipC.width = 70; chipC.height = 16; const chipG = chipC.getContext('2d');
 const mapC = document.createElement('canvas'); mapC.width = 108; mapC.height = 192; const mapG = mapC.getContext('2d');
-let floatsNow = [], textsNow = [], projCam = camera;
+let floatsNow = [], textsNow = [], trailsNow = [], projCam = camera;
 const proj = (p) => { const v = V3(p[0], p[1], p[2]).project(camera); return [(v.x * .5 + .5) * 1080, (1 - (v.y * .5 + .5)) * 1920]; };
 
 function renderWorld(t, sh) {
   const setName = sh.set;
   for (const k in SETS) SETS[k].group.visible = (k === setName);
+  if (setName === 'mapa') { scene.background = new THREE.Color('#1a1640'); scene.fog.density = 0; }
   used = 0; floatsNow = [];
   // camera
   const ck = camAt(sh.cam, t); camera.position.copy(ck.pos); camera.up.set(0, 1, 0); camera.lookAt(ck.tgt); camera.fov = ck.fov; camera.updateProjectionMatrix(); camera.updateMatrixWorld();
@@ -88,7 +89,7 @@ function renderWorld(t, sh) {
     sl.g.position.set(x, y, z); sl.sh.visible = sh0 && (a.blob ?? true); sl.sh.scale.set(k * (a.kind === 'slime' ? .9 : 1.1), 1, k); sl.g.visible = true;
     E[a.id || ''] = { x, y, z, k, g: sl.g, a };
     if (a.focus) focus = V3(x, y + (a.fy ?? .9), z);
-    if (a.glow) { const gl = a.glow; sl.g.userData.glowT = gl; }
+    sl.gl.visible = !!a.glow; if (a.glow) { sl.gl.position.set(0, .3, .1); sl.gl.scale.set(1.1, 1.1, 1); }
   }
   for (let i = used; i < pool.length; i++) pool[i].g.visible = false;
   const fp = sh.focus ? V3(...sh.focus) : (focus || ck.tgt.clone());
@@ -97,12 +98,12 @@ function renderWorld(t, sh) {
   // set (luz, nevoa, ceu)
   const hour = lin(sh.hour, t) ?? 8, st = {};
   if (sh.price) st.price = evalState(sh.price, t); if (sh.coinT != null) st.coinT = sh.coinT;
-  const env = SETS[setName].apply({ hour, camPos: camera.position, corredor: !!sh.corredor, fogK: sh.fogK }, fp, t, st) || {};
+  const env = SETS[setName] ? SETS[setName].apply({ hour, camPos: camera.position, corredor: !!sh.corredor, fogK: sh.fogK }, fp, t, st) : { fog: '#1a1640', fd: 0 };
   // brilho no personagem real/ gosma (brilho aditivo)
   // flash de impacto
   let flash = 0, flashCol = '#9ad8ff';
   for (const f of (sh.flash || [])) { const u = (t - f[0]) / f[1]; if (u >= 0 && u < 1) { flash = Math.max(flash, (1 - u) * (f[3] ?? .5)); flashCol = f[2] || flashCol; } }
-  scene.fog.color.set(env.fog || '#fff'); scene.fog.density = env.fd ?? .02; scene.background = new THREE.Color(env.fog || '#fff'); renderer.toneMappingExposure = (env.exp ?? 1.15) * (sh.exposure ?? 1);
+  scene.fog.color.set(env.fog || '#fff'); scene.fog.density = env.fd ?? .02; scene.background = new THREE.Color(env.fog || '#fff'); renderer.toneMappingExposure = (env.exp ?? 1.15) * (lin(sh.exposure, t) ?? 1);
   // menu (painel em mundo)
   const mn = sh.menu; panelMesh.visible = panelGlow.visible = false;
   if (mn && t >= (mn.show?.[0] ?? -1) && t < (mn.show?.[1] ?? 1e9)) {
@@ -115,6 +116,13 @@ function renderWorld(t, sh) {
   // overlay do mundo: flutuantes
   for (const f of (sh.floats || [])) { const u = (t - f.t) / (f.dur ?? .9); if (u < 0 || u > 1) continue; const base = typeof f.at === 'string' ? E[f.at] : { x: f.at[0], y: f.at[1], z: f.at[2] }; if (!base) continue; const hgt = (typeof f.at === 'string' ? (f.at === 'slime' ? .55 : 1.9) : 0); const pp = proj([base.x, (base.y || 0) + hgt + u * .5, base.z]); floatsNow.push({ ...f, x: pp[0], y: pp[1], u }); }
   // barra do slime
+  // rastro da mao (curto) e da ponta do galho (longo): amostra as poses recentes do ator
+  trailsNow = [];
+  if (sh.trails && E[sh.trails.actor]) { const e = E[sh.trails.actor], a = e.a, flipS = (a.face ?? 1) < 0 ? -1 : 1, sc = (a.k ?? 1) * .9 * CH.specK(a.spec) / 30;
+    const W_ = (px, py) => [e.x + flipS * (px - 23) * sc, e.y + (57 - py) * sc, e.z], ks = (a.pose || []).filter(k => CH.POSES[k[1]] && CH.POSES[k[1]].nh);
+    const pts = { hand: [], tip: [] };
+    for (let i = 0; i < ks.length - 1; i++) { const A = ks[i], B = ks[i + 1]; if (B[0] < t - .9 || A[0] > t) continue; const PA = CH.POSES[A[1]], PB = CH.POSES[B[1]]; for (let s = 0; s <= 6; s++) { const u = s / 6, tt = lerp(A[0], B[0], u); if (tt > t || tt < t - .9) continue; const hx = lerp(PA.nh[0], PB.nh[0], u), hy = lerp(PA.nh[1], PB.nh[1], u), ang = lerp(PA.gang ?? -25, PB.gang ?? -25, u) * Math.PI / 180; pts.hand.push({ t: tt, p: proj(W_(hx, hy)) }); pts.tip.push({ t: tt, p: proj(W_(hx + Math.cos(ang) * 22, hy + Math.sin(ang) * 22)) }); } }
+    trailsNow = [{ pts: pts.hand, col: '#ffe9a8', w: 6 }, { pts: pts.tip, col: '#ffffff', w: 10 }].filter(x => x.pts.length > 1).map(x => ({ ...x, now: t })); }
   const sb = sh.slimebar; let slimeBar = null;
   if (sb && E[sb.actor] && !(step(E[sb.actor].a.pose, t) === 'gone' || ['puddle'].includes(step(E[sb.actor].a.pose, t)))) { const e = E[sb.actor], pp = proj([e.x, e.y + .62, e.z]); slimeBar = { x: pp[0], y: pp[1], hp: step(sb.hp, t), max: sb.max ?? 20 }; }
   // post
@@ -170,12 +178,14 @@ function overlay(t, sh, wr) {
     pix(hudC, 40, 280, 4);
     if (sh.cron) { H.drawChip(chipG, 'cron', fmtCron(lin(sh.cron, t))); pix(chipC, 40, 372, 4); }
     if (sh.cnt) { H.drawChip(chipG, 'cnt', step(sh.cnt, t)); pix(chipC, 340, 372, 4); }
+    if (sh.bag && step(sh.bag, t)) { H.drawChip(chipG, 'bag', step(sh.bag, t)); pix(chipC, 640, 372, 4); }
   }
   if (sh.set === 'mapa') { H.drawMap(mapG, { lvl: 3 }); pix(mapC, 0, 0, 10); }
   // flutuantes (dano, cura)
   og.imageSmoothingEnabled = false;
   for (const f of floatsNow) { const sc = f.sc ?? 6, a = 1 - ss((f.u - .6) / .4), w = H.textW(f.text, sc); og.globalAlpha = a; H.ptext(og, f.text, f.x - w / 2, f.y - f.u * 40, f.color || '#ffffff', sc, '#10182a'); og.globalAlpha = 1; }
   if (wr.slimeBar) { const b = wr.slimeBar; const w = 100, x = b.x - w / 2, y = b.y - 30; og.fillStyle = '#10182a'; og.fillRect(x - 4, y - 4, w + 8, 24); og.fillStyle = '#4a2a2a'; og.fillRect(x, y, w, 16); og.fillStyle = '#e0604a'; og.fillRect(x, y, w * clamp(b.hp / b.max), 16); og.fillStyle = '#ff9a82'; og.fillRect(x, y, w * clamp(b.hp / b.max), 4); H.ptext(og, b.hp + '/' + b.max, b.x - H.textW(b.hp + '/' + b.max, 3) / 2, y - 30, '#ffffff', 3, '#10182a'); }
+  for (const tr of trailsNow) { og.lineCap = 'round'; og.lineJoin = 'round'; for (let i = 1; i < tr.pts.length; i++) { const a = tr.pts[i - 1], b = tr.pts[i], age = tr.now - b.t, al = clamp(1 - age / .85); og.globalAlpha = al * .85; og.strokeStyle = tr.col; og.lineWidth = tr.w * al; og.beginPath(); og.moveTo(a.p[0], a.p[1]); og.lineTo(b.p[0], b.p[1]); og.stroke(); } og.globalAlpha = 1; }
   drawExtras(t, sh);
   drawSubtitle(t);
   if (Q.get('safe')) { og.strokeStyle = 'rgba(255,0,0,.8)'; og.lineWidth = 3; og.strokeRect(0, 250, 930, 1290); og.strokeStyle = 'rgba(0,200,255,.8)'; og.beginPath(); og.moveTo(0, 1250); og.lineTo(1080, 1250); og.moveTo(0, 1500); og.lineTo(1080, 1500); og.stroke(); }

@@ -116,7 +116,7 @@ export function shingles(w, h, o = {}) {
   return P.done();
 }
 export function ground(w, h, o = {}) {   // dirt/grass mix
-  const P = new PX(w, h), s = o.seed ?? 13, G = ramp(o.grass ?? ['#0f1a14', '#1a2b1c', '#27402a', '#3a5a36', '#557a46']), D = ramp(o.dirt ?? ['#1d1611', '#33271c', '#4d3b28', '#6a5236']);
+  const P = new PX(w, h), s = o.seed ?? 13, G = ramp(o.grass ?? ['#0f1a14', '#1a2b1c', '#27402a', '#3a5a36', '#557a46'], .16), D = ramp(o.dirt ?? ['#1d1611', '#33271c', '#4d3b28', '#6a5236'], .16);
   const mask = o.mask ?? (() => 1);
   P.fill((x, y) => {
     const m = mask(x / w, y / h) + (fbm(x * .08, y * .08, s) - .5) * .8;

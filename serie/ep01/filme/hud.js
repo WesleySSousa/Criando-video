@@ -70,7 +70,7 @@ export function drawPanel(g, kind, st = {}, t = 0) {
     // curva de preco das ultimas 24 h
     const pts = st.curve ?? [.5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5];
     R_(g, 8, 36, 96, 58, '#161e32'); for (let i = 1; i < 4; i++) R_(g, 8, 36 + i * 14.5, 96, 1, '#222c42');
-    const n = pts.length; for (let i = 0; i < n; i++) { const x = 9 + i * (94 / (n - 1)), y = 90 - pts[i] * 50; R_(g, x - .5, y, 2, 94 - y, i === st.mark ? '#3a4a70' : '#243050'); R_(g, x - 1, y - 1, 3, 3, i >= (st.drop ?? 99) ? COL.red : COL.drop); if (i) { const px = 9 + (i - 1) * (94 / (n - 1)), py = 90 - pts[i - 1] * 50; const steps = 6; for (let k = 0; k <= steps; k++) R_(g, px + (x - px) * k / steps, py + (y - py) * k / steps, 2, 2, COL.drop); } }
+    const n = pts.length; for (let i = 0; i < n; i++) { const x = 9 + i * (94 / (n - 1)), y = 90 - pts[i] * 50; R_(g, x - .5, y, 2, 94 - y, i === st.mark ? '#3a4a70' : '#243050'); R_(g, x - 1, y - 1, 3, 3, (st.red || []).includes(i) ? COL.red : COL.drop); if (i) { const px = 9 + (i - 1) * (94 / (n - 1)), py = 90 - pts[i - 1] * 50; const steps = 6; for (let k = 0; k <= steps; k++) R_(g, px + (x - px) * k / steps, py + (y - py) * k / steps, 2, 2, COL.drop); } }
     if (st.mark != null) { const mx = 9 + st.mark * (94 / (n - 1)); R_(g, mx, 36, 1, 58, COL.warn); disc(g, mx, 90 - pts[st.mark] * 50, 3, COL.warn); }
     ICON.gosma(g, 14, 17, .9); ptext(g, st.price ?? '0,04', 26, 10, COL.paper, 3, '#10182a');
     if (st.arrow) ICON.seta(g, 84, 18, false);
@@ -80,7 +80,7 @@ export function drawPanel(g, kind, st = {}, t = 0) {
     for (let i = 0; i < 4; i++) for (let j = 0; j < 2; j++) { const x = 8 + i * 24, y = 8 + j * 26; R_(g, x, y, 22, 24, COL.slate2); R_(g, x, y, 22, 1, COL.slate3); }
     if (st.gosma) { ICON.gosma(g, 19, 20, .9); ptext(g, String(st.gosma), 20, 29, COL.paper); }
     if (st.po) { ICON.po(g, 43, 20); ptext(g, String(st.po), 44, 29, COL.paper); }
-    if (st.tag) { R_(g, 8, 62, 96, 15, COL.slate2); ICON.moeda(g, 16, 70, 3); ptext(g, st.tag, 24, 66, COL.paper, 1); if (st.tag2) { ptext(g, st.tag2, 62, 66, COL.silver); } }
+    if (st.tag) { R_(g, 8, 62, 96, 15, COL.slate2); ICON.moeda(g, 16, 70, 3); ptext(g, st.tag, 24, 66, COL.paper, 1); if (st.tag2) { ICON.gosma(g, 66, 69, .45); ptext(g, st.tag2, 74, 66, COL.silver); } }
   } else if (kind === 'cartas') {
     R_(g, 8, 8, 96, 84, COL.slate2); R_(g, 10, 10, 92, 80, '#ece4d0'); R_(g, 10, 10, 92, 2, '#d4c9aa');
     ICON.dourada(g, 32, 38); ptext(g, 'R$ 50,00', 48, 22, '#2a2010', 2); R_(g, 46, 40, 52, 1, '#b4a888');
@@ -109,6 +109,7 @@ export function drawChip(g, kind, s) {
   g.imageSmoothingEnabled = false; g.clearRect(0, 0, 70, 16); R_(g, 0, 0, 70, 14, COL.silver2); R_(g, 1, 1, 68, 12, '#10182a');
   if (kind === 'cron') { ICON.relogio(g, 9, 7); ptext(g, s, 19, 3, COL.paper); }
   if (kind === 'cnt') { ICON.gosma(g, 9, 7, .5); ptext(g, s, 19, 3, COL.paper); }
+  if (kind === 'bag') { ICON.mochila(g, 9, 7); ptext(g, s, 22, 3, COL.paper); }
 }
 // mapa (tela cheia, vista de cima): 108x192 px
 export function drawMap(g, s = {}) {
