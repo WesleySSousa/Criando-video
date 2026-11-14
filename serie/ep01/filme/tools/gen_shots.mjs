@@ -4,19 +4,27 @@
 import fs from 'fs'; import path from 'path'; import { fileURLToPath } from 'url';
 const HERE = path.dirname(fileURLToPath(import.meta.url)), ROOT = path.resolve(HERE, '..'), EP = path.resolve(ROOT, '..');
 
-// ---------- tempos dos planos (roteiro) e mapeamento para a linha do tempo real ----------
-const RS = [0, 2.8, 5.6, 9.4, 13.2, 16.8, 19.8, 22, 25, 28, 31, 34, 36, 39, 42, 45, 48, 51, 53, 56, 59, 61.8, 63.6, 66.6, 69.6, 72.6, 75, 77.5, 80.5, 83.5, 85.5, 88.5, 91.5, 94.5, 97.5, 100.5, 103.5, 106.5, 109.5, 113, 116];
-let NS = RS.slice(), SRC = 'roteiro';
+// ---------- tempos dos planos ----------
+// Segmentos de projeto (tempo do roteiro rev.2) -> janelas finais. Planos 3 e 5 divididos (rev.3): 3a/3b/3c, 5a/5b.
+const SEG = [['1', 0, 2.8], ['2', 2.8, 5.6], ['3a', 5.6, 6.9], ['3b', 6.9, 8.2], ['3c', 8.2, 9.4], ['4', 9.4, 13.2], ['5a', 13.2, 15], ['5b', 15, 16.8]];
+const RS0 = [16.8, 19.8, 22, 25, 28, 31, 34, 36, 39, 42, 45, 48, 51, 53, 56, 59, 61.8, 63.6, 66.6, 69.6, 72.6, 75, 77.5, 80.5, 83.5, 85.5, 88.5, 91.5, 94.5, 97.5, 100.5, 103.5, 106.5, 109.5, 113, 116];
+RS0.slice(0, -1).forEach((a, i) => SEG.push([String(6 + i), a, RS0[i + 1]]));
+let NEW = {}, SRC = 'roteiro';   // id -> [ini, fim]
+SEG.forEach(([id, a, b]) => { NEW[id] = [a, b]; });
 try {
   const f = path.join(ROOT, 'tempos.json');
   if (fs.existsSync(f)) {
     let j = JSON.parse(fs.readFileSync(f, 'utf8')); j = Array.isArray(j) ? j : (j.planos || j.shots || j.tempos || Object.values(j).find(Array.isArray));
-    const by = {};
-    for (const e of j) { const n = parseInt(e.plano ?? e.n ?? e.shot ?? e.id), a = e.inicio ?? e.ini ?? e.t0 ?? e.start ?? e.t, b = e.fim ?? e.t1 ?? e.end; if (!(n >= 1 && n <= 40) || a == null || b == null) continue; by[n] = by[n] || [1e9, -1]; by[n][0] = Math.min(by[n][0], +a); by[n][1] = Math.max(by[n][1], +b); }
-    if (Object.keys(by).length === 40) { NS = [by[1][0]]; for (let n = 1; n <= 40; n++) NS.push(by[n][1]); SRC = 'tempos.json'; }
+    const by = {}, byN = {};
+    for (const e of j) { const id = String(e.id ?? e.plano ?? e.n), n = parseInt(e.plano ?? e.n ?? id), a = +(e.inicio ?? e.ini ?? e.t0 ?? e.start ?? e.t), b = +(e.fim ?? e.t1 ?? e.end); if (!(n >= 1 && n <= 40) || isNaN(a) || isNaN(b)) continue; by[id] = [a, b]; byN[n] = byN[n] ? [Math.min(byN[n][0], a), Math.max(byN[n][1], b)] : [a, b]; }
+    const N = {};
+    for (const [id] of SEG) { const n = parseInt(id); if (by[id]) N[id] = by[id]; else if (/^\d+$/.test(id) && byN[n]) N[id] = byN[n]; }
+    // 3a/3b/3c e 5a/5b ausentes (tempos antigos): divide o plano pai na proporcao do projeto
+    for (const [par, subs] of [[3, ['3a', '3b', '3c']], [5, ['5a', '5b']]]) if (!subs.every(s => N[s]) && byN[par]) { const [a, b] = byN[par], d0 = NEW[subs[0]][0], d1 = NEW[subs[subs.length - 1]][1]; for (const s of subs) N[s] = [a + (NEW[s][0] - d0) / (d1 - d0) * (b - a), a + (NEW[s][1] - d0) / (d1 - d0) * (b - a)]; }
+    if (SEG.every(([id]) => N[id])) { NEW = N; SRC = 'tempos.json'; }
   }
 } catch (e) { console.error('tempos.json ignorado:', e.message); }
-const W = (t) => { let i = RS.findIndex((a, k) => t >= a && t < RS[k + 1]); if (i < 0) i = t < 0 ? 0 : 39; return NS[i] + (t - RS[i]) / (RS[i + 1] - RS[i]) * (NS[i + 1] - NS[i]); };
+const W = (t) => { let s = SEG.find(([, a, b]) => t >= a && t < b); if (!s) s = t < 0 ? SEG[0] : SEG[SEG.length - 1]; const [id, a, b] = s, [n0, n1] = NEW[id]; return n0 + (t - a) / (b - a) * (n1 - n0); };
 const K = (a) => a.map(([t, ...r]) => [+W(t).toFixed(3), ...r]);
 const cam = (ks) => ks.map(k => ({ ...k, t: +W(k.t).toFixed(3) }));
 const R3 = (x) => +x.toFixed(3);
@@ -62,7 +70,7 @@ const menuAt = (tx, o = {}) => ({ pos: [tx + .99, 1.2, .1], w: .83, ...o });
 
 // ---------- planos ----------
 const S = [];
-const add = (n, sh) => S.push({ n, t0: R3(NS[n - 1]), t1: R3(NS[n]), ...sh });
+const add = (n, sh) => S.push({ n, t0: R3(NEW[String(n)][0]), t1: R3(NEW[String(n)][1]), ...sh });
 
 // 1: quadro-chave do loop. Teco a esquerda, Menu aberto (Carteira 0,68; Carta com 1 fixo)
 const loopCam = C(0, .7, .65, 0, 8.0, 14, 14);
@@ -272,7 +280,7 @@ for (let n = 1; n <= 27; n++) {
   const parts = chunk(text), tot = parts.reduce((s, p) => s + p.length, 0); let a = t0;
   parts.forEach((p, i) => { const d = (t1 - t0) * p.length / tot; subs.push({ t0: R3(a), t1: R3(a + d), text: p, kind: who === 'S' ? 'whisper' : 'narr', line: n, ...(speaker ? { speaker } : {}) }); a += d; });
 }
-const dur = R3(NS[NS.length - 1]);
+const dur = R3(NEW['40'][1]);
 const out = {
   meta: { w: 1080, h: 1920, dur, fps: 24, fonte_tempos: SRC, fonte_legendas: subSrc, nota: 'Gerado por filme/tools/gen_shots.mjs; tempos de plano de filme/tempos.json (se existir) e legendas de audio/vo_times.json (se existir).' },
   speakers: { teco: { name: 'Teco', color: '#E01030', plate: false }, rogerio: { name: 'Rogério', color: '#2a8a9a' }, sandra: { name: 'Sandra', color: '#e0a820' } },
