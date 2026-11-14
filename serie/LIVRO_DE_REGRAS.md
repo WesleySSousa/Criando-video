@@ -11,7 +11,7 @@ R1. Toda narração, fala e texto de cartão são em português do Brasil (pt-BR
 
 R2. Vídeo vertical 1080×1920 em todos os planos, quadros-chave e prévias. — origem: usuário
 
-R3. Cada episódio dura entre 1:20 e 2:00. — origem: usuário
+R3. Cada episódio dura no mínimo 1:20; pode passar de 2:00 (ver R100). — origem: usuário
 
 R4. Todo episódio tem LEGENDA da narração e das falas, sincronizada com a voz (gerada dos tempos reais do áudio), no estilo da série: serifa itálica legível (~56–64 px, contorno/sombra escura), no máx. 2 linhas e ~6–8 palavras por vez, centralizada acima da zona segura de baixo (entre y≈1250 e y≈1500 no 1080×1920), nunca cobrindo o rosto do protagonista. Textos curtos extras também são permitidos (chamadas "manda pra quem…", "A ou B? comenta", rótulos do HUD, nomes, título), sem colidir com a legenda. Falas sussurradas em cena com marca visual distinta (ex.: itálico menor entre aspas). Quando quem fala NÃO é o protagonista, o NOME do personagem aparece logo acima da legenda (plaquinha pequena, na cor do figurino dele), em toda fala dele; narração e falas do protagonista não levam nome. Exportar também o .srt. — origem: usuário (revisado: 'pode escrever na tela' e 'pode pôr legenda')
 
