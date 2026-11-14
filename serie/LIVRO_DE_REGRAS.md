@@ -13,7 +13,7 @@ R2. Vídeo vertical 1080×1920 em todos os planos, quadros-chave e prévias. —
 
 R3. Cada episódio dura entre 1:20 e 2:00. — origem: usuário
 
-R4. Sem legenda da narração (o que é falado não é transcrito na tela). Texto curto na tela É PERMITIDO para reforçar o momento: chamadas ("manda pra quem…", "A ou B? comenta"), números e rótulos do HUD, nomes de lugares/itens, título e capítulo — no máximo ~6 palavras por vez, dentro da zona segura. — origem: usuário (revisado: 'pode escrever na tela')
+R4. Todo episódio tem LEGENDA da narração e das falas, sincronizada com a voz (gerada dos tempos reais do áudio), no estilo da série: serifa itálica legível (~56–64 px, contorno/sombra escura), no máx. 2 linhas e ~6–8 palavras por vez, centralizada acima da zona segura de baixo (entre y≈1250 e y≈1500 no 1080×1920), nunca cobrindo o rosto do protagonista. Textos curtos extras também são permitidos (chamadas "manda pra quem…", "A ou B? comenta", rótulos do HUD, nomes, título), sem colidir com a legenda. Falas sussurradas em cena com marca visual distinta (ex.: itálico menor entre aspas). Exportar também o .srt. — origem: usuário (revisado: 'pode escrever na tela' e 'pode pôr legenda')
 
 R5. A narração é em 1ª pessoa, do protagonista, com a voz "wesley" do ElevenLabs; o usuário é o narrador. — origem: usuário
 

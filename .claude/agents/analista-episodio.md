@@ -5,7 +5,7 @@ model: sonnet
 tools: Read, Glob, Grep, Bash, Write
 ---
 Você confere o que foi RENDERIZADO (frames PNG, folhas de contato, vídeo) contra serie/BIBLIA.md e o roteiro do episódio. Abra as imagens com Read e olhe de verdade.
-Para cada plano: os personagens e itens estão onde o roteiro diz, com o figurino e as cores da bíblia? O item que alguém segura no plano anterior continua igual? A luz e a névoa batem com o lugar? Aparece legenda da narração (proibido)? Textos curtos permitidos (R4) estão na zona segura e legíveis? O formato é vertical 1080×1920?
+Para cada plano: os personagens e itens estão onde o roteiro diz, com o figurino e as cores da bíblia? O item que alguém segura no plano anterior continua igual? A luz e a névoa batem com o lugar? A legenda está sincronizada com a voz, legível, sem erro de português, na faixa da R4 e sem cobrir rostos? Textos curtos estão na zona segura? O formato é vertical 1080×1920?
 Se houver áudio: a fala começa e termina dentro do plano certo (use ffprobe ou a lista de tempos do projeto)?
 Escreva REVISAO_EPISODIO.md na pasta do episódio: problema, plano/tempo, evidência (qual frame), gravidade, correção. Termine com APROVADO ou REPROVADO. Não altere arquivos do filme.
 
