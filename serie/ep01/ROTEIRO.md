@@ -1,65 +1,88 @@
-# BRASA VIVA — Ep. 1 "O Despertar" — Roteiro (80 s)
+# LOGADO — Ep. 1 "Nível 1" — Roteiro (105 s)
 
-Vertical 1080×1920, sem legendas. Voz: "wesley". N = narração do Teco (primeira pessoa, perto do ouvido). S = fala em cena, sempre sussurrada, mais lenta. Todo texto na tela (cartão de capítulo, título) é aplicado em pós-produção: nenhum quadro gerado contém letras. O Menu é só de ícones, sem rótulos.
-Elenco com voz: só o Teco.
-QUADRO-CHAVE = planos 1, 8 e 12 (gerados sem nenhum texto).
-Estado fixo da Brasa de Teco: forte nos planos 1, 3, 4, 8; **trêmula, mas ainda forte (o brilho oscila)** nos planos 9 a 12. Cachecol rubi sempre limpo, nunca toca o chão.
+Vertical 1080×1920, 2.5D Pixel Art, sem legendas. Voz "wesley". N = narração (calma, baixa, ~2,4 pal./s). S = fala em cena do Teco (sussurrada, ~1,6 pal./s). Os pais não têm voz. Texto na tela só em pós ("Nível 1" 22–25 s; "LOGADO" 102,5–105 s); quadros gerados sem letras (HUD só com ícones e números; R$ é símbolo). Cortes na batida de 80 bpm (±0,3 s). Nenhum plano passa de 4 s.
+**QUADROS-CHAVE:** plano 7 (vida real, cozinha/corredor), plano 14 (jogo, luta), plano 37 (jogo, final).
+Elevados (máx. 2): planos 28 e 36. Linhas faladas citadas como [L#] (lista ao fim). Conhecimentos ("O que ele sabe"): economia (17–19), probabilidade (21–22), física (23–25).
 
-| Nº | Tempo | Lugar | Câmera | O que se vê (posição de itens e personagens) | Luz | Som | Fala / narração | Continuidade |
+| Nº | Tempo | Lugar | Câmera | O que se vê | Luz | Som | Fala | Continuidade |
 |---|---|---|---|---|---|---|---|---|
-| 1 **QUADRO-CHAVE** | 0–4 | Praça do Despertar | plano médio, Teco ~60% da altura da tela, câmera baixa e próxima, 3/4 por cima do ombro direito do Teco (~15° para baixo), dolly in lento; foco na mão e no painel | perfil e rosto do Teco, olhos fixos no painel; a mão direita dele abre o Menu (painel quadrado azul-ardósia, moldura prateada, só 4 ícones sem texto: bolsa, mapa, dois elos, círculo); abaixo dos ícones, um espaço cinza liso, vazio, onde devia haver o ícone de sair; em primeiro plano, a mão esquerda fechada em punho na ponta do cachecol rubi (plantio do eco do plano 12) | ouro-pálido, sol alto frio; reflexo prata no painel | vento seco, celesta que entra (L-cut); clique do painel | N [calma, baixa]: "Procurei o botão de sair. Ele não existia." (8 pal.) | Teco: Brasa na cintura esquerda, forte; Espeto às costas; punho esquerdo no cachecol |
-| 2 | 4–11 | Praça do Despertar | PLANO GERAL/ELEVADO ESPECIAL 1 de 2 (escala: quatro mil presos; exceção ao enquadramento padrão): muito alta e muito longe, push lento; faixa sobre um ponto rubi | praça redonda de pedra pálida, fonte seca ao centro, 4000 pontinhos de gente parada; Teco (ponto rubi) no meio-esquerda; cartão de capítulo aplicado em pós (6–10 s) | névoa ouro-pálido, quase sem sombra | murmúrio abafado, vento | N [calma, baixa]: "Quatro mil pessoas acordaram comigo naquela praça." (7) | Teco parado; Lira ainda longe, não vista |
-| 3 | 11–20 | Praça | plano americano, Teco ~60% da altura, baixa e lateral (~10° para baixo), rack focus entre duas lanternas, quadro fixo | em primeiro plano a Brasa de Teco (laranja forte) na cintura esquerda; ao fundo, a ~0,5 m dele, a Brasa de Lira (amarela fraca) na cintura direita dela; Lira (capuz verde) acaba de chegar atrás de Teco e segura a ponta do cachecol rubi; Teco nota e deixa | luz pelas brasas, pequenos halos; sol pálido de fundo | crepitar baixo de brasa, sino fino de UI | N [calma, baixa]: "Na cintura, cada um carregava a própria vida: uma lanterna com uma brasa dentro." (14) | Lira a ~0,5 m, mão na ponta do cachecol (a Corda); Brasa de Teco forte, de Lira fraca |
-| 4 | 20–28 | Praça | plano médio, Teco e Lira ~60% da altura, 3/4 baixa (~15°), travelling lateral lento mostrando perfil de Teco e Lira com a fonte ao fundo | grupo de jogadores em círculo ao redor da fonte; um homem cai de joelhos; Teco à direita, Lira junto dele (~0,5 m) com a mão no cachecol | ouro-pálido; sol alto | murmúrios, um soluço abafado, celesta curta | N [calma, mais grave]: "A voz do jogo avisou: se a brasa apagar, o corpo não acorda lá fora." (15) | Corda mantida |
-| 5 | 28–35 | Escadaria da Praça ao Beco (transição) | plano americano, Teco ~60% da altura, travelling lateral baixo (~10°), câmera à frente mostrando o perfil e o rosto dos dois, figuras de perto desfocadas | Teco e Lira descem uma escadaria estreita, Lira a ~0,5 m com a mão no cachecol; no primeiro plano, jogadores desfocados passam; ao fundo, ao longe, a boca do Fosso pintada em verde | ouro-pálido esfria para violeta | passos em pedra, vento subindo | N [calma, baixa]: "A única saída fica no fundo do Fosso. Sete terraços abaixo." (11) | Teco à frente, Lira atrás |
-| 6 | 35–41 | Beco dos Sinos | plano médio, Teco ~60% da altura, baixa e próxima, 3/4 de frente (~10°), dolly in curto sobre os dois parados | Teco e Lira encostados numa parede, lanternas de papel rosa nos beirais, sinos de bronze imóveis; cachecol rubi suspenso entre os dois | névoa violeta, lanternas rosa e âmbar | silêncio quase total 38,6–41 s: só vento e um sino que balança sem som | N [cansada, baixa]: "Eu tinha dezessete anos e nenhum plano." (7) | Lira segura a ponta do cachecol |
-| 7 | 41–47 | Beco dos Sinos | plano médio por cima do ombro de Teco (~60% da altura), baixa (~15°), vendo o beco ao fundo; rack focus do rosto dele ao Gritador distante | no fundo do beco, a ~15 m, o Gritador (armadura azul-escura, machado) corre, boca aberta; mais atrás, um Ouvidor alto vira a cabeça, orelhas verdes brilhando; Teco e Lira na parede, em primeiro plano | violeta, orelhas verdes | grito sem palavras que ecoa (efeito), batida surda | N [tensa, baixa]: "Neste jogo, tudo escuta. Barulho chama os Ouvidores." (8) | Gritador com machado; Teco e Lira imóveis |
-| 8 **QUADRO-CHAVE** | 47–55 | Beco dos Sinos | PLANO GERAL/ELEVADO ESPECIAL 2 de 2 (a morte; exceção ao enquadramento padrão): muito alta, top-down, faixa de foco como tira sobre o Gritador | Ouvidor curvado sobre o Gritador; a Brasa dele (laranja forte) falha e apaga: o vidro escurece; cinzas claras sobem; Teco e Lira encostados na parede, a 8–10 m do Ouvidor, Brasa de Teco ainda forte | violeta; a única luz forte do beco some | **SILÊNCIO REAL 49–55 s**: o grito cessa, só vento e um coração | — (nenhuma fala) | Brasa do Gritador apagada; machado no chão |
-| 9 | 55–62 | Beco | plano médio, Teco ~60% da altura, baixa e próxima, 3/4 de perfil (~10°), dolly in enquanto Teco se ajoelha; Ouvidor ao fundo, desfocado | Teco ajoelhado de frente para Lira, dedo nos lábios; ao fundo, ainda a 8–10 m, o Ouvidor de costas; relance da Brasa de Lira, fraca; Brasa de Teco começa a tremer | violeta, rosa das lanternas | primeira sílaba depois do silêncio: o sussurro; passos pausados do Ouvidor ao longe | S [sussurrando, tenso]: "Fica atrás de mim. Pisa onde eu piso." (8) | Teco de joelhos; brasa trêmula, ainda forte |
-| 10 | 62–69 | Beco para a Boca do Fosso | plano americano, os dois ~60% da altura, travelling lateral baixo (~10°), câmera levemente à frente, perfil dos dois | os dois saem na ponta dos pés, um passo por vez; o Ouvidor passa ao longe sem ouvi-los; Lira levanta a ponta do cachecol, sem tocar o chão | do violeta ao verde (J-cut do vento do Fosso) | passos de bota em pedra úmida, quase sem som | N [baixa, aliviada]: "Foi ali que aprendi a regra de verdade. Quem fala baixo, vive." (12) | Lira segura a ponta do cachecol erguida; Espeto nunca saiu |
-| 11 | 69–74 | Boca do Fosso | plano americano, Teco ~60% da altura, orbit curto, baixo (~15°), de perfil a 3/4 de frente | buraco circular com espiral de degraus descendo; cristais verdes nas paredes; Teco e Lira na borda; a Brasa de Teco, trêmula, é a única cor quente | verde mineral, laranja no centro | corais graves, vento subindo, cristais zumbem | N [baixa, trêmula]: "A minha brasa tremia. Eu também." (6) | brasa trêmula, ainda forte |
-| 12 **QUADRO-CHAVE** | 74–80 | Boca do Fosso | plano médio, Teco ~60% da altura, baixa e próxima, 3/4 de frente (~15°), pull-back lento enquanto a faixa de foco fecha sobre o rosto do Teco até tudo virar desfoque; cartão de título aplicado em pós (76–80 s) | Teco de frente para o Fosso, punho esquerdo fechado na ponta do cachecol (eco do plano 1); Lira atrás, a ~0,5 m, mão no cachecol; ao fundo, o espiral de degraus; rosto e perfil de Teco legíveis; sem nenhum texto no quadro | verde mineral; a Brasa laranja trêmula, ainda forte, aquece o rosto | hard stop do coral na última sílaba; tambor leve; só vento | S [sussurro firme]: "Meu nome é Teco. E eu vou sair." (8) | brasa trêmula, ainda forte; cachecol rubi; Corda |
+| 1 | 0–2,5 | Campina, fim do dia | macro 3/4 baixa no painel do Menu, dolly in; rosto cansado do Teco desfocado atrás | Carteira aberta, números rolando até "R$ 1,12"; Teco (cachecol rubi) de perfil, olhos no painel | rosa-magenta do pôr do sol, brilho prata do painel | vento, moeda, celesta | L1 | Nv 3, saldo 1,12 (flash-forward) |
+| 2 | 2,5–4,5 | Campina | lateral baixa; relógio do HUD em primeiro plano | relógio gira para trás 18:34 → 08:00; a luz rosa vira menta num instante; sombras encurtam | do rosa ao verde-menta | zumbido de rebobinar, corte de som abrupto | L1 (fim) | avatar volta ao início: Nv 1 |
+| 3 | 4,5–7,5 | Quarto do Teco | plano médio, 3/4 baixa (~15°), dolly in | Teco sentado na beira da cama, Visor nas duas mãos, faixa vermelha no pulso esquerdo; fresta da porta com a sombra do pai de braços cruzados | amarela de lâmpada de mesa, névoa bege | voz abafada sem palavras atrás da porta, relógio | L2 | Visor nas mãos; Teco descalço de chinelo preto |
+| 4 | 7,5–10 | Cozinha | 3/4 baixa, travelling curto | mãe (blusa mostarda) aponta o relógio de parede com a mão esquerda, celular na direita; pai (polo azul-petróleo) de braços cruzados, balança a cabeça; Teco de pé, mãos na caneca | luz de teto amarela | cafeteira, murmúrio sem palavras | L3 | caneca na mão do Teco; faixa visível |
+| 5 | 10–12,5 | Cozinha | perfil próximo (~10°), rack focus do rosto dele ao pai | Teco aperta a caneca; pai ao fundo balança a cabeça; mãe passa a mão no coque | amarela, quente | colher na xícara, suspiro | L3 (fim) | Teco larga a caneca na pia |
+| 6 | 12,5–15,5 | Corredor | travelling lateral, câmera à frente, ele de ombro à câmera | Teco anda para o quarto, mãos nos bolsos, faixa visível; pais ficam atrás, desfocados na porta da cozinha | amarela, mais escura | chinelo, relógio | L4 | mãos nos bolsos; a caminho do quarto |
+| 7 **QUADRO-CHAVE** | 15,5–19 | Corredor, na porta do quarto | 3/4 baixa (~15°), plano americano, Teco ~60% da altura; pais desfocados na boca do corredor | Teco para na porta, vira o rosto para trás, mão esquerda (faixa vermelha) na maçaneta; fala baixo, olhando para os pais ao longe | amarela, vinheta; faixa vermelha única cor saturada | silêncio de casa, relógio | S1 [L5] | mão esquerda na maçaneta |
+| 8 | 19–22 | Quarto | plano médio baixo, dolly in; câmera passa para a altura do Visor | Teco deita, põe o Visor; a luz amarela some por trás da faixa; clique, zumbido sobe | amarela murcha | clique, zumbido (J-cut do pad) | L6 | Visor no rosto, deitado, faixa no pulso |
+| 9 | 22–24,5 | Campina, manhã | 3/4 baixa (~15°) | avatar de olhos abrindo; Galho Torto na mão direita; HUD 40/40, relógio 08:12; cartão "Nível 1" em pós | menta fria, névoa verde-pálido | violão entra, pássaros, vento | L6 (fim) | Nv 1, HP 40/40, XP 0/30, saldo 0,00 |
+| 10 | 24,5–27 | Campina | lateral baixa, pan com o pulinho | um slime Gosmim pula do capim para a frente do Teco; Teco levanta o galho | menta, sol alto | pulinho mole | L7 | Galho na mão direita, cachecol balança |
+| 11 | 27–29,5 | Campina | perfil próximo (~10°) | golpe 1: número "3"; slime achata; sua barra: 20→17 | menta | baque de madeira, mole | L8 | slime 17/20 |
+| 12 | 29,5–31,5 | Campina | 3/4 baixa, cortes rápidos | golpe "2"; slime ataca: "4" em cima do Teco; HP 36/40; um "+1" verde sobe do slime (regen) | menta | pancada, grunhido de esforço | L8 (fim) | Teco 36/40; slime 16 |
+| 13 | 31,5–33,5 | Campina | plano médio, câmera recua com ele | Teco recua, ofegante, mão no joelho; slime cura: "+1", "+1" | menta | respiração | L9 | HP 32/40 (segundo acerto) |
+| 14 **QUADRO-CHAVE** | 33,5–36,5 | Campina | 3/4 baixa (~15°), plano americano, Teco ~60% da altura, slime a 1 m no chão, em quadro | Teco, galho erguido, olha para o slime e sussurra para ele; slime balança | menta, rosto iluminado pelo painel | silêncio crescendo | S2 [L10] | HP 32/40; slime a ~10 HP |
+| 15 | 36,5–39 | Campina | lateral baixa | golpe final "3"; slime estoura em poça azul, cacos sobem | menta, flash azul | silêncio 36,0–37,2, depois estouro mole | L11 | XP 3/30 |
+| 16 | 39–41,5 | Campina | insert baixo, dolly in no chão | Gosma Rala (gota azul com borda prata) fica na poça; Teco pega, ícone na Mochila, número "0,04" sobe | menta | moedinha, sino curto | L11 (fim) | Mochila: 1 Gosma Rala; saldo 0,04 |
+| 17 | 41,5–44,5 | Campina | lateral baixa e larga, travelling | ao fundo, dezenas de jogadores (cores variadas, sem rubi) matando slimes em fila; Teco em primeiro plano, de lado | menta | golpes ao longe, vozes sem palavras | L12 (economia) | — |
+| 18 | 44,5–47 | Menu | insert por cima do ombro | painel da Banca: duas barras (oferta alta, procura baixa) e ícone da gosma com "0,04"; Teco aponta com dois dedos | prata-azulada | clique de UI | L12 (fim) | Menu aberto |
+| 19 | 47–49,5 | Menu | dolly in no painel | Carteira: barra de meta "20,00" quase vazia; mochila de gosmas; Teco coça a cabeça | prata | clique | L13 | meta 20,00 |
+| 20 | 49,5–52 | Campina | travelling lateral rápido, 3 cortes | montagem: golpes em vários slimes; relógio 09:10 → 09:40 → 10:05; selo de nível vira "2" e HP máx 48 | menta | golpes rápidos, sino de nível | L14, L15 (início) | Nv 2 às 10:05 |
+| 21 | 52–55 | Campina | insert baixo, lateral | duas poças lado a lado: uma vazia, outra com gosma; depois outra vazia; contador de gosma sobe (5, 6, 6, 7) | menta | estouros, moedinha | L15 | Mochila: 7 gosmas |
+| 22 | 55–58 | Menu / Campina | insert por cima do ombro | gráfico de pontos: cada dez slimes um conjunto de pontos azuis (6, 7, 4, 7, 6), a média marca uma linha em 6,5 | prata | cliques | L15 (fim) | média 6,5/10 |
+| 23 | 58–61 | Campina | lateral baixa, câmera acompanha o galho | diagrama pixel: seta curta na mão, seta longa na ponta; Teco balança o galho em câmera lenta | menta | assobio do galho | L16 (física) | pegada normal |
+| 24 | 61–64 | Campina | 3/4 baixa (~15°) | muda a pegada: mão na base; golpe de ponta no slime: "5" | menta, flash | assobio, baque seco | L16 | dano 5 |
+| 25 | 64–67 | Campina | cortes rápidos | segundo golpe "5", slime estoura em 3 golpes; Teco sorri sem som | menta | estouro | L16 (fim) | média ~8 s por slime |
+| 26 | 67–70 | Campina | insert macro, dolly in | ponta do Galho Torto: uma rachadura fina | menta | estalo seco de madeira | L17 | galho rachado |
+| 27 | 70–73 | Quarto, 14:20 | plano médio baixo, travelling; corte do jogo | Teco deitado de Visor; mãe entra, põe prato (arroz, ovo) na mesinha e sai de fininho; a luz da janela se arrasta pela parede | amarela, janela cinza | prato, passos, relógio | L18 | prato intocado; faixa no pulso |
+| 28 | 73–75,5 | Campina | PLANO GERAL/ELEVADO 1 de 2 (passagem do dia): alto, push lento, tilt-shift | pontinho rubi caçando; relógio 16:40 → 17:50; sombras longas giram | do verde ao rosa-magenta | pássaros somem, vento | L19 | Mochila: 20 gosmas |
+| 29 | 75,5–78,5 | Campina, pôr do sol | 3/4 baixa (~15°), travelling lateral | último slime: Teco bate de ponta, números "5","4","5","5": ~8 s | rosa-magenta, sombras verde-azuladas | golpes | L20 | slime 38 |
+| 30 | 78,5–80,5 | Campina | lateral baixa | estouro; o selo do nível vira "3"; luz sobe; XP 0 | rosa, flash | sino fino de nível | L21 | Nv 3, HP máx 56 |
+| 31 | 80,5–83,5 | Campina | por cima do ombro, dolly in | Teco abre o Menu com dois dedos; Carteira; Mochila vazia | rosa e prata | clique | L22 | HP 38/56 |
+| 32 | 83,5–86 | Menu | macro, rima do plano 1 | "R$ 1,12" lido por inteiro; 24 gosmas, 2 pós | prata | moedinhas | L22 (fim) | saldo 1,12 |
+| 33 | 86–88,5 | Menu | dolly in | barra "1,12/20,00" quase vazia | prata | clique | L23 | meta 20,00 |
+| 34 | 88,5–91,5 | Campina | plano médio, 3/4 baixa | Teco fecha o Menu e leva o punho ao peito (começa a sair); o ícone de Carta pisca "1"; ele para | rosa | sino de carta | L24 | punho no peito, desistiu |
+| 35 | 91,5–94,5 | Menu | insert por cima do ombro | Carta aberta: ícone de Gosma Dourada, "R$ 50,00" | prata e dourado | sino | L25 | Carta aberta |
+| 36 | 94,5–98 | Mapa | PLANO TOP-DOWN 2 de 2 (UI: mapa): tira de foco sobre um ponto | Campina (ponto rubi), Caverna do Brejo ao leste com selo "5" e lua; selo do Teco "3" | violeta | sino grave | L26 | — |
+| 37 **QUADRO-CHAVE** | 98–102,5 | Campina, crepúsculo | 3/4 baixa (~15°), pull-back lento; foco fecha no rosto | Teco, galho rachado na mão, cachecol balançando, olha a mata escura ao leste; ao fundo, o último sol | rosa a violeta; rosto iluminado pelo painel | vento, pad cresce | L27 | Nv 3, HP 38/56, saldo 1,12, Carta aberta |
+| 38 | 102,5–105 | Campina | locked, desfoque total | quadro de fundo; cartão "LOGADO" em pós | violeta | pad some, vento | — | — |
 
 ## Contagem
 
-- Narração (Teco): 88 palavras, 484 caracteres.
-- Falas sussurradas em cena (Teco): 16 palavras, 68 caracteres.
-- **Total: 104 palavras, 552 caracteres falados exatos** (contados em Python sobre as 11 linhas abaixo, com espaços e pontuação, sem as marcas de tom entre colchetes) => cerca de 552 créditos de ElevenLabs.
-- Duração: 80 s exatos; fala estimada ~48 s (2,2 pal./s narração; 1,8 pal./s sussurro), com dois silêncios reais (38,6–41 s e 49–55 s). Folgas: plano 3 (9 s, fala 6,4 s), plano 4 (8 s, fala 6,8 s).
+- **228 palavras** faladas (narração 219; sussurros em cena 9) e **1.334 caracteres** com espaços, pontuação e tags de tom (texto das linhas: 1.196; tags: 128 + 10 espaços).
+- Estimativa de fala: narração 91 s (2,4 pal./s) + sussurro 5,6 s = ~97 s em 105 s. Pausas de voz: 36,0–37,2 s e 79,5–80,0 s (≤ 1,5 s), mais o título (2,5 s, cartão e música).
+- Falas em cena: 2 (L5, L10), só do protagonista. Ninguém mais tem voz.
 
 ## Linhas faladas (para TTS), na ordem
 
-1. N [calma, baixa]: Procurei o botão de sair. Ele não existia.
-2. N [calma, baixa]: Quatro mil pessoas acordaram comigo naquela praça.
-3. N [calma, baixa]: Na cintura, cada um carregava a própria vida: uma lanterna com uma brasa dentro.
-4. N [calma, mais grave]: A voz do jogo avisou: se a brasa apagar, o corpo não acorda lá fora.
-5. N [calma, baixa]: A única saída fica no fundo do Fosso. Sete terraços abaixo.
-6. N [cansada, baixa]: Eu tinha dezessete anos e nenhum plano.
-7. N [tensa, baixa]: Neste jogo, tudo escuta. Barulho chama os Ouvidores.
-8. S [sussurrando, tenso]: Fica atrás de mim. Pisa onde eu piso.
-9. N [baixa, aliviada]: Foi ali que aprendi a regra de verdade. Quem fala baixo, vive.
-10. N [baixa, trêmula]: A minha brasa tremia. Eu também.
-11. S [sussurro firme]: Meu nome é Teco. E eu vou sair.
+1. N [calmo] Um dia inteiro jogando. Um real e doze centavos.
+2. N Meu pai diz que eu jogo demais.
+3. N Minha mãe diz que isso não leva a lugar nenhum.
+4. N [baixo] Eu não discuti. Falei baixinho, de costas pros dois:
+5. **S (para os pais)** [sussurrando] Eu vou mostrar pra vocês.
+6. N Entrei em Almaré. Nível um, um galho, quarenta de vida.
+7. N O primeiro inimigo: um slime. Parece fácil.
+8. N Não era. Eu tirava três por golpe, e ele se curava.
+9. N [baixo] Eu pedi pro slime, baixinho:
+10. **S (para o slime)** [sussurro ofegante] Morre logo, por favor.
+11. N Caiu uma Gosma Rala. Quatro centavos.
+12. N [calmo, didático] Eu já sabia por quê: oferta e procura. Todo mundo mata slime, então ninguém paga caro.
+13. N Pra sacar, vinte reais. Quinhentas gosmas.
+14. N Repeti a manhã inteira.
+15. N [calmo, didático] Eu já sabia que sessenta e cinco por cento não é toda vez. É a média.
+16. N [calmo, didático] Eu já sabia que a ponta do galho anda mais rápido que a mão. Segurei na base: mais velocidade, mais dano.
+17. N Cinco por golpe. Mas o galho rachou.
+18. N Esqueci o almoço. O prato esfriou.
+19. N O sol baixou. Slime trinta e oito.
+20. N Dessa vez, bati com a ponta. Oito segundos.
+21. N Nível três.
+22. N Abri a carteira. Vinte e quatro gosmas, dois pós: um real e doze.
+23. N Pro saque, faltavam quase dezenove reais.
+24. N Eu já ia sair, quando chegou uma carta.
+25. N [surpreso, baixo] Cinquenta reais por uma Gosma Dourada.
+26. N Só à noite, numa caverna nível cinco. Eu, nível três.
+27. N [firme] Eu tinha até a noite pra dar um jeito.
 
-Palavras de pronúncia para o campo asr: Ordálio, Ouvidor(es), Brasa, Teco, Fosso.
+Campo asr (nomes inventados): Almaré, Gosmim, Gosma Rala, Gosma Dourada, Visor, Teco.
 
-## Corrigido na revisão 1
+## Conferência de contas (jogo)
 
-- P1: Menu só com ícones, sem texto; espaço cinza liso no lugar do "sair"; texto de cartões declarado como pós-produção; punho esquerdo no cachecol plantado para o eco do P12.
-- P2/P12: cartões de capítulo e título só em pós; quadros-chave sem letras.
-- Ordem P3/P4 invertida: a brasa é explicada (P3) antes da regra de morte (P4); janelas 9 s e 8 s; frase da regra encurtada ("a voz do jogo avisou: se a brasa apagar...").
-- Lira a ~0,5 m com a mão na ponta do cachecol (P3 a P12); chegada dela mostrada no P3.
-- Brasa de Teco: leitura única, forte até o P8 e "trêmula, mas ainda forte" do P9 ao P12; relance da Brasa de Lira no P9.
-- P10: cachecol suspenso, erguido por Lira, sem tocar o chão.
-- P7/P8/P9: distância fixada: Ouvidor a 8–10 m de Teco e Lira (Gritador a ~15 m no P7).
-- P5: Escadaria registrada na bíblia como transição; P7: "Neste jogo, tudo escuta"; tom marcado em todas as falas.
-- Contagem refeita: 552 caracteres (antes 567, com a recontagem do revisor ~580).
-
-## Corrigido na revisão 2
-
-- Câmera padrão da série aplicada: lateral/3/4, baixa e próxima, ~10–20° para baixo, nunca na altura dos olhos, mostrando perfil e rosto.
-- P1 deixou de ser top-down: agora 3/4 sobre o ombro, dolly in. P12: baixo 3/4 de frente com pull-back e foco fechando no rosto (antes pull-back ascendente).
-- Só 2 planos elevados, com motivo dramático: P2 (escala, quatro mil presos) e P8 (a morte do Gritador). P9 passou de mergulho para dolly in baixo 3/4.
-- Movimentos variados: dolly in (P1, P6, P9), rack focus (P3, P7), travelling lateral (P4, P5, P10), por cima do ombro (P1, P7), orbit curto (P11).
-- Enquadramento padrão: plano médio/americano com o personagem principal ~60% da altura da tela vertical 1080×1920; só P2 e P8 são exceções (geral/elevado). Os 10 demais planos seguem a regra.
-- História, tempos, falas e contagem (104 palavras, 552 caracteres) inalterados.
+38 slimes × 3 XP = 114 XP (Nv 3). 24 × R$ 0,04 + 2 × R$ 0,08 = R$ 1,12. 20,00 − 1,12 = 18,88 ("quase dezenove"). 20 ÷ 0,04 = 500 gosmas. Média de drop: 38 × 0,65 ≈ 24,7.
