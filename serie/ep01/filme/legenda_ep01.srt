@@ -11,213 +11,229 @@ Em Almaré, item vira dinheiro.
 Meus pais dizem que não paga.
 
 4
+00:00:07,071 --> 00:00:08,628
+Desliga isso, Mateus.
+
+5
 00:00:07,720 --> 00:00:08,802
 Eu não discuti.
 
-5
+6
+00:00:08,163 --> 00:00:10,901
+Filho, sai um pouco dessa tela.
+
+7
+00:00:08,628 --> 00:00:10,111
+Jogo não paga conta.
+
+8
 00:00:08,802 --> 00:00:10,967
 Não adiantava. Falei baixinho,
 
-6
+9
+00:00:10,901 --> 00:00:12,403
+Você nem almoçou.
+
+10
 00:00:10,967 --> 00:00:12,410
 de costas pros dois:
 
-7
+11
 00:00:12,960 --> 00:00:14,490
 “Eu vou provar que paga.”
 
-8
+12
 00:00:15,140 --> 00:00:16,468
 Entrei em Almaré.
 
-9
+13
 00:00:16,468 --> 00:00:17,952
 Nível um, um galho,
 
-10
+14
 00:00:17,952 --> 00:00:19,280
 quarenta de vida.
 
-11
+15
 00:00:19,600 --> 00:00:21,733
 Primeiro inimigo: um slime.
 
-12
+16
 00:00:21,733 --> 00:00:22,760
 Parece fácil.
 
-13
+17
 00:00:23,080 --> 00:00:25,521
 Não era. Eu tirava três por golpe,
 
-14
+18
 00:00:25,521 --> 00:00:26,670
 e ele se curava.
 
-15
+19
 00:00:26,990 --> 00:00:29,030
 Eu pedi pro slime, baixinho:
 
-16
+20
 00:00:29,630 --> 00:00:31,420
 “Morre logo, por favor.”
 
-17
+21
 00:00:32,620 --> 00:00:33,812
 Caiu uma gosma.
 
-18
+22
 00:00:33,812 --> 00:00:35,560
 Valia quatro centavos.
 
-19
+23
 00:00:35,880 --> 00:00:38,070
 Pra sacar, são vinte reais.
 
-20
+24
 00:00:38,070 --> 00:00:39,530
 Quinhentas gosmas.
 
-21
+25
 00:00:39,850 --> 00:00:40,706
 Eu já sabia:
 
-22
+26
 00:00:40,706 --> 00:00:42,846
 sessenta e cinco por cento é a
 
-23
+27
 00:00:42,846 --> 00:00:44,487
 chance de soltar gosma,
 
-24
+28
 00:00:44,487 --> 00:00:45,700
 não uma garantia.
 
-25
+29
 00:00:46,020 --> 00:00:49,200
 Nos dez primeiros vieram só quatro. Continuei.
 
-26
+30
 00:00:49,520 --> 00:00:51,291
 Fui vender. Eu já sabia:
 
-27
+31
 00:00:51,291 --> 00:00:53,505
 quando todo mundo vende junto,
 
-28
+32
 00:00:53,505 --> 00:00:54,390
 o preço cai.
 
-29
+33
 00:00:54,710 --> 00:00:56,004
 À uma da tarde,
 
-30
+34
 00:00:56,004 --> 00:00:57,643
 salão vazio. Vendi:
 
-31
+35
 00:00:57,643 --> 00:00:59,800
 sessenta e oito centavos.
 
-32
+36
 00:01:00,250 --> 00:01:01,370
 Esqueci o almoço.
 
-33
+37
 00:01:02,170 --> 00:01:03,637
 Eu já sabia que a ponta do
 
-34
+38
 00:01:03,637 --> 00:01:05,500
 galho anda mais rápido que a mão.
 
-35
+39
 00:01:06,100 --> 00:01:07,324
 Segurei na base:
 
-36
+40
 00:01:07,324 --> 00:01:09,850
 mais velocidade, cinco por golpe.
 
-37
+41
 00:01:10,250 --> 00:01:11,310
 Mas o galho rachou.
 
-38
+42
 00:01:11,910 --> 00:01:12,867
 Pôr do sol.
 
-39
+43
 00:01:12,867 --> 00:01:14,606
 Slime trinta e oito.
 
-40
+44
 00:01:14,606 --> 00:01:16,780
 Oito segundos, não treze.
 
-41
+45
 00:01:17,180 --> 00:01:18,250
 Nível três.
 
-42
+46
 00:01:18,570 --> 00:01:19,558
 Fila na Banca,
 
-43
+47
 00:01:19,558 --> 00:01:22,380
 preço caindo. Guardei o resto pra manhã.
 
-44
+48
 00:01:22,880 --> 00:01:25,326
 Carteira: sessenta e oito centavos.
 
-45
+49
 00:01:25,326 --> 00:01:27,212
 Mochila: quarenta e quatro,
 
-46
+50
 00:01:27,212 --> 00:01:28,470
 no preço da manhã.
 
-47
+51
 00:01:28,920 --> 00:01:30,853
 Eu já ia sair quando chegou uma
 
-48
+52
 00:01:30,853 --> 00:01:33,660
 carta: cinquenta reais por uma Gosma Dourada.
 
-49
+53
 00:01:33,980 --> 00:01:35,148
 Só cai de noite,
 
-50
+54
 00:01:35,148 --> 00:01:36,826
 em caverna nível cinco.
 
-51
+55
 00:01:36,826 --> 00:01:38,140
 Vence amanhã cedo.
 
-52
+56
 00:01:38,740 --> 00:01:40,461
 Se alguém aí diz que jogo não
 
-53
+57
 00:01:40,461 --> 00:01:42,420
 paga, manda isso pra essa pessoa.
 
-54
+58
 00:01:42,920 --> 00:01:44,421
 Você faria o quê?
 
-55
+59
 00:01:44,421 --> 00:01:46,804
 A, arriscar a caverna hoje.
 
-56
+60
 00:01:46,804 --> 00:01:50,070
 B, esperar e perder a carta. Comenta.

@@ -86,8 +86,15 @@ const kit3 = (tx) => [
   { id: 'dad', kind: 'side', spec: 'rogerio', pos: [-4.3, -.1, -1.3], pose: K([[5.6, 'sit_dad'], [8.0, 'sit_dad_nod']]), face: 1, noBlob: 1 },
   { id: 'mom', kind: 'side', spec: 'sandra', pos: [-5.7, 0, -2.0], pose: K([[5.6, 'point_clock'], [6.4, 'point_clock_b']]), face: 1 },
   { id: 'visor', kind: 'item', id2: 0, ...{ id: 'visor' }, kind: 'item', k: .55, pos: [-3.85, .8, -1.5] }];
-add(3, { set: 'casa', cam: cam([C(5.6, -4.3, .75, -1.5, 10.6, 10, 13), C(9.4, -3.7, .75, -1.5, 10.0, 12, 13)]), focus: [-3.4, 1, -1.2], aper: 90,
-  actors: [...kit3(), TECO({ pos: [-2.6, 0, -.9], pose: K([[5.6, 'hold_mug']]), face: -1, focus: false })] });
+const mom3 = (pose) => ({ id: 'mom', kind: 'side', spec: 'sandra', pos: [-5.5, 0, -1.9], pose, face: 1 });
+const dad3 = (pose) => ({ id: 'dad', kind: 'side', spec: 'rogerio', pos: [-4.3, -.1, -1.3], pose, face: 1 });
+const visor3 = { id: 'visor', kind: 'item', ...{ id: 'visor' }, kind: 'item', k: .55, pos: [-3.85, .8, -1.5] };
+add('3a', { set: 'casa', cam: cam([C(5.6, -4.3, .75, -1.5, 10.6, 10, 13), C(6.9, -3.9, .75, -1.5, 10.2, 11, 13)]), focus: [-3.4, 1, -1.2], aper: 90,
+  actors: [dad3(K([[5.6, 'sit_dad']])), mom3(K([[5.6, 'point_clock'], [6.2, 'point_clock_b']])), visor3, TECO({ pos: [-2.6, 0, -.9], pose: K([[5.6, 'hold_mug']]), face: -1, focus: false })] });
+add('3b', { set: 'casa', cam: cam([C(6.9, -4.2, 1.05, -1.3, 5.4, 12, 9), C(8.2, -4.1, 1.05, -1.3, 5.0, 12, 9)]), focus: [-4.2, 1.2, -1.3], aper: 120,
+  actors: [dad3(K([[6.9, 'sit_dad_talk']])), mom3(K([[6.9, 'worry']])), visor3, TECO({ pos: [-2.9, 0, -2.3], pose: K([[6.9, 'hold_mug']]), face: -1, focus: false })] });
+add('3c', { set: 'casa', cam: cam([C(8.2, -5.2, 1.0, -1.9, 5.8, 12, 9), C(9.4, -5.1, 1.0, -1.9, 5.4, 12, 9)]), focus: [-5.4, 1.1, -1.9], aper: 120,
+  actors: [dad3(K([[8.2, 'sit_dad']])), mom3(K([[8.2, 'point_clock_talk']])), visor3, TECO({ pos: [-2.6, 0, -.9], pose: K([[8.2, 'hold_mug']]), face: -1, focus: false })] });
 // 4: Teco pega o Visor (mao direita), mug na pia (esq.), sai de costas
 add(4, { set: 'casa', cam: cam([C(9.4, -3.6, .8, -1.5, 8.6, 10, 12), C(11.3, -1.8, .8, -1.5, 8.2, 12, 12), C(13.2, .4, .8, -1.5, 8.0, 12, 12)]), focus: [-1.6, 1, -1], aper: 90, fogK: .9,
   actors: [
@@ -97,10 +104,11 @@ add(4, { set: 'casa', cam: cam([C(9.4, -3.6, .8, -1.5, 8.6, 10, 12), C(11.3, -1.
     TECO({ spec: 'teco_real', pos: K([[9.4, -3.4, -.9], [10.4, -3.4, -.9], [11.9, -.35, -.9], [12.2, -.35, -.9], [13.2, 1.2, -.9]]), pose: K([[9.4, 'grab_visor'], [10.4, 'walk_mug'], [11.95, 'sink'], [12.4, 'walk_mug']]), face: 1, face_k: K([[9.4, -1], [10.4, 1]]), focus: true, show: K([[9.4, 12.45]]) }),
     { id: 'tecoB', kind: 'back', spec: 'teco_real', pos: K([[12.45, -.2, -1.0], [13.2, .9, -1.2]]), pose: K([[12.45, 'stand']]), show: K([[12.45, 13.2]]), focus: true }] });
 // 5: porta do quarto (quadro-chave)
-add(5, { set: 'casa', corredor: true, cam: cam([C(13.2, 5.5, .75, -.5, 9.0, -8, 14), C(16.8, 5.4, .75, -.5, 8.4, -6, 14)]), focus: [6, 1.1, -.2], aper: 150,
-  actors: [{ id: 'dad', kind: 'side', spec: 'rogerio', pos: [4.3, 0, -2.0], pose: K([[13.2, 'arms_crossed'], [15.4, 'shake'], [15.9, 'arms_crossed']]), face: 1 },
-    { id: 'mom', kind: 'side', spec: 'sandra', pos: [5.0, 0, -2.0], pose: K([[13.2, 'worry']]), face: 1 },
-    TECO({ spec: 'teco_real', pos: [5.95, 0, -.2], pose: K([[13.2, 'door'], [14.2, 'door_whisper'], [15.6, 'door']]), face: -1 })] });
+const par5 = (t) => [{ id: 'dad', kind: 'side', spec: 'rogerio', pos: [4.3, 0, -2.0], pose: K([[t, 'arms_crossed'], [15.4, 'shake'], [15.9, 'arms_crossed']]), face: 1 }, { id: 'mom', kind: 'side', spec: 'sandra', pos: [5.0, 0, -2.0], pose: K([[t, 'worry']]), face: 1 }];
+add('5a', { set: 'casa', corredor: true, cam: cam([C(13.2, 4.8, .75, -.5, 9.6, -8, 14), C(15, 5.4, .75, -.5, 9.0, -8, 14)]), focus: [5.4, 1.1, -.2], aper: 150,
+  actors: [...par5(13.2), TECO({ spec: 'teco_real', pos: K([[13.2, 3.6, -.2], [14.5, 5.95, -.2]]), pose: K([[13.2, 'walk'], [14.5, 'door']]), face: -1, face_k: K([[13.2, 1], [14.5, -1]]) })] });
+add('5b', { set: 'casa', corredor: true, cam: cam([C(15, 5.4, .75, -.5, 9.0, -8, 14), C(16.8, 5.4, .75, -.5, 8.4, -6, 14)]), focus: [6, 1.1, -.2], aper: 150,
+  actors: [...par5(15), TECO({ spec: 'teco_real', pos: [5.95, 0, -.2], pose: K([[15, 'door'], [15.2, 'door_whisper'], [16.6, 'door']]), face: -1 })] });
 // 6: quarto, deita e poe o Visor
 add(6, { set: 'quarto', cam: cam([C(16.8, 1.4, .95, -2, 8.6, 10, 8), C(19.8, .9, .85, -2.2, 5.4, 12, 6)]), focus: [1.2, .9, -2], exposure: ucfg([[16.8, 1], [19.8, .62]]), aper: 120,
   actors: [{ id: 'teco', kind: 'side', spec: 'teco_real', pos: [1.95, .0, -1.45], pose: K([[16.8, 'sit_visor']]), face: -1, show: K([[16.8, 18.2]]), focus: true },
@@ -146,7 +154,7 @@ add(13, { set: 'campina', hour: 8.5, cam: cam([C(36, .9, .6, 0, 6.2, 12, 6), C(3
     { id: 'gosma', kind: 'item', id2: 3, ...{ id: 'gosma' }, kind: 'item', k: .9, pos: K([[35.7, 1.12, 0, 0], [36.0, 1.12, 0, .55], [36.3, 1.12, 0, .05]]), show: K([[35.7, 37.95]]) }] });
 // 14: Carteira 0,00 (por cima do ombro)
 const shoulder = (a, b, screen, state, o = {}) => ({ set: 'campina', hour: o.hour ?? 8.6, cam: cam([C(a, 1.0, 1.25, 0, 3.4, -24, 5), C(b, 1.0, 1.25, 0, 3.0, -22, 5)]), focus: [1.0, 1.25, .1], aper: o.aper ?? 14, tilt: [2, .6, .3], maxCoc: 8,
-  menu: { screen: [[R3(W(a)), screen]], pos: [1.0, 1.25, .1], w: o.w ?? .66, state, yaw: 0 }, actors: o.actors ?? [TECO({ pos: [.3, 0, -.05], pose: K([[a, 'menu_r']]), focus: false })], hud: o.hud, ...(o.extra || {}) });
+  menu: { screen: [[R3(W(a)), screen]], pos: [1.0, 1.25, .1], w: o.w ?? .66, state, yaw: 0 }, actors: o.actors ?? [TECO({ pos: [.05, 0, -.5], pose: K([[a, 'menu_r']]), focus: false })], hud: o.hud, ...(o.extra || {}) });
 add(14, shoulder(39, 42, 'carteira', { money: '0,00', meta: 0 }, { hud: HUD_EARLY() }));
 add(15, shoulder(42, 45, 'drops', { pct: '65%', cnt: '0/3', dots: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] }, { hud: HUD_EARLY() }));
 // 16: terceira luta (sem drop); contador 1/3
@@ -215,7 +223,7 @@ add(26, { set: 'campina', hour: 16.2, cam: cam([C(72.6, .66, 1.02, 0, 2.2, 4, 3,
 }
 // 29-32: Menu (por cima do ombro / macro)
 const priceNow = { curve: [.3, .3, .3, .3, .3, .3, .3, .3, .3, .3, .3, .3, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .5, .3], mark: 23, red: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 23], price: '0,03', arrow: 1, fila: 6 };
-add(29, shoulder(80.5, 83.5, 'banca', priceNow, { hour: 18.2, w: .6, hud: HUD_END('18:30'), actors: [TECO({ pos: [.3, 0, -.05], pose: K([[80.5, 'menu_r']]), focus: false })] }));
+add(29, shoulder(80.5, 83.5, 'banca', priceNow, { hour: 18.2, w: .6, hud: HUD_END('18:30'), actors: [TECO({ pos: [.05, 0, -.5], pose: K([[80.5, 'menu_r']]), focus: false })] }));
 add(30, shoulder(83.5, 85.5, 'mochila', { gosma: 9, po: 1 }, { hour: 18.3, hud: HUD_END('18:30') })); S[S.length - 1].menu.screen = K([[83.5, 'mochila'], [85.0, 'menu']]); S[S.length - 1].menu.state = { gosma: 9, po: 1, money: '0,68', carta: 1 };
 add(31, { ...shoulder(85.5, 88.5, 'carteira', { money: '0,68', meta: .68 }, { hour: 18.3, hud: HUD_END('18:30'), w: .7 }), cam: cam([C(85.5, 1.0, 1.25, 0, 2.6, -14, 4), C(88.5, 1.0, 1.25, 0, 2.2, -12, 4)]) });
 add(32, { ...shoulder(88.5, 91.5, 'mochila', { gosma: 9, po: 1, tag: '0,44', tag2: '0,04' }, { hour: 18.3, hud: HUD_END('18:30'), w: .7 }), cam: cam([C(88.5, 1.0, 1.25, 0, 2.6, -14, 4), C(91.5, 1.0, 1.25, 0, 2.2, -12, 4)]) });
@@ -280,6 +288,14 @@ for (let n = 1; n <= 27; n++) {
   const parts = chunk(text), tot = parts.reduce((s, p) => s + p.length, 0); let a = t0;
   parts.forEach((p, i) => { const d = (t1 - t0) * p.length / tot; subs.push({ t0: R3(a), t1: R3(a + d), text: p, kind: who === 'S' ? 'whisper' : 'narr', line: n, ...(speaker ? { speaker } : {}) }); a += d; });
 }
+// falas dos pais (rev.3): P1 Rogerio no plano 3b, P2 Sandra no plano 3c
+const P = [['rogerio', '3b', 'Desliga isso, Mateus. Jogo não paga conta.', 3.04, /p0?1/i], ['sandra', '3c', 'Filho, sai um pouco dessa tela. Você nem almoçou.', 4.24, /p0?2/i]];
+for (const [spk, id, text, d, re] of P) {
+  const v = vo?.lines?.find(l => re.test(String(l.id)) || re.test(String(l.linha)) || String(l.who) === spk);
+  const t0 = v ? v.t : NEW[id][0] + .15, t1 = v ? v.end : t0 + d, parts = chunk(text), tot = parts.reduce((s, p) => s + p.length, 0); let a = t0;
+  parts.forEach(p => { const dd = (t1 - t0) * p.length / tot; subs.push({ t0: R3(a), t1: R3(a + dd), text: p, kind: 'narr', line: spk, speaker: spk }); a += dd; });
+}
+subs.sort((a, b) => a.t0 - b.t0);
 const dur = R3(NEW['40'][1]);
 const out = {
   meta: { w: 1080, h: 1920, dur, fps: 24, fonte_tempos: SRC, fonte_legendas: subSrc, nota: 'Gerado por filme/tools/gen_shots.mjs; tempos de plano de filme/tempos.json (se existir) e legendas de audio/vo_times.json (se existir).' },

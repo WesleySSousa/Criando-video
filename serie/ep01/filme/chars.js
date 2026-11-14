@@ -56,6 +56,8 @@ export const POSES = {
   door_whisper: P_({ head: [22.4, 7.3], ne: [19, 23.5], nh: [13.4, 26], faixa: 'near', fitem: 'visor_hip', fe: [21, 24.5], fh: [23.5, 30], face: 'whisper' }),
   sit_visor: P_({ head: [22.5, 12.5], sh: [21.5, 20.5], hip: [18.5, 36.5], ne: [26, 28], nh: [31, 25], fe: [24, 29], fh: [29.5, 26], item: 'visor_up', faixa: 'near', nk: [29.5, 37.5], na: [29, 51], fk: [27, 38.5], fa: [26.5, 51], face: 'n' }),
   sit_dad: P_({ head: [22, 12.5], sh: [21, 20.5], hip: [17.5, 37], nk: [29.5, 38], na: [29.5, 51], fk: [27.5, 39], fa: [27, 51], ne: [25.5, 28], nh: [32, 31.5], fe: [24.5, 29], fh: [31, 31.5], hand: 'flat', face: 'stern' }),
+  sit_dad_talk: P_({ head: [22, 12.5], sh: [21, 20.5], hip: [17.5, 37], nk: [29.5, 38], na: [29.5, 51], fk: [27.5, 39], fa: [27, 51], ne: [25.5, 28], nh: [32, 31.5], fe: [24.5, 29], fh: [31, 31.5], hand: 'flat', face: 'talk' }),
+  sit_dad_talk_b: P_({ head: [22, 12.9], sh: [21, 20.6], hip: [17.5, 37], nk: [29.5, 38], na: [29.5, 51], fk: [27.5, 39], fa: [27, 51], ne: [25.5, 28], nh: [32, 31.5], fe: [24.5, 29], fh: [31, 31.5], hand: 'flat', face: 'stern' }),
   sit_dad_nod: P_({ head: [22, 13.4], sh: [21, 20.8], hip: [17.5, 37], nk: [29.5, 38], na: [29.5, 51], fk: [27.5, 39], fa: [27, 51], ne: [25.5, 28], nh: [32, 31.5], fe: [24.5, 29], fh: [31, 31.5], hand: 'flat', face: 'stern' }),
   // ---- avatar: galho (mao direita = braco proximo) ----
   idle_g: P_({ ne: [24, 23], nh: [27, 28], item: 'galho', gang: -25, hand: 'fist', face: 'n' }),
@@ -87,6 +89,8 @@ export const POSES = {
   sink: P_({ head: [23, 7.6], ne: [22.5, 24.4], nh: [24.5, 30.6], fe: [27, 23.6], fh: [32.6, 24.4], fitem: 'mug', faixa: 'far', fhand: 'fist', face: 'n' }),
   // ---- mae ----
   point_clock: P_({ ne: [26, 17.5], nh: [31, 11.5], hand: 'point', face: 'worry', fe: [21, 24.5], fh: [23, 30] }),
+  point_clock_talk: P_({ ne: [26, 17.5], nh: [31, 11.5], hand: 'point', face: 'talk', fe: [21, 24.5], fh: [23, 30] }),
+  point_clock_talk_b: P_({ ne: [26, 17.5], nh: [31, 11.5], hand: 'point', face: 'worry', fe: [21, 24.5], fh: [23, 30] }),
   point_clock_b: P_({ ne: [26.4, 17.2], nh: [31.4, 11.2], hand: 'point', face: 'worry', fe: [21, 24.5], fh: [23, 30] }),
   worry: P_({ head: [22.5, 7.2], ne: [24, 24], nh: [24.5, 29], fe: [22, 24.5], fh: [24, 29], hand: 'fist', face: 'worry' }),
   plate: P_({ head: [22.8, 7.4], ne: [26.5, 24], nh: [31, 25.5], item: 'prato', fe: [24, 24.5], fh: [29, 26], face: 'worry', nk: [24.5, 43], na: [26, 52], fk: [17.5, 43], fa: [16, 52] }),
@@ -109,6 +113,7 @@ const faceDraw = (P, hx, hy, face, spec) => {
   else if (face === 'wince') { P.rect(hx + 1.9, hy - .1, 2, .5, INK); brow(.7); P.rect(hx + 2.2, hy + 3.2, 1.8, .5, hex('#3a1612')); }
   else if (face === 'whisper') { eye(); brow(0); P.rect(hx + 3, hy + 3, .8, .8, hex('#4a1c16')); }
   else if (face === 'worry') { eye(); P.rect(hx + 1.4, hy - 1.9, 2.5, .6, (spec.hairC || PAL.hair)(.2, 0, 0)); P.set(hx + 3.4, hy - 2.3, (spec.hairC || PAL.hair)(.2, 0, 0)); mouth(1.2, 3.2); }
+  else if (face === 'talk') { eye(); brow(.3); P.rect(hx + 2.4, hy + 2.9, 1.8, 1.3, hex('#3a1612')); }
   else if (face === 'stern') { eye(); brow(.4); mouth(1.6, 3.1, '#4a221a'); }
   else if (face === 'whistle') { eye(); brow(0); P.rect(hx + 3.4, hy + 2.9, .8, .8, hex('#3a1612')); }
   else if (face === 'focus') { eye(); brow(.4); mouth(1.2, 3.1); }
@@ -383,7 +388,7 @@ export function sprite(kind, id, pose = 'stand', o = {}) {
 }
 // retorna o desenho para (tipo, personagem, pose) no instante t (alternando quadros _b a `rate` Hz)
 export function poseFrame(name, t, rate = 1.6) {
-  if (POSES[name + '_b']) return (Math.floor(t * (name === 'walk' || name === 'plate' ? 7 : name.startsWith('pant') ? 3 : rate)) % 2) ? name + '_b' : name;
+  if (POSES[name + '_b']) return (Math.floor(t * (name === 'walk' || name === 'plate' ? 7 : name.startsWith('pant') ? 3 : name.includes('talk') ? 5 : rate)) % 2) ? name + '_b' : name;
   if (name.endsWith('_b') || POSES[name]) return name;
   return name;
 }

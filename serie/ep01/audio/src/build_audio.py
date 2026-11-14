@@ -16,6 +16,11 @@ T = TM['dur']; N = int(round(T * SR))
 rng = np.random.default_rng(11); X._rng = np.random.default_rng(5)
 line = {v['id']: v for v in VO['lines']}
 shot = {p['id']: p for p in TM['planos']}
+# planos divididos (3a/3b..., 5a/5b, 25a/25b): alias pelo numero do plano (inicio do 1o, fim do ultimo, eventos juntos)
+for _n in sorted({p['plano'] for p in TM['planos']}):
+    _g = [p for p in TM['planos'] if p['plano'] == _n]
+    shot.setdefault(str(_n), dict(id=str(_n), plano=_n, ini=_g[0]['ini'], fim=_g[-1]['fim'], dur=_g[-1]['fim'] - _g[0]['ini'],
+                                  eventos=sum([p.get('eventos', []) for p in _g], [])))
 def st(i): return shot[i]['ini']
 def en(i): return shot[i]['fim']
 def stereo(): return np.zeros((N, 2), np.float32)
@@ -482,13 +487,13 @@ musica = (mus * mask[:, None]).astype(np.float32)
 # nota grave depois da rachadura (fora da mascara): musica quase parada
 cr_note = S.note('cellos', 'A2', 1.4, .4, attack=.25).astype(np.float32); A(musica, cr_note, tCrack + .3, .5, 0)
 # ================================================================ VOZ
-def load_voice(i):
-    raw = subprocess.run(['ffmpeg', '-v', 'quiet', '-i', R + f'voz/l{i:02d}.mp3', '-ac', '1', '-ar', str(SR), '-f', 'f32le', '-'], capture_output=True).stdout
+def load_voice(arq):
+    raw = subprocess.run(['ffmpeg', '-v', 'quiet', '-i', R + f'voz/{arq}.mp3', '-ac', '1', '-ar', str(SR), '-f', 'f32le', '-'], capture_output=True).stdout
     return np.frombuffer(raw, dtype=np.float32).copy()
 voice = stereo(); gate = np.zeros(N, np.float32)
 ana = json.load(open(R + 'audio/src/ana.json'))
 for v in VO['lines']:
-    i = v['linha']; x = load_voice(i); a = ana[str(i)]
+    arq = v['arquivo']; x = load_voice(arq); a = ana[arq]
     x = x[int(max(0, a['lead'] - .03) * SR): int((a['end'] + .08) * SR)]
     x = hp(x, 75, 2)
     x = X.compress(x, .12, 4.0, .004, .09)
@@ -498,7 +503,7 @@ for v in VO['lines']:
     t0 = v['t'] - .03
     if v.get('em_cena'):
         y = lp(x, v['lowpass_hz'], 2) * .85
-        wet = S.room(y.astype(np.float32), size=.2, mix=.22)[:, :]
+        wet = S.room(y.astype(np.float32), size=.2, mix=(.12 if v['id'].startswith('p') else .22))[:, :]
         y2 = np.concatenate([wet, np.zeros((int(.4 * SR), 2), np.float32)])
         add(voice, y2[:, 0], t0, 1.0, -.15); add(voice, y2[:, 1], t0, 1.0, .15)   # estereo leve da ambiencia
     else:
