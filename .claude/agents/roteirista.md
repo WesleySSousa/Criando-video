@@ -15,3 +15,4 @@ Regras fixas:
 - Antes de escrever, leia /root/lemo-opuscar/styles/hd-2d/STYLE.md e /root/lemo-opuscar/DIRECTOR.md, e use a gramática do estilo (diorama, luzes práticas, câmera alta 3/4, tilt-shift, cartão de capítulo).
 - A BÍBLIA (serie/BIBLIA.md) é a fonte de verdade: personagens (aparência, cor do figurino, itens que carregam), itens (onde estão, quem tem, estado), lugares, regras do mundo e linha do tempo. Atualize-a sempre que o roteiro introduzir ou mudar algo.
 - Roteiro em tabela por plano: nº, tempo início–fim, lugar, câmera, o que se vê (com a posição de cada item e personagem), luz, som, fala/narração (com tom), e uma coluna "estado de continuidade" (o que cada personagem tem na mão/no corpo).
+- OBRIGATÓRIO: antes de escrever, leia serie/LIVRO_DE_REGRAS.md e cumpra cada regra. Ao entregar, liste no fim do roteiro "Regras do livro conferidas" com o número de cada regra e ✓.
