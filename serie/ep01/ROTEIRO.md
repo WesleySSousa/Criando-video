@@ -1,88 +1,112 @@
-# LOGADO — Ep. 1 "Nível 1" — Roteiro (105 s)
+# LOGADO — Ep. 1 "Nível 1" — Roteiro (111 s)
 
-Vertical 1080×1920, 2.5D Pixel Art, sem legendas. Voz "wesley". N = narração (calma, baixa, ~2,4 pal./s). S = fala em cena do Teco (sussurrada, ~1,6 pal./s). Os pais não têm voz. Texto na tela só em pós ("Nível 1" 22–25 s; "LOGADO" 102,5–105 s); quadros gerados sem letras (HUD só com ícones e números; R$ é símbolo). Cortes na batida de 80 bpm (±0,3 s). Nenhum plano passa de 4 s.
-**QUADROS-CHAVE:** plano 7 (vida real, cozinha/corredor), plano 14 (jogo, luta), plano 37 (jogo, final).
-Elevados (máx. 2): planos 28 e 36. Linhas faladas citadas como [L#] (lista ao fim). Conhecimentos ("O que ele sabe"): economia (17–19), probabilidade (21–22), física (23–25).
+Vertical 1080×1920, 2.5D Pixel Art, sem legendas. Voz "wesley". N = narração (calma, baixa). S = fala em cena do Teco (sussurrada, mais lenta). Pais e vendedores não têm voz. Texto na tela só em pós ("Nível 1" 20,4–23,4 s; "LOGADO" 6,6–9,4 s, sobre a ação); quadros gerados sem letras (HUD só com ícones e números; R$ e % são símbolos). Nenhum plano passa de 4 s. Corte, ação ou movimento a cada 2–4 s.
+**Zona segura:** nada importante nos 250 px do topo, 380 px da base e 150 px da direita (tudo em x 0–930, y 250–1540). Teco ocupa ~60% da altura dentro dela; barra de HP e relógio em x 40–600, y 280–360; Menu centrado em x 80–850.
+**Loop:** o plano 38 é idêntico ao plano 1 (mesmo enquadramento, luz de crepúsculo rosa-violeta, Carteira "R$ 0,68", Carta piscando "1", galho rachado); o episódio recomeça sem corte perceptível.
+**QUADROS-CHAVE:** plano 5 (vida real, corredor); plano 11 (jogo, sussurro ao slime); plano 1 = 38 (jogo, Menu no crepúsculo, o quadro do loop).
+Elevados (máx. 2): planos 26 e 33. Conhecimentos ("O que ele sabe"): probabilidade (15–17), economia (18–20), física (22–24). Linhas faladas citadas como [L#].
 
 | Nº | Tempo | Lugar | Câmera | O que se vê | Luz | Som | Fala | Continuidade |
 |---|---|---|---|---|---|---|---|---|
-| 1 | 0–2,5 | Campina, fim do dia | macro 3/4 baixa no painel do Menu, dolly in; rosto cansado do Teco desfocado atrás | Carteira aberta, números rolando até "R$ 1,12"; Teco (cachecol rubi) de perfil, olhos no painel | rosa-magenta do pôr do sol, brilho prata do painel | vento, moeda, celesta | L1 | Nv 3, saldo 1,12 (flash-forward) |
-| 2 | 2,5–4,5 | Campina | lateral baixa; relógio do HUD em primeiro plano | relógio gira para trás 18:34 → 08:00; a luz rosa vira menta num instante; sombras encurtam | do rosa ao verde-menta | zumbido de rebobinar, corte de som abrupto | L1 (fim) | avatar volta ao início: Nv 1 |
-| 3 | 4,5–7,5 | Quarto do Teco | plano médio, 3/4 baixa (~15°), dolly in | Teco sentado na beira da cama, Visor nas duas mãos, faixa vermelha no pulso esquerdo; fresta da porta com a sombra do pai de braços cruzados | amarela de lâmpada de mesa, névoa bege | voz abafada sem palavras atrás da porta, relógio | L2 | Visor nas mãos; Teco descalço de chinelo preto |
-| 4 | 7,5–10 | Cozinha | 3/4 baixa, travelling curto | mãe (blusa mostarda) aponta o relógio de parede com a mão esquerda, celular na direita; pai (polo azul-petróleo) de braços cruzados, balança a cabeça; Teco de pé, mãos na caneca | luz de teto amarela | cafeteira, murmúrio sem palavras | L3 | caneca na mão do Teco; faixa visível |
-| 5 | 10–12,5 | Cozinha | perfil próximo (~10°), rack focus do rosto dele ao pai | Teco aperta a caneca; pai ao fundo balança a cabeça; mãe passa a mão no coque | amarela, quente | colher na xícara, suspiro | L3 (fim) | Teco larga a caneca na pia |
-| 6 | 12,5–15,5 | Corredor | travelling lateral, câmera à frente, ele de ombro à câmera | Teco anda para o quarto, mãos nos bolsos, faixa visível; pais ficam atrás, desfocados na porta da cozinha | amarela, mais escura | chinelo, relógio | L4 | mãos nos bolsos; a caminho do quarto |
-| 7 **QUADRO-CHAVE** | 15,5–19 | Corredor, na porta do quarto | 3/4 baixa (~15°), plano americano, Teco ~60% da altura; pais desfocados na boca do corredor | Teco para na porta, vira o rosto para trás, mão esquerda (faixa vermelha) na maçaneta; fala baixo, olhando para os pais ao longe | amarela, vinheta; faixa vermelha única cor saturada | silêncio de casa, relógio | S1 [L5] | mão esquerda na maçaneta |
-| 8 | 19–22 | Quarto | plano médio baixo, dolly in; câmera passa para a altura do Visor | Teco deita, põe o Visor; a luz amarela some por trás da faixa; clique, zumbido sobe | amarela murcha | clique, zumbido (J-cut do pad) | L6 | Visor no rosto, deitado, faixa no pulso |
-| 9 | 22–24,5 | Campina, manhã | 3/4 baixa (~15°) | avatar de olhos abrindo; Galho Torto na mão direita; HUD 40/40, relógio 08:12; cartão "Nível 1" em pós | menta fria, névoa verde-pálido | violão entra, pássaros, vento | L6 (fim) | Nv 1, HP 40/40, XP 0/30, saldo 0,00 |
-| 10 | 24,5–27 | Campina | lateral baixa, pan com o pulinho | um slime Gosmim pula do capim para a frente do Teco; Teco levanta o galho | menta, sol alto | pulinho mole | L7 | Galho na mão direita, cachecol balança |
-| 11 | 27–29,5 | Campina | perfil próximo (~10°) | golpe 1: número "3"; slime achata; sua barra: 20→17 | menta | baque de madeira, mole | L8 | slime 17/20 |
-| 12 | 29,5–31,5 | Campina | 3/4 baixa, cortes rápidos | golpe "2"; slime ataca: "4" em cima do Teco; HP 36/40; um "+1" verde sobe do slime (regen) | menta | pancada, grunhido de esforço | L8 (fim) | Teco 36/40; slime 16 |
-| 13 | 31,5–33,5 | Campina | plano médio, câmera recua com ele | Teco recua, ofegante, mão no joelho; slime cura: "+1", "+1" | menta | respiração | L9 | HP 32/40 (segundo acerto) |
-| 14 **QUADRO-CHAVE** | 33,5–36,5 | Campina | 3/4 baixa (~15°), plano americano, Teco ~60% da altura, slime a 1 m no chão, em quadro | Teco, galho erguido, olha para o slime e sussurra para ele; slime balança | menta, rosto iluminado pelo painel | silêncio crescendo | S2 [L10] | HP 32/40; slime a ~10 HP |
-| 15 | 36,5–39 | Campina | lateral baixa | golpe final "3"; slime estoura em poça azul, cacos sobem | menta, flash azul | silêncio 36,0–37,2, depois estouro mole | L11 | XP 3/30 |
-| 16 | 39–41,5 | Campina | insert baixo, dolly in no chão | Gosma Rala (gota azul com borda prata) fica na poça; Teco pega, ícone na Mochila, número "0,04" sobe | menta | moedinha, sino curto | L11 (fim) | Mochila: 1 Gosma Rala; saldo 0,04 |
-| 17 | 41,5–44,5 | Campina | lateral baixa e larga, travelling | ao fundo, dezenas de jogadores (cores variadas, sem rubi) matando slimes em fila; Teco em primeiro plano, de lado | menta | golpes ao longe, vozes sem palavras | L12 (economia) | — |
-| 18 | 44,5–47 | Menu | insert por cima do ombro | painel da Banca: duas barras (oferta alta, procura baixa) e ícone da gosma com "0,04"; Teco aponta com dois dedos | prata-azulada | clique de UI | L12 (fim) | Menu aberto |
-| 19 | 47–49,5 | Menu | dolly in no painel | Carteira: barra de meta "20,00" quase vazia; mochila de gosmas; Teco coça a cabeça | prata | clique | L13 | meta 20,00 |
-| 20 | 49,5–52 | Campina | travelling lateral rápido, 3 cortes | montagem: golpes em vários slimes; relógio 09:10 → 09:40 → 10:05; selo de nível vira "2" e HP máx 48 | menta | golpes rápidos, sino de nível | L14, L15 (início) | Nv 2 às 10:05 |
-| 21 | 52–55 | Campina | insert baixo, lateral | duas poças lado a lado: uma vazia, outra com gosma; depois outra vazia; contador de gosma sobe (5, 6, 6, 7) | menta | estouros, moedinha | L15 | Mochila: 7 gosmas |
-| 22 | 55–58 | Menu / Campina | insert por cima do ombro | gráfico de pontos: cada dez slimes um conjunto de pontos azuis (6, 7, 4, 7, 6), a média marca uma linha em 6,5 | prata | cliques | L15 (fim) | média 6,5/10 |
-| 23 | 58–61 | Campina | lateral baixa, câmera acompanha o galho | diagrama pixel: seta curta na mão, seta longa na ponta; Teco balança o galho em câmera lenta | menta | assobio do galho | L16 (física) | pegada normal |
-| 24 | 61–64 | Campina | 3/4 baixa (~15°) | muda a pegada: mão na base; golpe de ponta no slime: "5" | menta, flash | assobio, baque seco | L16 | dano 5 |
-| 25 | 64–67 | Campina | cortes rápidos | segundo golpe "5", slime estoura em 3 golpes; Teco sorri sem som | menta | estouro | L16 (fim) | média ~8 s por slime |
-| 26 | 67–70 | Campina | insert macro, dolly in | ponta do Galho Torto: uma rachadura fina | menta | estalo seco de madeira | L17 | galho rachado |
-| 27 | 70–73 | Quarto, 14:20 | plano médio baixo, travelling; corte do jogo | Teco deitado de Visor; mãe entra, põe prato (arroz, ovo) na mesinha e sai de fininho; a luz da janela se arrasta pela parede | amarela, janela cinza | prato, passos, relógio | L18 | prato intocado; faixa no pulso |
-| 28 | 73–75,5 | Campina | PLANO GERAL/ELEVADO 1 de 2 (passagem do dia): alto, push lento, tilt-shift | pontinho rubi caçando; relógio 16:40 → 17:50; sombras longas giram | do verde ao rosa-magenta | pássaros somem, vento | L19 | Mochila: 20 gosmas |
-| 29 | 75,5–78,5 | Campina, pôr do sol | 3/4 baixa (~15°), travelling lateral | último slime: Teco bate de ponta, números "5","4","5","5": ~8 s | rosa-magenta, sombras verde-azuladas | golpes | L20 | slime 38 |
-| 30 | 78,5–80,5 | Campina | lateral baixa | estouro; o selo do nível vira "3"; luz sobe; XP 0 | rosa, flash | sino fino de nível | L21 | Nv 3, HP máx 56 |
-| 31 | 80,5–83,5 | Campina | por cima do ombro, dolly in | Teco abre o Menu com dois dedos; Carteira; Mochila vazia | rosa e prata | clique | L22 | HP 38/56 |
-| 32 | 83,5–86 | Menu | macro, rima do plano 1 | "R$ 1,12" lido por inteiro; 24 gosmas, 2 pós | prata | moedinhas | L22 (fim) | saldo 1,12 |
-| 33 | 86–88,5 | Menu | dolly in | barra "1,12/20,00" quase vazia | prata | clique | L23 | meta 20,00 |
-| 34 | 88,5–91,5 | Campina | plano médio, 3/4 baixa | Teco fecha o Menu e leva o punho ao peito (começa a sair); o ícone de Carta pisca "1"; ele para | rosa | sino de carta | L24 | punho no peito, desistiu |
-| 35 | 91,5–94,5 | Menu | insert por cima do ombro | Carta aberta: ícone de Gosma Dourada, "R$ 50,00" | prata e dourado | sino | L25 | Carta aberta |
-| 36 | 94,5–98 | Mapa | PLANO TOP-DOWN 2 de 2 (UI: mapa): tira de foco sobre um ponto | Campina (ponto rubi), Caverna do Brejo ao leste com selo "5" e lua; selo do Teco "3" | violeta | sino grave | L26 | — |
-| 37 **QUADRO-CHAVE** | 98–102,5 | Campina, crepúsculo | 3/4 baixa (~15°), pull-back lento; foco fecha no rosto | Teco, galho rachado na mão, cachecol balançando, olha a mata escura ao leste; ao fundo, o último sol | rosa a violeta; rosto iluminado pelo painel | vento, pad cresce | L27 | Nv 3, HP 38/56, saldo 1,12, Carta aberta |
-| 38 | 102,5–105 | Campina | locked, desfoque total | quadro de fundo; cartão "LOGADO" em pós | violeta | pad some, vento | — | — |
+| 1 **QUADRO-CHAVE (loop)** | 0–2,8 | Campina, crepúsculo (18:35) | 3/4 baixa (~15°), plano médio, dolly in lento; foco no painel e no rosto | Teco de perfil à esquerda, galho rachado na mão direita; Menu aberto: Carteira "R$ 0,68", ícone de Carta com "1" piscando | rosa-violeta, brilho prata do painel | vento, moedinha, celesta | L1 | Nv 3, HP 38/56, saldo 0,68, Carta 1 |
+| 2 | 2,8–6,4 | Cozinha, 08:00 (real) | 3/4 baixa, travelling curto | mesa: Visor cinza-claro no centro, mão do pai (polo azul-petróleo) por cima; mãe (blusa mostarda) aponta o relógio de parede; Teco de pé, chinelo preto, caneca, faixa vermelha no pulso esquerdo | amarela, névoa bege | cafeteira, murmúrio sem palavras | L2 | Visor sob a mão do pai; caneca na mão do Teco |
+| 3 | 6,4–9,9 | Banca de Compras, Porto Manso (jogo) | insert 3/4 baixa, dolly in | balcão com selo prateado; um jogador de costas põe um item brilhante, moedas caem, número "R$ 3,00" sobe; "LOGADO" em pós | azul-claro de janela alta | moedas, sino | L3 | cena de explicação, não é o Teco |
+| 4 | 9,9–13,2 | Cozinha e corredor (real) | travelling lateral, câmera à frente | Teco estica a mão, pega o Visor da mesa e leva embaixo do braço direito; larga a caneca na pia; pai balança a cabeça; Teco sai de costas para os dois | amarela, mais escura no corredor | chinelo, caneca na pia | L4 | Visor sob o braço direito |
+| 5 **QUADRO-CHAVE** | 13,2–17,2 | Porta do quarto, corredor (real) | 3/4 baixa (~15°), plano americano, Teco ~60% da altura; pais desfocados ao fundo | Teco para na porta, mão esquerda (faixa vermelha) na maçaneta, Visor no braço direito, vira o rosto para os pais e sussurra | amarela, vinheta; faixa = única cor saturada | relógio, silêncio de casa | S1 [L5] | Visor sob o braço direito; mão esquerda na maçaneta |
+| 6 | 17,2–20,2 | Quarto (real) | plano médio baixo, dolly in até a altura do Visor | Teco deita, põe o Visor; a luz amarela some atrás da faixa; clique, zumbido | amarela murcha | clique, zumbido, J-cut do violão | L6 | Visor no rosto |
+| 7 | 20,2–23,2 | Campina, manhã | 3/4 baixa (~15°); HUD em x 40–600, y 280–360 | avatar abre os olhos; Galho Torto na mão direita; HP 40/40, relógio 08:12; cartão "Nível 1" em pós | menta fria, névoa verde-pálido | violão, pássaros, vento | L6 (fim), L7 | Nv 1, HP 40/40, XP 0/30, galho intacto |
+| 8 | 23,2–26,2 | Campina | lateral baixa, pan | um Gosmim pula do capim; barra do slime 20/20; Teco levanta o galho | menta | pulinho mole | L7 | slime 20/20 |
+| 9 | 26,2–29,2 | Campina | perfil próximo (~10°) | golpe "3" (slime 17); golpe "2" (15); erro; "+1" branco-azulado (16) | menta | baque de madeira, mole | L8 | slime 16 |
+| 10 | 29,2–32,2 | Campina | 3/4 baixa, cortes rápidos | golpe "4" (12); slime acerta "4" no Teco (HP 36/40); golpe "3" (9) | menta | pancada, esforço | L8 (fim), L9 | slime 9, Teco 36/40 |
+| 11 **QUADRO-CHAVE** | 32,2–35,2 | Campina | 3/4 baixa (~15°), plano americano, Teco ~60% da altura, slime a 1 m no chão | Teco ofegante, galho erguido; erro e "+1" (slime 10); slime acerta "4" (HP 32/40); ele sussurra para o slime | menta | silêncio crescendo | S2 [L10] | slime 10/20, Teco 32/40 |
+| 12 | 35,2–38,2 | Campina | lateral baixa | golpes "3" (7), "4" (3), "3" (0); estouro em poça azul | menta, flash azul | silêncio de voz 34,9–35,8, estouro mole | L11 | XP 3/30; ~13 s de luta |
+| 13 | 38,2–41,2 | Campina | insert baixo, dolly in | Gosma Rala (gota azul, borda prata) fica na poça; etiqueta "0,04" flutua; Teco pega, Mochila 1 | menta | moedinha | L11 (fim), L12 | Mochila: 1 gosma; Carteira 0,00 |
+| 14 | 41,2–44,2 | Menu | por cima do ombro | Carteira "R$ 0,00" e barra de meta "20,00" vazia; Teco olha a barra | prata | clique | L12 (fim), L13 | meta 20,00 |
+| 15 | 44,2–47,2 | Campina | lateral baixa, travelling | Teco mata o 3º slime; poça sem nada; contador de drops "1/3" | menta | estouro | L13 | 1 gosma em 3 slimes |
+| 16 | 47,2–50,2 | Menu | dolly in no gráfico | dez pontos: 4 azuis acesos (gosmas), 6 apagados; ao lado "65%" | prata | clique | L13 (fim), L14 | 4 gosmas em 10 slimes |
+| 17 | 50,2–53,2 | Campina | travelling lateral rápido, 3 cortes | montagem de golpes; relógio 09:20 → 10:05; selo vira "2", HP máx 48 | menta | golpes, sino de nível | L14 (fim), L15 | Nv 2 às 10:05 |
+| 18 | 53,2–56,2 | Banca, Porto Manso, 13:08 | 3/4 baixa, travelling | Teco entra correndo no salão quase vazio; só 2 jogadores; balcão com selo prateado | azul-claro | passos, eco do salão | L15 | Mochila: 15 gosmas + 1 pó |
+| 19 | 56,2–59,2 | Banca | por cima do ombro | painel de preços: Gosma "0,04" estável, ícone de fila com 2 figurinhas; Teco põe 15 gosmas e 1 pó no balcão | azul-claro, prata | clique, objetos no balcão | L15 (fim), L16 | preço 0,04 |
+| 20 | 59,2–62,2 | Banca | insert dolly in | moedas caem; Carteira sobe até "R$ 0,68" | prata, dourado | moedas | L16 (fim), L17 | Carteira 0,68; Mochila 9 gosmas + 1 pó |
+| 21 | 62,2–65,2 | Quarto, 14:20 (real) | plano médio baixo, travelling | Teco deitado de Visor, faixa no pulso; mãe entra, põe o prato (arroz, ovo) na mesinha e sai de fininho; a luz da janela se arrasta | amarela, janela cinza | prato, passos, relógio | L17 | prato intocado |
+| 22 | 65,2–68,2 | Campina, tarde | lateral baixa, câmera acompanha o galho | diagrama pixel: seta curta na mão, seta longa na ponta; galho em câmera lenta | menta | assobio | L18 (física) | pegada normal (2–4) |
+| 23 | 68,2–70,8 | Campina | 3/4 baixa (~15°) | pegada na base; golpe de ponta "5" | menta, flash | assobio, baque seco | L18 (fim), L19 | dano 4–6 |
+| 24 | 70,8–72,9 | Campina | cortes rápidos | golpes "4", "5", "6"; slime estoura; Teco sorri sem som | menta | estouro | L19 | ~8 s por slime |
+| 25 | 72,9–74,9 | Campina | insert macro, dolly in | rachadura fina na ponta do Galho Torto | menta | estalo de madeira | L20 | galho rachado |
+| 26 | 74,9–77,4 | Campina | PLANO GERAL/ELEVADO 1 de 2 (passagem do dia): alto, push, tilt-shift | pontinho rubi caçando; relógio 16:40 → 17:50; sombras longas giram; ao fundo, fila de jogadores nos pontos de spawn | do menta ao rosa-magenta | pássaros somem | L21 | — |
+| 27 | 77,4–80,4 | Campina, pôr do sol | 3/4 baixa, travelling lateral | último slime (nº 38): "5", "4", "5", "6"; estouro; selo do nível vira "3" | rosa-magenta, sombras verde-azuladas | golpes, sino fino | L21 (fim), L22 | Nv 3, HP máx 56 |
+| 28 | 80,4–83,4 | Campina, crepúsculo | por cima do ombro, dolly in | Teco abre o Menu; Banca: ícone de fila com muita gente, preço "0,03" com seta para baixo | rosa e prata | clique | L23 | HP 38/56 |
+| 29 | 83,4–86,4 | Menu | insert por cima do ombro | Mochila: 9 gosmas + 1 pó; Teco fecha a Mochila (Menu continua aberto) | prata | clique | L23 (fim), L24 | estoque guardado |
+| 30 | 86,4–88,9 | Menu | macro | Carteira "R$ 0,68"; etiqueta "0,44" sobre a Mochila | prata | moedinhas | L24 | patrimônio 1,12 |
+| 31 | 88,9–91,9 | Campina, crepúsculo | plano médio, 3/4 baixa | Teco leva o punho ao peito (começa a sair), o ícone de Carta pisca "1"; ele para | rosa-violeta | sino de carta | L25 | punho no peito, desistiu de sair |
+| 32 | 91,9–94,9 | Menu | por cima do ombro | Carta aberta: ícone de Gosma Dourada e "R$ 50,00" | prata e dourado | sino | L25 (fim) | Carta aberta |
+| 33 | 94,9–97,9 | Mapa | PLANO TOP-DOWN 2 de 2 (UI: mapa), tira de foco | Campina (ponto rubi), Caverna do Brejo a leste com selo "5" e lua; selo do Teco "3" | violeta | sino grave | L26 | — |
+| 34 | 97,9–100,9 | Campina, crepúsculo | 3/4 baixa, push | Teco de frente olha a mata escura a leste; Menu aberto com relógio da Carta (08:00) | violeta, painel prata no rosto | vento, pad | L26 (fim), L27 | Menu aberto |
+| 35 | 100,9–103,9 | Campina | plano médio, dolly in | Teco vira o rosto para a câmera e aponta o galho rachado para o espectador | violeta | pad cresce | L27 | galho rachado |
+| 36 | 103,9–106,5 | Campina | 3/4 baixa, orbit curto | Teco entre duas trilhas: à esquerda a caverna escura, à direita a cidade com lampiões; ícones sem letras | violeta | pad | L27 (fim), L28 | — |
+| 37 | 106,5–109,5 | Campina | dolly in | Teco reabre o Menu e leva o olhar à Carteira | violeta | pad | L28 | Menu aberto |
+| 38 **QUADRO-CHAVE (loop = plano 1)** | 109,5–111 | Campina, crepúsculo | idêntico ao plano 1 | idêntico ao plano 1 | rosa-violeta | cauda, vento | L28 (fim) | Nv 3, saldo 0,68, Carta 1 |
 
-## Contagem
+## Contagem exata
 
-- **228 palavras** faladas (narração 219; sussurros em cena 9) e **1.334 caracteres** com espaços, pontuação e tags de tom (texto das linhas: 1.196; tags: 128 + 10 espaços).
-- Estimativa de fala: narração 91 s (2,4 pal./s) + sussurro 5,6 s = ~97 s em 105 s. Pausas de voz: 36,0–37,2 s e 79,5–80,0 s (≤ 1,5 s), mais o título (2,5 s, cartão e música).
-- Falas em cena: 2 (L5, L10), só do protagonista. Ninguém mais tem voz.
+- **Palavras faladas: 241** (narração 232; falas em cena 9: L5 = 5 e L10 = 4).
+- **Caracteres sem tags: 1.323** (com espaços e pontuação).
+- **Caracteres com tags: 1.461** (1.323 + 128 de tags + 10 espaços depois delas).
+- Pace: narração 232 pal. em ~97 s (≈2,3–2,4 pal./s nas janelas abaixo) + sussurros em ~5,6 s; pausas de voz só 34,9–35,8 s (0,9 s) e 79,6–79,7 s.
 
-## Linhas faladas (para TTS), na ordem
+## Linhas faladas (para TTS), na ordem, com janela e ritmo
 
-1. N [calmo] Um dia inteiro jogando. Um real e doze centavos.
-2. N Meu pai diz que eu jogo demais.
-3. N Minha mãe diz que isso não leva a lugar nenhum.
-4. N [baixo] Eu não discuti. Falei baixinho, de costas pros dois:
-5. **S (para os pais)** [sussurrando] Eu vou mostrar pra vocês.
-6. N Entrei em Almaré. Nível um, um galho, quarenta de vida.
-7. N O primeiro inimigo: um slime. Parece fácil.
-8. N Não era. Eu tirava três por golpe, e ele se curava.
-9. N [baixo] Eu pedi pro slime, baixinho:
-10. **S (para o slime)** [sussurro ofegante] Morre logo, por favor.
-11. N Caiu uma Gosma Rala. Quatro centavos.
-12. N [calmo, didático] Eu já sabia por quê: oferta e procura. Todo mundo mata slime, então ninguém paga caro.
-13. N Pra sacar, vinte reais. Quinhentas gosmas.
-14. N Repeti a manhã inteira.
-15. N [calmo, didático] Eu já sabia que sessenta e cinco por cento não é toda vez. É a média.
-16. N [calmo, didático] Eu já sabia que a ponta do galho anda mais rápido que a mão. Segurei na base: mais velocidade, mais dano.
-17. N Cinco por golpe. Mas o galho rachou.
-18. N Esqueci o almoço. O prato esfriou.
-19. N O sol baixou. Slime trinta e oito.
-20. N Dessa vez, bati com a ponta. Oito segundos.
-21. N Nível três.
-22. N Abri a carteira. Vinte e quatro gosmas, dois pós: um real e doze.
-23. N Pro saque, faltavam quase dezenove reais.
-24. N Eu já ia sair, quando chegou uma carta.
-25. N [surpreso, baixo] Cinquenta reais por uma Gosma Dourada.
-26. N Só à noite, numa caverna nível cinco. Eu, nível três.
-27. N [firme] Eu tinha até a noite pra dar um jeito.
+1. N [calmo] Um dia inteiro. Sessenta e oito centavos. (0,1–2,8; 6 pal.; 2,2/s)
+2. N Meus pais dizem que jogo não paga nada. (2,9–6,3; 8; 2,35/s)
+3. N Mas em Almaré, item vira dinheiro de verdade. (6,4–9,8; 8; 2,35/s)
+4. N [baixo] Eu não discuti. Falei baixinho, de costas pros dois: (9,9–13,8; 9; 2,3/s)
+5. **S (para os pais)** [sussurrando] Eu vou provar que paga. (14,2–17,2; 5; 1,7/s)
+6. N Entrei em Almaré. Nível um, um galho, quarenta de vida. (17,6–21,9; 10; 2,3/s)
+7. N Primeiro inimigo: um slime. Parece fácil. (22,0–24,6; 6; 2,3/s)
+8. N Não era. Eu tirava três por golpe, e ele se curava. (24,7–29,4; 11; 2,3/s)
+9. N [baixo] Eu pedi pro slime, baixinho: (29,5–31,7; 5; 2,3/s)
+10. **S (para o slime)** [sussurro ofegante] Morre logo, por favor. (32,3–34,9; 4; 1,5/s)
+11. N Caiu uma gosma. Valia quatro centavos. (35,8–38,4; 6; 2,3/s)
+12. N Pra sacar, são vinte reais. Quinhentas gosmas. (38,5–41,5; 7; 2,3/s)
+13. N [calmo, didático] Eu já sabia: sessenta e cinco por cento é a chance de soltar gosma, não uma garantia. (41,6–48,9; 17; 2,33/s)
+14. N Nos dez primeiros vieram só quatro. Continuei. (49,0–52,0; 7; 2,3/s)
+15. N [calmo, didático] Fui vender. Eu já sabia: quando todo mundo vende junto, o preço cai. (52,1–57,7; 13; 2,32/s)
+16. N Às treze, salão vazio. Vendi: sessenta e oito centavos. (57,8–61,7; 9; 2,3/s)
+17. N Esqueci o almoço. (61,8–63,2; 3; 2,1/s)
+18. N [calmo, didático] Eu já sabia que a ponta do galho anda mais rápido que a mão. (63,3–69,3; 14; 2,33/s)
+19. N Segurei na base: mais velocidade, cinco por golpe. (69,4–72,8; 8; 2,35/s)
+20. N Mas o galho rachou. (72,9–74,7; 4; 2,2/s)
+21. N Pôr do sol. Slime trinta e oito. Oito segundos, não treze. (74,8–79,6; 11; 2,3/s)
+22. N Nível três. (79,7–80,7; 2; 2,0/s)
+23. N Fila na Banca, preço caindo. Guardei o resto pra manhã. (80,8–85,2; 10; 2,27/s)
+24. N Carteira: sessenta e oito. Mochila: quarenta e quatro. (85,3–88,8; 8; 2,3/s)
+25. N [surpreso, baixo] Eu já ia sair quando chegou uma carta: cinquenta reais por uma Gosma Dourada. (88,9–94,9; 14; 2,33/s)
+26. N Só cai de noite, em caverna nível cinco. Vence amanhã cedo. (95,0–99,7; 11; 2,34/s)
+27. N Se alguém aí diz que jogo não paga, manda isso pra essa pessoa. (99,8–105,4; 13; 2,32/s)
+28. N [firme] Você faria o quê? A, arriscar a caverna hoje. B, esperar. Comenta. (105,5–110,6; 12; 2,35/s)
 
-Campo asr (nomes inventados): Almaré, Gosmim, Gosma Rala, Gosma Dourada, Visor, Teco.
+Campo asr (nomes inventados): Almaré, Gosmim, Gosma Rala, Gosma Dourada, Visor, Banca de Compras, Teco.
 
 ## Conferência de contas (jogo)
 
-38 slimes × 3 XP = 114 XP (Nv 3). 24 × R$ 0,04 + 2 × R$ 0,08 = R$ 1,12. 20,00 − 1,12 = 18,88 ("quase dezenove"). 20 ÷ 0,04 = 500 gosmas. Média de drop: 38 × 0,65 ≈ 24,7.
+- Luta 1, golpe a golpe: 20 −3 = 17; −2 = 15; cura +1 = 16; −4 = 12; −3 = 9; cura +1 = 10; −3 = 7; −4 = 3; −3 = 0. Dano total 22 = 20 + 2 curas. Teco: 40 → 36 → 32.
+- Luta final: 5 + 4 + 5 + 6 = 20. 
+- 38 slimes × 3 XP = 114 XP (Nv 3). Drops: 24 de 38 = 63% (esperado 24,7). Venda às 13:08: 15 × 0,04 + 1 × 0,08 = R$ 0,68. Estoque: 9 × 0,04 + 0,08 = R$ 0,44. Patrimônio R$ 1,12. Sacar: R$ 20,00 ÷ 0,04 = 500 gosmas.
+
+## Título, legenda e hashtags
+
+- **Título:** LOGADO - EP01 - Um dia inteiro no jogo rendeu 68 centavos (e uma carta de R$ 50)
+- **Legenda:** Meus pais dizem que jogo não paga nada. Passei um dia no nível 1, fiz R$ 0,68 e chegou uma carta de R$ 50. Arrisco a caverna hoje (A) ou espero ficar mais forte (B)? Comenta A ou B. Manda pra quem diz que jogo não dá dinheiro.
+- **Hashtags (7):** #logado #gamer #mmorpg #pixelart #animacao #dinheiroextra #gamerbrasil
+
+## Checklist viral (VIRAL.md)
+
+1 frase 1 com número e conflito (L1+L2); 2 sai em 0,1 s; 3 primeiro quadro com Carteira em R$ e galho rachado; 4 premissa em uma frase (L3); 5 recap dentro da ação nos primeiros 10 s; 6 "manda pra quem..." (L27); 7 pais e dinheiro (planos 2, 4, 5); 8 números mudam (HP, saldo, nível) e saldo antes/depois (planos 14, 20, 30); 9 erro caro (slime cura, 13 s de luta por 4 centavos); 10 três explicações, cada uma ≤ 7,3 s, com resultado visível; 11 cada uma termina num número (4 de 10; R$ 0,68; dano 5); 12 evento novo a cada 3 s; 13 pergunta A/B (L28); 14 final em loop com pergunta nova (a Carta); 15 título e legenda no padrão, 7 hashtags.
+
+## Corrigido na revisão 1
+
+- **Críticos:** venda mostrada na Banca (planos 18–20; regra do preço por fila na bíblia; Mochila com 9 gosmas e 1 pó em vez de "vazia"; saldo só sobe na Banca); HP do slime golpe a golpe (planos 9–12, soma fecha em 22 = 20 + 2 curas; HP do Teco 40 → 36 → 32); premissa dita cedo (L3 "item vira dinheiro de verdade" aos 6 s) e S1 agora diz o quê ("Eu vou provar que paga").
+- **Médios:** probabilidade refeita (65% é a chance de soltar gosma; 4 de 10; 24 de 38 = 63%, sem média errada); economia agora muda decisão (vende às 13h com salão vazio e guarda o resto de noite); prazo da Carta (vence domingo 08:00) e caverna na mesma noite; "Dessa vez" removido; Visor tem origem (sobre a mesa, sob a mão do pai, plano 2) e chinelo preto; plano 5 sem "mãos nos bolsos"; Menu continua aberto quando a Carta pisca; nenhum plano acima de 4 s; final em loop (plano 38 = plano 1), sem cartão parado; zona segura definida.
+- **Ritmo de falas:** todas as janelas ≤ 2,35 pal./s (sussurros ≤ 1,7).
+- **Leves:** "+1" em branco-azulado (não verde); rosto iluminado pelo painel só com Menu aberto (plano 34); galho rachado já no plano 1; 38 slimes em ~10 h explicados por spawn disputado (bíblia).
+- **Viral:** gatilho "manda pra quem..." (L27), pergunta A/B (L28), título, legenda e 7 hashtags.

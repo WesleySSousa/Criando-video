@@ -1,7 +1,7 @@
 # LOGADO — Bíblia da série
 
 Fonte de verdade. Toda mudança de roteiro atualiza este arquivo.
-Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de **1:20 a 2:00** (ep. 1 = 105 s), sem legendas nem fala escrita (só cartões de título/capítulo em pós; números de HUD, dano, relógio, preço e saldo podem aparecer como números, sem palavras; o símbolo R$ vale como símbolo). Mundo, nomes e personagens 100% originais.
+Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de **1:20 a 2:00** (ep. 1 = 111 s, final em loop com o primeiro quadro), sem legendas nem fala escrita (só cartões de título/capítulo em pós; números de HUD, dano, relógio, preço e saldo podem aparecer como números, sem palavras; o símbolo R$ vale como símbolo). Mundo, nomes e personagens 100% originais.
 
 ## 1. Premissa
 
@@ -19,14 +19,17 @@ Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de **1:20 a 2:00
 
 - **Narração:** primeira pessoa do Teco (voz "wesley"), calma e baixa, estilo diário; cobre quase o episódio todo (pausas só como efeito, ≤ 1,5 s). Ritmo ~2,4 palavras/s; sussurro ~1,6 palavras/s. Teto ~2,4 palavras/s no total do episódio.
 - **Falas em cena:** no máximo 2 por episódio, só do protagonista, sussurradas, sempre com a narração ou a imagem mostrando com quem ele fala antes. Os pais nunca têm voz (narração, gesto, som abafado).
-- **Gancho:** forte nos primeiros 2 s (ep. 1: o saldo de R$ 1,12) e final que puxa o próximo episódio.
-- **Ritmo de imagem:** nenhum plano parado; corte, movimento ou ação a cada 2–4 s.
+- **Gancho:** forte nos primeiros 2 s, com número e conflito (ep. 1: "Um dia inteiro. Sessenta e oito centavos. Meus pais dizem que jogo não paga nada."), recap da premissa ("em Almaré, item vira dinheiro de verdade") nos primeiros 10 s, e final que puxa o próximo episódio.
+- **Ritmo de imagem:** nenhum plano parado nem acima de 4 s; corte, movimento ou ação a cada 2–4 s. Cada fala cabe a ≤ 2,4 palavras/s na sua janela.
+- **Loop:** o último quadro é igual ao primeiro (mesmo enquadramento, mesma luz, mesmo saldo); o título entra por cima da ação, nunca em cartão parado no fim.
+- **Zona segura (1080×1920):** nada importante nos 250 px do topo, nos 380 px da base e nos 150 px da direita, ou seja, tudo em x 0–930, y 250–1540. HUD, cartões e rosto do Teco ficam dentro dela.
+- **Fecho de episódio:** um gatilho natural de compartilhamento ("manda pra quem...") dito pela narração e uma pergunta A/B de uma palavra; título "LOGADO - EP## - gancho" e legenda com a pergunta e 5–8 hashtags (games/animação/dinheiro).
 - **Marca da série: "O que ele sabe".** O Teco explica, como quem já sabia ("Eu já sabia que..."), um fato verdadeiro do mundo real (física, biologia, matemática, economia) e o usa numa ação na tela: vencer, escolher o que vender, decidir. 2 a 3 por episódio. Regra de continuidade: o conhecimento tem de ser real e o jogo, por regra, o recompensa (ver §3).
 
 | Ep. | Conhecimento | Fato real | Uso na tela |
 |---|---|---|---|
-| 1 | Economia | preço = oferta e procura | slime é farmado por todos, logo vale 4 centavos; raro vale 50 |
-| 1 | Probabilidade | 65% é média de muitas tentativas, não "toda vez" (lei dos grandes números) | conta o drop sem se frustrar com poças vazias |
+| 1 | Economia | quando muita gente vende junto, o preço cai (oferta e procura) | vai à Banca às 13h, com o salão vazio, e vende tudo a R$ 0,04; no fim da tarde, com fila e preço R$ 0,03, guarda o resto para a manhã |
+| 1 | Probabilidade | 65% é a chance de cada slime soltar gosma, não uma garantia; só a média de muitos aparece | nos 10 primeiros slimes vêm só 4 gosmas e ele continua; no fim 24 de 38 (63%) |
 | 1 | Física | a ponta de um galho anda mais rápido que a mão (v = ω·r), e a energia do impacto cresce com a velocidade | segura na base, bate com a ponta: dano de 3 para 5 |
 
 ## 3. Regras do jogo (ALMARÉ)
@@ -37,9 +40,10 @@ Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de **1:20 a 2:00
 - **Níveis e HP.** Nv 1: 40 HP; cada nível +8 HP máx (Nv 2: 48, Nv 3: 56). Regeneração fora de combate: 1 HP a cada 5 s.
 - **Dano.** Galho Torto: 2 a 4 por golpe (pegada normal); com pegada na base e golpe de ponta: 4 a 6 (média ~5). Um golpe a cada ~1,5 s, ~25% de erro.
 - **XP.** Nv 1→2: 30 XP; Nv 2→3: mais 84 (acumulado 114). Slime Gosmim dá 3 XP: 10 slimes para o Nv 2, 38 para o Nv 3.
-- **Gosmim (slime de nível 1).** 20 HP; ataca a cada ~3 s com 50% de acerto, 4 de dano; recupera 1 HP a cada 2 s se ficar sem apanhar. Luta de iniciante: ~12 s e ~8 HP perdidos; com pegada de ponta: ~8 s. Estoura numa poça azul-clara que some em 2 s.
+- **Gosmim (slime de nível 1).** 20 HP; ataca a cada ~3 s com 50% de acerto, 4 de dano; recupera 1 HP se ficar 2 s sem apanhar (número "+1" em branco-azulado, nunca verde). Estoura numa poça azul-clara que some em 2 s. **Luta 1 do ep. 1, golpe a golpe:** Teco acerta 3 (slime 17), 2 (15), erra e o slime cura (16), 4 (12), slime acerta Teco -4 (36/40), 3 (9), erra e cura (10), slime acerta Teco -4 (32/40), 3 (7), 4 (3), 3 (0): sete acertos e dois erros, ~13 s, Teco perde 8 HP. **Com pegada de ponta:** 5, 4, 5, 6 = 20, ~8 s, sem cura.
+- **Spawn.** Cada ponto da Campina solta um Gosmim a cada ~15 min e há fila de jogadores por ponto; por isso, mesmo jogando ~10 h, o Teco mata só 38 slimes.
 - **Drops do Gosmim.** Gosma Rala (65%), Pó Brilhante (5%), 1 a 3 moedas de cobre (moeda interna, sem valor real).
-- **Dinheiro real.** Só itens "negociáveis" (borda prateada no ícone). A **Banca de Compras** (balcão em Porto Manso) compra por preço do dia e credita na **Carteira** em R$; jogadores também fazem **encomendas** pela Carta (preço livre, bem acima da Banca para raros). Preços já líquidos.
+- **Dinheiro real.** Só itens "negociáveis" (borda prateada no ícone). A **Banca de Compras** (salão com balcão em Porto Manso; é preciso estar lá para vender) compra por preço do momento e credita na **Carteira** em R$ na hora (moedas caem, número sobe). O preço cai conforme a fila de vendedores naquele momento (ex.: Gosma Rala R$ 0,04 com salão vazio; R$ 0,03 com fila grande) e volta ao normal às 06:00. O Menu mostra o preço atual e um ícone de fila. Jogadores também fazem **encomendas** pela Carta (preço livre, bem acima da Banca para raros, com prazo). Preços já líquidos. Valor "no papel" de itens guardados = preço normal.
 - **Saque.** Mínimo R$ 20,00, taxa de 10%, prazo de 1 dia útil.
 - **Tabela de referência:**
 
@@ -49,7 +53,7 @@ Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de **1:20 a 2:00
 | Pó Brilhante | Gosmim, 5% | R$ 0,08 |
 | Gosma Dourada | só à noite, Caverna do Brejo (nível 5) | Banca R$ 3,00 / encomenda R$ 50,00 |
 
-- **Contas do ep. 1:** 38 slimes; 24 Gosmas Ralas (24 × 0,04 = 0,96) + 2 Pós Brilhantes (2 × 0,08 = 0,16) = **R$ 1,12**. Falta R$ 18,88 para sacar (~470 gosmas).
+- **Contas do ep. 1:** 38 slimes (114 XP); 24 Gosmas Ralas e 2 Pós Brilhantes no total (24 de 38 = 63%, esperado 65% × 38 = 24,7). Nos 10 primeiros: 4 gosmas. Às 13:08 vende 15 gosmas + 1 pó: 15 × 0,04 + 0,08 = **R$ 0,68 na Carteira**. Guarda 9 gosmas + 1 pó: 9 × 0,04 + 0,08 = R$ 0,44 na Mochila. **Patrimônio R$ 1,12.** Para sacar faltam R$ 19,32 (R$ 20,00 − 0,68), ou 500 gosmas a 0,04.
 - **Mapa.** Porto Manso (cidade inicial), Campina Mansa (campo dos Gosmins, ao sul), Caverna do Brejo (noite, nível recomendado 5, a leste).
 
 ## 4. Personagens
@@ -79,10 +83,10 @@ Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de **1:20 a 2:00
 | Visor | Teco | cabeça (jogando); no início, nas mãos dele sentado na cama | intacto |
 | Faixa vermelha | Teco | pulso esquerdo (vida real) | presente |
 | Cachecol rubi | avatar | pescoço, ponta esquerda longa | limpo |
-| Galho Torto | avatar | mão direita | **rachado na ponta** desde o plano 26 do ep. 1 |
-| Mochila | avatar | costas | quase vazia (tudo vendido) |
-| Carteira | Teco | Menu | **R$ 1,12** |
-| Carta do comprador | Teco | Menu | aberta; encomenda R$ 50,00 (Gosma Dourada) |
+| Galho Torto | avatar | mão direita | **rachado na ponta** desde o plano 25 do ep. 1 |
+| Mochila | avatar | costas | 9 Gosmas Ralas + 1 Pó Brilhante guardados (R$ 0,44 no preço normal) |
+| Carteira | Teco | Menu | **R$ 0,68** (patrimônio 1,12) |
+| Carta do comprador | Teco | Menu | aberta; encomenda R$ 50,00 (Gosma Dourada), vence domingo 08:00 |
 | Nível/HP | avatar | HUD | **Nv 3, HP 38/56** |
 | Prato de almoço | família Almeida | mesinha ao lado da cama, quarto | esfriou, intocado |
 
@@ -90,29 +94,29 @@ Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de **1:20 a 2:00
 
 | Lugar | Mundo | Névoa | Luz-chave | Práticas | Uso |
 |---|---|---|---|---|---|
-| **Quarto do Teco** | real | bege-poeira | lâmpada de mesa incandescente amarela; janela com céu cinza-claro | abajur, luz sob a porta | ep. 1 planos 3, 8, 27 |
-| **Cozinha e corredor dos Almeida** | real | bege-amarelado | luz de teto amarela, quente | relógio de parede, cafeteira com luz âmbar | ep. 1 planos 4 a 7 |
-| **Campina Mansa** | jogo | verde-pálido | sol alto frio menta; no fim do dia, sol baixo rosa-magenta, sombras verde-azuladas | só o brilho dos slimes e do Menu | ep. 1 planos 1, 2, 9 a 37 |
-| Porto Manso | jogo | azul-claro | luz fria de manhã | lampiões, Banca de Compras | ep. 2 |
+| **Quarto do Teco** | real | bege-poeira | lâmpada de mesa incandescente amarela; janela com céu cinza-claro | abajur, luz sob a porta | ep. 1 planos 6 e 21 |
+| **Cozinha e corredor dos Almeida** | real | bege-amarelado | luz de teto amarela, quente | relógio de parede, cafeteira com luz âmbar | ep. 1 planos 2, 4, 5 |
+| **Campina Mansa** | jogo | verde-pálido | sol alto frio menta; no fim do dia, sol baixo rosa-magenta, sombras verde-azuladas; crepúsculo rosa-violeta | só o brilho dos slimes e do Menu | ep. 1 planos 1, 7 a 17, 22 a 38 |
+| **Porto Manso, Banca de Compras** | jogo | azul-claro | luz fria de dia, janelas altas | balcão com selo prateado, painel de preços com ícone de fila | ep. 1 planos 3, 18–20; ep. 2 |
 | Caverna do Brejo | jogo | verde-musgo escuro | brilho dourado dos slimes dourados | cogumelos fluorescentes | ep. 2 (noite) |
 
 ## 7. Linha do tempo
 
-- **Sábado, ep. 1:** 08:00 café com os pais; 08:10 Teco loga; 08:12 Campina; ~10:05 Nv 2; ~12:00 muda a pegada do galho; 14:20 prato esfriando; 18:05 último slime e Nv 3; ~18:30 Carteira R$ 1,12; Carta chega.
-- **Ep. 2 (previsto):** domingo; os pais notam que passou o dia sem comer; Teco sobe de nível para a caverna.
+- **Sábado, ep. 1:** 08:00 café com os pais (o pai segura o Visor sobre a mesa; Teco o pega de volta); 08:10 Teco loga; 08:12 Campina; ~10:05 Nv 2; 13:08 vende na Banca (R$ 0,68); 14:20 prato esfriando no quarto; ~14:40 muda a pegada do galho; 18:05 último slime e Nv 3; ~18:30 Banca com fila (R$ 0,03), guarda o resto; Carta chega (vence domingo 08:00); o episódio começa e termina nesse crepúsculo.
+- **Ep. 2 (previsto):** ainda sábado à noite: decide a caverna (A ou B, a votação do público); os pais notam que passou o dia sem comer.
 
 ## 8. Saldo e progresso ao fim de cada episódio (previsão)
 
 | Ep. | Nível | Saldo | Marco |
 |---|---|---|---|
-| 1 | 3 | R$ 1,12 | Carta de R$ 50,00 |
+| 1 | 3 | R$ 0,68 (+ R$ 0,44 na Mochila) | Carta de R$ 50,00 |
 | 2 | 5 | ~R$ 9 | Caverna do Brejo, primeira Gosma Dourada |
 | 3 | 7 | ~R$ 60 | cumpre a encomenda; passa de R$ 20 |
 | 4+ | — | primeiro saque | comprovante aos pais (final da temporada 1) |
 
 ## 9. Ganchos
 
-1. Ep. 1: Carta de R$ 50,00 por uma Gosma Dourada (só à noite, caverna nível 5; Teco é Nv 3).
+1. Ep. 1: Carta de R$ 50,00 por uma Gosma Dourada (só à noite, caverna nível 5; Teco é Nv 3; vence domingo 08:00) e a pergunta A/B ao público: arrisca hoje ou espera.
 2. Tensão em casa: ele passou o sábado sem comer.
 3. Quem é o comprador anônimo?
 4. O Galho Torto rachado vai quebrar antes da caverna.
@@ -120,6 +124,6 @@ Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de **1:20 a 2:00
 ## 10. Linguagem de câmera da série
 
 - **Padrão:** lateral ou 3/4, baixa e próxima, ~10–20° para baixo; plano médio/americano com o protagonista ~60% da altura.
-- **Geral/elevado:** máx. 2 por episódio, com motivo (ep. 1: plano 28, passagem do dia; plano 36, mapa).
+- **Geral/elevado:** máx. 2 por episódio, com motivo (ep. 1: plano 26, passagem do dia; plano 33, mapa).
 - **Movimentos:** travelling lateral, dolly in, rack focus, orbit curto, por cima do ombro, inserts de HUD.
 - **Estilo:** diorama, luzes práticas, tilt-shift que acompanha o sujeito, cartão de capítulo. Corte entre mundos: corte seco, som do outro mundo entra antes (J-cut).
