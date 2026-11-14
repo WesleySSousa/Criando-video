@@ -204,3 +204,7 @@ R91. Falha de geração não se corrige repetindo a chamada, porque cada repeti�
 R92. Nova pose entra na tabela de poses existente (`TECO_POSES`, `LIRA_POSES`, `OUVIDOR_POSES`); não se cria sprite paralelo. — origem: previa/NOTAS.md
 
 R93. A checagem visual sai direto em PNG, sem passar por JPEG (hoje `still.mjs` grava JPEG q92, e a prévia atual foi convertida). — origem: previa/NOTAS.md
+
+## Adendo — lições da produção
+R94. O tempo dos planos se ajusta à voz REAL, não o contrário: depois de gerar a voz, medir cada fala (ffprobe) e redistribuir os planos (vo_times.json → tempos.json) antes de animar. — origem: EP01, produção (falas até 1,6 s maiores que a janela)
+R95. Ao escrever, calcular as janelas de fala com ~2,1 pal./s para a voz "wesley" com [softly] (ela fala mais devagar que 2,4) e deixar ≥0,3 s de folga por plano; total de fala ≤ 92% da duração do episódio. — origem: EP01, produção (108,3 s de fala em 116 s)
