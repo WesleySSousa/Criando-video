@@ -18,7 +18,7 @@ Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de **1:20 a 2:00
 ## 2. Voz e ritmo (regras da série)
 
 - **Narração:** primeira pessoa do Teco (voz "wesley"), calma e baixa, estilo diário; cobre quase o episódio todo (pausas só como efeito, ≤ 1,5 s). Ritmo ~2,4 palavras/s; sussurro ~1,6 palavras/s. Teto ~2,4 palavras/s no total do episódio.
-- **Falas em cena:** no máximo 2 por episódio, só do protagonista, sussurradas, sempre com a narração ou a imagem mostrando com quem ele fala antes. Os pais nunca têm voz (narração, gesto, som abafado).
+- **Falas em cena:** no máximo 2 por episódio, só do protagonista, sussurradas, sempre com a narração ou a imagem mostrando com quem ele fala antes. Os pais têm voz só para falas curtas e necessárias (Rogério e Sandra, ids em §4); fora disso, narração, gesto ou som abafado.
 - **Gancho:** forte nos primeiros 2 s, com número e conflito (ep. 1: "Dez horas. Sessenta e oito centavos." e, em seguida, "Em Almaré, item vira dinheiro. Meus pais dizem que não paga."), premissa fechada até ~5 s, e final que puxa o próximo episódio.
 - **Ritmo de imagem:** nenhum plano parado nem acima de 4 s; corte, movimento ou ação a cada 2–4 s. Cada fala cabe a ≤ 2,4 palavras/s na sua janela.
 - **Loop:** o último quadro é igual ao primeiro (mesmo enquadramento, mesma luz, mesmo saldo); o título entra por cima da ação, nunca em cartão parado no fim.
@@ -65,11 +65,15 @@ Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de **1:20 a 2:00
 - **No jogo (avatar já desenhado):** cabelo preto curto espetado, pele parda, olhos grandes, calça cinza-ferro, botas marrons de couro cru, colete de couro bege curto, **cachecol comprido vermelho-rubi (#E01030)**, cor única do herói. Itens: **Galho Torto** (galho de madeira clara, mão direita), Mochila de pano (costas, pequena). Sem Espeto nem Brasa.
 - **Na vida real:** camiseta cinza-grafite grande, bermuda preta, chinelo preto, cabelo amassado, olheiras leves; **faixa de pano vermelho-rubi amarrada no pulso esquerdo** (réplica do cachecol), sempre visível quando a mão aparece.
 
-### Rogério Almeida (pai, sem voz)
+### Rogério Almeida (pai, com voz)
 - 47 anos, corpulento, barba grisalha curta, óculos de armação grossa preta; polo azul-petróleo, jeans escuro. Cruza os braços, balança a cabeça.
+- **Voz:** ElevenLabs "Gélson Bertol" (id `nTlnHbWVNC3Uiuychvrv`), tom irritado. Falas curtas, só quando necessário (ep. 1: P1 "Desliga isso, Mateus. Jogo não paga conta.").
+- Legenda: nome "ROGÉRIO" acima da legenda, na cor do polo (azul-petróleo).
 
-### Sandra Almeida (mãe, sem voz)
+### Sandra Almeida (mãe, com voz)
 - 44 anos, cabelo cacheado castanho em coque alto, blusa mostarda e avental cinza-claro. Aponta o relógio da parede; preocupada, não só brava.
+- **Voz:** ElevenLabs "Adriane" (id `mmTLZX6tO1YdiYVoUVN5`), tom preocupado. Falas curtas, só quando necessário (ep. 1: P2 "Filho, sai um pouco dessa tela. Você nem almoçou.").
+- Legenda: nome "SANDRA" acima da legenda, na cor da blusa (mostarda).
 
 ### Slime Gosmim
 - Gota baixa, translúcida azul-clara, dois pontos escuros de olho, ~0,5 de cabeça do herói; pulinho de 2 quadros.
