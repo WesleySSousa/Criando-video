@@ -85,6 +85,7 @@ Formato: 2.5D Pixel Art, vertical 1080×1920, pt-BR, episódios de 80 s, sem leg
 ## 8. Linguagem de câmera da série
 
 - **Câmera padrão:** lateral ou 3/4, baixa e próxima, como série de TV, com inclinação de só ~10–20° para baixo, nunca na altura dos olhos; mostra perfil e rosto dos personagens.
+- **Enquadramento padrão:** plano médio/americano, com o personagem principal ocupando ~60% da altura da tela (vertical 1080×1920). Planos gerais e top-down só como exceção dramática (máx. 2 por episódio).
 - **Plano elevado (top-down ou bem alto):** só para momentos especiais, no máximo 2 por episódio, cada um com motivo dramático (escala, morte, mapa).
 - **Movimentos bem-vindos:** travelling lateral, dolly in, câmera por cima do ombro, rack focus, orbit curto.
 - Mantém a gramática do estilo (diorama, tilt-shift, luz prática); a faixa de foco segue o sujeito.
