@@ -1,0 +1,569 @@
+{
+ "dur": 112.47,
+ "fps_nota": "tempos em segundos; planos contiguos; plano final (40) = quadro do plano 1 (loop)",
+ "n_planos": 40,
+ "n_entradas": 41,
+ "planos": [
+  {
+   "id": "1",
+   "plano": 1,
+   "ini": 0,
+   "fim": 3.09,
+   "dur": 3.09,
+   "falas": [
+    "l01"
+   ]
+  },
+  {
+   "id": "2",
+   "plano": 2,
+   "ini": 3.09,
+   "fim": 5.83,
+   "dur": 2.74,
+   "falas": [
+    "l02"
+   ],
+   "eventos": [
+    {
+     "t": 3.24,
+     "o": 0.15,
+     "desc": "titulo LOGADO entra (2,6 s)"
+    }
+   ]
+  },
+  {
+   "id": "3",
+   "plano": 3,
+   "ini": 5.83,
+   "fim": 9.02,
+   "dur": 3.19,
+   "falas": [
+    "l02",
+    "l03"
+   ]
+  },
+  {
+   "id": "4",
+   "plano": 4,
+   "ini": 9.02,
+   "fim": 12.71,
+   "dur": 3.69,
+   "falas": [
+    "l03"
+   ]
+  },
+  {
+   "id": "5",
+   "plano": 5,
+   "ini": 12.71,
+   "fim": 14.84,
+   "dur": 2.13,
+   "falas": [
+    "l04"
+   ]
+  },
+  {
+   "id": "6",
+   "plano": 6,
+   "ini": 14.84,
+   "fim": 16.64,
+   "dur": 1.8,
+   "falas": [
+    "l05"
+   ]
+  },
+  {
+   "id": "7",
+   "plano": 7,
+   "ini": 16.64,
+   "fim": 20.5,
+   "dur": 3.86,
+   "falas": [
+    "l05",
+    "l06"
+   ],
+   "eventos": [
+    {
+     "t": 16.74,
+     "o": 0.1,
+     "desc": "cartao Nivel 1 entra (2,0 s)"
+    }
+   ]
+  },
+  {
+   "id": "8",
+   "plano": 8,
+   "ini": 20.5,
+   "fim": 23.86,
+   "dur": 3.36,
+   "falas": [
+    "l06",
+    "l07"
+   ]
+  },
+  {
+   "id": "9",
+   "plano": 9,
+   "ini": 23.86,
+   "fim": 26.48,
+   "dur": 2.62,
+   "falas": [
+    "l07"
+   ],
+   "eventos": [
+    {
+     "t": 24.36,
+     "o": 0.5,
+     "desc": "golpe 3"
+    },
+    {
+     "t": 24.96,
+     "o": 1.1,
+     "desc": "golpe 2"
+    },
+    {
+     "t": 25.56,
+     "o": 1.7,
+     "desc": "erro"
+    },
+    {
+     "t": 26.06,
+     "o": 2.2,
+     "desc": "+1 cura"
+    }
+   ]
+  },
+  {
+   "id": "10",
+   "plano": 10,
+   "ini": 26.48,
+   "fim": 29.08,
+   "dur": 2.6,
+   "falas": [
+    "l07",
+    "l08"
+   ],
+   "eventos": [
+    {
+     "t": 26.78,
+     "o": 0.3,
+     "desc": "golpe 4"
+    },
+    {
+     "t": 27.48,
+     "o": 1.0,
+     "desc": "slime acerta -4 (36/40)"
+    },
+    {
+     "t": 28.48,
+     "o": 2.0,
+     "desc": "golpe 3"
+    }
+   ]
+  },
+  {
+   "id": "11",
+   "plano": 11,
+   "ini": 29.08,
+   "fim": 31.5,
+   "dur": 2.42,
+   "falas": [
+    "l09"
+   ],
+   "eventos": [
+    {
+     "t": 29.23,
+     "o": 0.15,
+     "desc": "erro"
+    },
+    {
+     "t": 29.38,
+     "o": 0.3,
+     "desc": "+1 cura"
+    },
+    {
+     "t": 29.48,
+     "o": 0.4,
+     "desc": "slime acerta -4 (32/40)"
+    }
+   ]
+  },
+  {
+   "id": "12",
+   "plano": 12,
+   "ini": 31.5,
+   "fim": 33.72,
+   "dur": 2.22,
+   "falas": [
+    "l10"
+   ],
+   "eventos": [
+    {
+     "t": 31.8,
+     "o": 0.3,
+     "desc": "golpe 3"
+    },
+    {
+     "t": 32.1,
+     "o": 0.6,
+     "desc": "golpe 4"
+    },
+    {
+     "t": 32.35,
+     "o": 0.85,
+     "desc": "golpe 3"
+    },
+    {
+     "t": 32.5,
+     "o": 1.0,
+     "desc": "estouro, cronometro 0:13"
+    },
+    {
+     "t": 33.4,
+     "o": 1.9,
+     "desc": "gosma salta"
+    },
+    {
+     "t": 32.52,
+     "o": 1.02,
+     "desc": "gosma salta da poca (L10 comeca em 32.62)"
+    }
+   ]
+  },
+  {
+   "id": "13",
+   "plano": 13,
+   "ini": 33.72,
+   "fim": 36.76,
+   "dur": 3.04,
+   "falas": [
+    "l10",
+    "l11"
+   ]
+  },
+  {
+   "id": "14",
+   "plano": 14,
+   "ini": 36.76,
+   "fim": 40.7,
+   "dur": 3.94,
+   "falas": [
+    "l11",
+    "l12"
+   ]
+  },
+  {
+   "id": "15",
+   "plano": 15,
+   "ini": 40.7,
+   "fim": 42.85,
+   "dur": 2.15,
+   "falas": [
+    "l12"
+   ],
+   "eventos": [
+    {
+     "t": 40.7,
+     "o": 0.0,
+     "desc": "65% entra"
+    }
+   ]
+  },
+  {
+   "id": "16",
+   "plano": 16,
+   "ini": 42.85,
+   "fim": 45.77,
+   "dur": 2.92,
+   "falas": [
+    "l12"
+   ]
+  },
+  {
+   "id": "17",
+   "plano": 17,
+   "ini": 45.77,
+   "fim": 48.38,
+   "dur": 2.61,
+   "falas": [
+    "l13"
+   ]
+  },
+  {
+   "id": "18",
+   "plano": 18,
+   "ini": 48.38,
+   "fim": 50.42,
+   "dur": 2.04,
+   "falas": [
+    "l13",
+    "l14"
+   ]
+  },
+  {
+   "id": "19",
+   "plano": 19,
+   "ini": 50.42,
+   "fim": 53.5,
+   "dur": 3.08,
+   "falas": [
+    "l14"
+   ]
+  },
+  {
+   "id": "20",
+   "plano": 20,
+   "ini": 53.5,
+   "fim": 57.2,
+   "dur": 3.7,
+   "falas": [
+    "l14",
+    "l15"
+   ]
+  },
+  {
+   "id": "21",
+   "plano": 21,
+   "ini": 57.2,
+   "fim": 60.0,
+   "dur": 2.8,
+   "falas": [
+    "l15"
+   ]
+  },
+  {
+   "id": "22",
+   "plano": 22,
+   "ini": 60.0,
+   "fim": 61.92,
+   "dur": 1.92,
+   "falas": [
+    "l16"
+   ]
+  },
+  {
+   "id": "23",
+   "plano": 23,
+   "ini": 61.92,
+   "fim": 63.77,
+   "dur": 1.85,
+   "falas": [
+    "l17"
+   ]
+  },
+  {
+   "id": "24",
+   "plano": 24,
+   "ini": 63.77,
+   "fim": 65.85,
+   "dur": 2.08,
+   "falas": [
+    "l17"
+   ]
+  },
+  {
+   "id": "25a",
+   "plano": 25,
+   "ini": 65.85,
+   "fim": 67.35,
+   "dur": 1.5,
+   "nota": "plano 25 dividido em 2 (fala L18 de 3,75 s + folga passaria de 4 s); mesmo momento, mesma cena",
+   "falas": [
+    "l18"
+   ]
+  },
+  {
+   "id": "25b",
+   "plano": 25,
+   "ini": 67.35,
+   "fim": 70.0,
+   "dur": 2.65,
+   "nota": "plano 25 dividido em 2 (fala L18 de 3,75 s + folga passaria de 4 s); mesmo momento, mesma cena",
+   "falas": [
+    "l18"
+   ]
+  },
+  {
+   "id": "26",
+   "plano": 26,
+   "ini": 70.0,
+   "fim": 71.66,
+   "dur": 1.66,
+   "falas": [
+    "l19"
+   ]
+  },
+  {
+   "id": "27",
+   "plano": 27,
+   "ini": 71.66,
+   "fim": 74.67,
+   "dur": 3.01,
+   "falas": [
+    "l20"
+   ]
+  },
+  {
+   "id": "28",
+   "plano": 28,
+   "ini": 74.67,
+   "fim": 78.32,
+   "dur": 3.65,
+   "falas": [
+    "l20",
+    "l21"
+   ],
+   "eventos": [
+    {
+     "t": 75.07,
+     "o": 0.4,
+     "desc": "golpes 5,4,5,6"
+    },
+    {
+     "t": 76.57,
+     "o": 1.9,
+     "desc": "estouro"
+    },
+    {
+     "t": 77.27,
+     "o": 2.6,
+     "desc": "selo vira 3, HP 56/56"
+    }
+   ]
+  },
+  {
+   "id": "29",
+   "plano": 29,
+   "ini": 78.32,
+   "fim": 80.67,
+   "dur": 2.35,
+   "falas": [
+    "l22"
+   ]
+  },
+  {
+   "id": "30",
+   "plano": 30,
+   "ini": 80.67,
+   "fim": 82.63,
+   "dur": 1.96,
+   "falas": [
+    "l22"
+   ]
+  },
+  {
+   "id": "31",
+   "plano": 31,
+   "ini": 82.63,
+   "fim": 85.58,
+   "dur": 2.95,
+   "falas": [
+    "l23"
+   ]
+  },
+  {
+   "id": "32",
+   "plano": 32,
+   "ini": 85.58,
+   "fim": 88.67,
+   "dur": 3.09,
+   "falas": [
+    "l23"
+   ]
+  },
+  {
+   "id": "33",
+   "plano": 33,
+   "ini": 88.67,
+   "fim": 91.16,
+   "dur": 2.49,
+   "falas": [
+    "l24"
+   ],
+   "eventos": [
+    {
+     "t": 90.77,
+     "o": 2.1,
+     "desc": "icone de Carta pisca 1 (sino)"
+    }
+   ]
+  },
+  {
+   "id": "34",
+   "plano": 34,
+   "ini": 91.16,
+   "fim": 93.73,
+   "dur": 2.57,
+   "falas": [
+    "l24"
+   ],
+   "eventos": [
+    {
+     "t": 92.66,
+     "o": 1.5,
+     "desc": "1 da Carta vira fixo"
+    }
+   ]
+  },
+  {
+   "id": "35",
+   "plano": 35,
+   "ini": 93.73,
+   "fim": 96.78,
+   "dur": 3.05,
+   "falas": [
+    "l25"
+   ]
+  },
+  {
+   "id": "36",
+   "plano": 36,
+   "ini": 96.78,
+   "fim": 98.54,
+   "dur": 1.76,
+   "falas": [
+    "l25"
+   ]
+  },
+  {
+   "id": "37",
+   "plano": 37,
+   "ini": 98.54,
+   "fim": 102.47,
+   "dur": 3.93,
+   "falas": [
+    "l26"
+   ]
+  },
+  {
+   "id": "38",
+   "plano": 38,
+   "ini": 102.47,
+   "fim": 106.42,
+   "dur": 3.95,
+   "falas": [
+    "l27"
+   ]
+  },
+  {
+   "id": "39",
+   "plano": 39,
+   "ini": 106.42,
+   "fim": 109.37,
+   "dur": 2.95,
+   "falas": [
+    "l27"
+   ]
+  },
+  {
+   "id": "40",
+   "plano": 40,
+   "ini": 109.37,
+   "fim": 112.47,
+   "dur": 3.1,
+   "falas": [
+    "l27"
+   ]
+  }
+ ]
+}

@@ -1,14 +1,438 @@
-{"dur": 80.0, "note": "inicio (s) de cada fala no mix de 80 s; plano e fim calculados com voz/duracoes.txt",
+{
+ "dur": 112.47,
+ "note": "t = inicio audivel da fala (s); t_arquivo = onde o mp3 comeca (t - silencio inicial); dur = fala sem silencios das pontas; tempos de voz/duracoes.txt",
  "lines": [
-  {"id":"l01","shot":1,"t":0.3,"dur":3.396,"end":3.696,"who":"N"},
-  {"id":"l02","shot":2,"t":4.3,"dur":3.318,"end":7.618,"who":"N"},
-  {"id":"l03","shot":3,"t":11.3,"dur":5.799,"end":17.099,"who":"N"},
-  {"id":"l04","shot":4,"t":20.3,"dur":5.251,"end":25.551,"who":"N"},
-  {"id":"l05","shot":5,"t":28.3,"dur":4.676,"end":32.976,"who":"N"},
-  {"id":"l06","shot":6,"t":35.3,"dur":3.239,"end":38.539,"who":"N"},
-  {"id":"l07","shot":7,"t":41.3,"dur":4.362,"end":45.662,"who":"N"},
-  {"id":"l08","shot":9,"t":55.3,"dur":2.926,"end":58.226,"who":"S","lowpass_hz":7000},
-  {"id":"l09","shot":10,"t":62.3,"dur":4.598,"end":66.898,"who":"N"},
-  {"id":"l10","shot":11,"t":69.3,"dur":3.396,"end":72.696,"who":"N"},
-  {"id":"l11","shot":12,"t":74.3,"dur":2.847,"end":77.147,"who":"S","lowpass_hz":7000}
- ]}
+  {
+   "id": "l01",
+   "linha": 1,
+   "shot": "1",
+   "shots": [
+    "1"
+   ],
+   "t": 0.2,
+   "dur": 2.82,
+   "end": 3.02,
+   "t_arquivo": 0.16,
+   "who": "N",
+   "tom": "softly",
+   "texto": "Dez horas. Sessenta e oito centavos."
+  },
+  {
+   "id": "l02",
+   "linha": 2,
+   "shot": "2",
+   "shots": [
+    "2",
+    "3"
+   ],
+   "t": 3.34,
+   "dur": 4.06,
+   "end": 7.4,
+   "t_arquivo": 3.18,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Em Almaré, item vira dinheiro. Meus pais dizem que não paga."
+  },
+  {
+   "id": "l03",
+   "linha": 3,
+   "shot": "3",
+   "shots": [
+    "3",
+    "4"
+   ],
+   "t": 7.72,
+   "dur": 4.69,
+   "end": 12.41,
+   "t_arquivo": 7.53,
+   "who": "N",
+   "tom": "softly",
+   "texto": "Eu não discuti. Não adiantava. Falei baixinho, de costas pros dois:"
+  },
+  {
+   "id": "l04",
+   "linha": 4,
+   "shot": "5",
+   "shots": [
+    "5"
+   ],
+   "t": 12.96,
+   "dur": 1.53,
+   "end": 14.49,
+   "t_arquivo": 12.81,
+   "who": "S",
+   "tom": "whispering",
+   "texto": "Eu vou provar que paga.",
+   "lowpass_hz": 7000,
+   "em_cena": true
+  },
+  {
+   "id": "l05",
+   "linha": 5,
+   "shot": "6",
+   "shots": [
+    "6",
+    "7"
+   ],
+   "t": 15.14,
+   "dur": 4.14,
+   "end": 19.28,
+   "t_arquivo": 15.04,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Entrei em Almaré. Nível um, um galho, quarenta de vida."
+  },
+  {
+   "id": "l06",
+   "linha": 6,
+   "shot": "7",
+   "shots": [
+    "7",
+    "8"
+   ],
+   "t": 19.6,
+   "dur": 3.16,
+   "end": 22.76,
+   "t_arquivo": 19.45,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Primeiro inimigo: um slime. Parece fácil."
+  },
+  {
+   "id": "l07",
+   "linha": 7,
+   "shot": "8",
+   "shots": [
+    "8",
+    "9",
+    "10"
+   ],
+   "t": 23.08,
+   "dur": 3.59,
+   "end": 26.67,
+   "t_arquivo": 22.9,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Não era. Eu tirava três por golpe, e ele se curava."
+  },
+  {
+   "id": "l08",
+   "linha": 8,
+   "shot": "10",
+   "shots": [
+    "10"
+   ],
+   "t": 26.99,
+   "dur": 2.04,
+   "end": 29.03,
+   "t_arquivo": 26.85,
+   "who": "N",
+   "tom": "softly",
+   "texto": "Eu pedi pro slime, baixinho:"
+  },
+  {
+   "id": "l09",
+   "linha": 9,
+   "shot": "11",
+   "shots": [
+    "11"
+   ],
+   "t": 29.63,
+   "dur": 1.79,
+   "end": 31.42,
+   "t_arquivo": 29.45,
+   "who": "S",
+   "tom": "whispering",
+   "texto": "Morre logo, por favor.",
+   "lowpass_hz": 7000,
+   "em_cena": true
+  },
+  {
+   "id": "l10",
+   "linha": 10,
+   "shot": "12",
+   "shots": [
+    "12",
+    "13"
+   ],
+   "t": 32.62,
+   "dur": 2.94,
+   "end": 35.56,
+   "t_arquivo": 32.45,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Caiu uma gosma. Valia quatro centavos."
+  },
+  {
+   "id": "l11",
+   "linha": 11,
+   "shot": "13",
+   "shots": [
+    "13",
+    "14"
+   ],
+   "t": 35.88,
+   "dur": 3.65,
+   "end": 39.53,
+   "t_arquivo": 35.76,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Pra sacar, são vinte reais. Quinhentas gosmas."
+  },
+  {
+   "id": "l12",
+   "linha": 12,
+   "shot": "14",
+   "shots": [
+    "14",
+    "15",
+    "16"
+   ],
+   "t": 39.85,
+   "dur": 5.85,
+   "end": 45.7,
+   "t_arquivo": 39.74,
+   "who": "N",
+   "tom": "calm",
+   "texto": "Eu já sabia: sessenta e cinco por cento é a chance de soltar gosma, não uma garantia."
+  },
+  {
+   "id": "l13",
+   "linha": 13,
+   "shot": "17",
+   "shots": [
+    "17",
+    "18"
+   ],
+   "t": 46.02,
+   "dur": 3.18,
+   "end": 49.2,
+   "t_arquivo": 45.86,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Nos dez primeiros vieram só quatro. Continuei."
+  },
+  {
+   "id": "l14",
+   "linha": 14,
+   "shot": "18",
+   "shots": [
+    "18",
+    "19",
+    "20"
+   ],
+   "t": 49.52,
+   "dur": 4.87,
+   "end": 54.39,
+   "t_arquivo": 49.45,
+   "who": "N",
+   "tom": "calm",
+   "texto": "Fui vender. Eu já sabia: quando todo mundo vende junto, o preço cai."
+  },
+  {
+   "id": "l15",
+   "linha": 15,
+   "shot": "20",
+   "shots": [
+    "20",
+    "21"
+   ],
+   "t": 54.71,
+   "dur": 5.09,
+   "end": 59.8,
+   "t_arquivo": 54.54,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "À uma da tarde, salão vazio. Vendi: sessenta e oito centavos."
+  },
+  {
+   "id": "l16",
+   "linha": 16,
+   "shot": "22",
+   "shots": [
+    "22"
+   ],
+   "t": 60.25,
+   "dur": 1.12,
+   "end": 61.37,
+   "t_arquivo": 60.07,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Esqueci o almoço."
+  },
+  {
+   "id": "l17",
+   "linha": 17,
+   "shot": "23",
+   "shots": [
+    "23",
+    "24"
+   ],
+   "t": 62.17,
+   "dur": 3.33,
+   "end": 65.5,
+   "t_arquivo": 62.01,
+   "who": "N",
+   "tom": "calm",
+   "texto": "Eu já sabia que a ponta do galho anda mais rápido que a mão."
+  },
+  {
+   "id": "l18",
+   "linha": 18,
+   "shot": "25a",
+   "shots": [
+    "25a",
+    "25b"
+   ],
+   "t": 66.1,
+   "dur": 3.75,
+   "end": 69.85,
+   "t_arquivo": 65.9,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Segurei na base: mais velocidade, cinco por golpe."
+  },
+  {
+   "id": "l19",
+   "linha": 19,
+   "shot": "26",
+   "shots": [
+    "26"
+   ],
+   "t": 70.25,
+   "dur": 1.06,
+   "end": 71.31,
+   "t_arquivo": 70.05,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Mas o galho rachou."
+  },
+  {
+   "id": "l20",
+   "linha": 20,
+   "shot": "27",
+   "shots": [
+    "27",
+    "28"
+   ],
+   "t": 71.91,
+   "dur": 4.87,
+   "end": 76.78,
+   "t_arquivo": 71.82,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Pôr do sol. Slime trinta e oito. Oito segundos, não treze."
+  },
+  {
+   "id": "l21",
+   "linha": 21,
+   "shot": "28",
+   "shots": [
+    "28"
+   ],
+   "t": 77.18,
+   "dur": 1.07,
+   "end": 78.25,
+   "t_arquivo": 77.01,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Nível três."
+  },
+  {
+   "id": "l22",
+   "linha": 22,
+   "shot": "29",
+   "shots": [
+    "29",
+    "30"
+   ],
+   "t": 78.57,
+   "dur": 3.81,
+   "end": 82.38,
+   "t_arquivo": 78.41,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Fila na Banca, preço caindo. Guardei o resto pra manhã."
+  },
+  {
+   "id": "l23",
+   "linha": 23,
+   "shot": "31",
+   "shots": [
+    "31",
+    "32"
+   ],
+   "t": 82.88,
+   "dur": 5.59,
+   "end": 88.47,
+   "t_arquivo": 82.77,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Carteira: sessenta e oito centavos. Mochila: quarenta e quatro, no preço da manhã."
+  },
+  {
+   "id": "l24",
+   "linha": 24,
+   "shot": "33",
+   "shots": [
+    "33",
+    "34"
+   ],
+   "t": 88.92,
+   "dur": 4.74,
+   "end": 93.66,
+   "t_arquivo": 88.84,
+   "who": "N",
+   "tom": "surprised",
+   "texto": "Eu já ia sair quando chegou uma carta: cinquenta reais por uma Gosma Dourada."
+  },
+  {
+   "id": "l25",
+   "linha": 25,
+   "shot": "35",
+   "shots": [
+    "35",
+    "36"
+   ],
+   "t": 93.98,
+   "dur": 4.16,
+   "end": 98.14,
+   "t_arquivo": 93.78,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Só cai de noite, em caverna nível cinco. Vence amanhã cedo."
+  },
+  {
+   "id": "l26",
+   "linha": 26,
+   "shot": "37",
+   "shots": [
+    "37"
+   ],
+   "t": 98.74,
+   "dur": 3.68,
+   "end": 102.42,
+   "t_arquivo": 98.52,
+   "who": "N",
+   "tom": "padrao",
+   "texto": "Se alguém aí diz que jogo não paga, manda isso pra essa pessoa."
+  },
+  {
+   "id": "l27",
+   "linha": 27,
+   "shot": "38",
+   "shots": [
+    "38",
+    "39",
+    "40"
+   ],
+   "t": 102.92,
+   "dur": 7.15,
+   "end": 110.07,
+   "t_arquivo": 102.87,
+   "who": "N",
+   "tom": "curious",
+   "texto": "Você faria o quê? A, arriscar a caverna hoje. B, esperar e perder a carta. Comenta."
+  }
+ ]
+}
