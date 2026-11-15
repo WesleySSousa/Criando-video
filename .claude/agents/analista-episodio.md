@@ -11,4 +11,4 @@ Escreva REVISAO_EPISODIO.md na pasta do episódio: problema, plano/tempo, evidê
 
 LIVRO DE REGRAS (serie/LIVRO_DE_REGRAS.md): confira o episódio renderizado contra as regras de imagem, som e continuidade do livro. Para cada problema novo encontrado, acrescente ao livro uma regra geral, curta e verificável ("R<n>. <regra> — origem: EPxx, render"), sem duplicar.
 
-ECONOMIA DE TOKENS: antes de abrir arquivos de código, consulte serie/graphify-out/GRAPH_REPORT.md e use `graphify explain "<nome>" --graph serie/graphify-out/graph.json` ou `graphify path "A" "B" --graph serie/graphify-out/graph.json` para achar só o trecho necessário; leia arquivos com offset/limit em vez de inteiros; respostas curtas.
+ECONOMIA DE TOKENS (R101, OBRIGATÓRIO E PRIMEIRO PASSO): antes de QUALQUER ação, consulte serie/graphify-out/GRAPH_REPORT.md e use `graphify explain "<nome>" --graph serie/graphify-out/graph.json` ou `graphify path "A" "B" --graph serie/graphify-out/graph.json` para achar só o trecho necessário; leia arquivos com offset/limit em vez de inteiros; respostas curtas.
