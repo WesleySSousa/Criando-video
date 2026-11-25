@@ -29,6 +29,32 @@ Site de webtoon vertical de uma obra só ("Reencarnei como Slime", autor Flash J
 - Duas séries: PEDIDO 03H33 (terror, motoboy, 6 eps) e LOGADO (gamer, pixel art 2.5D, ep. 1 em produção).
 - Expectativa honesta: com ~200 seguidores, as doações vão ser poucas no começo. O site vale mais agora como **link da bio** (onde ver todos os episódios em ordem) e cresce junto com o público. O animatensei já tinha público de webtoon antes.
 
+## 2b. Perfil hoje (Replin, 25/11/2026) — mudou muito desde 14/11
+- **2.379 seguidores** (eram 201), 9 posts. Bio: "Toda história começa do nada. A nossa começa sem aviso. Animação original."
+- Todas as séries terminam com **votação A/B** ("Vocês votaram B…") — o público já decide a história.
+
+| Post | Data | Views | Alcance | Coment. | Compart. | Salvos | Tempo médio | Pulam no início |
+|---|---|---|---|---|---|---|---|---|
+| LOGADO EP01 — O Início | 16/11 | **110.172** | 76.622 | 324 | 240 | 536 | 55,9 s | 27,0% |
+| LOGADO EP02 | 17/11 | 18.223 | 9.542 | 88 | 17 | 65 | 83,7 s | 31,8% |
+| LOGADO EP03 | 19/11 | 12.588 | 8.201 | 36 | 13 | 41 | 79,3 s | 30,8% |
+| Esqueleto (testador de jogo) ep. 1 | 21/11 | 71.808 | 46.086 | 132 | 67 | 244 | 84,6 s | 17,2% |
+| LOGADO EP04 | 22/11 | 17.747 | 10.993 | 44 | 19 | 34 | 57,2 s | 31,3% |
+| Esqueleto (Otto) ep. 2 | 22/11 | 14.937 | 8.477 | 39 | 19 | 49 | 90,5 s | 26,0% |
+| **RANK F EP1** | 23/11 | 10.553 | 7.188 | 46 | 21 | 53 | 56,6 s | 29,5% |
+| **RANK F EP2** | 24/11 | **56.545** | 40.670 | **228** | 149 | 294 | **82,5 s** | **15,8%** |
+| Toque de Recolher ep. 1 | 25/11 | 3.378 (1º dia) | 2.641 | 5 | 15 | 10 | 25,1 s | 41,5% |
+
+Leitura: o **RANK F EP2 é o melhor post do canal em engajamento** (o EP2 superou o EP1 em 5×, coisa que nenhuma outra série fez; 11,6% de engajamento, só 15,8% pulam no início e 228 comentários = votação). É a série com mais cara de "comunidade" — a melhor para puxar o apoio.
+Obs.: o LOGADO publicado (Léo, NEXO Online) está diferente da BIBLIA.md do repositório (Teco, Almaré).
+
+## 2c. RANK F — mecânica de apoio (a mais forte)
+O gênero (ranks F→S, portais, caçadores) já é um sistema de hierarquia: é o "Vila dos Goblins" pronto.
+- **Licença de Caçador**: quem apoia ganha uma carteirinha com o @ e um rank. O rank sobe conforme o total apoiado no mês (sem mostrar valor): F, E, D, C, B, A e um único **S** (o maior apoiador do mês, como o "Dente" do animatensei).
+- **Quadro da Associação**: a página de apoiadores é o mural de caçadores registrados; os nomes aparecem nos episódios (lista de caçadores na tela, crachá no portal, mural da escola).
+- **Meta do mês = estabilidade do portal**: barra "o portal fecha se não estabilizar"; o Téo na ponta muda de cara.
+- **Votação**: manter A/B grátis para todos nos comentários (é o motor do alcance). Para apoiadores, só bônus sem pagar por decisão: ex. o rank S escolhe o nome de um monstro/NPC do episódio.
+
 ## 3. A versão do canal: mecânicas que casam com as séries
 | Série | "Vila dos Goblins" equivalente | Barra da meta |
 |---|---|---|
