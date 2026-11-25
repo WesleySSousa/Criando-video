@@ -91,6 +91,47 @@ main{padding-block:26px 70px}
 .c-txt p{margin:10px 0 0;max-width:46ch;color:#c9cbd8}
 .c-txt .acoes{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 
+/* mergulho no portal ao descer a página */
+.cena-trilho{position:relative}
+.cena-trilho::after{content:"";display:block;height:110vh}
+.cena-trilho .cena{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px)}
+.cena.espelho .c-fundo img{transform:scaleX(-1);object-position:50% 72%}
+.c-flash{position:absolute;inset:0;z-index:7;display:grid;place-content:center;justify-items:center;gap:8px;text-align:center;pointer-events:none;opacity:0;background:radial-gradient(circle,#2a1a6e 0%,#0b0c11 75%)}
+.c-flash .T{font-size:clamp(34px,7vw,72px)}
+.c-flash small{color:#cbb4ff;font-size:14px}
+.c-txt .portal-btn{background:rgba(120,80,255,.22);border:1px solid rgba(170,130,255,.6);color:#e6dcff}
+@media (prefers-reduced-motion:reduce){.cena-trilho::after{height:0}.cena-trilho .cena{position:relative;top:0}}
+
+/* aparecer na série */
+.como{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}
+.como div{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:14px;color:var(--mut)}
+.como b{display:block;color:var(--fg);font-family:var(--f-tit);font-weight:800;font-size:16px;margin-bottom:4px}
+nav a{white-space:nowrap}
+.part{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:24px;align-items:start}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chips button{background:var(--card);border:2px solid var(--line);border-radius:999px;padding:7px 12px;font-weight:600;font-size:13px;cursor:pointer}
+.chips button.on{border-color:var(--yel);color:var(--yel)}
+.foto-linha{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.foto-prev{width:56px;height:56px;border-radius:50%;background:var(--card);border:2px solid var(--line);display:grid;place-items:center;overflow:hidden;font-family:var(--f-tit);font-weight:900;color:var(--mut)}
+.foto-prev img{width:100%;height:100%;object-fit:cover}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--mut);grid-template-columns:none}
+.check input{margin-top:3px;accent-color:var(--yel);width:18px;height:18px;flex:none}
+.link{background:none;border:0;color:var(--mut);text-decoration:underline;cursor:pointer;font-size:13px;padding:0;justify-self:start}
+.dono{background:#1a1408;border:1px dashed #6b4f14;border-radius:14px;padding:14px;display:grid;gap:10px}
+.dono-l{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.dono select,.dono input{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px;color:var(--fg)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.polas{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px}
+.pola{width:132px;background:#f3efe6;color:#1b1610;padding:8px 8px 10px;border-radius:4px;box-shadow:0 8px 20px rgba(0,0,0,.4);transform:rotate(var(--r,-2deg));display:grid;gap:6px}
+.pola .ft{aspect-ratio:1;background:#2b2440;display:grid;place-items:center;overflow:hidden;font-family:var(--f-tit);font-weight:900;font-size:40px;color:var(--yel)}
+.pola .ft img{width:100%;height:100%;object-fit:cover}
+.pola b{font-family:var(--f-tit);font-weight:900;font-size:14px;text-transform:uppercase;line-height:1.1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pola small{font-size:11px;color:#6b5f4a}
+.lista .av.ft{overflow:hidden;border-radius:50%}
+.lista .av.ft img{width:100%;height:100%;object-fit:cover}
+.lista .rm{background:none;border:1px solid var(--line);color:var(--mut);border-radius:8px;padding:4px 8px;cursor:pointer;font-size:12px}
+@media (max-width:760px){.part{grid-template-columns:1fr}}
+
 /* séries em andamento */
 .secao-top{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}
 .secao-top .T{font-size:clamp(24px,4vw,32px)}
@@ -223,14 +264,15 @@ footer img{width:34px;height:34px;border-radius:8px}
 <div class="claq"></div>
 <header class="topo"><div class="wrap">
   <a class="marca" href="#inicio"><img src="img/logo.png" alt="Sem Aviso"><b>SEM <span>AVISO</span></b></a>
-  <nav id="nav"><a href="#inicio" data-v="inicio">Séries</a><a href="#apoiadores" data-v="apoiadores">Apoiadores</a></nav>
+  <nav id="nav"><a href="#inicio" data-v="inicio">Séries</a><a href="#participar" data-v="participar">Aparecer</a><a href="#apoiadores" data-v="apoiadores">Apoiadores</a></nav>
   <a class="b-ap" href="#apoiar">Apoiar</a>
 </div></header>
 
 <main class="wrap">
 
 <section class="tela" id="v-inicio">
-  <div class="cena" id="cena" aria-label="Cena interativa do Rank F: mexa o mouse ou o dedo e toque para usar a gravidade">
+  <div class="cena-trilho" id="trilho">
+  <div class="cena" id="cena" aria-label="Cena interativa do Rank F: mexa o mouse ou o dedo, toque para usar a gravidade e desça a página para entrar no portal">
     <div class="c-fundo" id="c-fundo"><img src="img/cena_fundo.webp" alt=""></div>
     <canvas class="c-can" id="can-tras"></canvas>
     <div class="c-teo" id="c-teo"><div class="c-aura" id="c-aura"></div><img src="img/teo.webp" alt="Téo flutuando com a aura roxa de gravidade" draggable="false"></div>
@@ -240,6 +282,8 @@ footer img{width:34px;height:34px;border-radius:8px}
     <div class="c-hud"><span>GRAVIDADE</span><b id="c-g">1G</b><div class="c-barra"><i id="c-gb"></i></div></div>
     <div class="c-dica" id="c-dica">Mexe o mouse ou arrasta o dedo · <b>toca para usar a gravidade</b></div>
     <div class="c-txt" id="dest"></div>
+    <div class="c-flash" id="c-flash"><span class="T">Do outro <em>lado</em></span><small>as séries continuam aqui embaixo ↓</small></div>
+  </div>
   </div>
   <div style="display:grid;gap:16px">
     <div class="secao-top"><h2 class="T">Séries em <em>andamento</em></h2><span class="mut" id="atual" style="font-size:13px"></span></div>
@@ -255,6 +299,47 @@ footer img{width:34px;height:34px;border-radius:8px}
 </section>
 
 <section class="tela" id="v-serie" hidden></section>
+
+<section class="tela" id="v-participar" hidden>
+  <div><span class="eyebrow">Sorteio grátis · a cada episódio</span><h1 class="T" style="font-size:clamp(34px,7vw,64px);margin-top:6px">Apareça <em>na série</em></h1>
+    <p class="mut" style="margin:10px 0 0;max-width:60ch">Inscreva seu nome e, se quiser, sua foto de perfil. A cada episódio novo eu sorteio inscritos para aparecerem de verdade na animação.</p></div>
+  <div class="como">
+    <div><b>Seu nome na tela</b>No crachá da Associação de Caçadores do Rank F, numa placa da escola ou no chat e no ranking do NEXO Online.</div>
+    <div><b>Sua foto em algum lugar</b>Num cartaz do mural do colégio, no perfil de um player do NEXO ou na lista de caçadores do portal.</div>
+    <div><b>Sorteio a cada episódio</b>Quem for sorteado aparece no mural abaixo e no episódio. A inscrição vale para todos os sorteios até você sair.</div>
+  </div>
+  <div class="part">
+    <div class="caixa" style="margin:0"><div class="claq"></div><div class="dentro">
+      <h2 class="T" style="font-size:24px;text-align:left" id="pf-tit">Quero <em>participar</em></h2>
+      <p class="pq" id="pf-estado">Carregando…</p>
+      <form id="pf" novalidate style="display:grid;gap:12px" hidden>
+        <label for="pf-nick">Nome que aparece na série<div class="campo"><input id="pf-nick" maxlength="16" placeholder="Ex.: Brasa" autocomplete="off"></div></label>
+        <label for="pf-arroba">Seu @ do Instagram (opcional)<div class="campo"><span class="mut">@</span><input id="pf-arroba" maxlength="30" autocapitalize="off" spellcheck="false" placeholder="seuperfil" autocomplete="off"></div></label>
+        <div style="display:grid;gap:6px"><span class="mut" style="font-size:14px">Em qual série?</span>
+          <div class="chips" id="pf-onde"><button type="button" data-v="rank" class="on">Rank F</button><button type="button" data-v="nexo">LOGADO / MOB ZERO</button><button type="button" data-v="ambos">Todas</button></div></div>
+        <div style="display:grid;gap:6px" id="pf-foto-bloco"><span class="mut" style="font-size:14px">Foto de perfil (opcional)</span>
+          <div class="foto-linha"><span class="foto-prev" id="pf-prev">?</span><label class="btn cl" for="pf-foto" style="display:inline-flex;cursor:pointer;color:var(--fg)">Escolher foto</label><input id="pf-foto" type="file" accept="image/png,image/jpeg,image/webp" hidden><button type="button" class="link" id="pf-tira" hidden>tirar foto</button></div>
+          <p class="pq" id="pf-foto-aviso"></p></div>
+        <label class="check"><input type="checkbox" id="pf-ok"> <span>Autorizo usar meu nome, @ e foto na série Sem Aviso e neste site. Posso sair quando quiser.</span></label>
+        <button class="btn am full" type="submit" id="pf-ir">Quero participar</button>
+        <p class="erro" id="pf-msg" hidden></p>
+        <button type="button" class="link" id="pf-sair" hidden>Sair do sorteio e apagar meus dados</button>
+      </form>
+      <p class="pq">Inscrição grátis, sem compra. Apoiar pelo Pix não dá chance extra no sorteio: quem apoia já aparece garantido no mural de apoiadores.</p>
+    </div></div>
+    <div style="display:grid;gap:18px;align-content:start">
+      <div class="dono" id="dono" hidden>
+        <b class="T" style="font-size:18px">Painel do criador <em>· só você vê</em></b>
+        <div class="dono-l"><select id="d-serie" aria-label="Série do sorteio"><option value="rank">Rank F</option><option value="nexo">LOGADO / MOB ZERO</option></select>
+          <label for="d-ep" class="sr">Episódio</label><input id="d-ep" type="number" min="1" value="3" style="width:76px" aria-label="Episódio">
+          <button class="btn am" type="button" id="d-sortear">Sortear agora</button></div>
+        <p class="pq" id="d-msg"></p>
+      </div>
+      <div><h3 class="T" style="font-size:22px">Já <em>sorteados</em></h3><div class="polas" id="sorteados"><p class="pq">Nenhum sorteio ainda.</p></div></div>
+      <div><h3 class="T" style="font-size:22px">Inscritos <em id="n-insc">(0)</em></h3><ul class="lista" id="inscritos" style="margin-top:10px"></ul></div>
+    </div>
+  </div>
+</section>
 
 <section class="tela" id="v-apoiar" hidden>
   <div class="caixa"><div class="claq"></div><div class="dentro">
@@ -338,7 +423,8 @@ async function carrega(){
   $('dest').innerHTML=`<span class="eyebrow">${novo(er.data)?'Episódio novo · ':''}Rank F</span>
       <h1 class="T">RANK F <em>EP${er.n}</em></h1>
       <p>${esc(er.titulo)}. ${esc(rf.sinopse)}</p>
-      <div class="acoes"><button class="btn am" data-ep="rank-f:${er.n}">▶ Assistir EP${er.n}</button><a class="btn cl" href="#rank-f">Todos os episódios</a></div>`;
+      <div class="acoes"><button class="btn am" data-ep="rank-f:${er.n}">▶ Assistir EP${er.n}</button><a class="btn cl" href="#rank-f">Todos os episódios</a><button class="btn cl portal-btn" type="button" id="ir-portal">Entrar no portal ↓</button></div>`;
+  $('ir-portal').onclick=()=>{const tr=$('trilho');scrollTo({top:tr.getBoundingClientRect().top+scrollY+tr.offsetHeight-$('cena').offsetHeight,behavior:'smooth'});};
   $('series').innerHTML=DADOS.series.map(s=>`<a class="serie" href="#${s.id}"><div class="poster"><img src="${s.ult.capa}" alt="" loading="lazy">
       <div class="selos"><span class="selo and">Em andamento</span>${novo(s.ult.data)?'<span class="selo novo">Novo</span>':''}</div>
       <div class="rod"><h3 class="T">${esc(s.titulo)}</h3><small>EP${s.ult.n} saiu ${dia(s.ult.data)} · ${s.episodios.length} ep.</small></div></div></a>`).join('');
@@ -401,8 +487,8 @@ $('salvar').onclick=()=>{const nick=$('nick').value.trim(),arroba=$('arroba').va
 
 /* telas pelo #hash: inicio, uma por série (#rank-f, #logado, #mob-zero), apoiar, obrigado, apoiadores */
 function rota(){if(!DADOS)return;let v=location.hash.slice(1)||'inicio';const s=DADOS.series.find(x=>x.id===v);
-  if(s)paginaSerie(s);const tela=s?'serie':(['inicio','apoiar','obrigado','apoiadores'].includes(v)?v:'inicio');
-  ['inicio','serie','apoiar','obrigado','apoiadores'].forEach(t=>$('v-'+t).hidden=t!==tela);
+  if(s)paginaSerie(s);const tela=s?'serie':(['inicio','apoiar','obrigado','apoiadores','participar'].includes(v)?v:'inicio');
+  ['inicio','serie','apoiar','obrigado','apoiadores','participar'].forEach(t=>$('v-'+t).hidden=t!==tela);
   document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.dataset.v===(tela==='serie'?'inicio':tela)));scrollTo(0,0);}
 addEventListener('hashchange',rota);
 
@@ -412,7 +498,17 @@ addEventListener('hashchange',rota);
   const cT=$('can-tras'),cF=$('can-frente'),xT=cT.getContext('2d'),xF=cF.getContext('2d');
   const calmo=matchMedia('(prefers-reduced-motion: reduce)').matches;
   let W=0,H=0,dpr=1,alvo={x:0,y:0},pos={x:0,y:0},vel={x:0,y:0},ultimoMov=-1e9,G=1,gravInv=0,t0=performance.now();
-  const parts=[],pedras=[];
+  const parts=[],pedras=[],trilho=$('trilho'),portal={P:{x:0,y:0},e:0};
+  // redemoinho do portal: azul por dentro, borda roxa com raios, braços girando
+  function vortice(x,y,r,t,a){
+    xT.save();xT.globalAlpha=a;
+    const g=xT.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,'#05041a');g.addColorStop(.38,'#16207e');g.addColorStop(.72,'rgba(98,84,255,.75)');g.addColorStop(1,'rgba(150,100,255,0)');
+    xT.fillStyle=g;xT.beginPath();xT.arc(x,y,r,0,7);xT.fill();
+    xT.lineWidth=Math.max(1.5,r*.012);xT.strokeStyle='rgba(160,200,255,.32)';
+    for(let k=0;k<6;k++){xT.beginPath();for(let i=0;i<=48;i++){const q=i/48,ang=t*1.8+k*Math.PI/3+q*5.2;const rr=r*.92*q;i?xT.lineTo(x+Math.cos(ang)*rr,y+Math.sin(ang)*rr):xT.moveTo(x,y);}xT.stroke();}
+    xT.shadowColor='#7fb8ff';xT.shadowBlur=14;xT.strokeStyle='rgba(150,205,255,.85)';xT.lineWidth=Math.max(2,r*.016);xT.beginPath();
+    for(let i=0;i<=64;i++){const ang=i/64*Math.PI*2,rr=r*.8*(1+(Math.random()-.5)*.07);i?xT.lineTo(x+Math.cos(ang)*rr,y+Math.sin(ang)*rr):xT.moveTo(x+rr,y);}
+    xT.stroke();xT.restore();}
   function tamanho(){const r=cena.getBoundingClientRect();W=r.width;H=r.height;dpr=Math.min(2,devicePixelRatio||1);
     [cT,cF].forEach(c=>{c.width=W*dpr;c.height=H*dpr;}); xT.setTransform(dpr,0,0,dpr,0,0);xF.setTransform(dpr,0,0,dpr,0,0);}
   new ResizeObserver(tamanho).observe(cena);tamanho();
@@ -446,18 +542,37 @@ addEventListener('hashchange',rota);
     const vx=pos.x-px,vy=pos.y-py,rapidez=Math.min(1,Math.hypot(vx,vy)*25);
     const bob=calmo?0:Math.sin(t*2.1)*6;
     const mob=W<760;const ax=mob?W*.16:W*.11,ay=mob?H*.07:H*.07;
-    teo.style.transform=`translate(${pos.x*ax}px,${pos.y*ay+bob}px) rotate(${Math.max(-14,Math.min(14,vx*240+pos.x*4))}deg)`;
-    fundo.style.transform=`translate(${-pos.x*18}px,${-pos.y*12}px) scale(1.04)`;
+    cena.classList.toggle('espelho',!mob);
+    // quanto a página já desceu dentro do trilho (0 = parado, 1 = dentro do portal)
+    const tr=trilho.getBoundingClientRect(),curso=Math.max(1,trilho.offsetHeight-H),topo=parseFloat(getComputedStyle(cena).top)||0;
+    const p=calmo?0:Math.max(0,Math.min(1,(topo-tr.top)/curso)),e=p*p*(3-2*p);
+    // onde está o portal do cenário (a imagem é 720×1280; no computador ela vem espelhada)
+    const fw=W*1.12,fh=H*1.12,s=Math.max(fw/720,fh/1280),oy=(fh-1280*s)*(mob?.42:.72),ox=(fw-720*s)*.5;
+    let pfx=ox+.236*720*s;if(!mob)pfx=fw-pfx;const pfy=oy+.734*1280*s;
+    const parX=-pos.x*18,parY=-pos.y*12,P={x:pfx-W*.06+parX,y:pfy-H*.06+parY};
+    const cx=teo.offsetLeft+teo.offsetWidth/2,cy=teo.offsetTop+teo.offsetHeight/2;
+    const rotSegue=Math.max(-14,Math.min(14,vx*240+pos.x*4));
+    const tx=pos.x*ax*(1-e)+(P.x-cx)*e,ty=(pos.y*ay+bob)*(1-e)+(P.y-cy)*e;
+    teo.style.transform=`translate(${tx}px,${ty}px) rotate(${rotSegue*(1-e)+e*720}deg) scale(${1-.92*e})`;
+    fundo.style.transformOrigin=`${pfx}px ${pfy}px`;
+    fundo.style.transform=`translate(${parX}px,${parY}px) scale(${1.04+3.4*e})`;
     aura.style.opacity=.45+rapidez*.4+(G-1)*.08;
-    // faíscas roxas do portal (camada de trás) e poeira (camada da frente)
-    if(Math.random()<.6)parts.push({x:W*(mob?.15:.08)+Math.random()*W*.25,y:H*(.75+Math.random()*.3),vx:(Math.random()-.5)*.4,vy:-(.4+Math.random()*1.2),v:1,r:1+Math.random()*2,f:0});
+    const somem=Math.max(0,1-e*2.6);
+    $('dest').style.opacity=somem;$('dest').style.pointerEvents=somem<.3?'none':'';
+    document.querySelector('.c-hud').style.opacity=somem;$('c-dica').style.visibility=e>.05?'hidden':'';
+    $('c-flash').style.opacity=e>.82?Math.min(1,(e-.82)/.14):0;
+    portal.P=P;portal.e=e;
+    // faíscas roxas saindo do portal (camada de trás)
+    if(Math.random()<.6)parts.push({x:P.x+(Math.random()-.5)*W*.2,y:P.y+(Math.random()-.3)*H*.15,vx:(Math.random()-.5)*.4,vy:-(.4+Math.random()*1.2),v:1,r:1+Math.random()*2,f:0});
     xT.clearRect(0,0,W,H);xF.clearRect(0,0,W,H);
-    for(let i=parts.length-1;i>=0;i--){const p=parts[i];p.x+=p.vx-vx*40*(p.f?1.2:.4);p.y+=p.vy;p.vx*=.98;p.vy*=.98;p.v-=p.f?.02:.006;
+    vortice(P.x,P.y,.17*720*s*(1+e*9),t,.55+.45*e);
+    const pe=portal.e,PP=portal.P;
+    for(let i=parts.length-1;i>=0;i--){const p=parts[i];if(pe>0){p.vx+=(PP.x-p.x)*.003*pe;p.vy+=(PP.y-p.y)*.003*pe;}p.x+=p.vx-vx*40*(p.f?1.2:.4);p.y+=p.vy;p.vx*=.98;p.vy*=.98;p.v-=p.f?.02:.006;
       if(p.v<=0){parts.splice(i,1);continue;}const c=p.f?xF:xT;c.globalAlpha=p.v;c.fillStyle=p.f?'#e9d5ff':'#a97bff';c.shadowColor='#9b6bff';c.shadowBlur=10;
       c.beginPath();c.arc(p.x,p.y,p.r,0,7);c.fill();}
     xT.globalAlpha=xF.globalAlpha=1;xT.shadowBlur=xF.shadowBlur=0;
     for(let i=pedras.length-1;i>=0;i--){const p=pedras[i];
-      p.vy+=gravInv?-.05:.18;p.x+=p.vx-vx*60*(p.fr?1.4:.6);p.y+=p.vy;p.rot+=p.vr;
+      p.vy+=gravInv?-.05:.18;if(pe>0){p.vx+=(PP.x-p.x)*.004*pe;p.vy+=(PP.y-p.y)*.004*pe;}p.x+=p.vx-vx*60*(p.fr?1.4:.6);p.y+=p.vy;p.rot+=p.vr;
       if(p.y<-60||p.y>H+60){pedras.splice(i,1);continue;}
       const c=p.fr?xF:xT;c.save();c.translate(p.x,p.y);c.rotate(p.rot);c.fillStyle=p.cor;c.strokeStyle='rgba(190,140,255,.7)';c.lineWidth=1.5;
       c.beginPath();p.pts.forEach(([a,b],j)=>j?c.lineTo(a,b):c.moveTo(a,b));c.closePath();c.fill();c.stroke();c.restore();}
@@ -465,6 +580,76 @@ addEventListener('hashchange',rota);
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
+})();
+
+/* ---------- aparecer na série: inscrições e sorteios guardados no banco de dados do site ---------- */
+(async()=>{
+  const ONDE={rank:'Rank F',nexo:'LOGADO / MOB ZERO',ambos:'Todas as séries'};
+  let onde='rank',fotoId=null,fotoNova=null,meu=null,insc=[],uid=null,dono=false;
+  const estado=t=>{$('pf-estado').textContent=t;};
+  const fotoHTML=(id,nick)=>id?`<img src="/_blob/${encodeURIComponent(id)}" alt="" onerror="this.style.display='none'">`:esc((nick||'?')[0]);
+  $('pf-onde').onclick=e=>{const b=e.target.closest('button');if(!b)return;onde=b.dataset.v;$('pf-onde').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));};
+  const claude=window.claude;
+  const [db,user,assets]=claude?.use?await Promise.all([claude.use('db'),claude.use('user'),claude.use('assets')]):[null,null,null];
+  if(!db){estado('Neste protótipo, a inscrição funciona para quem abre o link logado na conta Claude. No site de verdade qualquer pessoa se inscreve, sem conta.');return;}
+  uid=user?await user.id():null;dono=user?((await user.isOwner())??false):false;
+  $('dono').hidden=!dono;
+  if(!assets){$('pf-foto-aviso').textContent='Envio de foto indisponível para você neste protótipo; o nome e o @ funcionam.';$('pf-foto').disabled=true;}
+  // foto: reduz para 320 px antes de enviar
+  $('pf-foto').onchange=async()=>{const f=$('pf-foto').files[0];if(!f)return;
+    if(f.size>8e6){$('pf-foto-aviso').textContent='Foto grande demais (máx. 8 MB).';return;}
+    const bmp=await createImageBitmap(f).catch(()=>null);if(!bmp){$('pf-foto-aviso').textContent='Não consegui abrir essa imagem. Use JPG, PNG ou WebP.';return;}
+    const c=document.createElement('canvas'),L=Math.min(bmp.width,bmp.height);c.width=c.height=320;
+    c.getContext('2d').drawImage(bmp,(bmp.width-L)/2,(bmp.height-L)/2,L,L,0,0,320,320);
+    fotoNova=await new Promise(r=>c.toBlob(r,'image/webp',.85));
+    $('pf-prev').innerHTML=`<img src="${URL.createObjectURL(fotoNova)}" alt="">`;$('pf-tira').hidden=false;$('pf-foto-aviso').textContent='';};
+  $('pf-tira').onclick=()=>{fotoNova=null;fotoId=null;$('pf-prev').textContent='?';$('pf-tira').hidden=true;$('pf-foto').value='';};
+  function preenche(){
+    $('pf').hidden=!uid;if(!uid){estado('Entre na sua conta para se inscrever neste protótipo.');return;}
+    if(meu){estado('Você está inscrito. Pode mudar os dados ou sair quando quiser.');$('pf-tit').innerHTML='Sua <em>inscrição</em>';$('pf-ir').textContent='Salvar mudanças';$('pf-sair').hidden=false;
+      $('pf-nick').value=meu.nick||'';$('pf-arroba').value=meu.arroba||'';onde=meu.onde||'rank';fotoId=meu.foto||null;$('pf-ok').checked=true;
+      $('pf-onde').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x.dataset.v===onde));
+      if(fotoId&&!fotoNova){$('pf-prev').innerHTML=fotoHTML(fotoId,meu.nick);$('pf-tira').hidden=false;}}
+    else{estado('Preencha e marque a autorização. Leva 20 segundos.');$('pf-tit').innerHTML='Quero <em>participar</em>';$('pf-ir').textContent='Quero participar';$('pf-sair').hidden=true;}}
+  const erro=t=>{$('pf-msg').hidden=!t;$('pf-msg').textContent=t||'';};
+  $('pf').onsubmit=async e=>{e.preventDefault();
+    const nick=$('pf-nick').value.trim(),arroba=$('pf-arroba').value.trim().replace(/^@/,'');
+    if(nick.length<2)return erro('Escreva um nome com pelo menos 2 letras.');
+    if(arroba&&!/^[A-Za-z0-9._]{1,30}$/.test(arroba))return erro('O @ só pode ter letras, números, ponto e sublinhado.');
+    if(!$('pf-ok').checked)return erro('Marque a autorização para entrar no sorteio.');
+    erro('');$('pf-ir').disabled=true;$('pf-ir').textContent='Salvando…';
+    try{
+      if(fotoNova&&assets){const up=await assets.upload(fotoNova,{type:'image/webp'});fotoId=up.id;fotoNova=null;}
+      await db.collection('inscricoes').doc(uid).set({nick,arroba:arroba||null,onde,foto:fotoId||null,autorizou:true,criado:meu?.criado||new Date().toISOString(),atualizado:new Date().toISOString()});
+      estado('Pronto! Você está no sorteio.');
+    }catch(x){erro(x?.code==='quota_exceeded'?'O banco de dados do protótipo encheu. Me avise.':x?.code==='too_large'?'Foto grande demais.':'Não consegui salvar. Tente de novo em instantes.');}
+    $('pf-ir').disabled=false;preenche();};
+  $('pf-sair').onclick=async()=>{if($('pf-sair').dataset.conf!=='1'){$('pf-sair').dataset.conf='1';$('pf-sair').textContent='Toque de novo para confirmar: sair e apagar';return;}
+    try{await db.collection('inscricoes').doc(uid).delete();fotoId=null;fotoNova=null;$('pf-prev').textContent='?';$('pf-nick').value='';$('pf-arroba').value='';$('pf-ok').checked=false;}catch(x){erro('Não consegui apagar. Tente de novo.');}
+    $('pf-sair').dataset.conf='';$('pf-sair').textContent='Sair do sorteio e apagar meus dados';};
+  // listas ao vivo
+  let carregou=false;const timer=setTimeout(()=>{if(!carregou)estado('O banco de dados ainda não respondeu. A lista pode estar desatualizada.');},10000);
+  db.collection('inscricoes').orderBy('criado','desc').limit(500).onSnapshot(sn=>{
+    if(!sn.metadata.fromCache){carregou=true;clearTimeout(timer);}
+    insc=sn.docs.map(d=>({id:d.id,...d.data()}));meu=insc.find(x=>x.id===uid)||null;preenche();
+    $('n-insc').textContent=`(${insc.length})`;
+    $('inscritos').innerHTML=insc.length?insc.map(a=>`<li${a.id===uid?' class="eu"':''}><span class="p">·</span><span class="av ft">${fotoHTML(a.foto,a.nick)}</span><span style="min-width:0"><b>${esc(a.nick)}</b><small>${a.arroba?'@'+esc(a.arroba):'sem @'}${a.id===uid?' · você':''}</small></span>${dono?`<button class="rm" data-rm="${esc(a.id)}">remover</button>`:`<span class="tag">${esc(ONDE[a.onde]||'')}</span>`}</li>`).join(''):'<li><span></span><span></span><span class="mut">Ninguém inscrito ainda. Seja o primeiro.</span></li>';
+  },x=>{clearTimeout(timer);estado('Não consegui carregar as inscrições agora.');});
+  db.collection('sorteios').orderBy('quando','desc').limit(30).onSnapshot(sn=>{
+    $('sorteados').innerHTML=sn.empty?'<p class="pq">Nenhum sorteio ainda.</p>':sn.docs.map((d,i)=>{const s=d.data();
+      return `<div class="pola" style="--r:${[-3,2,-1,3,-2][i%5]}deg"><div class="ft">${fotoHTML(s.foto,s.nick)}</div><b>${esc(s.nick)}</b><small>${esc(s.serieNome||'')} · EP${esc(s.ep)}${s.arroba?' · @'+esc(s.arroba):''}</small></div>`;}).join('');
+  },()=>{});
+  $('inscritos').onclick=async e=>{const b=e.target.closest('[data-rm]');if(!b||!dono)return;
+    if(b.dataset.conf!=='1'){b.dataset.conf='1';b.textContent='confirmar';return;}
+    try{await db.collection('inscricoes').doc(b.dataset.rm).delete();}catch(x){b.textContent='erro';}};
+  $('d-sortear').onclick=async()=>{const serie=$('d-serie').value,ep=parseInt($('d-ep').value,10)||1;
+    const pool=insc.filter(a=>a.autorizou&&(a.onde===serie||a.onde==='ambos'));
+    if(!pool.length){$('d-msg').textContent='Ninguém inscrito para essa série ainda.';return;}
+    const r=new Uint32Array(1);crypto.getRandomValues(r);const v=pool[r[0]%pool.length];
+    $('d-sortear').disabled=true;
+    try{await db.collection('sorteios').add({inscricao:v.id,nick:v.nick,arroba:v.arroba||null,foto:v.foto||null,serie,serieNome:serie==='rank'?'Rank F':'NEXO Online',ep,quando:new Date().toISOString(),entre:pool.length});
+      $('d-msg').textContent=`Sorteado: ${v.nick}${v.arroba?' (@'+v.arroba+')':''}, entre ${pool.length} inscritos.`;}catch(x){$('d-msg').textContent='Não consegui salvar o sorteio.';}
+    $('d-sortear').disabled=false;};
 })();
 lista();carrega().catch(()=>{$('dest').innerHTML='<p class="mut">Não foi possível carregar as séries. Recarregue a página.</p>';});
 </script>
