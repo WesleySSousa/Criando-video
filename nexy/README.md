@@ -12,6 +12,7 @@ App de lista de compras com IA (iPhone, Android e site). Este protótipo é uma 
 - Nexy IA: itens básicos, receita (ex.: bolo de chocolate) com ingredientes para a lista, sugestões por histórico ("faz 32 dias que você comprou arroz").
 - Compartilhar lista com outra pessoa.
 - Mercados (fase futura): comparação de preço por mercado próximo. Preços fictícios.
+- Configurações da conta: nome, apelido, nascimento, CPF (validado), e-mail e celular com código de verificação, endereço por CEP, contas Google/Apple, idioma.
 - Perfil: foto, selo do plano, números de uso (listas criadas, compartilhadas, itens coletados, economia), dados pessoais, segurança, pessoas com acesso, notificações, preferências, ajuda, sair e excluir conta.
 - Planos: 7 dias de IA grátis, depois Plus (R$ 9,90) e Família (R$ 14,90) — preços a validar.
 

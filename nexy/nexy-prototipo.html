@@ -302,6 +302,8 @@ select.input option{background:var(--card-2)}
 /* Toast */
 .toast{position:absolute;left:16px;right:16px;bottom:100px;background:rgba(32,29,42,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line-hi);padding:12px 14px 12px 16px;border-radius:16px;font-size:14px;display:flex;align-items:center;gap:12px;z-index:40;opacity:0;transform:translateY(16px);transition:.22s;pointer-events:none}
 .toast.show{opacity:1;transform:none;pointer-events:auto}
+.phone:has(.scrim) .toast{bottom:auto;top:calc(16px + env(safe-area-inset-top,0px))}
+.phone:not(.mobile):has(.scrim) .toast{top:60px}
 .toast .tdot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px var(--ok);flex:none}
 .toast span{flex:1}
 .toast button{color:var(--accent-hi);font-weight:700}
@@ -419,6 +421,24 @@ select.input option{background:var(--card-2)}
 .tg input:focus-visible+i{outline:2px solid var(--accent-hi);outline-offset:2px}
 .pp{display:flex;align-items:center;gap:12px;padding:12px 14px}
 .pp+.pp{border-top:1px solid var(--line)}
+.acc-photo{margin-top:16px;padding:14px 16px;display:flex;align-items:center;gap:14px}
+.acc-photo .ph-avatar{margin:0}
+.settings.acc button{gap:10px}
+.settings.acc .cl{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.settings.acc em{max-width:48%}
+.settings.acc .ph{color:var(--accent-hi);font-weight:600}
+.settings button[disabled]{opacity:.6;cursor:default}
+.vbadge{flex:none;font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px;background:rgba(251,191,36,.12);color:var(--warn);display:inline-flex;align-items:center;gap:4px}
+.vbadge svg{width:11px;height:11px}
+.vbadge.ok{background:rgba(52,211,153,.12);color:var(--ok)}
+.otp{display:flex;gap:8px;justify-content:center}
+.otp input{width:46px;height:56px;border-radius:14px;border:1px solid var(--line-hi);background:rgba(255,255,255,.04);text-align:center;font-size:22px;font-weight:700;font-family:var(--display);outline:0}
+.otp input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(139,92,246,.18)}
+.err{margin:0;color:var(--danger);font-size:13px}
+.link-btn{color:var(--accent-hi);font-weight:600;font-size:14px;padding:6px;align-self:center}
+.phone-in{display:flex;gap:8px}
+.phone-in span{flex:none;height:50px;padding:0 12px;border-radius:15px;border:1px solid var(--line);background:rgba(255,255,255,.04);display:grid;place-items:center;font-weight:600;font-size:14px}
+
 .confirm-plan{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:6px 0}
 
 .spacer{height:110px}
@@ -1034,7 +1054,7 @@ function renderPerfil(){
 
     <div class="section-h"><span class="label">Conta</span></div>
     <div class="card settings">
-      ${row("dados","user","Dados pessoais",S.phone)}
+      ${row("conta","user","Configurações da conta",S.email)}
       ${row("seg","lock","Senha e segurança")}
       ${row("people","share","Pessoas com acesso",`${S.people.length}`)}
       ${row("pay","card","Pagamento",isPremium()?"App Store":"—")}
@@ -1056,17 +1076,14 @@ function renderPerfil(){
     <p class="note">Nexy 1.0.0 (protótipo)</p>
     <div class="tab-space"></div>
   </div></div>`;
-  $("#photoIn").onchange=e=>{const f=e.target.files[0];if(!f)return;const img=new Image();img.onload=()=>{
-    const c=document.createElement("canvas"),k=256/Math.min(img.width,img.height);c.width=c.height=256;
-    c.getContext("2d").drawImage(img,(256-img.width*k)/2,(256-img.height*k)/2,img.width*k,img.height*k);
-    S.photo=c.toDataURL("image/jpeg",.85);try{localStorage.setItem("nexy-photo",S.photo)}catch(err){}
-    renderPerfil();toast("Foto atualizada")};img.src=URL.createObjectURL(f)};
+  $("#photoIn").onchange=e=>setPhoto(e.target.files[0],renderPerfil);
   view.querySelectorAll("[data-row]").forEach(b=>b.onclick=()=>profileAction(b.dataset.row));
   $("#out").onclick=()=>{S.tab="login";render()};
 }
 function profileAction(k){
   if(k==="intro")return playSplash();
   if(k==="plans")return plansSheet();
+  if(k==="conta"){S.sub="conta";return renderConta(true)}
   if(k==="dados")return sheet(`<h3>Dados pessoais</h3>
     <div style="display:flex;justify-content:center">${avatar(72,26)}</div>
     <div class="field"><label for="dN">Nome</label><input class="input" id="dN" value="${esc(S.user)}"></div>
@@ -1130,16 +1147,133 @@ function plansSheet(){
     })});
 }
 
+/* ---------- Configurações da conta (tela própria) ---------- */
+Object.assign(S,{sub:null,acc:{nick:"Wes",birth:"1995-04-12",cpf:"",cep:"01310-100",city:"São Paulo · SP",street:"Av. Paulista, 1000",emailOk:true,phoneOk:true,google:true,apple:false,lang:"Português (Brasil)"}});
+const maskPhone=v=>{const d=v.replace(/\D/g,"").slice(0,11);return d.length<3?d:d.length<8?`(${d.slice(0,2)}) ${d.slice(2)}`:`(${d.slice(0,2)}) ${d.slice(2,d.length-4)}-${d.slice(-4)}`};
+const maskCPF=v=>{const d=v.replace(/\D/g,"").slice(0,11);return d.replace(/(\d{3})(\d)/,"$1.$2").replace(/(\d{3})(\d)/,"$1.$2").replace(/(\d{3})(\d{1,2})$/,"$1-$2")};
+const maskCEP=v=>{const d=v.replace(/\D/g,"").slice(0,8);return d.length>5?d.slice(0,5)+"-"+d.slice(5):d};
+const cpfOk=v=>{const d=v.replace(/\D/g,"");if(d.length!==11||/^(\d)\1+$/.test(d))return false;
+  const dv=n=>{let s=0;for(let i=0;i<n;i++)s+=+d[i]*(n+1-i);const r=s*10%11;return r===10?0:r};return dv(9)===+d[9]&&dv(10)===+d[10]};
+const emailOk=v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+const CEP_UF=[["0","São Paulo · SP"],["1","Interior · SP"],["2","Rio de Janeiro · RJ"],["3","Belo Horizonte · MG"],["4","Salvador · BA"],["5","Recife · PE"],["6","Fortaleza · CE"],["7","Brasília · DF"],["8","Curitiba · PR"],["9","Porto Alegre · RS"]];
+const fmtBirth=v=>{if(!v)return"";const[y,m,d]=v.split("-");return`${d}/${m}/${y}`};
+const crow=(id,label,val,badge="")=>`<button data-acc="${id}"><span class="cl">${label}</span><em>${val?esc(val):'<span class="ph">Adicionar</span>'}</em>${badge}<span class="chev">${I.chev}</span></button>`;
+const okBadge=on=>on?`<span class="vbadge ok">${I.check}Verificado</span>`:`<span class="vbadge">Verificar</span>`;
+
+function renderConta(anim){
+  $("#tabbar").hidden=true;const A=S.acc;
+  view.innerHTML=`<div class="view ${anim?"push":""}">
+    <div class="appbar" id="ab"><button class="ib" id="back" aria-label="Voltar">${I.back}</button><div class="title">Configurações da conta</div><span style="width:42px"></span></div>
+    <div class="scroll" id="sc"><div class="pad">
+      <h1 class="h-display" style="font-size:26px;margin-top:4px">Configurações da conta</h1>
+      <div class="acc-photo card"><label for="photoIn2" class="ph-avatar" aria-label="Trocar foto">${avatar(64,24)}<span class="cam-badge">${I.camera}</span></label>
+        <input type="file" id="photoIn2" accept="image/*" hidden>
+        <div style="flex:1;min-width:0"><b>${esc(S.user)}</b><div class="caption">Toque na foto para trocar</div></div>
+        ${S.photo?`<button class="btn glass sm" id="rmPh">Remover</button>`:""}</div>
+
+      <div class="section-h"><span class="label">Informações pessoais</span></div>
+      <div class="card settings acc">
+        ${crow("name","Nome completo",S.user)}${crow("nick","Como quer ser chamado",A.nick)}
+        ${crow("birth","Data de nascimento",fmtBirth(A.birth))}${crow("cpf","CPF",A.cpf,A.cpf?"":`<span class="vbadge">Opcional</span>`)}
+      </div>
+      <p class="note" style="text-align:left;margin:8px 4px 0">O CPF é usado só para ler suas notas fiscais e montar o histórico de preços.</p>
+
+      <div class="section-h"><span class="label">Contato</span></div>
+      <div class="card settings acc">${crow("email","E-mail",S.email,okBadge(A.emailOk))}${crow("phone","Celular",S.phone,okBadge(A.phoneOk))}</div>
+
+      <div class="section-h"><span class="label">Endereço</span></div>
+      <div class="card settings acc">${crow("addr","Endereço",A.street?`${A.street} · ${A.city}`:"")}</div>
+      <p class="note" style="text-align:left;margin:8px 4px 0">Usado para mostrar mercados e preços perto de você.</p>
+
+      <div class="section-h"><span class="label">Contas conectadas</span></div>
+      <div class="card tgs" style="border-radius:22px">
+        ${toggle("cG",A.google,"Google",A.google?S.email:"Entrar com sua conta Google")}
+        ${toggle("cA",A.apple,"Apple","Entrar com seu Apple ID")}
+      </div>
+
+      <div class="section-h"><span class="label">Região</span></div>
+      <div class="card settings acc">${crow("lang","Idioma",A.lang)}<button disabled><span class="cl">Moeda</span><em>Real (R$)</em><span class="chev"></span></button></div>
+      <div class="tab-space" style="height:40px"></div>
+    </div></div></div>`;
+  const sc=$("#sc"),ab=$("#ab");sc.onscroll=()=>ab.classList.toggle("scrolled",sc.scrollTop>40);
+  $("#back").onclick=()=>{S.sub=null;render()};
+  $("#photoIn2").onchange=e=>setPhoto(e.target.files[0],()=>renderConta());
+  const rp=$("#rmPh");if(rp)rp.onclick=()=>{S.photo=null;try{localStorage.removeItem("nexy-photo")}catch(e){}renderConta();toast("Foto removida")};
+  view.querySelectorAll("[data-acc]").forEach(b=>b.onclick=()=>accEdit(b.dataset.acc));
+  $("#cG").onchange=e=>{A.google=e.target.checked;toast(A.google?"Conta Google conectada":"Conta Google desconectada")};
+  $("#cA").onchange=e=>{A.apple=e.target.checked;toast(A.apple?"Apple ID conectado":"Apple ID desconectado")};
+}
+function setPhoto(f,after){if(!f)return;const img=new Image();img.onload=()=>{
+  const c=document.createElement("canvas"),k=256/Math.min(img.width,img.height);c.width=c.height=256;
+  c.getContext("2d").drawImage(img,(256-img.width*k)/2,(256-img.height*k)/2,img.width*k,img.height*k);
+  S.photo=c.toDataURL("image/jpeg",.85);try{localStorage.setItem("nexy-photo",S.photo)}catch(err){}after();toast("Foto atualizada")};img.src=URL.createObjectURL(f)}
+
+function codeStep(el,close,dest,onOk){
+  el.innerHTML=`<div class="grab"></div><h3>Digite o código</h3><p class="caption" style="margin:0">Enviamos um código de 6 números para <b style="color:var(--fg)">${esc(dest)}</b>.</p>
+    <div class="otp">${[0,1,2,3,4,5].map(i=>`<input inputmode="numeric" maxlength="1" aria-label="Número ${i+1} do código" data-i="${i}">`).join("")}</div>
+    <p class="err" id="otpErr" hidden></p>
+    <button class="btn block" id="otpOk" disabled>Confirmar</button>
+    <button class="link-btn" id="resend">Reenviar código em <span id="cd">30</span>s</button>
+    <p class="note">Protótipo: qualquer código de 6 números funciona.</p>`;
+  const ins=[...el.querySelectorAll(".otp input")],ok=el.querySelector("#otpOk"),val=()=>ins.map(i=>i.value).join("");
+  ins.forEach((inp,i)=>{
+    inp.oninput=()=>{inp.value=inp.value.replace(/\D/g,"").slice(-1);if(inp.value&&ins[i+1])ins[i+1].focus();ok.disabled=val().length<6};
+    inp.onkeydown=e=>{if(e.key==="Backspace"&&!inp.value&&ins[i-1])ins[i-1].focus()};
+    inp.onpaste=e=>{const t=(e.clipboardData.getData("text")||"").replace(/\D/g,"").slice(0,6);if(!t)return;e.preventDefault();t.split("").forEach((c,k)=>ins[k]&&(ins[k].value=c));ok.disabled=val().length<6;ins[Math.min(t.length,5)].focus()};
+  });
+  setTimeout(()=>ins[0].focus(),200);
+  let n=30;const r=el.querySelector("#resend"),t=setInterval(()=>{n--;const c=el.querySelector("#cd");if(c)c.textContent=n;if(n<=0){clearInterval(t);r.textContent="Reenviar código";r.onclick=()=>{toast("Código reenviado");}}},1000);
+  ok.onclick=()=>{clearInterval(t);close();onOk()};
+}
+function accEdit(k){
+  const A=S.acc;
+  const simple=(title,label,val,opts,save)=>sheet(`<h3>${title}</h3>
+    <div class="field"><label for="fv">${label}</label><input class="input" id="fv" value="${esc(val)}" ${opts||""}></div>
+    <p class="err" id="fe" hidden></p><button class="btn block" id="fs">Salvar</button>`,(el,close)=>{
+      const i=el.querySelector("#fv"),e=el.querySelector("#fe");setTimeout(()=>i.focus(),250);
+      if(k==="cpf")i.oninput=()=>i.value=maskCPF(i.value);
+      el.querySelector("#fs").onclick=()=>{const m=save(i.value.trim());if(m){e.textContent=m;e.hidden=false;i.focus();return}close();renderConta();toast("Salvo")}});
+  if(k==="name")return simple("Nome completo","Nome",S.user,'autocomplete="name"',v=>{if(v.length<2)return"Digite seu nome.";S.user=v});
+  if(k==="nick")return simple("Como quer ser chamado","Apelido",A.nick,"",v=>{A.nick=v});
+  if(k==="birth")return simple("Data de nascimento","Data",A.birth,'type="date"',v=>{A.birth=v});
+  if(k==="cpf")return simple("CPF","CPF (opcional)",A.cpf,'inputmode="numeric" placeholder="000.000.000-00"',v=>{if(v&&!cpfOk(v))return"Esse CPF não é válido. Confira os números.";A.cpf=v});
+  if(k==="lang")return sheet(`<h3>Idioma</h3><div class="menu">${["Português (Brasil)","English","Español"].map(o=>`<button data-o="${o}"><span style="flex:1">${o}</span>${A.lang===o?`<span style="color:var(--accent-hi);width:20px">${I.check}</span>`:""}</button>`).join("")}</div>`,(el,close)=>el.querySelectorAll("[data-o]").forEach(b=>b.onclick=()=>{A.lang=b.dataset.o;close();renderConta();toast("Idioma salvo")}));
+  if(k==="email")return sheet(`<h3>E-mail</h3><p class="caption" style="margin:0">Atual: ${esc(S.email)} ${A.emailOk?"· verificado":""}</p>
+    <div class="field"><label for="ne">Novo e-mail</label><input class="input" id="ne" type="email" placeholder="nome@exemplo.com" autocomplete="email"></div>
+    <p class="err" id="fe" hidden></p><button class="btn block" id="fs">Enviar código</button>`,(el,close)=>{
+      const i=el.querySelector("#ne"),e=el.querySelector("#fe");setTimeout(()=>i.focus(),250);
+      el.querySelector("#fs").onclick=()=>{const v=i.value.trim();if(!emailOk(v)){e.textContent="Digite um e-mail válido, como nome@exemplo.com.";e.hidden=false;return}
+        codeStep(el,close,v,()=>{S.email=v;A.emailOk=true;renderConta();toast("E-mail alterado e verificado")})}});
+  if(k==="phone")return sheet(`<h3>Celular</h3><p class="caption" style="margin:0">Atual: ${esc(S.phone)} ${A.phoneOk?"· verificado":""}</p>
+    <div class="field"><label for="np">Novo número</label><div class="phone-in"><span>🇧🇷 +55</span><input class="input" id="np" inputmode="tel" placeholder="(11) 91234-5678" autocomplete="tel-national"></div></div>
+    <p class="err" id="fe" hidden></p><button class="btn block" id="fs">Enviar código por SMS</button>`,(el,close)=>{
+      const i=el.querySelector("#np"),e=el.querySelector("#fe");setTimeout(()=>i.focus(),250);i.oninput=()=>i.value=maskPhone(i.value);
+      el.querySelector("#fs").onclick=()=>{const d=i.value.replace(/\D/g,"");if(d.length!==11||d[2]!=="9"){e.textContent="Digite o celular com DDD, por exemplo (11) 91234-5678.";e.hidden=false;return}
+        codeStep(el,close,"+55 "+i.value,()=>{S.phone=i.value;A.phoneOk=true;renderConta();toast("Celular alterado e verificado")})}});
+  if(k==="addr")return sheet(`<h3>Endereço</h3>
+    <div class="field"><label for="ac">CEP</label><input class="input" id="ac" inputmode="numeric" value="${esc(A.cep)}" placeholder="00000-000"></div>
+    <div class="caption" id="acCity" style="margin-top:-4px">${esc(A.city)}</div>
+    <div class="field"><label for="as">Rua e número</label><input class="input" id="as" value="${esc(A.street)}" autocomplete="street-address"></div>
+    <p class="err" id="fe" hidden></p><button class="btn block" id="fs">Salvar</button>
+    <p class="note">Protótipo: a cidade é estimada pelo CEP. No app, vem dos Correios.</p>`,(el,close)=>{
+      const c=el.querySelector("#ac"),city=el.querySelector("#acCity"),e=el.querySelector("#fe");
+      const look=()=>{const d=c.value.replace(/\D/g,"");city.textContent=d.length===8?(CEP_UF.find(x=>x[0]===d[0])||["","—"])[1]:"Digite os 8 números do CEP"};
+      c.oninput=()=>{c.value=maskCEP(c.value);look()};
+      el.querySelector("#fs").onclick=()=>{if(c.value.replace(/\D/g,"").length!==8){e.textContent="O CEP precisa ter 8 números.";e.hidden=false;return}
+        A.cep=c.value;A.city=city.textContent;A.street=el.querySelector("#as").value.trim();close();renderConta();toast("Endereço salvo")}});
+}
+
 /* ---------- Navegação ---------- */
 const TABS=[["listas","Listas","lists"],["ia","IA","ai"],["mercados","Mercados","map"],["perfil","Perfil","user"]];
 function render(anim){
   if(!S.openList)stopScanner();
   if(S.tab==="login")return renderLogin();
   if(S.openList)return renderList(anim);
+  if(S.sub==="conta"&&S.tab==="perfil")return renderConta(anim);
   const tb=$("#tabbar");tb.hidden=false;
   tb.innerHTML=TABS.map(([k,l,i])=>`<button data-tab="${k}" class="${S.tab===k?"on":""}" aria-label="${l}">${I[i]}${l}</button>`).join("");
   ({listas:renderHome,ia:renderIA,mercados:renderMercados,perfil:renderPerfil})[S.tab]();
-  document.querySelectorAll("[data-tab]").forEach(b=>b.onclick=()=>{S.tab=b.dataset.tab;render()});
+  document.querySelectorAll("[data-tab]").forEach(b=>b.onclick=()=>{S.tab=b.dataset.tab;S.sub=null;render()});
 }
 
 /* ---------- Som da abertura (sintetizado, toca só se o navegador permitir) ---------- */
