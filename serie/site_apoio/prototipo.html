@@ -102,6 +102,14 @@ main{padding-block:26px 70px}
 .c-txt .portal-btn{background:rgba(120,80,255,.22);border:1px solid rgba(170,130,255,.6);color:#e6dcff}
 @media (prefers-reduced-motion:reduce){.cena-trilho::after{height:0}.cena-trilho .cena{position:relative;top:0}}
 
+/* escolher a série no apoio */
+.ap-series{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.ap-series button{background:var(--card);border:2px solid var(--line);border-radius:12px;padding:0;overflow:hidden;cursor:pointer;display:grid;text-align:center}
+.ap-series img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 25%}
+.ap-series span{font-family:var(--f-tit);font-weight:800;font-size:12.5px;padding:6px 2px}
+.ap-series button.on{border-color:var(--yel);box-shadow:0 0 0 3px rgba(255,185,74,.25)}
+.ap-series button.on span{color:var(--yel)}
+
 /* aparecer na série */
 .como{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}
 .como div{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:14px;color:var(--mut)}
@@ -344,9 +352,17 @@ footer img{width:34px;height:34px;border-radius:8px}
 <section class="tela" id="v-apoiar" hidden>
   <div class="caixa"><div class="claq"></div><div class="dentro">
     <img src="img/logo.png" alt="" style="width:64px;border-radius:14px;margin:0 auto">
-    <h1 class="T">Apoiar o <em>canal</em></h1>
+    <h1 class="T" id="ap-tit">Apoiar o <em>canal</em></h1>
     <p class="mut" id="ap-tx" style="margin:0;text-align:center">Qualquer valor ajuda a continuar os episódios. O pagamento é por Pix.</p>
     <form id="f" novalidate style="display:grid;gap:14px">
+      <div style="display:grid;gap:8px"><b>Qual série você quer apoiar?</b>
+        <div class="ap-series" id="ap-series">
+          <button type="button" data-s="rank-f"><img src="img/rankf1.webp" alt=""><span>Rank F</span></button>
+          <button type="button" data-s="logado"><img src="img/logado1.webp" alt=""><span>LOGADO</span></button>
+          <button type="button" data-s="mob-zero"><img src="img/mob2.webp" alt=""><span>MOB ZERO</span></button>
+          <button type="button" data-s="todas"><img src="img/logo.png" alt=""><span>Todas</span></button>
+        </div>
+        <p class="pq" id="ap-serie-tx"></p></div>
       <div class="valores" id="valores"><button type="button" data-v="5">R$ 5</button><button type="button" data-v="10">R$ 10</button><button type="button" data-v="20">R$ 20</button><button type="button" data-v="50">R$ 50</button></div>
       <label for="valor">Ou digite o valor<div class="campo"><span class="mut">R$</span><input id="valor" inputmode="decimal" placeholder="0,00" autocomplete="off"></div></label>
       <button class="btn am full" type="submit">Gerar Pix</button>
@@ -368,7 +384,7 @@ footer img{width:34px;height:34px;border-radius:8px}
     <h1 class="T">Valeu <em>demais!</em></h1>
     <p class="mut" id="ob-tx" style="margin:0;text-align:center">Esta é a tela que aparece depois que o Pix é pago.</p>
     <div id="escolha" style="display:grid;gap:14px">
-      <b>Onde você quer aparecer?</b>
+      <b id="onde-tit">Onde você quer aparecer?</b>
       <div class="opcoes">
         <button type="button" class="opc" data-u="rank"><img src="img/rankf1.webp" alt=""><span><b>Caçador no Rank F</b><small>Licença com rank no mural da Associação</small></span></button>
         <button type="button" class="opc" data-u="nexo"><img src="img/logado1.webp" alt=""><span><b>Player no NEXO Online</b><small>Seu nick no LOGADO e no MOB ZERO</small></span></button>
@@ -437,7 +453,7 @@ function paginaSerie(s){
     <div class="s-topo"><div class="poster"><img src="${s.episodios[0].capa}" alt=""></div>
       <div><span class="eyebrow">${esc(s.universo)} · ${esc(s.status)}</span><h1 class="T" style="margin-top:6px">${esc(s.titulo)}</h1>
       <p class="mut">${esc(s.sinopse)}</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><button class="btn am" data-ep="${s.id}:1">▶ Começar do EP1</button><a class="btn cl" href="#apoiar">Apoiar a série</a></div></div></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><button class="btn am" data-ep="${s.id}:1">▶ Começar do EP1</button><a class="btn cl" href="#apoiar" data-apoiar="${s.id}">Apoiar a série</a></div></div></div>
     <div style="display:grid;gap:14px"><h2 class="T" style="font-size:24px">Episódios <em>(${s.episodios.length})</em></h2>
     <div class="eps">${eps}<div class="ep prox"><div class="poster"><span class="mut" style="font-size:13px">Próximo episódio<br>vocês decidem nos comentários</span></div><b class="mut">EP${s.episodios.length+1}</b></div></div></div>`;
 }
@@ -453,6 +469,19 @@ const fecha=()=>{$('veu').hidden=true;foco?.focus();};
 $('fechar').onclick=fecha;$('veu').onclick=e=>{if(e.target===$('veu'))fecha();};
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('veu').hidden)fecha();});
 
+/* apoiar: primeiro a série, depois o valor */
+const SERIE_AP={'rank-f':{nome:'o Rank F',tit:'o <em>Rank F</em>',u:'rank',tx:'Você ganha uma Licença de Caçador no mural da Associação do Rank F.'},
+  'logado':{nome:'o LOGADO',tit:'o <em>LOGADO</em>',u:'nexo',tx:'Você vira um player do NEXO Online e seu nick aparece no LOGADO e no MOB ZERO.'},
+  'mob-zero':{nome:'o MOB ZERO',tit:'o <em>MOB ZERO</em>',u:'nexo',tx:'Você vira um player do NEXO Online e seu nick aparece no MOB ZERO e no LOGADO.'},
+  'todas':{nome:'todas as séries',tit:'o <em>canal</em>',u:'ambos',tx:'O apoio vai para o canal todo: você aparece no Rank F e no NEXO Online.'}};
+let serieApoio='todas';
+function marcaSerie(id){serieApoio=SERIE_AP[id]?id:'todas';const sa=SERIE_AP[serieApoio];
+  $('ap-series').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.s===serieApoio));
+  $('ap-tit').innerHTML='Apoiar '+sa.tit;$('ap-serie-tx').textContent=sa.tx;}
+$('ap-series').onclick=e=>{const b=e.target.closest('button');if(b)marcaSerie(b.dataset.s);};
+document.addEventListener('click',e=>{const a=e.target.closest('[data-apoiar]');if(a)marcaSerie(a.dataset.apoiar);},true);
+marcaSerie('todas');
+
 /* apoiar (Pix de demonstração) */
 let valor=0;
 $('valores').onclick=e=>{const b=e.target.closest('button');if(!b)return;document.querySelectorAll('#valores button').forEach(x=>x.classList.toggle('on',x===b));$('valor').value=b.dataset.v+',00';};
@@ -464,7 +493,8 @@ function qr(){const c=$('qrc').getContext('2d'),n=29;c.fillStyle='#fff';c.fillRe
   for(let y=0;y<n;y++)for(let x=0;x<n;x++)if(r()>.52)c.fillRect(x,y,1,1);
   [[0,0],[n-7,0],[0,n-7]].forEach(([x,y])=>{c.fillStyle='#000';c.fillRect(x,y,7,7);c.fillStyle='#fff';c.fillRect(x+1,y+1,5,5);c.fillStyle='#000';c.fillRect(x+2,y+2,3,3);});}
 $('copiar').onclick=async()=>{try{await navigator.clipboard.writeText($('codigo').value);}catch(e){$('codigo').select();}$('copiar').textContent='Copiado!';setTimeout(()=>$('copiar').textContent='Copiar',1600);};
-$('simular').onclick=()=>{$('ob-tx').textContent=`Recebemos o seu Pix de ${brl(valor)}. Muito obrigado!`;location.hash='obrigado';};
+$('simular').onclick=()=>{const sa=SERIE_AP[serieApoio];$('ob-tx').textContent=`Recebemos o seu Pix de ${brl(valor)} para ${sa.nome}. Muito obrigado!`;
+  uni=sa.u;document.querySelectorAll('.opc').forEach(x=>x.classList.toggle('on',x.dataset.u===uni));$('onde-tit').textContent='Você vai aparecer em (dá para trocar):';location.hash='obrigado';};
 
 /* obrigado + mural (exemplos) */
 const RANKS=['S','A','B','C','D','E','F'],NEXO=['Top 1 do servidor','Nível 40','Nível 32','Nível 25','Nível 18','Nível 12','Nível 1'];
