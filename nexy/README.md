@@ -6,7 +6,7 @@ App de lista de compras com IA (iPhone, Android e site). Este protótipo é uma 
 - Versão publicada: https://claude.ai/artifact/JxFqQs4XgH45jaf6WaTuoW
 
 ## O que o protótipo cobre
-- Abertura animada com som (carrinho chega, itens caem, vira o N), login.
+- Abertura de ~2,5 s sem toque: carrinho se desenha, item cai, vira o ícone do N e a logo pousa no login (som quando o navegador permite).
 - Listas: várias listas, busca por nome ou código de barras, "coletei", 3 pontinhos (editar quantidade/unidade/observação, excluir, desfazer).
 - Câmera ao vivo dentro da lista: lê código de barras e usa IA para reconhecer o produto; marca sozinho e mostra "Coloque no carrinho". Na prévia do navegador roda em modo demonstração.
 - Nexy IA: itens básicos, receita (ex.: bolo de chocolate) com ingredientes para a lista, sugestões por histórico ("faz 32 dias que você comprou arroz").
