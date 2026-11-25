@@ -1,0 +1,26 @@
+{
+ "atualizado": "2026-11-25",
+ "tiktok": "https://www.tiktok.com/@canalsemaviso",
+ "series": [
+  {"id": "rank-f", "titulo": "RANK F", "universo": "Rank F", "status": "Em andamento",
+   "sinopse": "O garoto mais fraco da escola descobriu o poder da gravidade… e um portal abriu dentro do colégio. No fim de cada episódio, vocês votam no que o Téo faz.",
+   "episodios": [
+    {"n": 1, "titulo": "Ele era o mais fraco", "data": "2026-11-23", "capa": "img/rankf1.webp", "ig": "https://www.instagram.com/reel/DgF5yrTMON8/", "yt": "https://www.youtube.com/shorts/eF41yeAeQik"},
+    {"n": 2, "titulo": "O zelador e a vassoura", "data": "2026-11-24", "capa": "img/rankf2.webp", "ig": "https://www.instagram.com/reel/DgIhTiJsQqq/", "yt": "https://www.youtube.com/shorts/hEP_sNVFieg"}
+   ]},
+  {"id": "logado", "titulo": "LOGADO", "universo": "NEXO Online", "status": "Em andamento",
+   "sinopse": "\"Jogo não paga conta.\" O Léo vai provar o contrário: no NEXO Online, cada item vira dinheiro de verdade, começando com R$ 0,04 por slime.",
+   "episodios": [
+    {"n": 1, "titulo": "Jogo não paga conta", "data": "2026-11-16", "capa": "img/logado1.webp", "ig": "https://www.instagram.com/reel/DfzNee6MpLJ/", "yt": "https://www.youtube.com/shorts/gq59kRaBTBA"},
+    {"n": 2, "titulo": "Quem corre vira caça", "data": "2026-11-17", "capa": "img/logado2.webp", "ig": "https://www.instagram.com/reel/Df2iaAcMB98/", "yt": "https://www.youtube.com/shorts/93W7AlrSVdM"},
+    {"n": 3, "titulo": "Quanto mais mata, menos ganha", "data": "2026-11-19", "capa": "img/logado3.webp", "ig": "https://www.instagram.com/reel/Df8Svh-sRhZ/", "yt": "https://www.youtube.com/shorts/D_ztFqwIySs"},
+    {"n": 4, "titulo": "O preço de não morrer", "data": "2026-11-22", "capa": "img/logado4.webp", "ig": "https://www.instagram.com/reel/DgBeJGmMXWl/", "yt": "https://www.youtube.com/shorts/eVw73y4Twk0"}
+   ]},
+  {"id": "mob-zero", "titulo": "MOB ZERO", "universo": "NEXO Online", "status": "Em andamento",
+   "sinopse": "Testador de jogo, 36 horas sem dormir. Apagou no teclado e acordou lá dentro: esqueleto nível 1, o monstro mais fraco da cripta. Mesmo mundo do LOGADO.",
+   "episodios": [
+    {"n": 1, "titulo": "Acordei nível 1", "data": "2026-11-21", "capa": "img/mob1.webp", "ig": "https://www.instagram.com/reel/DgAGYYAMcsz/", "yt": "https://www.youtube.com/shorts/lAQTcudqDgM"},
+    {"n": 2, "titulo": "Ele não lembra", "data": "2026-11-22", "capa": "img/mob2.webp", "ig": "https://www.instagram.com/reel/DgDAukFMs6I/", "yt": "https://www.youtube.com/shorts/f7twup_tFwg"}
+   ]}
+ ]
+}
