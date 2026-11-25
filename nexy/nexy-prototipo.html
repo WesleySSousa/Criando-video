@@ -374,6 +374,53 @@ select.input option{background:var(--card-2)}
 .settings button span{flex:1}
 .settings svg{width:20px;height:20px;color:var(--muted)}
 .chev{width:18px;color:var(--faint)}
+/* Perfil */
+.avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.prof-hero{margin-top:18px;padding:22px 18px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;position:relative;overflow:hidden}
+.prof-hero::before{content:"";position:absolute;left:0;right:0;top:0;height:70px;background:linear-gradient(135deg,rgba(109,40,217,.35),rgba(139,92,246,.12))}
+.ph-avatar{position:relative;cursor:pointer;margin-bottom:8px}
+.ph-avatar .avatar{border:3px solid var(--card-2)}
+.cam-badge{position:absolute;right:-2px;bottom:2px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;border:3px solid var(--card-2)}
+.cam-badge svg{width:14px;height:14px}
+.ph-name{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.02em}
+.ph-badges{display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap;justify-content:center}
+.pill.prem{display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,#6d28d9,#8b5cf6);color:#fff;border:0}
+.pill.prem svg{width:12px;height:12px}
+.stats{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-top:12px}
+.stat{padding:14px;display:flex;flex-direction:column;gap:6px}
+.stat b{font-family:var(--display);font-size:22px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-top:4px}
+.stat .caption{font-size:12.5px}
+.plan-now{padding:16px;display:flex;flex-direction:column;gap:12px}
+.plan-now.best{background:linear-gradient(var(--card-2),var(--card-2)) padding-box,linear-gradient(140deg,#8b5cf6,rgba(255,255,255,.08)) border-box;border:1.5px solid transparent}
+.pn-top{display:flex;align-items:center;gap:12px}
+.pn-top b{font-size:15.5px}
+.pn-crown{width:40px;height:40px;border-radius:13px;background:var(--grad);color:#fff;display:grid;place-items:center;flex:none}
+.pn-crown svg{width:20px;height:20px}
+.pn-crown.big{width:56px;height:56px;border-radius:18px}
+.pn-crown.big svg{width:28px;height:28px}
+.plan-now ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--muted)}
+.plan-now li{display:flex;gap:8px}
+.plan-now li svg{width:15px;height:15px;color:var(--ok);flex:none;margin-top:2px}
+.settings button span.chev{flex:none}
+.settings button>span:not(.chev){min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.settings em{flex:none;font-style:normal;font-size:13px;color:var(--muted);max-width:44%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.settings .danger-row{color:var(--danger)}.settings .danger-row svg{color:var(--danger)}
+.del-acc{display:block;margin:18px auto 6px;font-size:13.5px;color:var(--danger);font-weight:600;padding:8px}
+.tgs{display:flex;flex-direction:column;background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.tg{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer}
+.tg+.tg{border-top:1px solid var(--line)}
+.tg>span{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.tg small{font-size:12.5px;color:var(--muted)}
+.tg input{position:absolute;opacity:0;pointer-events:none}
+.tg i{width:46px;height:28px;border-radius:14px;background:rgba(255,255,255,.12);position:relative;flex:none;transition:.2s}
+.tg i::after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:.2s}
+.tg input:checked+i{background:var(--accent)}
+.tg input:checked+i::after{transform:translateX(18px)}
+.tg input:focus-visible+i{outline:2px solid var(--accent-hi);outline-offset:2px}
+.pp{display:flex;align-items:center;gap:12px;padding:12px 14px}
+.pp+.pp{border-top:1px solid var(--line)}
+.confirm-plan{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:6px 0}
+
 .spacer{height:110px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -473,6 +520,8 @@ const I={
   bread:sv('<path d="M5 11a4 4 0 0 1 2-7.5c2 0 3 1 5 1s3-1 5-1A4 4 0 0 1 19 11v8a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z"/>'),
   pill:sv('<rect x="3" y="8" width="18" height="8" rx="4" transform="rotate(-35 12 12)"/><path d="M9.5 8.5l5 7"/>'),
   fire:sv('<path d="M12 21a6 6 0 0 0 6-6c0-4-3-6-4-10-2 2-3 4-3 6-1-1-2-2-2-3-2 2-3 4-3 7a6 6 0 0 0 6 6z"/>'),
+  lock:sv('<rect x="5" y="11" width="14" height="10" rx="3"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>'),
+  doc:sv('<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/>'),
   bolt:sv('<path d="M13 3L5 14h6l-1 7 8-11h-6z"/>')
 };
 
@@ -568,12 +617,12 @@ function renderLogin(){
 /* ---------- Início / Listas ---------- */
 function renderHome(){
   view.innerHTML=`<div class="scroll fadein">
-    <div class="hello"><div class="brand" style="font-size:17px;gap:9px"><span class="logo-mk" style="width:32px;height:32px;border-radius:10px">${LOGO}</span>NEXY</div><button class="avatar" data-tab="perfil" aria-label="Perfil">W</button></div>
+    <div class="hello"><div class="brand" style="font-size:17px;gap:9px"><span class="logo-mk" style="width:32px;height:32px;border-radius:10px">${LOGO}</span>NEXY</div><button data-tab="perfil" aria-label="Perfil" style="border-radius:50%">${avatar()}</button></div>
     <div class="pad">
       <h1 class="h-display" style="margin-top:22px">Boa tarde,<br><span class="gradient-text">${S.user}</span></h1>
       <button class="askbar" id="ask"><span class="spark">${I.ai}</span><span class="txt">Pergunte à IA: “quero fazer um bolo”</span><span class="go">${I.send}</span></button>
       <div class="tiles">
-        <div class="card tile trial"><span class="label" style="color:#d8b4fe">Teste da IA</span><div class="days">${S.trialDays}<small>dias restantes</small></div><div class="bar"><i style="width:${S.trialDays/7*100}%"></i></div></div>
+        ${isPremium()?`<div class="card tile trial"><span class="label" style="color:#d8b4fe">${PLANS[S.plan].name}</span><div class="days" style="font-size:20px">IA ilimitada</div><span class="caption" style="color:#cdb8f6">Assinatura ativa</span></div>`:`<div class="card tile trial"><span class="label" style="color:#d8b4fe">Teste da IA</span><div class="days">${S.trialDays}<small>dias restantes</small></div><div class="bar"><i style="width:${S.trialDays/7*100}%"></i></div></div>`}
         ${S.nudge?`<button class="card tile" id="nudge"><span class="ico" style="${tint(2)}">${I.clock}</span><b>Faz ${S.nudge.days} dias que você comprou arroz</b><span class="caption">Toque para adicionar</span></button>`
           :`<div class="card tile"><span class="ico" style="${tint(1)}">${I.check}</span><b>Nada esquecido</b><span class="caption">Sua lista está em dia</span></div>`}
       </div>
@@ -908,7 +957,7 @@ function act(a){
 function renderIA(){
   if(!S.chat.length)bot(`<p>Oi, ${S.user}! Sou a IA do Nexy. Posso montar sua lista, lembrar o que está acabando e mandar receitas.</p>`);
   const prev=$("#ci")?.value||"";
-  view.innerHTML=`<div class="ai-head"><div class="ai-orb ${S.thinking?"thinking":""}"></div><div class="who"><b>Nexy IA</b><div class="state ${S.thinking?"busy":""}"><i></i>${S.thinking?"Pensando…":`Online · teste grátis, ${S.trialDays} dias`}</div></div></div>
+  view.innerHTML=`<div class="ai-head"><div class="ai-orb ${S.thinking?"thinking":""}"></div><div class="who"><b>Nexy IA</b><div class="state ${S.thinking?"busy":""}"><i></i>${S.thinking?"Pensando…":isPremium()?`Online · ${PLANS[S.plan].name}`:`Online · teste grátis, ${S.trialDays} dias`}</div></div></div>
     <div class="scroll" id="chatSc"><div class="chat">${S.chat.map((m,mi)=>`<div class="msg ${m.who}">${m.html}${m.actions&&!S.thinking?`<div class="actions">${m.actions.map(([l,a])=>`<button class="btn sm ${a==="no"?"glass":""}" data-act="${a}" data-mi="${mi}">${l}</button>`).join("")}</div>`:""}</div>`).join("")}${S.thinking?`<div class="msg bot typing" aria-label="A IA está pensando"><i></i><i></i><i></i></div>`:""}</div></div>
     <div class="sugs">${["Adicionar itens básicos","Quero fazer um bolo de chocolate","O que estou esquecendo?"].map(c=>`<button class="chip" data-chip>${I.ai}${c}</button>`).join("")}</div>
     <form class="composer" id="cf"><input class="input" id="ci" placeholder="Peça algo para a IA" aria-label="Mensagem para a IA" autocomplete="off"><button class="send" aria-label="Enviar">${I.send}</button></form>
@@ -942,30 +991,143 @@ function renderMercados(){
 }
 
 /* ---------- Perfil ---------- */
+const PLANS={
+  free:{name:"Grátis",price:"R$ 0",feats:["2 listas ativas, até 40 itens cada","Compartilhar com 1 pessoa","IA liberada nos 7 primeiros dias"]},
+  plus:{name:"Nexy Plus",price:"R$ 9,90",feats:["Listas e itens ilimitados","IA ilimitada: receitas, sugestões e dúvidas","Câmera que reconhece os itens","Comparar preços (quando lançar)"]},
+  familia:{name:"Família",price:"R$ 14,90",feats:["Tudo do Plus","Até 5 pessoas","Listas da casa sincronizadas"]}
+};
+Object.assign(S,{plan:"free",phone:"(11) 98765-4321",email:"voce@exemplo.com",since:"março de 2026",photo:null,
+  notif:{repor:true,compart:true,ofertas:false,resumo:true},prefs:{mercado:"Mercado Bom Preço",ordem:"Por setor do mercado",tema:"Escuro"},bio:true,
+  people:[{a:"A",n:"Ana",r:"esposa",c:"#be185d"},{a:"J",n:"José",r:"pai",c:"#0369a1"}]});
+try{const p=localStorage.getItem("nexy-photo");if(p)S.photo=p}catch(e){}
+const isPremium=()=>S.plan!=="free";
+const avatar=(size=42,font=15)=>`<span class="avatar" style="width:${size}px;height:${size}px;font-size:${font}px">${S.photo?`<img src="${S.photo}" alt="Sua foto">`:S.user[0]}</span>`;
+const CROWN=sv('<path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/>');
+const row=(id,ic,label,val="")=>`<button data-row="${id}">${I[ic]||ic}<span>${label}</span>${val?`<em>${esc(val)}</em>`:""}<span class="chev">${I.chev}</span></button>`;
+const toggle=(id,on,label,sub)=>`<label class="tg"><span><b>${label}</b>${sub?`<small>${sub}</small>`:""}</span><input type="checkbox" id="${id}" ${on?"checked":""}><i></i></label>`;
+
 function renderPerfil(){
-  const plans=[["Grátis","R$ 0",["2 listas ativas, até 40 itens cada","Compartilhar com 1 pessoa","IA liberada nos 7 primeiros dias"],0,"Seu plano"],
-    ["Nexy Plus","R$ 9,90",["Listas e itens ilimitados","IA ilimitada: receitas, sugestões e dúvidas","Escanear itens com a câmera","Comparar preços (quando lançar)"],1,"Assinar Plus"],
-    ["Família","R$ 14,90",["Tudo do Plus","Até 5 pessoas","Listas da casa sincronizadas"],0,"Assinar Família"]];
+  const shared=S.lists.filter(l=>l.shared.length).length;
+  const got=S.lists.reduce((s,l)=>s+l.items.filter(i=>i.got).length,0);
+  const stats=[["Listas criadas",11+S.lists.length,"lists"],["Compartilhadas",4+shared,"share"],["Itens coletados",412+got,"check"],["Economia estimada","R$ 86,40","bolt"]];
+  const P=PLANS[S.plan];
   view.innerHTML=`<div class="scroll fadein"><div class="pad">
-    <div style="display:flex;align-items:center;gap:14px;margin-top:20px"><span class="avatar" style="width:60px;height:60px;font-size:22px">W</span><div><h1 class="h-display" style="font-size:24px">${S.user}</h1><div class="caption">voce@exemplo.com · Plano Grátis</div></div></div>
-    <div class="section-h"><span class="label">Planos</span><span class="caption">teste acaba em ${S.trialDays} dias</span></div>
-    <div class="lists">${plans.map(([n,p,f,best,cta])=>`<div class="card plan ${best?"best":""}"><div class="h"><h4>${n}</h4>${best?'<span class="pill">Mais escolhido</span>':""}</div>
-      <div class="price">${p}<small> /mês</small></div><ul>${f.map(x=>`<li>${I.check}${x}</li>`).join("")}</ul>
-      <button class="btn ${best?"":"glass"} block" data-plan="${n}" ${n==="Grátis"?"disabled":""}>${cta}</button></div>`).join("")}</div>
-    <p class="note" style="margin-top:12px">Preços sugeridos para validar. A assinatura é cobrada pela App Store ou Google Play.</p>
+    <div class="prof-hero card">
+      <label class="ph-avatar" for="photoIn" aria-label="Trocar foto">${avatar(84,30)}<span class="cam-badge">${I.camera}</span></label>
+      <input type="file" id="photoIn" accept="image/*" hidden>
+      <div class="ph-name">${esc(S.user)}</div>
+      <div class="caption">${esc(S.email)}</div>
+      <div class="ph-badges">${isPremium()?`<span class="pill prem">${CROWN}${P.name}</span>`:`<span class="pill">Plano Grátis</span>`}<span class="caption">Membro desde ${S.since}</span></div>
+    </div>
+    <div class="stats">${stats.map(([l,v,ic])=>`<div class="card stat"><span class="ico" style="${tint(5)};width:32px;height:32px;border-radius:10px">${I[ic]}</span><b>${v}</b><span class="caption">${l}</span></div>`).join("")}</div>
+    <p class="note" style="margin-top:8px">Números de exemplo, somados às suas listas deste protótipo.</p>
+
+    <div class="section-h"><span class="label">Assinatura</span></div>
+    <div class="card plan-now ${isPremium()?"best":""}">
+      ${isPremium()?`<div class="pn-top"><span class="pn-crown">${CROWN}</span><div style="flex:1"><b>${P.name} ativo</b><div class="caption">${P.price}/mês · renova em 25/12/2026</div></div></div>
+        <ul>${P.feats.map(f=>`<li>${I.check}${f}</li>`).join("")}</ul>
+        <div class="actions"><button class="btn glass sm" data-row="plans">Trocar plano</button><button class="btn glass sm" data-row="pay">Pagamento</button></div>`
+      :`<div class="pn-top"><div style="flex:1"><b>Plano Grátis</b><div class="caption">Teste da IA termina em ${S.trialDays} dias</div></div><span class="pill">${S.trialDays} dias</span></div>
+        <div class="bar"><i style="width:${S.trialDays/7*100}%"></i></div>
+        <button class="btn block" data-row="plans">${CROWN}Conhecer o Premium</button>`}
+    </div>
+
     <div class="section-h"><span class="label">Conta</span></div>
     <div class="card settings">
-      <button id="intro">${I.play}<span>Ver animação de abertura</span><span class="chev">${I.chev}</span></button>
-      <button>${I.bell}<span>Lembretes de reposição</span><span class="chev">${I.chev}</span></button>
-      <button>${I.card}<span>Assinatura e pagamento</span><span class="chev">${I.chev}</span></button>
-      <button>${I.help}<span>Ajuda</span><span class="chev">${I.chev}</span></button>
-      <button id="out" style="color:var(--danger)">${I.logout}<span>Sair</span></button>
+      ${row("dados","user","Dados pessoais",S.phone)}
+      ${row("seg","lock","Senha e segurança")}
+      ${row("people","share","Pessoas com acesso",`${S.people.length}`)}
+      ${row("pay","card","Pagamento",isPremium()?"App Store":"—")}
     </div>
+    <div class="section-h"><span class="label">Preferências</span></div>
+    <div class="card settings">
+      ${row("notif","bell","Notificações")}
+      ${row("prefs","map","Mercado favorito",S.prefs.mercado)}
+      ${row("ordem","lists","Ordem dos itens",S.prefs.ordem)}
+      ${row("intro","play","Ver animação de abertura")}
+    </div>
+    <div class="section-h"><span class="label">Suporte</span></div>
+    <div class="card settings">
+      ${row("help","help","Ajuda e contato")}
+      ${row("termos","doc","Termos e privacidade")}
+      <button id="out" class="danger-row">${I.logout}<span>Sair da conta</span></button>
+    </div>
+    <button class="del-acc" data-row="delete">Excluir minha conta</button>
+    <p class="note">Nexy 1.0.0 (protótipo)</p>
     <div class="tab-space"></div>
   </div></div>`;
-  view.querySelectorAll("[data-plan]").forEach(b=>b.onclick=()=>toast(`Checkout do ${b.dataset.plan} (simulação)`));
-  $("#intro").onclick=()=>playSplash();
+  $("#photoIn").onchange=e=>{const f=e.target.files[0];if(!f)return;const img=new Image();img.onload=()=>{
+    const c=document.createElement("canvas"),k=256/Math.min(img.width,img.height);c.width=c.height=256;
+    c.getContext("2d").drawImage(img,(256-img.width*k)/2,(256-img.height*k)/2,img.width*k,img.height*k);
+    S.photo=c.toDataURL("image/jpeg",.85);try{localStorage.setItem("nexy-photo",S.photo)}catch(err){}
+    renderPerfil();toast("Foto atualizada")};img.src=URL.createObjectURL(f)};
+  view.querySelectorAll("[data-row]").forEach(b=>b.onclick=()=>profileAction(b.dataset.row));
   $("#out").onclick=()=>{S.tab="login";render()};
+}
+function profileAction(k){
+  if(k==="intro")return playSplash();
+  if(k==="plans")return plansSheet();
+  if(k==="dados")return sheet(`<h3>Dados pessoais</h3>
+    <div style="display:flex;justify-content:center">${avatar(72,26)}</div>
+    <div class="field"><label for="dN">Nome</label><input class="input" id="dN" value="${esc(S.user)}"></div>
+    <div class="field"><label for="dE">E-mail</label><input class="input" id="dE" type="email" value="${esc(S.email)}"></div>
+    <div class="field"><label for="dP">Celular</label><input class="input" id="dP" value="${esc(S.phone)}" inputmode="tel"></div>
+    ${S.photo?`<button class="btn glass block" id="rmPhoto">${I.trash}Remover foto</button>`:""}
+    <button class="btn block" id="dOk">Salvar</button>`,(el,close)=>{
+      const rp=el.querySelector("#rmPhoto");if(rp)rp.onclick=()=>{S.photo=null;try{localStorage.removeItem("nexy-photo")}catch(e){}close();renderPerfil();toast("Foto removida")};
+      el.querySelector("#dOk").onclick=()=>{S.user=el.querySelector("#dN").value.trim()||S.user;S.email=el.querySelector("#dE").value.trim()||S.email;S.phone=el.querySelector("#dP").value.trim();close();renderPerfil();toast("Dados salvos")}});
+  if(k==="seg")return sheet(`<h3>Senha e segurança</h3>
+    <div class="tgs">${toggle("tBio",S.bio,"Entrar com Face ID ou digital","Mais rápido e seguro")}</div>
+    <div class="field"><label for="sA">Senha atual</label><input class="input" id="sA" type="password"></div>
+    <div class="field"><label for="sN">Nova senha</label><input class="input" id="sN" type="password" placeholder="Mínimo de 8 caracteres"></div>
+    <button class="btn block" id="sOk">Salvar</button>`,(el,close)=>{
+      el.querySelector("#sOk").onclick=()=>{S.bio=el.querySelector("#tBio").checked;const n=el.querySelector("#sN").value;
+        if(n&&n.length<8){el.querySelector("#sN").focus();toast("A nova senha precisa de 8 caracteres ou mais");return}
+        close();toast(n?"Senha alterada":"Configurações salvas")}});
+  if(k==="people")return sheet(`<h3>Pessoas com acesso</h3><p class="caption" style="margin:0">Quem recebe suas listas compartilhadas.</p>
+    <div class="menu" id="pl">${S.people.map((p,i)=>`<div class="pp"><span class="avatar" style="background:${p.c}">${p.a}</span><span style="flex:1"><b>${p.n}</b><div class="caption">${p.r}</div></span><button class="btn glass sm" data-rm="${i}">Remover</button></div>`).join("")||`<div class="pp caption">Ninguém ainda.</div>`}</div>
+    <button class="btn block" data-close>${I.plus}Convidar pelas listas</button>`,(el,close)=>{
+      el.querySelectorAll("[data-rm]").forEach(b=>b.onclick=()=>{const p=S.people.splice(+b.dataset.rm,1)[0];close();renderPerfil();toast(`${p.n} não tem mais acesso`)})});
+  if(k==="pay")return sheet(`<h3>Pagamento</h3><p class="caption" style="margin:0">${isPremium()?`A assinatura ${PLANS[S.plan].name} é cobrada pela App Store. Para cancelar, use os Ajustes do celular ou o botão abaixo.`:"Você ainda não tem assinatura."}</p>
+    ${isPremium()?`<div class="menu"><div class="pp"><span style="flex:1">Próxima cobrança</span><b>25/12/2026</b></div><div class="pp"><span style="flex:1">Valor</span><b>${PLANS[S.plan].price}</b></div></div><button class="btn danger block" id="cancel">Cancelar assinatura</button>`:`<button class="btn block" id="go">${CROWN}Ver planos</button>`}`,(el,close)=>{
+      const c=el.querySelector("#cancel");if(c)c.onclick=()=>{S.plan="free";close();renderPerfil();toast("Assinatura cancelada (simulação)")};
+      const g=el.querySelector("#go");if(g)g.onclick=()=>{close();plansSheet()}});
+  if(k==="notif")return sheet(`<h3>Notificações</h3><div class="tgs">
+    ${toggle("n1",S.notif.repor,"Lembretes de reposição","“Faz 30 dias que você comprou arroz”")}
+    ${toggle("n2",S.notif.compart,"Listas compartilhadas","Quando alguém muda ou coleta um item")}
+    ${toggle("n3",S.notif.resumo,"Resumo da compra","Total gasto e economia depois do mercado")}
+    ${toggle("n4",S.notif.ofertas,"Ofertas perto de você","Quando lançar a comparação de preços")}</div>
+    <button class="btn block" id="nOk">Salvar</button>`,(el,close)=>{
+      el.querySelector("#nOk").onclick=()=>{["repor","compart","resumo","ofertas"].forEach((k,i)=>S.notif[k]=el.querySelector("#n"+(i+1)).checked);close();toast("Notificações salvas")}});
+  const pick=(title,key,opts)=>sheet(`<h3>${title}</h3><div class="menu">${opts.map(o=>`<button data-o="${esc(o)}"><span style="flex:1">${esc(o)}</span>${S.prefs[key]===o?`<span style="color:var(--accent-hi);width:20px">${I.check}</span>`:""}</button>`).join("")}</div>`,(el,close)=>{
+      el.querySelectorAll("[data-o]").forEach(b=>b.onclick=()=>{S.prefs[key]=b.dataset.o;close();renderPerfil();toast("Preferência salva")})});
+  if(k==="prefs")return pick("Mercado favorito","mercado",["Mercado Bom Preço","Atacadão da Vila","Pão de Açúcar · Centro","Mercado do Bairro"]);
+  if(k==="ordem")return pick("Ordem dos itens","ordem",["Por setor do mercado","Ordem em que adicionei","Ordem alfabética"]);
+  if(k==="help")return sheet(`<h3>Ajuda e contato</h3><div class="menu">
+    <button>${I.help}<span style="flex:1">Perguntas frequentes</span></button><button>${I.ai}<span style="flex:1">Falar com o suporte</span></button><button>${I.edit}<span style="flex:1">Sugerir uma melhoria</span></button></div>
+    <p class="note">E-mail de suporte: suporte@nexy.app</p>`);
+  if(k==="termos")return sheet(`<h3>Termos e privacidade</h3><p class="caption" style="margin:0">Seus dados de compra são usados só para as sugestões da IA e nunca são vendidos. Você pode baixar ou apagar tudo a qualquer momento.</p>
+    <div class="menu"><button>${I.doc}<span style="flex:1">Termos de uso</span></button><button>${I.lock}<span style="flex:1">Política de privacidade</span></button><button>${I.share}<span style="flex:1">Baixar meus dados</span></button></div>`);
+  if(k==="delete")return sheet(`<h3>Excluir conta?</h3><p class="caption" style="margin:0">Suas ${S.lists.length} listas, o histórico de compras e as preferências serão apagados para sempre. Quem recebeu suas listas perde o acesso.</p>
+    <div class="field"><label for="dc">Digite EXCLUIR para confirmar</label><input class="input" id="dc" autocomplete="off"></div>
+    <div class="actions"><button class="btn glass" data-close>Cancelar</button><button class="btn" id="dGo" style="background:#e11d48;box-shadow:none" disabled>Excluir conta</button></div>`,(el,close)=>{
+      const i=el.querySelector("#dc"),b=el.querySelector("#dGo");i.oninput=()=>b.disabled=i.value.trim().toUpperCase()!=="EXCLUIR";
+      b.onclick=()=>{close();S.tab="login";render();toast("Conta excluída (simulação)")}});
+}
+function plansSheet(){
+  sheet(`<h3>Escolha seu plano</h3><p class="caption" style="margin:0">Cancele quando quiser. Cobrança pela App Store ou Google Play.</p>
+    <div class="lists">${Object.entries(PLANS).map(([k,p])=>`<div class="card plan ${k==="plus"?"best":""}"><div class="h"><h4>${p.name}</h4>${S.plan===k?'<span class="pill ok">Seu plano</span>':k==="plus"?'<span class="pill">Mais escolhido</span>':""}</div>
+      <div class="price">${p.price}<small> /mês</small></div><ul>${p.feats.map(x=>`<li>${I.check}${x}</li>`).join("")}</ul>
+      ${S.plan===k?"":`<button class="btn ${k==="plus"?"":"glass"} block" data-plan="${k}">${k==="free"?"Voltar ao Grátis":"Assinar "+p.name}</button>`}</div>`).join("")}</div>
+    <p class="note">Preços sugeridos para validar.</p>`,(el,close)=>{
+    el.querySelectorAll("[data-plan]").forEach(b=>b.onclick=()=>{const k=b.dataset.plan;
+      if(k==="free"){S.plan="free";close();renderPerfil();toast("Você voltou ao plano Grátis");return}
+      el.innerHTML=`<div class="grab"></div><div class="confirm-plan"><span class="pn-crown big">${CROWN}</span><h3>Assinar ${PLANS[k].name}</h3>
+        <p class="caption" style="margin:0">${PLANS[k].price} por mês, renovação automática. Na loja de verdade, aqui aparece a confirmação com Face ID.</p></div>
+        <div class="actions"><button class="btn glass" data-close>Cancelar</button><button class="btn" id="cOk">Confirmar</button></div>`;
+      el.querySelector("[data-close]").onclick=close;
+      el.querySelector("#cOk").onclick=()=>{S.plan=k;close();renderPerfil();toast(`Bem-vindo ao ${PLANS[k].name}!`)};
+    })});
 }
 
 /* ---------- Navegação ---------- */
