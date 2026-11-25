@@ -38,15 +38,20 @@ Site de webtoon vertical de uma obra só ("Reencarnei como Slime", autor Flash J
 | LOGADO EP01 — O Início | 16/11 | **110.172** | 76.622 | 324 | 240 | 536 | 55,9 s | 27,0% |
 | LOGADO EP02 | 17/11 | 18.223 | 9.542 | 88 | 17 | 65 | 83,7 s | 31,8% |
 | LOGADO EP03 | 19/11 | 12.588 | 8.201 | 36 | 13 | 41 | 79,3 s | 30,8% |
-| Esqueleto (testador de jogo) ep. 1 | 21/11 | 71.808 | 46.086 | 132 | 67 | 244 | 84,6 s | 17,2% |
+| MOB ZERO ep. 1 (Otto, esqueleto) | 21/11 | 71.808 | 46.086 | 132 | 67 | 244 | 84,6 s | 17,2% |
 | LOGADO EP04 | 22/11 | 17.747 | 10.993 | 44 | 19 | 34 | 57,2 s | 31,3% |
-| Esqueleto (Otto) ep. 2 | 22/11 | 14.937 | 8.477 | 39 | 19 | 49 | 90,5 s | 26,0% |
+| MOB ZERO ep. 2 | 22/11 | 14.937 | 8.477 | 39 | 19 | 49 | 90,5 s | 26,0% |
 | **RANK F EP1** | 23/11 | 10.553 | 7.188 | 46 | 21 | 53 | 56,6 s | 29,5% |
 | **RANK F EP2** | 24/11 | **56.545** | 40.670 | **228** | 149 | 294 | **82,5 s** | **15,8%** |
 | Toque de Recolher ep. 1 | 25/11 | 3.378 (1º dia) | 2.641 | 5 | 15 | 10 | 25,1 s | 41,5% |
 
 Leitura: o **RANK F EP2 é o melhor post do canal em engajamento** (o EP2 superou o EP1 em 5×, coisa que nenhuma outra série fez; 11,6% de engajamento, só 15,8% pulam no início e 228 comentários = votação). É a série com mais cara de "comunidade" — a melhor para puxar o apoio.
 Obs.: o LOGADO publicado (Léo, NEXO Online) está diferente da BIBLIA.md do repositório (Teco, Almaré).
+
+## 2b2. Séries atuais (confirmado pelo dono, 25/11)
+- **RANK F** (Téo, portais, ranks F→S) — mundo próprio.
+- **LOGADO** (Léo, ganha dinheiro real no NEXO Online) e **MOB ZERO** (Otto, testador que acorda como esqueleto nível 1 na cripta) — **mesmo mundo, o NEXO Online**.
+- Toque de Recolher (25/11) ficou fora da lista de séries atuais.
 
 ## 2c. RANK F — mecânica de apoio (a mais forte)
 O gênero (ranks F→S, portais, caçadores) já é um sistema de hierarquia: é o "Vila dos Goblins" pronto.
@@ -55,7 +60,17 @@ O gênero (ranks F→S, portais, caçadores) já é um sistema de hierarquia: é
 - **Meta do mês = estabilidade do portal**: barra "o portal fecha se não estabilizar"; o Téo na ponta muda de cara.
 - **Votação**: manter A/B grátis para todos nos comentários (é o motor do alcance). Para apoiadores, só bônus sem pagar por decisão: ex. o rank S escolhe o nome de um monstro/NPC do episódio.
 
-## 3. A versão do canal: mecânicas que casam com as séries
+## 2d. NEXO Online (LOGADO + MOB ZERO) — mecânica de apoio
+- O apoiador vira **um player do NEXO Online**, com o @ como nick. O mesmo player aparece nas duas séries: no LOGADO, na fila da loja, no chat ou no ranking; no MOB ZERO, como um dos players que descem a cripta (o Otto vê o nick em cima da cabeça). É um crossover que só quem apoia ganha.
+- Hierarquia por nível do player (sem mostrar valor): o maior apoiador do mês é o "Top 1 do servidor", depois nível alto, médio, novatos nível 1.
+- Meta do mês: barra no estilo do HUD do jogo ("servidor online", ou o XP do Léo/Otto).
+
+## 2e. Site único com dois universos
+- Um site do canal (Sem Aviso) com **dois universos**: NEXO Online (LOGADO + MOB ZERO) e RANK F.
+- **Um Pix só e uma meta só** ("para as séries continuarem"); na tela de obrigado o apoiador escolhe onde quer aparecer: player do NEXO Online ou caçador do Rank F (ou nos dois).
+- Cada série com os episódios em ordem e "comece pelo EP1" — é o link da bio.
+
+## 3. (versão antiga, de antes de 25/11) A versão do canal: mecânicas que casam com as séries
 | Série | "Vila dos Goblins" equivalente | Barra da meta |
 |---|---|---|
 | **LOGADO** | Apoiador vira **jogador de Almaré**: nick no ranking da Banca de Porto Manso, ou um NPC na Campina Mansa farmando Gosmins ao lado do Teco. Topo do ranking = "Jogador nº 1 do servidor"; depois Veteranos, Caçadores, Novatos (nível 1). Os nomes aparecem de verdade na tela dos episódios (placar, chat do jogo, fila da Banca). | A **Carteira do Teco**: "Para o Teco sacar faltam…" com a barra igual ao HUD do jogo (sem mostrar reais). O Gosmim na ponta muda de cara. |
