@@ -16,7 +16,10 @@ App de lista de compras com IA (iPhone, Android e site). Este protótipo é uma 
 - Perfil: foto, selo do plano, números de uso (listas criadas, compartilhadas, itens coletados, economia), dados pessoais, segurança, pessoas com acesso, notificações, preferências, ajuda, sair e excluir conta.
 - Planos: 7 dias de IA grátis, depois Plus (R$ 9,90) e Família (R$ 14,90) — preços a validar.
 
-## Próximo passo: app de verdade
+## App de verdade
+O app em Expo está em `app/` (veja `app/README.md`). Já tem criação de conta, login e verificação do celular por SMS com Supabase.
+
+## Plano técnico
 - App: React Native + Expo (iPhone, Android e web com o mesmo código); câmera e código de barras com `expo-camera`.
 - Contas, banco e lista compartilhada em tempo real: Supabase.
 - IA: API do Claude (listas, receitas, sugestões, reconhecimento por imagem).
