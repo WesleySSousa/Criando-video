@@ -1,0 +1,379 @@
+<title>Sem Aviso — Apoie</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&family=Silkscreen&display=swap" rel="stylesheet">
+<style>
+/* Layout: coluna única de leitura (máx 960px), topo fixo, "telas" trocadas pelo #hash como num app; visual de HUD de jogo, só escuro */
+:root{
+  --bg:#0d1016; --panel:#151a23; --panel2:#1c2330; --line:#2a3344;
+  --fg:#e8edf5; --mut:#8e9ab0;
+  --nexo:#4fd8a6;  /* NEXO Online: verde-menta do HUD */
+  --rank:#ffb02e;  /* Rank F: âmbar de licença */
+  --heart:#ff5d7a; --ok:#57e389;
+  --f-disp:"Chakra Petch","Arial Narrow",system-ui,sans-serif;
+  --f-body:"Inter",system-ui,-apple-system,sans-serif;
+  --f-px:"Silkscreen","Courier New",monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+@media (max-width:640px){nav{order:3;flex:1 0 100%;flex-wrap:nowrap;overflow-x:auto}.btn-ap{margin-left:auto}}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--f-body);margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-disp);text-wrap:balance;margin:0;line-height:1.15}
+.px{font-family:var(--f-px);letter-spacing:.04em}
+button,input{font:inherit}
+:focus-visible{outline:2px solid var(--nexo);outline-offset:2px}
+
+/* topo */
+.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topo .wrap{display:flex;align-items:center;gap:14px;padding-block:10px;flex-wrap:wrap}
+.logo{font-family:var(--f-disp);font-weight:700;font-size:19px;text-decoration:none;display:flex;gap:8px;align-items:center}
+.logo i{width:14px;height:14px;background:var(--fg);display:inline-block;box-shadow:4px 4px 0 var(--heart)}
+nav{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+nav a{text-decoration:none;color:var(--mut);padding:6px 10px;border-radius:6px;font-weight:500;font-size:14px}
+nav a.on,nav a:hover{color:var(--fg);background:var(--panel2)}
+.btn-ap{background:var(--heart);color:#1a0a0e;border:0;border-radius:8px;padding:8px 14px;font-weight:700;text-decoration:none;cursor:pointer}
+.demo{background:#2a2210;color:#ffd98a;font-size:13px;text-align:center;padding:6px 16px;border-bottom:1px solid #4a3a14}
+
+main{padding-block:24px 60px}
+section.tela{display:grid;gap:22px}
+.sub{color:var(--mut);margin:6px 0 0}
+
+/* hero */
+.hero h1{font-size:clamp(30px,6vw,46px)}
+.hero p{max-width:60ch}
+
+/* meta */
+.meta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:10px}
+.meta-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.meta-top b{font-family:var(--f-disp);font-size:17px}
+.trilho{position:relative;height:18px;background:var(--panel2);border:1px solid var(--line);border-radius:3px;margin:22px 0 4px}
+.cheio{height:100%;background:repeating-linear-gradient(90deg,var(--nexo) 0 10px,color-mix(in srgb,var(--nexo) 80%,#000) 10px 12px);transition:width .6s}
+.boneco{position:absolute;top:-30px;transform:translateX(-50%);transition:left .6s}
+.boneco svg{width:40px;height:40px;image-rendering:pixelated;display:block}
+.demo-ctl{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--mut);flex-wrap:wrap}
+.demo-ctl input{flex:1;min-width:140px;accent-color:var(--nexo)}
+
+/* universos */
+.unis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.uni{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:grid}
+.uni .cap{padding:18px 18px 14px;display:grid;gap:8px;position:relative}
+.uni.nexo .cap{background:linear-gradient(160deg,#0f2a22,#151a23 70%)}
+.uni.rank .cap{background:linear-gradient(160deg,#2e2108,#151a23 70%)}
+.tag{font-family:var(--f-px);font-size:11px;letter-spacing:.08em}
+.nexo .tag{color:var(--nexo)} .rank .tag{color:var(--rank)}
+.uni h2{font-size:26px}
+.uni ul{list-style:none;margin:0;padding:0 18px 16px;display:grid;gap:6px}
+.serie-t{font-family:var(--f-disp);font-weight:700;font-size:13px;color:var(--mut);letter-spacing:.06em;margin-top:8px}
+.ep{display:flex;justify-content:space-between;gap:10px;padding:8px 10px;background:var(--panel2);border-radius:6px;text-decoration:none;font-size:14px}
+.ep:hover{outline:1px solid var(--line)}
+.ep span:last-child{color:var(--mut);font-variant-numeric:tabular-nums;white-space:nowrap}
+.uni .acoes{display:flex;gap:8px;padding:0 18px 18px;flex-wrap:wrap}
+.b2{border:1px solid var(--line);background:var(--panel2);color:var(--fg);border-radius:8px;padding:8px 12px;font-weight:600;text-decoration:none;cursor:pointer;font-size:14px}
+.nexo .b2.pri{background:var(--nexo);color:#06231a;border-color:transparent}
+.rank .b2.pri{background:var(--rank);color:#2a1a00;border-color:transparent}
+
+.faixa{display:flex;gap:14px;align-items:center;background:var(--panel);border:1px dashed var(--line);border-radius:12px;padding:14px 16px;flex-wrap:wrap}
+.faixa div{flex:1;min-width:200px}
+
+/* apoiar */
+.caixa{max-width:460px;margin:0 auto;width:100%;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;gap:14px}
+.valores{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.valores button{background:var(--panel2);border:1px solid var(--line);color:var(--fg);border-radius:8px;padding:12px 0;font-weight:700;cursor:pointer;font-variant-numeric:tabular-nums}
+.valores button.on{border-color:var(--heart);background:color-mix(in srgb,var(--heart) 18%,var(--panel2))}
+label{display:grid;gap:6px;font-size:14px;color:var(--mut)}
+.campo{display:flex;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:0 12px}
+.campo span{color:var(--mut)}
+.campo input{flex:1;min-width:0;background:none;border:0;color:var(--fg);padding:12px 8px;outline:none}
+.big{background:var(--heart);color:#1a0a0e;border:0;border-radius:10px;padding:13px;font-weight:700;font-size:16px;cursor:pointer;width:100%}
+.big.sec{background:var(--panel2);color:var(--fg);border:1px solid var(--line)}
+.aviso{font-size:12.5px;color:var(--mut);margin:0}
+.erro{color:#ff8c8c;font-size:14px;margin:0}
+.qr{width:190px;height:190px;margin:0 auto;background:#fff;padding:10px;border-radius:8px;position:relative}
+.qr canvas{width:100%;height:100%;image-rendering:pixelated}
+.qr em{position:absolute;inset:auto 0 -22px;text-align:center;font-style:normal;font-size:11px;color:#ffd98a}
+.copia{display:flex;gap:8px}
+.copia input{flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--mut);padding:10px;font-size:12px}
+.espera{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--mut)}
+.bol{width:9px;height:9px;border-radius:50%;background:var(--rank);animation:pis 1s infinite}
+@keyframes pis{50%{opacity:.25}}
+
+/* escolha */
+.opcoes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opc{background:var(--panel2);border:2px solid var(--line);border-radius:10px;padding:12px;color:var(--fg);cursor:pointer;text-align:left;display:grid;gap:4px}
+.opc small{color:var(--mut);font-size:12px;line-height:1.35}
+.opc b{font-family:var(--f-disp)}
+.opc.on.n{border-color:var(--nexo)} .opc.on.r{border-color:var(--rank)} .opc.on.d{border-color:var(--mut)}
+.opc.full{grid-column:1/-1}
+
+/* cartões */
+.cartoes{display:grid;gap:14px;justify-items:center}
+.lic{width:min(100%,340px);aspect-ratio:1.6;border-radius:12px;padding:14px 16px;background:linear-gradient(135deg,#3a2a0a,#1d1608);border:1px solid #6b4f14;display:grid;grid-template-columns:1fr auto;grid-template-rows:auto 1fr auto;gap:4px;color:#fbe7bf;position:relative;overflow:hidden}
+.lic::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 18px,rgba(255,176,46,.05) 18px 20px);pointer-events:none}
+.lic .org{font-family:var(--f-px);font-size:10px;letter-spacing:.1em;color:var(--rank);grid-column:1/-1}
+.lic .letra{font-family:var(--f-disp);font-size:72px;line-height:1;color:var(--rank);grid-row:2/4;grid-column:2;align-self:end;text-shadow:0 0 18px rgba(255,176,46,.35)}
+.lic .nm{font-family:var(--f-disp);font-size:20px;align-self:end}
+.lic .num{font-family:var(--f-px);font-size:10px;color:#c9a560}
+.player{width:min(100%,340px);border-radius:12px;padding:16px;background:#0b1f19;border:1px solid #1f5c47;display:grid;gap:8px;justify-items:center;text-align:center}
+.player .nick{font-family:var(--f-px);font-size:13px;color:var(--nexo);background:rgba(0,0,0,.45);padding:3px 8px;border-radius:3px}
+.player .nick small{color:var(--fg)}
+.player svg{width:72px;height:72px;image-rendering:pixelated}
+.hp{width:70%;height:8px;background:#06120e;border:1px solid #1f5c47}
+.hp i{display:block;height:100%;background:var(--ok)}
+.player p{margin:0;font-size:12.5px;color:var(--mut)}
+
+/* mural */
+.abas{display:flex;gap:8px;flex-wrap:wrap}
+.aba{background:var(--panel2);border:1px solid var(--line);color:var(--mut);border-radius:999px;padding:7px 14px;cursor:pointer;font-weight:600}
+.aba.on.n{color:#06231a;background:var(--nexo);border-color:transparent}
+.aba.on.r{color:#2a1a00;background:var(--rank);border-color:transparent}
+.lista{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.lista li{display:grid;grid-template-columns:34px 44px 1fr auto;gap:12px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.lista li.novo{border-color:var(--heart);box-shadow:0 0 0 1px var(--heart) inset}
+.pos{font-family:var(--f-px);font-size:12px;color:var(--mut);font-variant-numeric:tabular-nums}
+.av{width:44px;height:44px;border-radius:8px;display:grid;place-items:center;font-family:var(--f-disp);font-weight:700;font-size:20px}
+.n .av,.av.n{background:#103a2c;color:var(--nexo)}
+.av.r{background:#3a2a0a;color:var(--rank)}
+.nm2{min-width:0}
+.nm2 b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nm2 small{color:var(--mut);font-size:12.5px}
+.selo{font-family:var(--f-px);font-size:11px;padding:4px 8px;border-radius:4px;white-space:nowrap}
+.selo.n{background:#103a2c;color:var(--nexo)} .selo.r{background:#3a2a0a;color:var(--rank)}
+.como{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px}
+.como div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;font-size:14px;color:var(--mut)}
+.como b{display:block;color:var(--fg);font-family:var(--f-disp);font-size:16px;margin-bottom:4px}
+footer{border-top:1px solid var(--line);color:var(--mut);font-size:12.5px;padding-block:18px}
+@media (max-width:520px){.valores{grid-template-columns:repeat(2,1fr)}.opcoes{grid-template-columns:1fr}.lista li{grid-template-columns:26px 40px 1fr}.lista .selo{grid-column:3;justify-self:start}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="demo">Protótipo para ver como ficaria. O Pix e os apoiadores são de exemplo; nada é cobrado.</div>
+<header class="topo"><div class="wrap">
+  <a class="logo" href="#inicio"><i></i>Sem Aviso</a>
+  <nav id="nav">
+    <a href="#inicio" data-v="inicio">Início</a>
+    <a href="#nexo" data-v="nexo">NEXO Online</a>
+    <a href="#rankf" data-v="rankf">Rank F</a>
+    <a href="#apoiadores" data-v="apoiadores">Apoiadores</a>
+  </nav>
+  <a class="btn-ap" href="#apoiar">💛 Apoiar</a>
+</div></header>
+
+<main class="wrap">
+
+<!-- INÍCIO -->
+<section class="tela" id="v-inicio">
+  <div class="hero">
+    <span class="tag px" style="color:var(--heart)">ANIMAÇÃO ORIGINAL · 3 SÉRIES</span>
+    <h1>Toda história começa do nada.<br>A nossa começa sem aviso.</h1>
+    <p class="sub">Dois universos, três séries, e você vota no que acontece no fim de cada episódio. Comece pelo EP1.</p>
+  </div>
+  <div class="meta-lugar"></div>
+  <div class="unis">
+    <article class="uni nexo">
+      <div class="cap"><span class="tag">UNIVERSO · NEXO ONLINE</span><h2>Um MMO onde item vira dinheiro de verdade</h2>
+        <p class="sub" style="margin:0">Duas séries no mesmo servidor. O Léo farma para provar que jogo paga conta. O Otto acordou dentro dele como o monstro mais fraco da cripta.</p></div>
+      <ul>
+        <li class="serie-t">LOGADO</li>
+        <li><a class="ep" target="_blank" rel="noopener" href="https://www.instagram.com/reel/DfzNee6MpLJ/"><span>EP01 · O início</span><span>110 mil views</span></a></li>
+        <li><a class="ep" target="_blank" rel="noopener" href="https://www.instagram.com/reel/Df2iaAcMB98/"><span>EP02 · Quem corre vira caça</span><span>18 mil</span></a></li>
+        <li><a class="ep" target="_blank" rel="noopener" href="https://www.instagram.com/reel/Df8Svh-sRhZ/"><span>EP03 · Quanto mais mata, menos ganha</span><span>12,5 mil</span></a></li>
+        <li><a class="ep" target="_blank" rel="noopener" href="https://www.instagram.com/reel/DgBeJGmMXWl/"><span>EP04 · O preço de não morrer</span><span>17,7 mil</span></a></li>
+        <li class="serie-t">MOB ZERO</li>
+        <li><a class="ep" target="_blank" rel="noopener" href="https://www.instagram.com/reel/DgAGYYAMcsz/"><span>EP01 · Esqueleto nível 1</span><span>71,8 mil</span></a></li>
+        <li><a class="ep" target="_blank" rel="noopener" href="https://www.instagram.com/reel/DgDAukFMs6I/"><span>EP02 · 15 de vida</span><span>14,9 mil</span></a></li>
+      </ul>
+      <div class="acoes"><a class="b2 pri" href="#apoiar">Apoiar e virar player</a><a class="b2" href="#nexo">Ver o servidor</a></div>
+    </article>
+    <article class="uni rank">
+      <div class="cap"><span class="tag">UNIVERSO · RANK F</span><h2>O garoto mais fraco da escola e um portal no colégio</h2>
+        <p class="sub" style="margin:0">O Téo descobriu o poder da gravidade. O resto do mundo ainda acha que ele é rank F.</p></div>
+      <ul>
+        <li class="serie-t">RANK F</li>
+        <li><a class="ep" target="_blank" rel="noopener" href="https://www.instagram.com/reel/DgF5yrTMON8/"><span>EP1 · O portal abriu</span><span>10,5 mil views</span></a></li>
+        <li><a class="ep" target="_blank" rel="noopener" href="https://www.instagram.com/reel/DgIhTiJsQqq/"><span>EP2 · O zelador e a vassoura</span><span>56,5 mil</span></a></li>
+        <li><span class="ep" style="opacity:.6"><span>EP3 · Vocês decidem</span><span>em breve</span></span></li>
+      </ul>
+      <div class="acoes"><a class="b2 pri" href="#apoiar">Apoiar e tirar licença</a><a class="b2" href="#rankf">Ver a Associação</a></div>
+    </article>
+  </div>
+  <div class="faixa"><span style="font-size:26px">💛</span><div><b>Gosta das séries? Apoie o canal</b><p class="aviso">Qualquer valor por Pix ajuda a sair mais episódio. Quem apoia aparece dentro da série.</p></div><a class="btn-ap" href="#apoiar">Apoiar</a></div>
+</section>
+
+<!-- NEXO -->
+<section class="tela" id="v-nexo" hidden>
+  <div><span class="tag px" style="color:var(--nexo)">SERVIDOR NEXO ONLINE</span><h1 style="font-size:clamp(26px,5vw,38px)">Players registrados</h1>
+    <p class="sub">Cada apoiador vira um player com o próprio nick. O mesmo player aparece no LOGADO (fila da loja, chat, ranking) e no MOB ZERO (um dos players que descem a cripta; o Otto vê o nick em cima da cabeça).</p></div>
+  <div class="meta-lugar"></div>
+  <ul class="lista n" id="lista-nexo"></ul>
+  <div class="como">
+    <div><b>Top 1 do servidor</b>Quem mais apoiou no mês. Aparece com destaque nos dois episódios do mês.</div>
+    <div><b>Nível alto e médio</b>Do 2º ao 10º lugar. Nick visível na tela, no ranking ou na cripta.</div>
+    <div><b>Novatos nível 1</b>Todo mundo que apoia entra no servidor, com qualquer valor.</div>
+  </div>
+</section>
+
+<!-- RANK F -->
+<section class="tela" id="v-rankf" hidden>
+  <div><span class="tag px" style="color:var(--rank)">ASSOCIAÇÃO DE CAÇADORES</span><h1 style="font-size:clamp(26px,5vw,38px)">Mural de licenças</h1>
+    <p class="sub">Cada apoiador tira uma Licença de Caçador. O rank sobe com o apoio no mês e só existe um rank S. Os nomes aparecem no mural da escola e na lista de caçadores do portal.</p></div>
+  <div class="meta-lugar"></div>
+  <ul class="lista" id="lista-rank"></ul>
+  <div class="como">
+    <div><b>Rank S</b>Um por mês: o maior apoiador. Escolhe o nome de um monstro do episódio.</div>
+    <div><b>Ranks A a C</b>Licença no mural do episódio, com o seu @.</div>
+    <div><b>Ranks D a F</b>Todo mundo começa no F, igual ao Téo.</div>
+  </div>
+</section>
+
+<!-- APOIADORES -->
+<section class="tela" id="v-apoiadores" hidden>
+  <div><h1 style="font-size:clamp(26px,5vw,38px)">💛 Apoiadores</h1><p class="sub" id="ap-sub">Quem ajuda as séries a continuarem. Valores não aparecem, só a posição.</p></div>
+  <div class="meta-lugar"></div>
+  <div class="abas"><button class="aba n on" data-a="nexo">NEXO Online</button><button class="aba r" data-a="rank">Rank F</button></div>
+  <ul class="lista" id="lista-ap"></ul>
+  <a class="big" href="#apoiar" style="text-align:center;text-decoration:none;max-width:320px">Quero apoiar também</a>
+</section>
+
+<!-- APOIAR -->
+<section class="tela" id="v-apoiar" hidden>
+  <div class="caixa">
+    <div style="text-align:center"><h1 style="font-size:28px">Apoiar as séries</h1><p class="sub" id="ap-tx">Qualquer valor ajuda a continuar os episódios. O pagamento é por Pix.</p></div>
+    <div class="meta-lugar"></div>
+    <form id="f" novalidate style="display:grid;gap:14px">
+      <div class="valores" id="valores"><button type="button" data-v="5">R$ 5</button><button type="button" data-v="10">R$ 10</button><button type="button" data-v="20">R$ 20</button><button type="button" data-v="50">R$ 50</button></div>
+      <label for="valor">Ou digite o valor<div class="campo"><span>R$</span><input id="valor" inputmode="decimal" placeholder="0,00" autocomplete="off"></div></label>
+      <button class="big" type="submit">Gerar Pix</button>
+      <p class="erro" id="msg" hidden></p>
+      <p class="aviso">No site real o Mercado Pago pede um e-mail para gerar o Pix. Ele não aparece para ninguém.</p>
+    </form>
+    <div id="pix" hidden style="display:grid;gap:14px">
+      <p style="margin:0;text-align:center">Pix de <b id="pv"></b></p>
+      <div class="qr"><canvas id="qrc" width="29" height="29"></canvas><em>QR de exemplo, não paga nada</em></div>
+      <p class="aviso" style="margin-top:14px">Abra o app do banco, escolha Pix e leia o QR code, ou use o Pix copia e cola.</p>
+      <div class="copia"><input id="codigo" readonly value="EXEMPLO-DO-PROTOTIPO-NAO-E-UM-PIX"><button class="b2" type="button" id="copiar">Copiar</button></div>
+      <div class="espera"><span class="bol"></span>Aguardando o pagamento…</div>
+      <button class="big sec" type="button" id="simular">Simular pagamento aprovado</button>
+    </div>
+  </div>
+</section>
+
+<!-- OBRIGADO -->
+<section class="tela" id="v-obrigado" hidden>
+  <div class="caixa">
+    <div style="text-align:center"><h1 style="font-size:28px">Obrigado!</h1><p class="sub" id="ob-tx">Recebemos o seu Pix.</p></div>
+    <div id="escolha" style="display:grid;gap:14px">
+      <p style="margin:0"><b>Onde você quer aparecer?</b></p>
+      <div class="opcoes">
+        <button type="button" class="opc n" data-u="nexo"><b style="color:var(--nexo)">Player no NEXO Online</b><small>Seu nick no LOGADO e no MOB ZERO</small></button>
+        <button type="button" class="opc r" data-u="rank"><b style="color:var(--rank)">Caçador no Rank F</b><small>Licença no mural da Associação</small></button>
+        <button type="button" class="opc n full" data-u="ambos"><b>Nos dois universos</b><small>Player e caçador com o mesmo nome</small></button>
+      </div>
+      <label for="nick">Nome do seu personagem<div class="campo"><input id="nick" maxlength="16" placeholder="Ex.: Brasa" autocomplete="off"><button type="button" class="b2" id="sortear" title="Sortear um nome" style="margin:4px -6px 4px 0">🎲</button></div></label>
+      <label for="arroba">Seu @ do Instagram (deixe vazio para ficar anônimo)<div class="campo"><span>@</span><input id="arroba" maxlength="30" autocapitalize="off" spellcheck="false" placeholder="seuperfil" autocomplete="off"></div></label>
+      <button class="big" type="button" id="salvar">Entrar na série</button>
+      <p class="erro" id="msg2" hidden></p>
+    </div>
+    <div id="pronto" hidden style="display:grid;gap:14px">
+      <div class="cartoes" id="cartoes"></div>
+      <a class="big" href="#apoiadores" style="text-align:center;text-decoration:none">Ver no mural de apoiadores</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer><div class="wrap">Sem Aviso · animação original · @canalsemaviso no Instagram, YouTube e TikTok<br>Para melhorar o site, contamos visitas de forma anônima: um código aleatório no seu navegador, sem nome, e-mail ou IP.</div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const brl=v=>'R$ '+Number(v).toFixed(2).replace('.',',');
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* ---------- personagem pixel da meta: muda de cara ---------- */
+const CARAS={
+ triste:["..########..",".#........#.","#..........#","#.##....##.#","#..........#","#..#....#..#","#.#......#.#","#..........#",".#........#.","..########.."],
+ preocupado:["..########..",".#........#.","#..........#","#..........#","#.##....##.#","#.##....##.#","#..........#","#...####...#",".#........#.","..########.."],
+ feliz:["..########..",".#........#.","#..........#","#.#.#..#.#.#","#..#....#..#","#..........#","#.#......#.#","#..######..#",".#........#.","..########.."],
+ festa:["..########..",".#........#.","#.*......*.#","#***....***#","#.*......*.#","#..........#","#.########.#","#..######..#",".#........#.","..########.."]};
+function caraSVG(h,cor){const m=CARAS[h];let r='';m.forEach((l,y)=>[...l].forEach((c,x)=>{const f=c==='#'?'#0d1016':c==='*'?'#ffd23a':null;
+  const dentro=l.slice(0,x).includes('#')&&l.slice(x).includes('#');
+  if(f)r+=`<rect x="${x}" y="${y}" width="1" height="1" fill="${f}"/>`;else if(dentro||y===0&&c==='#')r+=`<rect x="${x}" y="${y}" width="1" height="1" fill="${cor}"/>`;}));
+  return `<svg viewBox="0 0 12 10" shape-rendering="crispEdges" aria-hidden="true">${r}</svg>`;}
+let meta=0.32;
+function desenhaMeta(){
+  const f=meta,humor=f>=1?'festa':f<.25?'triste':f<.6?'preocupado':'feliz';
+  const frase=f>=1?'Meta de novembro batida! 1 mês garantido 🎉':f<.25?'Meta de novembro para as séries continuarem: ainda falta bastante':f<.6?'Meta de novembro para as séries continuarem: no caminho':'Meta de novembro: quase lá!';
+  const L=Math.max(4,Math.min(100,Math.round(f*100)));
+  document.querySelectorAll('.meta-lugar').forEach(el=>{el.innerHTML=`<div class="meta"><div class="meta-top"><b>${frase}</b><span class="aviso">sem valores, só a barra</span></div>
+   <div class="trilho"><div class="cheio" style="width:${L}%"></div><div class="boneco" style="left:${L}%">${caraSVG(humor,'#4fd8a6')}</div></div>
+   ${el.closest('#v-inicio')?`<div class="demo-ctl"><span>Teste como fica:</span><input type="range" min="0" max="100" value="${Math.round(f*100)}" aria-label="Simular a meta" class="sim"><span>${Math.round(f*100)}%</span></div>`:''}</div>`;});
+  document.querySelectorAll('.sim').forEach(s=>s.oninput=()=>{meta=s.value/100;desenhaMeta();document.querySelector('.sim')?.focus();});
+}
+
+/* ---------- apoiadores de exemplo ---------- */
+const NEXO_P=['Top 1 do servidor','Nível 40','Nível 32','Nível 25','Nível 18','Nível 12','Novato nível 1'];
+const RANKS=['S','A','B','C','D','E','F'];
+let apoiadores=[
+ {nick:'Exemplo1',arroba:'exemplo_01',u:'ambos'},{nick:'Exemplo2',arroba:'exemplo_02',u:'nexo'},{nick:'Exemplo3',arroba:null,u:'rank'},
+ {nick:'Exemplo4',arroba:'exemplo_04',u:'rank'},{nick:'Exemplo5',arroba:'exemplo_05',u:'nexo'},{nick:'Exemplo6',arroba:null,u:'ambos'}];
+const de=u=>apoiadores.filter(a=>a.u===u||a.u==='ambos');
+const papelN=i=>NEXO_P[Math.min(i,NEXO_P.length-1)], rankDe=i=>RANKS[Math.min(i,RANKS.length-1)];
+function linha(a,i,tipo){
+  const quem=a.arroba?`<a href="https://www.instagram.com/${encodeURIComponent(a.arroba)}/" target="_blank" rel="noopener">@${esc(a.arroba)}</a>`:'Anônimo';
+  const selo=tipo==='nexo'?`<span class="selo n">${papelN(i)}</span>`:`<span class="selo r">RANK ${rankDe(i)}</span>`;
+  const av=tipo==='nexo'?`<span class="av n">${esc(a.nick[0])}</span>`:`<span class="av r">${rankDe(i)}</span>`;
+  return `<li class="${a.novo?'novo':''}"><span class="pos">${i+1}º</span>${av}<span class="nm2"><b>${esc(a.nick)}</b><small>${quem}${a.novo?' · você':''}</small></span>${selo}</li>`;}
+let aba='nexo';
+function desenhaListas(){
+  $('lista-nexo').innerHTML=de('nexo').map((a,i)=>linha(a,i,'nexo')).join('');
+  $('lista-rank').innerHTML=de('rank').map((a,i)=>linha(a,i,'rank')).join('');
+  $('lista-ap').innerHTML=de(aba).map((a,i)=>linha(a,i,aba)).join('');
+  $('ap-sub').textContent=`${apoiadores.length} pessoas já apoiaram (exemplos). Valores não aparecem, só a posição.`;}
+document.querySelectorAll('.aba').forEach(b=>b.onclick=()=>{aba=b.dataset.a;document.querySelectorAll('.aba').forEach(x=>x.classList.toggle('on',x===b));desenhaListas();});
+
+/* ---------- apoiar (Pix de demonstração) ---------- */
+let valor=0;
+$('valores').onclick=e=>{const b=e.target.closest('button');if(!b)return;document.querySelectorAll('#valores button').forEach(x=>x.classList.toggle('on',x===b));$('valor').value=b.dataset.v+',00';};
+$('valor').oninput=()=>document.querySelectorAll('#valores button').forEach(x=>x.classList.remove('on'));
+$('f').onsubmit=e=>{e.preventDefault();valor=parseFloat(($('valor').value||'').replace(/\./g,'').replace(',','.'));
+  if(!(valor>=1)){$('msg').hidden=false;$('msg').textContent='Escolha ou digite um valor a partir de R$ 1,00.';return;}
+  $('msg').hidden=true;$('f').hidden=true;$('pix').hidden=false;$('pv').textContent=brl(valor);$('ap-tx').textContent='Falta pouco!';desenhaQR();};
+function desenhaQR(){const c=$('qrc').getContext('2d'),n=29;c.fillStyle='#fff';c.fillRect(0,0,n,n);c.fillStyle='#000';
+  let s=7;const rnd=()=>(s=(s*16807)%2147483647)/2147483647;
+  for(let y=0;y<n;y++)for(let x=0;x<n;x++)if(rnd()>.52)c.fillRect(x,y,1,1);
+  [[0,0],[n-7,0],[0,n-7]].forEach(([x,y])=>{c.fillStyle='#000';c.fillRect(x,y,7,7);c.fillStyle='#fff';c.fillRect(x+1,y+1,5,5);c.fillStyle='#000';c.fillRect(x+2,y+2,3,3);});}
+$('copiar').onclick=async()=>{try{await navigator.clipboard.writeText($('codigo').value);}catch(e){$('codigo').select();}$('copiar').textContent='Copiado!';setTimeout(()=>$('copiar').textContent='Copiar',1600);};
+$('simular').onclick=()=>{$('ob-tx').textContent=`Recebemos o seu Pix de ${brl(valor)}. Muito obrigado!`;location.hash='obrigado';};
+
+/* ---------- obrigado: escolher universo e personagem ---------- */
+let uni=null;
+document.querySelectorAll('.opc').forEach(b=>b.onclick=()=>{uni=b.dataset.u;document.querySelectorAll('.opc').forEach(x=>x.classList.toggle('on',x===b));});
+const NOMES=['Brasa','Gork','Zubi','Nhoque','Tiko','Bafo','Rasga','Toco','Krak','Bolota','Faísca','Sombra'];
+$('sortear').onclick=()=>{$('nick').value=NOMES[Math.floor(Math.random()*NOMES.length)];};
+$('salvar').onclick=()=>{const nick=$('nick').value.trim(),arroba=$('arroba').value.trim().replace(/^@/,'')||null;
+  const err=t=>{$('msg2').hidden=false;$('msg2').textContent=t;};
+  if(!uni)return err('Escolha onde você quer aparecer.');if(!nick)return err('Escolha o nome do personagem (ou toque no 🎲).');
+  $('msg2').hidden=true;apoiadores.forEach(a=>delete a.novo);
+  const pos=valor>=50?0:valor>=20?2:apoiadores.length;               // no site real a posição vem da soma do mês
+  const eu={nick,arroba,u:uni,novo:true};apoiadores.splice(pos,0,eu);
+  const iN=de('nexo').indexOf(eu),iR=de('rank').indexOf(eu);
+  let h='';
+  if(uni!=='rank')h+=`<div class="player"><span class="nick">${esc(nick)} <small>· ${papelN(iN)}</small></span>${caraSVG('feliz','#cfd8e6')}<div class="hp"><i style="width:100%"></i></div><p>Assim o seu nick aparece em cima do personagem no LOGADO e no MOB ZERO.</p></div>`;
+  if(uni!=='nexo')h+=`<div class="lic"><span class="org">ASSOCIAÇÃO DE CAÇADORES · LICENÇA</span><span class="letra">${rankDe(iR)}</span><span class="nm">${esc(nick)}</span><span class="num">${arroba?'@'+esc(arroba):'ANÔNIMO'} · Nº ${String(1000+apoiadores.length).padStart(5,'0')}</span></div>`;
+  $('cartoes').innerHTML=h;$('escolha').hidden=true;$('pronto').hidden=false;$('ob-tx').textContent='Você entrou na série!';
+  aba=uni==='rank'?'rank':'nexo';document.querySelectorAll('.aba').forEach(x=>x.classList.toggle('on',x.dataset.a===aba));desenhaListas();};
+
+/* ---------- telas pelo #hash ---------- */
+const TELAS=['inicio','nexo','rankf','apoiadores','apoiar','obrigado'];
+function rota(){let v=location.hash.slice(1);if(!TELAS.includes(v))v='inicio';
+  TELAS.forEach(t=>$('v-'+t).hidden=t!==v);
+  document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.dataset.v===v));
+  if(v==='apoiar'&&!$('pix').hidden&&$('f').hidden){}
+  if(v==='obrigado'&&!valor){$('ob-tx').textContent='Esta é a tela que aparece depois que o Pix é pago.';}
+  scrollTo(0,0);}
+addEventListener('hashchange',rota);
+desenhaMeta();desenhaListas();rota();
+</script>
